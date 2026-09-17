@@ -40,8 +40,8 @@
 
 三种途径，任选：
 
-1. **自动**：GitHub Actions 每周一跑 `tools/build-dict.mjs`，把 `data/dict.min.json` 推回仓库，脚本 7 天后自动取新版
-2. **手动**：脚本菜单「🌏 直接从 PoEDB 同步词库」，绕过仓库直接抓 poedb.tw
+1. **自动**：GitHub Actions 每周一跑 `tools/build-dict.mjs`，把 `data/dict.min.json` 推回仓库，脚本缓存到期后自动取新版
+2. **手动**：脚本菜单「🌏 直接从 PoEDB 同步词库」，绕过仓库直接抓 poedb.tw（首次安装会自动走一次这一步）
 3. **本地构建**：
    ```bash
    node tools/build-dict.mjs                 # PoE1，源站 poedb.tw
@@ -51,6 +51,12 @@
    产物：`data/dict.json`（带缩进，方便 diff）与 `data/dict.min.json`（脚本加载用）
 
 **改译名**请改 `data/overrides.json`（优先级最高，覆盖官方翻译），改完重新构建；补界面文案改 `data/ui.json`。
+
+> ⚠️ 工作流文件目前放在 `workflows/update-dict.yml`，GitHub 只识别 `.github/workflows/` 下的文件。
+> clone 到本地后执行一条命令即可启用自动更新（也可以在仓库网页上直接手动触发一次 Actions）：
+> ```bash
+> mkdir -p .github/workflows && git mv workflows/update-dict.yml .github/workflows/ && rmdir workflows
+> ```
 
 ## 开发
 
