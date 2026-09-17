@@ -1,0 +1,35 @@
+{
+ "_comment": "人工纠错层：优先级最高，会覆盖 poedb.tw 的官方翻译。用来把台服/官中里玩家不习惯的译名改成常用叫法。改完跑一次 node tools/build-dict.mjs 重新生成词库。",
+ "cn": {
+  "Exalted Orb": "崇高石",
+  "Divine Orb": "神圣石",
+  "Chaos Orb": "混沌石",
+  "Mirror of Kalandra": "卡兰德的魔镜",
+  "Regal Orb": "富豪石",
+  "Orb of Scouring": "重铸石",
+  "Cartographer's Chisel": "制图钉",
+  "Gemcutter's Prism": "宝石棱镜",
+  "Vaal Orb": "瓦尔宝珠",
+  "Tabula Rasa": "白袍",
+  "Headhunter": "猎首",
+  "Mageblood": "法师之血",
+  "The Doctor": "医生",
+  "House of Mirrors": "镜之殿堂"
+ },
+ "tw": {
+  "Exalted Orb": "崇高石",
+  "Divine Orb": "神聖石",
+  "Chaos Orb": "混沌石",
+  "Mirror of Kalandra": "卡蘭德的魔鏡",
+  "Regal Orb": "富豪石",
+  "Orb of Scouring": "重鑄石",
+  "Cartographer's Chisel": "製圖釘",
+  "Gemcutter's Prism": "寶石稜鏡",
+  "Vaal Orb": "瓦爾寶珠",
+  "Tabula Rasa": "白袍",
+  "Headhunter": "獵首",
+  "Mageblood": "法師之血",
+  "The Doctor": "醫生",
+  "House of Mirrors": "鏡之殿堂"
+ }
+}
