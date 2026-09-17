@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 悲歌
+Copyright (c) 2026 PoeNinjaChinese contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---------------------------------------------------------------------------
+
+词库数据（data/dict*.json）来自 poedb.tw / poe2db.tw，其内容以
+CC BY-NC-SA 3.0 授权发布；物品与游戏内文本版权归 Grinding Gear Games 所有。
+本脚本仅作非商业的个人辅助用途。
