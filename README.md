@@ -1,1 +1,94 @@
 # PoeNinjaChinese
+
+> 给 [poe.ninja](https://poe.ninja) 做中文化的油猴脚本，词库取自 **poedb.tw / poe2db.tw**（流亡编年史）。
+
+简体 / 繁體一键切换，界面文案、物品名、通货、技能宝石、地图、基底类型全覆盖；鼠标悬停可看英文原文，搜索框也能直接搜中文。
+
+---
+
+## 功能
+
+| | 说明 |
+|---|---|
+| **三层翻译** | ① 拦截页面自己的 `/api/` 响应，在数据进前端前改字段（搜索/排序/筛选直接吃中文）<br>② DOM 文本节点替换，兜底覆盖表格、弹窗、懒加载内容<br>③ 内置界面文案词典，断网也能翻按钮和表头 |
+| **词库来源** | poedb.tw（PoE1）/ poe2db.tw（PoE2）公开 autocomplete 词表，按 slug 做英→中对齐 |
+| **语言** | 简体、繁體、关闭，右下角按钮循环切换（记住偏好） |
+| **保留原文** | 翻译后的节点 `title` 里保留英文，鼠标悬停即可对照；可关 |
+| **未翻译收集** | `Alt + 点击`右下按钮（或油猴菜单）导出未命中字符串，方便补词条 |
+| **PoE1 / PoE2** | 按 URL 自动识别 `/poe1`、`/poe2`，切换到对应词库源站 |
+
+## 安装
+
+1. 浏览器装 [Tampermonkey](https://www.tampermonkey.net/)（或 Violentmonkey / 脚本猫）
+2. 从 GitHub 直装：打开下面的「脚本直链」，Tampermonkey 会自动识别并跳转到安装页
+3. 或者手动安装：新建脚本 → 粘贴 `PoeNinjaChinese.user.js` 全部内容 → 保存
+4. Greasyfork：在 Greasyfork 投稿时选「从 URL 导入」，填脚本直链即可，后续随 `@updateURL` 自动同步
+
+> 首次打开 poe.ninja 会自动从 poedb.tw 拉一次词库（约几百 KB，之后缓存 7 天）。
+
+## 使用
+
+- **右下角按钮**：点击在 `译·简 → 譯·繁 → 译·关` 之间切换；`Alt + 点击` 导出未翻译字符串
+- **油猴菜单**：
+  - 立即更新词库（CDN）
+  - 直接从 PoEDB 同步词库（绕过缓存，现场抓最新）
+  - 翻译接口数据 开/关（关掉后只做页面文字翻译）
+  - 悬浮显示英文原文 开/关
+  - 导出未翻译字符串 / 清除缓存 / 关于
+
+## 词库怎么更新
+
+三种途径，任选：
+
+1. **自动**：GitHub Actions 每周一跑 `tools/build-dict.mjs`，把 `data/dict.min.json` 推回仓库，脚本 7 天后自动取新版
+2. **手动**：脚本菜单「🌏 直接从 PoEDB 同步词库」，绕过仓库直接抓 poedb.tw
+3. **本地构建**：
+   ```bash
+   node tools/build-dict.mjs                 # PoE1，源站 poedb.tw
+   node tools/build-dict.mjs --poe2          # PoE2，源站 poe2db.tw
+   node tools/build-dict.mjs --local ./snap  # 用本地快照离线构建
+   ```
+   产物：`data/dict.json`（带缩进，方便 diff）与 `data/dict.min.json`（脚本加载用）
+
+**改译名**请改 `data/overrides.json`（优先级最高，覆盖官方翻译），改完重新构建；补界面文案改 `data/ui.json`。
+
+## 开发
+
+```bash
+node tools/smoke-test.mjs   # 冒烟测试：在 Node 里用 DOM stub 跑翻译核心
+```
+
+脚本结构（单文件，按编号分节）：
+
+```
+0 常量配置      1 GM API 封装   2 内置 UI 词典   3 运行时状态
+4 词库加载      5 翻译核心      6 数据层拦截     7 DOM 层
+8 悬浮按钮      9 菜单与工具    10 启动
+```
+
+浏览器控制台里可以用 `__PoeNinjaChinese.translatePhrase('Tabula Rasa')` 自查命中情况。
+
+## 发布
+
+仓库地址：https://github.com/saiyajiang/PoeNinjaChinese
+脚本直链：https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js
+
+**fork 后必做**：脚本顶部 `const OWNER = 'saiyajiang'` 换成你自己的用户名，同时改 `@namespace`、`@downloadURL`、`@updateURL`、`@homepageURL`、`@supportURL`，否则自动更新和 CDN 词库都会指向原仓库。
+
+发 Greasyfork 时注意：
+
+- `@downloadURL` / `@updateURL` 必须与仓库里的文件路径一致，否则自动更新失效
+- Greasyfork 会校验 `@license`，本脚本为 MIT
+- 版本号改动后 Greasyfork 才会推送更新
+
+## 已知限制 / TODO
+
+- 词缀（`explicitModifiers`）目前只在词库里存在对应条目时才翻，翻译框架已留好，后续可加专用词缀词库
+- 稀有物品的随机名（如「暴怒之 魔爪」）不翻译，避免误导
+- poe.ninja 改版换接口路径时，数据层可能失效，DOM 层会自动兜底
+
+## 版权与致谢
+
+- 脚本本体：MIT
+- 词库数据：[poedb.tw](https://poedb.tw) / [poe2db.tw](https://poe2db.tw)，内容以 CC BY-NC-SA 3.0 发布
+- 游戏文本版权归 Grinding Gear Games 所有，本项目仅作非商业的个人辅助用途
