@@ -2,7 +2,7 @@ name: Update Dictionary
 
 on:
   schedule:
-    # 每周一 03:17 UTC 重新从 poedb.tw 拉一次词库
+    # 每周一 03:17 UTC 重新构建词库
     - cron: '17 3 * * 1'
   workflow_dispatch:
 
@@ -21,8 +21,22 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build PoE1 dictionary (poedb.tw)
-        run: node tools/build-dict.mjs --host https://poedb.tw
+      # 腾讯官方优先；国服接口要登录，用仓库 secret 传 POESESSID（没配就自动降级到 poedb）
+      - name: Build dictionary (Tencent official first, PoEDB fallback)
+        env:
+          POESESSID: ${{ secrets.POESESSID }}
+        run: |
+          if [ -n "$POESESSID" ]; then
+            node tools/build-dict.mjs --host https://poedb.tw --cookie "POESESSID=$POESESSID"
+          else
+            node tools/build-dict.mjs --host https://poedb.tw
+          fi
+
+      - name: Check inline blocks are in sync
+        run: node tools/sync-inline.mjs --check
+
+      - name: Smoke test
+        run: node tools/smoke-test.mjs
 
       - name: Commit and push if changed
         run: |
