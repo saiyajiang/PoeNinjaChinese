@@ -1,8 +1,10 @@
 # PoeNinjaChinese
 
-> 给 [poe.ninja](https://poe.ninja) 做中文化的油猴脚本，词库取自 **poedb.tw / poe2db.tw**（流亡编年史）。
+> 给 [poe.ninja](https://poe.ninja) 做中文化的油猴脚本，中文译名优先取腾讯官方（国服），官方没有的再从 **poedb.tw / poe2db.tw**（流亡编年史）补齐。
 
 简体 / 繁體一键切换，界面文案、物品名、通货、技能宝石、地图、基底类型全覆盖；鼠标悬停可看英文原文，搜索框也能直接搜中文。
+
+[![Greasyfork](https://img.shields.io/badge/Greasyfork-安装-7c3aed)](https://greasyfork.org/zh-CN/scripts/596361)
 
 ---
 
@@ -22,21 +24,26 @@
 ## 安装
 
 1. 浏览器装 [Tampermonkey](https://www.tampermonkey.net/)（或 Violentmonkey / 脚本猫）
-2. 从 GitHub 直装：打开下面的「脚本直链」，Tampermonkey 会自动识别并跳转到安装页
-3. 或者手动安装：新建脚本 → 粘贴 `PoeNinjaChinese.user.js` 全部内容 → 保存
-4. Greasyfork：在 Greasyfork 投稿时选「从 URL 导入」，填脚本直链即可，后续随 `@updateURL` 自动同步
+2. **从 Greasyfork 安装（推荐，带自动更新）**：
+   [https://greasyfork.org/zh-CN/scripts/596361](https://greasyfork.org/zh-CN/scripts/596361)
+3. 或者从 GitHub 直装：打开下面的「脚本直链」，Tampermonkey 会自动识别并跳转到安装页
+4. 或者手动安装：新建脚本 → 粘贴 `PoeNinjaChinese.user.js` 全部内容 → 保存
 
-> 首次打开 poe.ninja 会自动从 poedb.tw 拉一次词库（约几百 KB，之后缓存 7 天）。
+仓库地址：https://github.com/saiyajiang/PoeNinjaChinese
+脚本直链：https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js
+
+> 首次打开 poe.ninja 会自动拉一次词库（腾讯官方优先，之后缓存 7 天）。
 
 ## 使用
 
 - **右下角按钮**：点击在 `译·简 → 譯·繁 → 译·关` 之间切换；`Alt + 点击` 导出未翻译字符串
 - **油猴菜单**：
-  - 立即更新词库（CDN）
-  - 直接从 PoEDB 同步词库（绕过缓存，现场抓最新）
-  - 翻译接口数据 开/关（关掉后只做页面文字翻译）
-  - 悬浮显示英文原文 开/关
-  - 导出未翻译字符串 / 清除缓存 / 关于
+  - 🔄 更新词库（一次拉齐：CDN 词库 → 腾讯官方 → PoEDB 补缺）
+  - 🌐 显示语言 简体 / 繁體 / 关闭
+  - 📡 翻译接口数据 开/关（关掉后只做页面文字翻译）
+  - 🏷 悬浮显示英文原文 开/关
+  - 🧩 跨节点合并翻译 开/关
+  - 📤 导出未翻译字符串 / 🧹 清除缓存 / ℹ️ 关于
 
 ## 中文译名从哪来
 
@@ -92,8 +99,8 @@ node tools/sync-inline.mjs  # 把 data/*.json 写回脚本内置区块（--check
 `data/` 是词库的单一数据源：改 JSON → 跑 `sync-inline` → 脚本内置生效，不要手改脚本里的数组。
 
 ```
-data/ui.json       界面文案 + 专有名词（精确/小写匹配，417 条）
-data/terms.json    通用术语（小写匹配，大小写不敏感，约 400 条）
+data/ui.json       界面文案 + 专有名词（精确/小写匹配，494 条）
+data/terms.json    通用术语（小写匹配，大小写不敏感，522 条）
 data/overrides.json  人工纠错层（优先级最高）
 ```
 
@@ -109,16 +116,20 @@ data/overrides.json  人工纠错层（优先级最高）
 
 ## 发布
 
-仓库地址：https://github.com/saiyajiang/PoeNinjaChinese
-脚本直链：https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js
+| | 地址 |
+|---|---|
+| **Greasyfork（推荐安装）** | https://greasyfork.org/zh-CN/scripts/596361 |
+| GitHub 仓库 | https://github.com/saiyajiang/PoeNinjaChinese |
+| 脚本直链 | https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js |
 
 **fork 后必做**：脚本顶部 `const OWNER = 'saiyajiang'` 换成你自己的用户名，同时改 `@namespace`、`@downloadURL`、`@updateURL`、`@homepageURL`、`@supportURL`，否则自动更新和 CDN 词库都会指向原仓库。
 
-发 Greasyfork 时注意：
+Greasyfork 与 GitHub 的关系：
 
+- Greasyfork 脚本设为「从 URL 导入」，指向上面的脚本直链，推新版本时两边自动同步
 - `@downloadURL` / `@updateURL` 必须与仓库里的文件路径一致，否则自动更新失效
-- Greasyfork 会校验 `@license`，本脚本为 MIT
-- 版本号改动后 Greasyfork 才会推送更新
+- 只有 `@version` 变了 Greasyfork 才会推送更新，**改完记得升版本号**
+- 元信息里 `@name` / `@description` 的 `zh-CN`、`zh-TW` 变体都要填，Greasyfork 会校验非空
 
 ## 已知限制 / TODO
 
@@ -132,5 +143,5 @@ data/overrides.json  人工纠错层（优先级最高）
 ## 版权与致谢
 
 - 脚本本体：MIT
-- 词库数据：[poedb.tw](https://poedb.tw) / [poe2db.tw](https://poe2db.tw)，内容以 CC BY-NC-SA 3.0 发布
+- 中文译名：腾讯《流放之路》国服（官方简体，优先）+ [poedb.tw](https://poedb.tw) / [poe2db.tw](https://poe2db.tw)（内容以 CC BY-NC-SA 3.0 发布）
 - 游戏文本版权归 Grinding Gear Games 所有，本项目仅作非商业的个人辅助用途
