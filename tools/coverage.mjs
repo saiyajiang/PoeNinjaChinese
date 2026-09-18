@@ -47,22 +47,30 @@ const api = sandbox.__PoeNinjaChinese;
 const data = JSON.parse(readFileSync(file, 'utf8'));
 const items = data.items;
 
-const hit = [], miss = [];
+const CJK = /[　-〿㐀-鿿＀-￯]/;
+const hit = [], miss = [], stale = [];
 for (const s of items) {
   const out = api.translatePhrase(s);
-  (out !== s ? hit : miss).push([s, out]);
+  if (out !== s) { hit.push([s, out]); continue; }
+  // 导出时已被翻成一半的串（含中文）不算真实缺口：页面初始是纯英文，不会再出现
+  (CJK.test(s) ? stale : miss).push([s, out]);
 }
 
-const pct = (n) => (n / items.length * 100).toFixed(1) + '%';
-console.log(`词条总数：${items.length}`);
-console.log(`✅ 已翻译：${hit.length}  (${pct(hit.length)})`);
-console.log(`❌ 仍为英文：${miss.length}  (${pct(miss.length)})`);
+const pure = miss.length + hit.length;   // 剔除残留后的有效样本
+const pct = (n, d) => (d ? n / d * 100 : 0).toFixed(1) + '%';
+console.log(`词条总数：${items.length}（其中 ${stale.length} 条是已半翻译的残留串，不计入）`);
+console.log(`✅ 已翻译：${hit.length}  (${pct(hit.length, pure)})`);
+console.log(`❌ 仍为英文：${miss.length}  (${pct(miss.length, pure)})　← 真实缺口`);
 
 if (SHOW) {
   console.log('\n--- 翻译样例 ---');
   for (const [a, b] of hit.slice(0, Math.min(SHOW, hit.length))) console.log(`  ${JSON.stringify(a)} → ${JSON.stringify(b)}`);
   console.log('\n--- 仍为英文（按长度排序）---');
   for (const [a] of miss.sort((x, y) => y[0].length - x[0].length).slice(0, Math.min(SHOW, miss.length))) console.log(`  ${a}`);
+  if (stale.length) {
+    console.log(`\n--- 残留串 ${stale.length} 条（导出时已半翻译，页面刷新后不会重现，仅列前 ${Math.min(SHOW, stale.length)} 条）---`);
+    for (const [a] of stale.slice(0, Math.min(SHOW, stale.length))) console.log(`  ${a}`);
+  }
 }
 
 process.exit(0);
