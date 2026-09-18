@@ -2,7 +2,16 @@
 
 本项目版本号遵循 [SemVer](https://semver.org/)。
 
+## 1.3.1（文档）
+
+- 已发布到 Greasyfork：https://greasyfork.org/zh-CN/scripts/596361
+- README 顶部加安装徽章，「安装」章节把 Greasyfork 列为推荐入口，
+  「发布」章节改为列出 Greasyfork / 仓库 / 直链三个地址
+- 修正「使用」章节与实际菜单不一致的地方（同步源选项已在 1.3.0 移除）
+- 词库条目数、致谢里的中文译名来源同步更新
+
 ## 1.3.0
+
 
 - 补齐 `@description:zh-TW`（Greasyfork 投稿时会校验 zh-TW 非空，之前漏了导致报错）
 - **去掉「选择同步源」的菜单项**：原来有「腾讯官方优先」和「只从 PoEDB」两个入口，现在合并成
