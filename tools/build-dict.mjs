@@ -72,34 +72,122 @@ async function readOptionalJSON(path, fallback) {
 
 const clean = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 
-async function main() {
-  console.log(`▶ 源站：${HOST}（${POE2 ? 'PoE2' : 'PoE1'}）`);
-  const us = await autocomplete('us');
-  const cn = await autocomplete('cn');
-  const tw = await autocomplete('tw');
+/* ── 腾讯官方（国服）源 ────────────────────────────────────────
+ * 国服市集 API 与国际服同构，返回腾讯官方简体译名：
+ *   items：按「分组序号 + 组内序号」对齐（组/条数不一致则跳过该组）
+ *   stats：两端 id 完全一致，按 id 精确对齐，用来翻词缀
+ * 国服接口需要登录态（POESESSID），取不到就 fallback 到 poedb。
+ * 可用 --cookie "POESESSID=xxx" 传入。
+ */
+const EN_API = 'https://www.pathofexile.com/api/trade/data/';
+const CN_API = 'https://poe.game.qq.com/api/trade/data/';
+const COOKIE = arg('cookie', '');
 
-  // 英→中 映射：靠 slug（value）对齐，value 在所有语言里一致
-  const enBySlug = new Map();
-  for (const it of us) {
-    if (it && it.value) enBySlug.set(it.value, clean(it.label));
+async function tradeData(base, name) {
+  const headers = { 'User-Agent': UA, Accept: 'application/json' };
+  if (COOKIE) headers.Cookie = COOKIE;
+  const res = await fetch(base + name, { headers });
+  if (!res.ok) throw new Error(`${name}: HTTP ${res.status}`);
+  const json = await res.json();
+  if (!Array.isArray(json.result) || !json.result.length) throw new Error(`${name}: 返回为空（多半是没登录国服）`);
+  return json.result;
+}
+
+/** 按索引对齐两端；组数或组内条数不一致就整组放弃，宁缺勿错 */
+function alignGroups(enList, cnList, pick) {
+  const out = {};
+  const usable = Math.min(enList.length, cnList.length);
+  let groups = 0;
+  for (let g = 0; g < usable; g++) {
+    const ee = (enList[g] || {}).entries || [];
+    const ce = (cnList[g] || {}).entries || [];
+    if (ee.length !== ce.length || !ee.length) continue;
+    for (let i = 0; i < ee.length; i++) pick(out, ee[i], ce[i]);
+    groups++;
+  }
+  return { out, groups, of: usable };
+}
+
+async function fromTencent() {
+  const [enItems, cnItems] = await Promise.all([tradeData(EN_API, 'items'), tradeData(CN_API, 'items')]);
+  const items = alignGroups(enItems, cnItems, (out, e, c) => {
+    const en = clean(e && (e.name || e.type));
+    const cn = clean(c && (c.name || c.type));
+    if (!en || !cn || en === cn) return;                 // 官方没翻的保持英文
+    if (en.length > 60 || cn.length > 60) return;
+    if (/[^A-Za-z0-9'’\- ]/.test(en)) return;            // 只收纯英文名
+    if (!(en in out)) out[en] = cn;
+  });
+  console.log(`  ✓ 腾讯官方 物品：${Object.keys(items.out).length} 条（对齐 ${items.groups}/${items.of} 组）`);
+
+  let stats = { out: {}, groups: 0, of: 0 };
+  try {
+    const [enStats, cnStats] = await Promise.all([tradeData(EN_API, 'stats'), tradeData(CN_API, 'stats')]);
+    const cnById = new Map();
+    for (const g of cnStats) for (const e of (g.entries || [])) {
+      if (e && e.id && e.text) cnById.set(e.id, clean(e.text));
+    }
+    for (const g of enStats) for (const e of (g.entries || [])) {
+      if (!e || !e.id || !e.text) continue;
+      const cn = cnById.get(e.id), en = clean(e.text);
+      if (!cn || !en || en === cn) continue;
+      if (!(en in stats.out)) stats.out[en] = cn;
+    }
+    console.log(`  ✓ 腾讯官方 词缀：${Object.keys(stats.out).length} 条`);
+  } catch (e) { console.warn(`  · 腾讯官方 词缀 跳过：${e.message}`); }
+
+  return Object.assign({}, items.out, stats.out);
+}
+
+async function main() {
+  const SOURCE = arg('source', 'both');   // tencent | poedb | both（both = 腾讯优先）
+  console.log(`▶ 源策略：${SOURCE}${SOURCE !== 'poedb' ? '（腾讯官方优先）' : ''}　PoE 版本：${POE2 ? 'PoE2' : 'PoE1'}`);
+
+  // ① 腾讯官方（国服）——只提供简体
+  let official = {};
+  if (SOURCE !== 'poedb') {
+    try { official = await fromTencent(); }
+    catch (e) { console.warn(`  · 腾讯官方源不可用：${e.message}`); if (SOURCE === 'tencent') throw e; }
   }
 
-  const build = (zhList) => {
-    const out = {};
-    for (const it of zhList) {
-      if (!it || !it.value || !it.label) continue;
-      const en = enBySlug.get(it.value);
-      const zh = clean(it.label);
-      if (!en || !zh || en === zh) continue;          // 官方没翻译的保持英文
-      if (en.length > 60 || zh.length > 60) continue; // 超长条目（多为说明性词条）丢弃
-      if (/[<>]/.test(zh)) continue;
-      if (!(en in out)) out[en] = zh;
-    }
-    return out;
-  };
+  // ② poedb.tw —— 繁体 + 补官方缺的简体
+  let en2cn = {}, en2tw = {};
+  if (SOURCE !== 'tencent' || !Object.keys(official).length) {
+    console.log(`▶ 源站：${HOST}（${POE2 ? 'PoE2' : 'PoE1'}）`);
+    const us = await autocomplete('us');
+    const cn = await autocomplete('cn');
+    const tw = await autocomplete('tw');
 
-  const en2cn = build(cn);
-  const en2tw = build(tw);
+    // 英→中 映射：靠 slug（value）对齐，value 在所有语言里一致
+    const enBySlug = new Map();
+    for (const it of us) {
+      if (it && it.value) enBySlug.set(it.value, clean(it.label));
+    }
+
+    const build = (zhList) => {
+      const out = {};
+      for (const it of zhList) {
+        if (!it || !it.value || !it.label) continue;
+        const en = enBySlug.get(it.value);
+        const zh = clean(it.label);
+        if (!en || !zh || en === zh) continue;          // 官方没翻译的保持英文
+        if (en.length > 60 || zh.length > 60) continue; // 超长条目（多为说明性词条）丢弃
+        if (/[<>]/.test(zh)) continue;
+        if (!(en in out)) out[en] = zh;
+      }
+      return out;
+    };
+
+    const pdbCn = build(cn);
+    const pdbTw = build(tw);
+    // 简体：官方优先，poedb 只补缺
+    en2cn = Object.assign({}, pdbCn, official);
+    en2tw = pdbTw;
+    const patched = Object.keys(pdbCn).filter((k) => k in official).length;
+    console.log(`  ✓ poedb 简体 ${Object.keys(pdbCn).length} 条（其中 ${patched} 条被官方译名覆盖）／繁体 ${Object.keys(pdbTw).length} 条`);
+  } else {
+    en2cn = official;
+  }
 
   const ui = await readOptionalJSON(join(OUT, 'ui.json'), { cn: {}, tw: {} });
   const terms = await readOptionalJSON(join(OUT, 'terms.json'), { cn: {}, tw: {} });
@@ -108,7 +196,7 @@ async function main() {
   const payload = {
     v: 1,
     game: POE2 ? 'poe2' : 'poe1',
-    source: HOST,
+    source: Object.keys(official).length ? `tencent+${HOST}` : HOST,
     generatedAt: new Date().toISOString(),
     en2cn: Object.assign({}, en2cn, overrides.cn || {}),
     en2tw: Object.assign({}, en2tw, overrides.tw || {}),
