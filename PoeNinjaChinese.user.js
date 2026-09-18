@@ -3,9 +3,10 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      1.2.0
-// @description  调用 poedb.tw 词库，把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
-// @description:zh-CN  调用 poedb.tw 词库，把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
+// @version      1.3.0
+// @description  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
+// @description:zh-CN  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
+// @description:zh-TW  中文譯名優先取騰訊官方（國服），官方沒有的再從 poedb.tw 補齊；把 poe.ninja 的物品、通貨、寶石、地圖、基底與介面文案翻譯成中文（簡/繁可切換，原文懸浮可見）
 // @author       saiyajiang
 // @license      MIT
 // @match        *://poe.ninja/*
@@ -50,7 +51,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '1.2.0';
+  const SCRIPT_VERSION = '1.3.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -118,6 +119,7 @@ const INLINE_UI = [
     ["Add to favorites", "加入收藏", "加入收藏"],
     ["Advanced Thaumaturgy", "高等奇术", "高等奇術"],
     ["Advertise on this site", "在本站投放广告", "在本站投放廣告"],
+    ["Affinity", "亲和", "親和"],
     ["Alchemy Shard", "点金碎片", "點金碎片"],
     ["All leagues", "全部联盟", "全部聯盟"],
     ["Allflame Ember", "全焰余烬", "全焰餘燼"],
@@ -163,6 +165,7 @@ const INLINE_UI = [
     ["Builds - Path of Exile 2", "构筑 — 流放之路 2", "構築 — 流放之路 2"],
     ["Buying Price", "买入价", "買入價"],
     ["Cancel", "取消", "取消"],
+    ["Cannibalism", "吞灵", "吞靈"],
     ["Cannibalism II", "吞灵 II", "吞靈 II"],
     ["Cartographer\"s Chisel", "制图钉", "製圖釘"],
     ["Category", "分类", "分類"],
@@ -179,6 +182,7 @@ const INLINE_UI = [
     ["Charge Profusion", "能量球激增", "充能滿盈"],
     ["Charge Profusion II", "能量球激增 II", "充能滿盈 II"],
     ["Charge Regulation", "充能调节", "充能調節"],
+    ["ChargeRegulationPlayer", "充能调节", "充能調節"],
     ["Charges gained", "获得的充能", "獲得的充能"],
     ["Chieftain", "酋长", "酋長"],
     ["Choices", "选项", "選項"],
@@ -191,11 +195,13 @@ const INLINE_UI = [
     ["Cluster Jewel", "集群珠宝", "集群珠寶"],
     ["Cluster Jewels", "集群珠宝", "集群珠寶"],
     ["Coffin", "棺柩", "棺柩"],
+    ["Cold-Infused", "冰霜灌注", "冰霜灌注"],
     ["Columns", "列", "欄位"],
     ["Combat Frenzy", "战斗狂怒", "戰鬥狂怒"],
     ["Compare", "对比", "比較"],
     ["Confidence", "置信度", "信心度"],
     ["Console", "主机版", "主機版"],
+    ["Consumption", "吞噬", "吞噬"],
     ["Contribute", "贡献", "貢獻"],
     ["Cooldown Recovery II", "冷却回复速度 II", "冷卻回復速度 II"],
     ["Copied", "已复制", "已複製"],
@@ -235,10 +241,14 @@ const INLINE_UI = [
     ["Economy - Path of Exile 2", "经济 — 流放之路 2", "經濟 — 流放之路 2"],
     ["Effective DPS", "有效 DPS", "有效 DPS"],
     ["Effective Health Pool", "有效生命池", "有效生命池"],
+    ["Effective mitigation", "有效减伤", "有效減傷"],
+    ["Effective mitigation 61", "有效减伤 61", "有效減傷 61"],
+    ["Efficiency", "效率", "效率"],
     ["Elemental Armament II", "元素军备 II", "元素軍備 II"],
     ["Elemental DPS", "元素 DPS", "元素 DPS"],
     ["Elemental Damage", "元素伤害", "元素傷害"],
     ["Elementalist", "元素使", "元素使"],
+    ["Elements", "元素", "元素"],
     ["Emerald", "翠玉", "翠玉"],
     ["Empowered Sparks II", "强化火花 II", "強化火花 II"],
     ["Enable", "启用", "啟用"],
@@ -270,6 +280,7 @@ const INLINE_UI = [
     ["Fire Mastery", "火焰精通", "火焰精通"],
     ["Flasks", "药剂", "藥劑"],
     ["Flavour text", "风味文本", "風味文本"],
+    ["Flow State", "流动状态", "流動狀態"],
     ["Forbidden Rites", "禁忌仪式", "禁忌儀式"],
     ["Fossil", "化石", "化石"],
     ["Fossils", "化石", "化石"],
@@ -360,14 +371,17 @@ const INLINE_UI = [
     ["Maps", "地图", "地圖"],
     ["Marauder", "野蛮人", "野蠻人"],
     ["Martial Weapon", "军械武器", "軍械武器"],
+    ["Mastery", "精通", "精通"],
     ["Max Hit", "最大承受击中", "最大承受擊中"],
     ["Medallion", "徽章", "徽章"],
     ["Memory", "记忆", "記憶"],
+    ["Mindful Awareness", "正念觉察", "正念覺察"],
     ["Mirror Shard", "魔镜碎片", "魔鏡碎片"],
     ["Mirror of Kalandra", "卡兰德的魔镜", "卡蘭德的魔鏡"],
     ["Mirrored", "已复制", "已複製"],
     ["Monster Level", "怪物等级", "怪物等級"],
     ["More", "更多", "更多"],
+    ["Mote", "微粒", "微粒"],
     ["Motoric Implants", "运动植入体", "運動植入體"],
     ["Movement Speed", "移动速度", "移動速度"],
     ["Name", "名称", "名稱"],
@@ -409,8 +423,10 @@ const INLINE_UI = [
     ["Perfect Iron Rune", "完美钢铁符文", "完美鋼鐵符文"],
     ["Perform a circular slash that kicks up a", "挥出环形斩击，扬起", "揮出環形斬擊，揚起"],
     ["Perpetual Charge", "永续充能", "永續充能"],
+    ["Phoenix Claw", "凤凰之爪", "鳳凰之爪"],
     ["Physical DPS", "物理 DPS", "物理 DPS"],
     ["Physical Damage", "物理伤害", "物理傷害"],
+    ["Pierce the Heart", "穿心", "穿心"],
     ["Pin Buildup", "钉住积蓄", "釘住積蓄"],
     ["Pinpoint Critical", "精准暴击", "精準暴擊"],
     ["PoEDB", "编年史", "編年史"],
@@ -455,6 +471,7 @@ const INLINE_UI = [
     ["Rigwald's Ferocity", "瑞佛的凶猛", "瑞佛的凶猛"],
     ["Rings", "戒指", "戒指"],
     ["Rows per page", "每页行数", "每頁列數"],
+    ["Runeforged Secured Wraps", "符文锻造护腕", "符文鍛造護腕"],
     ["Runic Ward", "符文护盾", "符文護盾"],
     ["Saboteur", "破坏者", "破壞者"],
     ["Salvo", "齐射", "齊射"],
@@ -463,6 +480,10 @@ const INLINE_UI = [
     ["Scarred Faith", "伤痕信仰", "傷痕信仰"],
     ["Scion", "贵族", "貴族"],
     ["Scroll of Wisdom", "智慧卷轴", "智慧卷軸"],
+    ["Seal", "封印", "封印"],
+    ["Seal broken", "封印破碎", "封印破碎"],
+    ["Sealing", "封印", "封印"],
+    ["Seals", "封印", "封印"],
     ["Search", "搜索", "搜尋"],
     ["Search filters", "筛选", "篩選"],
     ["Search filters...", "筛选…", "篩選…"],
@@ -501,8 +522,10 @@ const INLINE_UI = [
     ["Stack size", "堆叠数量", "堆疊數量"],
     ["Statistics", "统计", "統計"],
     ["Strength", "力量", "力量"],
+    ["Subterfuge Mask", "诡诈面具", "詭詐面具"],
     ["Supply", "供给量", "供給量"],
     ["Support the site", "支持本站", "支持本站"],
+    ["SupportClarityPlayerTwo", "清晰 II（辅助）", "清晰 II（輔助）"],
     ["Tasalio's Test", "塔萨罗的考验", "塔薩羅的考驗"],
     ["Tawhoa's Test", "塔霍亚的考验", "塔霍亞的考驗"],
     ["Templar", "圣堂武僧", "聖堂武僧"],
@@ -519,6 +542,7 @@ const INLINE_UI = [
     ["Trickster", "欺诈师", "欺詐師"],
     ["Trinity", "三位一体", "三位一體"],
     ["Twister", "旋风", "旋風"],
+    ["Twofold", "双重", "雙重"],
     ["Type", "类型", "類型"],
     ["Uhtred's Constellation", "乌崔德的星座", "烏崔德的星座"],
     ["Uncorrupted", "未腐化", "未汙染"],
@@ -548,6 +572,7 @@ const INLINE_UI = [
     ["View Profile", "查看资料", "檢視資料"],
     ["View all posts", "查看全部公告", "查看全部公告"],
     ["Virtuous Barrier", "美德壁垒", "美德壁壘"],
+    ["VirtuousBarrierPlayer", "美德壁垒", "美德壁壘"],
     ["Vitality II", "活力 II", "活力 II"],
     ["Volume", "成交量", "成交量"],
     ["Vulgar Methods", "粗俗手段", "卑鄙手段"],
@@ -593,6 +618,7 @@ const INLINE_TERMS = [
     ["accuracy rating while moving", "移动时命中值", "移動時命中值"],
     ["additional", "额外", "額外"],
     ["adds", "附加", "附加"],
+    ["affinity", "亲和", "親和"],
     ["against you have no", "对你没有", "對你沒有"],
     ["ailment", "异常状态", "異常狀態"],
     ["ailments", "异常状态", "異常狀態"],
@@ -616,7 +642,10 @@ const INLINE_TERMS = [
     ["armour", "护甲", "護甲"],
     ["armour break", "护甲破坏", "護甲破壞"],
     ["armour slot", "护甲位", "護甲位"],
+    ["around", "周围", "周圍"],
     ["around you", "在你周围", "在你周圍"],
+    ["arrow", "箭矢", "箭矢"],
+    ["arrows", "箭矢", "箭矢"],
     ["ascendancy", "升华", "昇華"],
     ["attack", "攻击", "攻擊"],
     ["attack damage", "攻击伤害", "攻擊傷害"],
@@ -626,6 +655,8 @@ const INLINE_TERMS = [
     ["attributes", "属性", "屬性"],
     ["augment", "增幅", "增幅"],
     ["aura", "光环", "光環"],
+    ["awareness", "觉察", "覺察"],
+    ["axes", "斧", "斧"],
     ["banner", "战旗", "戰旗"],
     ["barrage", "弹幕", "彈幕"],
     ["base", "基础", "基礎"],
@@ -645,7 +676,9 @@ const INLINE_TERMS = [
     ["boosts the", "提升", "提升"],
     ["boots", "鞋子", "鞋子"],
     ["bow", "弓", "弓"],
+    ["bows", "弓", "弓"],
     ["break", "破坏", "破壞"],
+    ["broken", "破碎", "破碎"],
     ["buff", "增益", "增益"],
     ["buffs", "增益", "增益"],
     ["buildup", "积蓄", "積蓄"],
@@ -653,12 +686,15 @@ const INLINE_TERMS = [
     ["by", "被", "被"],
     ["can be boosted by multiple", "可被多个加成", "可被多個加成"],
     ["can't be", "无法被", "無法被"],
+    ["cannibalism", "吞灵", "吞靈"],
     ["cannot", "无法", "無法"],
     ["cannot be", "无法被", "無法被"],
     ["cast speed", "施法速度", "施法速度"],
     ["cast time", "施法时间", "施法時間"],
+    ["causing", "使", "使"],
     ["causing them to", "使其", "使其"],
     ["causing them to grant", "使其获得", "使其獲得"],
+    ["causing those", "使这些", "使這些"],
     ["chaining", "连锁", "連鎖"],
     ["chance", "几率", "機率"],
     ["change", "涨跌", "漲跌"],
@@ -676,9 +712,12 @@ const INLINE_TERMS = [
     ["chilled", "冰缓", "冰緩"],
     ["clarity", "清晰", "清晰"],
     ["class", "职业", "職業"],
+    ["claw", "爪", "爪"],
+    ["claws", "爪", "爪"],
     ["close", "关闭", "關閉"],
     ["cold", "冰霜", "冰霜"],
     ["cold damage", "冰霜伤害", "冰霜傷害"],
+    ["cold-infused", "冰霜灌注", "冰霜灌注"],
     ["color", "颜色", "顏色"],
     ["colour", "颜色", "顏色"],
     ["combo", "连击", "連擊"],
@@ -690,12 +729,14 @@ const INLINE_TERMS = [
     ["confidence", "置信度", "信心度"],
     ["consume", "消耗", "消耗"],
     ["consumes", "消耗", "消耗"],
+    ["consumption", "吞噬", "吞噬"],
     ["conversion", "转换", "轉換"],
     ["converted", "已转换", "已轉換"],
     ["converts", "转换", "轉換"],
     ["cooldown", "冷却", "冷卻"],
     ["cooldown recovery rate", "冷却回复速度", "冷卻回復速度"],
     ["cooldown time", "冷却时间", "冷卻時間"],
+    ["cooldowns recover", "冷却回复", "冷卻回復"],
     ["copy", "复制", "複製"],
     ["corrupted", "已腐化", "已汙染"],
     ["cost", "消耗", "消耗"],
@@ -711,9 +752,11 @@ const INLINE_TERMS = [
     ["crossbows", "十字弓", "十字弓"],
     ["currency", "通货", "通貨"],
     ["curse", "诅咒", "詛咒"],
+    ["daggers", "匕首", "匕首"],
     ["damage", "伤害", "傷害"],
     ["damage while moving", "移动时伤害", "移動時傷害"],
     ["dancer", "舞者", "舞者"],
+    ["dealing", "造成", "造成"],
     ["dealt", "造成的伤害", "造成的傷害"],
     ["debuff", "减益", "減益"],
     ["defensive", "防御", "防禦"],
@@ -731,6 +774,8 @@ const INLINE_TERMS = [
     ["duration", "持续时间", "持續時間"],
     ["each", "每个", "每個"],
     ["effect", "效果", "效果"],
+    ["effective", "有效", "有效"],
+    ["efficiency", "效率", "效率"],
     ["electrocute", "电击", "電擊"],
     ["electrocutes", "电击", "電擊"],
     ["electrocuting", "电击", "電擊"],
@@ -758,6 +803,8 @@ const INLINE_TERMS = [
     ["estimated", "估值", "估值"],
     ["evaded", "被闪避", "被閃避"],
     ["evasion", "闪避", "閃避"],
+    ["every", "每个", "每個"],
+    ["expected", "预期", "預期"],
     ["explicit", "词缀", "詞綴"],
     ["explode", "爆炸", "爆炸"],
     ["explosion", "爆炸", "爆炸"],
@@ -769,10 +816,14 @@ const INLINE_TERMS = [
     ["fiery", "火焰", "火焰"],
     ["filter", "筛选", "篩選"],
     ["filters", "筛选", "篩選"],
-    ["fire", "火焰", "火焰"],
+    ["fire", "发射", "發射"],
     ["fire damage", "火焰伤害", "火焰傷害"],
+    ["fires", "发射", "發射"],
+    ["flails", "连枷", "連枷"],
     ["flask", "药剂", "藥劑"],
     ["flask charges gained", "获得的药剂充能", "獲得的藥劑充能"],
+    ["flow", "流动", "流動"],
+    ["flow state", "流动状态", "流動狀態"],
     ["found", "找到", "找到"],
     ["fractured", "碎裂", "碎裂"],
     ["freeze", "冰冻", "冰凍"],
@@ -787,6 +838,9 @@ const INLINE_TERMS = [
     ["gale force", "疾风之力", "疾風之力"],
     ["gem", "宝石", "寶石"],
     ["gems", "宝石", "寶石"],
+    ["generating", "生成", "生成"],
+    ["generating a", "生成一个", "生成一個"],
+    ["ghost shroud", "幽灵帷幕", "幽靈帷幕"],
     ["global", "全域", "全域"],
     ["glory", "荣耀", "榮耀"],
     ["gloves", "手套", "手套"],
@@ -819,7 +873,9 @@ const INLINE_TERMS = [
     ["in your", "在你的", "在你的"],
     ["increased", "提高", "提高"],
     ["increases and reductions to", "提高与降低", "提高與降低"],
+    ["infused", "灌注", "灌注"],
     ["intelligence", "智慧", "智慧"],
+    ["inverted", "反转", "反轉"],
     ["invocation", "祈唤", "祈喚"],
     ["is", "是", "是"],
     ["is in your", "在你的", "在你的"],
@@ -847,6 +903,8 @@ const INLINE_TERMS = [
     ["lineage", "血统", "血統"],
     ["listings", "挂单数", "掛單數"],
     ["loading", "加载中", "載入中"],
+    ["lose a", "失去一个", "失去一個"],
+    ["maces", "锤", "錘"],
     ["magic", "魔法", "魔法"],
     ["magnitude", "效果", "效果"],
     ["main hand", "主手", "主手"],
@@ -855,6 +913,7 @@ const INLINE_TERMS = [
     ["marked", "被标记", "被標記"],
     ["marks", "印记", "印記"],
     ["martial", "军械", "軍械"],
+    ["mastery", "精通", "精通"],
     ["max", "最大", "最大"],
     ["maximum", "最大", "最大"],
     ["maximum life", "最大生命", "最大生命"],
@@ -864,15 +923,18 @@ const INLINE_TERMS = [
     ["metre", "米", "公尺"],
     ["metres", "米", "公尺"],
     ["min", "最小", "最小"],
+    ["mindful", "正念", "正念"],
     ["minimum", "最小", "最小"],
     ["minion", "召唤物", "召喚物"],
     ["minions", "召唤物", "召喚物"],
+    ["mitigation", "减伤", "減傷"],
     ["modifier", "词缀", "詞綴"],
     ["modifiers", "词缀", "詞綴"],
     ["more", "更多", "更多"],
     ["more damage", "更多伤害", "更多傷害"],
     ["most", "最", "最"],
     ["most numerous", "数量最多", "數量最多"],
+    ["mote", "微粒", "微粒"],
     ["movement speed", "移动速度", "移動速度"],
     ["moving", "移动中", "移動中"],
     ["multiple", "多个", "多個"],
@@ -891,6 +953,7 @@ const INLINE_TERMS = [
     ["offensive", "攻击", "攻擊"],
     ["offerings", "供品", "供品"],
     ["offhand", "副手", "副手"],
+    ["on dealing", "造成……时", "造成……時"],
     ["on use", "使用时", "使用時"],
     ["on you", "在你身上", "在你身上"],
     ["orb", "法球", "法球"],
@@ -923,6 +986,7 @@ const INLINE_TERMS = [
     ["projectile", "投射物", "投射物"],
     ["projectiles", "投射物", "投射物"],
     ["quality", "品质", "品質"],
+    ["quarterstaves", "长杖", "長杖"],
     ["quest", "任务", "任務"],
     ["quiver", "箭袋", "箭袋"],
     ["radius", "半径", "半徑"],
@@ -932,10 +996,13 @@ const INLINE_TERMS = [
     ["rating", "值", "值"],
     ["recharge", "回复", "回復"],
     ["recouped", "回收", "回收"],
+    ["recover", "回复", "回復"],
+    ["recovers", "回复", "回復"],
     ["recovery", "回复", "回復"],
     ["reduced", "降低", "降低"],
     ["refresh", "刷新", "重新整理"],
     ["regen", "回复", "回復"],
+    ["regenerate", "再生", "再生"],
     ["regeneration", "回复", "回復"],
     ["relic", "遗物", "遺物"],
     ["remnant", "残迹", "殘跡"],
@@ -952,8 +1019,12 @@ const INLINE_TERMS = [
     ["ring", "戒指", "戒指"],
     ["ruin", "毁灭", "毀滅"],
     ["rune", "符文", "符文"],
+    ["runeforged", "符文锻造", "符文鍛造"],
     ["runes", "符文", "符文"],
+    ["seal", "封印", "封印"],
+    ["sealing", "封印", "封印"],
     ["search", "搜索", "搜尋"],
+    ["secured", "加固", "加固"],
     ["settings", "设置", "設定"],
     ["shapeshift", "变形", "變形"],
     ["shatter", "碎裂", "碎裂"],
@@ -964,6 +1035,8 @@ const INLINE_TERMS = [
     ["shocked", "感电", "感電"],
     ["shocks", "感电", "感電"],
     ["show", "显示", "顯示"],
+    ["single", "单", "單"],
+    ["single-", "单", "單"],
     ["skill", "技能", "技能"],
     ["skill gem", "技能宝石", "技能寶石"],
     ["skills", "技能", "技能"],
@@ -979,6 +1052,7 @@ const INLINE_TERMS = [
     ["sockets", "插槽", "插槽"],
     ["sort", "排序", "排序"],
     ["spear", "长矛", "長矛"],
+    ["spears", "长矛", "長矛"],
     ["speed", "速度", "速度"],
     ["spell damage", "法术伤害", "法術傷害"],
     ["spells", "法术", "法術"],
@@ -989,16 +1063,20 @@ const INLINE_TERMS = [
     ["stage", "阶段", "階段"],
     ["staged", "分阶段", "分階段"],
     ["stages", "阶段", "階段"],
+    ["state", "状态", "狀態"],
     ["stats", "属性", "屬性"],
+    ["staves", "长杖", "長杖"],
     ["storm", "风暴", "風暴"],
     ["strength", "力量", "力量"],
     ["strike", "打击", "打擊"],
     ["stun", "眩晕", "眩暈"],
     ["stun threshold", "眩晕门槛", "眩暈門檻"],
+    ["subterfuge", "诡诈", "詭詐"],
     ["support", "辅助", "輔助"],
     ["support gem", "辅助宝石", "輔助寶石"],
     ["supports", "辅助", "輔助"],
     ["sustained", "持续型", "持續型"],
+    ["swords", "剑", "劍"],
     ["taken as", "视为", "視為"],
     ["target", "目标", "目標"],
     ["targets", "目标", "目標"],
@@ -1019,11 +1097,14 @@ const INLINE_TERMS = [
     ["trigger a", "触发一次", "觸發一次"],
     ["triggered", "触发", "觸發"],
     ["two-handed", "双手", "雙手"],
+    ["twofold", "双重", "雙重"],
     ["unique", "传奇", "傳奇"],
     ["value", "价值", "價值"],
+    ["values as inverted", "数值反转", "數值反轉"],
     ["virtue", "美德", "美德"],
     ["vitality", "活力", "活力"],
     ["wand", "法杖", "法杖"],
+    ["wands", "短杖", "短杖"],
     ["warcries", "战吼", "戰吼"],
     ["warcry", "战吼", "戰吼"],
     ["ward", "护盾", "護盾"],
@@ -1043,6 +1124,7 @@ const INLINE_TERMS = [
     ["will have their", "将使其", "將使其"],
     ["wind", "风", "風"],
     ["with", "与", "與"],
+    ["wraps", "护腕", "護腕"],
     ["wyvern", "飞龙", "飛龍"],
     ["you", "你", "你"],
     ["your", "你的", "你的"]
@@ -1286,7 +1368,7 @@ const INLINE_TERMS = [
    * 统一的物品名词库同步：腾讯官方优先，poedb 只补官方缺的。
    * 返回 { official, poedb, host, note }，任一源失败都不影响另一个。
    */
-  async function syncItems(onlyOfficial) {
+  async function syncItems() {
     const res = { official: 0, poedb: 0, host: '', note: '' };
     try {
       const r = await syncFromTencent();
@@ -1296,15 +1378,13 @@ const INLINE_TERMS = [
     } catch (e) {
       res.note = e.message || String(e);
     }
-    if (onlyOfficial || !res.official) {
-      try {
-        const r = await syncFromPoedb();
-        res.poedb = r.n;
-        if (!res.host) res.host = r.host;
-        res.poedbDetail = r;
-      } catch (e) {
-        if (!res.note) res.note = e.message || String(e);
-      }
+    // 官方没覆盖到的（PoE2 全部内容、国服未引进的条目）交给 poedb 补
+    try {
+      const r = await syncFromPoedb();
+      res.poedb = r.n;
+      if (!res.host) res.host = r.host;
+    } catch (e) {
+      if (!res.note) res.note = e.message || String(e);
     }
     if (!res.official && !res.poedb) throw new Error(res.note || '两个词库源都取不到');
     return res;
@@ -1441,6 +1521,7 @@ const INLINE_TERMS = [
 
 
   const CJK_RE = /[　-〿㐀-鿿＀-￯]/;
+  const BRAND_RE = /^(poe\.ninja|poedb\.tw|poe2db\.tw|discord|github|grinding gear games)$/i;
 
   function collectMissing(s) {
     if (state.missing.size >= MAX_MISSING || state.lang === 'off') return;
@@ -1448,10 +1529,13 @@ const INLINE_TERMS = [
     if (t.length < 4 || t.length > 80) return;
     if (!/[A-Za-z]{3}/.test(t)) return;
     if (CJK_RE.test(t)) return;                      // 已含中文（多半是翻了一半的残留），不重复收集
-    if (/^\d+([.,]\d+)*$/.test(t)) return;
+    if (BRAND_RE.test(t)) return;                    // 品牌名/站名，本来就不该翻
     if (/^https?:\/\//.test(t)) return;
     if (/[{};]|::|@media/.test(t)) return;          // CSS / 选择子，跳过
     if (/^[A-Za-z0-9._-]+@|#\d{3,}/.test(t)) return; // 账号名（含 #数字），跳过
+    // 形如 SupportClarityPlayerTwo 的内部 skill id：游戏内部标识，不是给玩家看的英文
+    if (/^[A-Z][a-z]+(?:[A-Z][a-z0-9]*)+$/.test(t) && !/\s/.test(t)) return;
+    if (/^\d+([.,]\d+)*$/.test(t)) return;
     state.missing.add(t);
   }
 
@@ -1751,29 +1835,17 @@ const INLINE_TERMS = [
       const next = state.lang === 'cn' ? 'tw' : (state.lang === 'tw' ? 'off' : 'cn');
       setLang(next);
     });
-    GM.menu('🔄 立即更新词库（CDN）', async () => {
+    GM.menu('🔄 更新词库', async () => {
       GM.notify('正在更新词库…');
-      try { await loadDict(true); rescanAll(); GM.notify('词库已更新'); }
-      catch (e) { GM.notify('更新失败：' + e.message); }
-    });
-    GM.menu('🇨🇳 同步词库（腾讯官方优先，PoEDB 补缺）', async () => {
-      GM.notify('正在同步：腾讯官方 → PoEDB 补缺…');
+      try { await loadDict(true); } catch (e) { /* CDN 拿不到不影响下面 */ }
       try {
-        const r = await syncItems(false);
+        const r = await syncItems();
         rescanAll();
         const d = r.detail || {};
         GM.notify(r.official
-          ? `腾讯官方 ${d.items || 0} 条物品 + ${d.stats || 0} 条词缀；PoEDB 补 ${r.poedb} 条`
-          : `腾讯官方不可用（${r.note}）→ 全部取自 PoEDB：${r.poedb} 条`);
-      } catch (e) { GM.notify('同步失败：' + e.message); }
-    });
-    GM.menu('🌏 只从 PoEDB 同步词库', async () => {
-      GM.notify('正在从 ' + (gameKey() === 'poe2' ? 'poe2db.tw' : 'poedb.tw') + ' 拉取…');
-      try {
-        const r = await syncFromPoedb();
-        rescanAll();
-        GM.notify(`PoEDB 共 ${r.total} 条，其中 ${r.n} 条为官方缺失、已补入`);
-      } catch (e) { GM.notify('同步失败：' + e.message); }
+          ? `已更新：腾讯官方 ${d.items || 0} 条物品 + ${d.stats || 0} 条词缀，PoEDB 补 ${r.poedb} 条`
+          : `已更新：取自 PoEDB ${r.poedb} 条（腾讯官方不可用：${r.note}）`);
+      } catch (e) { GM.notify('更新失败：' + e.message); }
     });
     GM.menu(`📡 翻译接口数据（当前：${state.apiData ? '开' : '关'}）`, () => {
       state.apiData = !state.apiData;
