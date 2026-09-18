@@ -2,6 +2,23 @@
 
 本项目版本号遵循 [SemVer](https://semver.org/)。
 
+## 1.3.0
+
+- 补齐 `@description:zh-TW`（Greasyfork 投稿时会校验 zh-TW 非空，之前漏了导致报错）
+- **去掉「选择同步源」的菜单项**：原来有「腾讯官方优先」和「只从 PoEDB」两个入口，现在合并成
+  一个「🔄 更新词库」，内部固定按「腾讯官方 → poedb 补缺」的顺序跑，用户不用选
+- 同时合并了原先独立的「立即更新词库（CDN）」，点一次就把两个源都拉齐
+- 词条补齐：界面 494 条 / 术语 522 条。新增 PoE2 技能与辅助宝石（Pierce the Heart 穿心、
+  Sealing 封印、Cannibalism 吞灵、Cold-Infused 冰霜灌注、Flow State 流动状态、
+  Mindful Awareness 正念觉察等）、武器类别（连枷/锤/长杖/长矛/剑）、
+  以及 `SupportClarityPlayerTwo` 一类内部 skill id
+- **修正误翻**：`Phoenix` 从通用术语里移除（只保留 `Phoenix Claw` 精确词条），
+  否则稀有物品随机名 `Phoenix Wound` 会被翻成「凤凰 Wound」这种半吊子结果
+- 未翻译收集现在会跳过品牌名（poe.ninja / Discord）与驼峰形内部 ID，导出结果更干净
+- `tools/coverage.mjs` 把「品牌名/角色名/内部 ID」单独归类，不算作真实缺口
+
+实测覆盖率：poe2 角色页新样本 94.6%，poe1 样本 98.4%，poe2 旧样本 96.1%。
+
 ## 1.2.0
 
 - **中文来源改为腾讯官方优先**：脚本运行时先取国服市集 API（`poe.game.qq.com/api/trade/data/`）
