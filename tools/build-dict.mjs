@@ -102,6 +102,7 @@ async function main() {
   const en2tw = build(tw);
 
   const ui = await readOptionalJSON(join(OUT, 'ui.json'), { cn: {}, tw: {} });
+  const terms = await readOptionalJSON(join(OUT, 'terms.json'), { cn: {}, tw: {} });
   const overrides = await readOptionalJSON(join(OUT, 'overrides.json'), { cn: {}, tw: {} });
 
   const payload = {
@@ -112,6 +113,7 @@ async function main() {
     en2cn: Object.assign({}, en2cn, overrides.cn || {}),
     en2tw: Object.assign({}, en2tw, overrides.tw || {}),
     ui: { cn: ui.cn || {}, tw: ui.tw || {} },
+    terms: { cn: terms.cn || {}, tw: terms.tw || {} },
     overrides: { cn: overrides.cn || {}, tw: overrides.tw || {} }
   };
 
@@ -126,6 +128,7 @@ async function main() {
   console.log(`   简体中文章节：${Object.keys(payload.en2cn).length} 条`);
   console.log(`   繁體中文章节：${Object.keys(payload.en2tw).length} 条`);
   console.log(`   界面词条：简 ${Object.keys(payload.ui.cn).length} / 繁 ${Object.keys(payload.ui.tw).length}`);
+  console.log(`   通用术语：简 ${Object.keys(payload.terms.cn).length} / 繁 ${Object.keys(payload.terms.tw).length}`);
 }
 
 main().catch((e) => { console.error('❌ 构建失败：' + e.message); process.exit(1); });
