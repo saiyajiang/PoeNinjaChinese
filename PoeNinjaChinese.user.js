@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      1.5.0
+// @version      1.6.0
 // @description  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-CN  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-TW  中文譯名優先取騰訊官方（國服），官方沒有的再從 poedb.tw 補齊；把 poe.ninja 的物品、通貨、寶石、地圖、基底與介面文案翻譯成中文（簡/繁可切換，原文懸浮可見）
@@ -52,7 +52,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '1.5.0';
+  const SCRIPT_VERSION = '1.6.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -168,6 +168,7 @@ const INLINE_UI = [
     ["Blighted Map", "凋零地图", "凋零地圖"],
     ["Blind II", "致盲 II", "致盲 II"],
     ["Block", "格挡", "格擋"],
+    ["Block Chance", "格挡率", "格擋率"],
     ["Breachlord's Rift", "裂界之主的裂隙", "裂界之主的裂隙"],
     ["Brutus' Brain", "布鲁特斯之脑", "布魯特斯之腦"],
     ["Build Planner", "天赋树规划器", "天賦樹規劃器"],
@@ -186,6 +187,7 @@ const INLINE_UI = [
     ["Chaos Damage", "混沌伤害", "混沌傷害"],
     ["Chaos Equivalent", "折合混沌石", "折合混沌石"],
     ["Chaos Orb", "混沌石", "混沌石"],
+    ["Chaos Resistance", "混沌抗性", "混沌抗性"],
     ["Chaos Value", "混沌石价值", "混沌石價值"],
     ["Character", "角色", "角色"],
     ["Characters", "角色", "角色"],
@@ -206,6 +208,8 @@ const INLINE_UI = [
     ["Cluster Jewel", "集群珠宝", "集群珠寶"],
     ["Cluster Jewels", "集群珠宝", "集群珠寶"],
     ["Coffin", "棺柩", "棺柩"],
+    ["Cold Damage", "冰霜伤害", "冰霜傷害"],
+    ["Cold Resistance", "冰霜抗性", "冰霜抗性"],
     ["Cold-Infused", "冰霜灌注", "冰霜灌注"],
     ["Columns", "列", "欄位"],
     ["Combat Frenzy", "战斗狂怒", "戰鬥狂怒"],
@@ -217,9 +221,11 @@ const INLINE_UI = [
     ["Cooldown Recovery II", "冷却回复速度 II", "冷卻回復速度 II"],
     ["Copied", "已复制", "已複製"],
     ["Copy", "复制", "複製"],
-    ["Corrupted", "已腐化", "已汙染"],
+    ["Corrupted", "已腐化", "已腐化"],
     ["Count", "数量", "數量"],
     ["Crafted", "工艺", "工藝"],
+    ["Critical Damage Bonus", "暴击伤害加成", "暴擊傷害加成"],
+    ["Critical Hit Chance", "暴击几率", "暴擊機率"],
     ["Critical Strike Chance", "暴击率", "暴擊率"],
     ["Currency", "通货", "通貨"],
     ["Current price", "当前价格", "目前價格"],
@@ -227,6 +233,8 @@ const INLINE_UI = [
     ["Daggerfoot Shoes", "匕足之靴", "匕足之靴"],
     ["Daily change", "日涨跌", "日漲跌"],
     ["Damage", "伤害", "傷害"],
+    ["Damage per Second", "每秒伤害", "每秒傷害"],
+    ["Damage taken", "承受伤害", "承受傷害"],
     ["Daresso's Passion", "德瑞索的热情", "德瑞索的熱情"],
     ["Dark mode", "深色模式", "深色模式"],
     ["Data dumps", "数据下载", "資料下載"],
@@ -293,14 +301,16 @@ const INLINE_UI = [
     ["Favorites", "收藏", "收藏"],
     ["Filter", "筛选", "篩選"],
     ["Filters", "筛选", "篩選"],
+    ["Fire Damage", "火焰伤害", "火焰傷害"],
     ["Fire Mastery", "火焰精通", "火焰精通"],
+    ["Fire Resistance", "火焰抗性", "火焰抗性"],
     ["Flasks", "药剂", "藥劑"],
     ["Flavour text", "风味文本", "風味文本"],
     ["Flow State", "流动状态", "流動狀態"],
     ["Forbidden Rites", "禁忌仪式", "禁忌儀式"],
     ["Fossil", "化石", "化石"],
     ["Fossils", "化石", "化石"],
-    ["Fractured", "碎裂", "碎裂"],
+    ["Fractured", "破裂的", "破裂的"],
     ["Fragment", "碎片", "碎片"],
     ["Fragments", "碎片", "碎片"],
     ["Frost Nexus", "霜寒连结", "霜寒連結"],
@@ -315,6 +325,8 @@ const INLINE_UI = [
     ["Ghost Dance", "幽灵舞步", "幽靈舞步"],
     ["Gladiator", "角斗士", "角鬥士"],
     ["Goddess of Justice", "正义女神", "正義女神"],
+    ["Grants Skill", "赋予技能", "賦予技能"],
+    ["Grants skill", "赋予技能", "賦予技能"],
     ["Great White One", "大白鲨", "大白鯊"],
     ["Guardian", "守护者", "守護者"],
     ["Guatelitzi's Ablation", "瓜铁雷兹的消融", "瓜鐵雷茲的消融"],
@@ -333,9 +345,11 @@ const INLINE_UI = [
     ["Hypnotic Star", "催眠之星", "催眠之星"],
     ["Hypnotic Star, Ancestral Tiara", "催眠之星，先祖之冠", "催眠之星，先祖之冠"],
     ["Implicit", "固有词缀", "固有詞綴"],
+    ["Implicit Modifier", "固有词缀", "固有詞綴"],
     ["Implicit modifiers", "固有词缀", "固有詞綴"],
     ["Import", "导入", "匯入"],
     ["Import Code for Path of Building", "Path of Building 导入代码", "Path of Building 匯入代碼"],
+    ["Increased", "提高", "提高"],
     ["Incubator", "孵化器", "孵化器"],
     ["Incubators", "孵化器", "孵化器"],
     ["Influenced", "已受尊师影响", "已受尊師影響"],
@@ -372,6 +386,8 @@ const INLINE_UI = [
     ["Life", "生命", "生命"],
     ["Life Regeneration", "生命回复", "生命回復"],
     ["Light mode", "浅色模式", "淺色模式"],
+    ["Lightning Damage", "闪电伤害", "閃電傷害"],
+    ["Lightning Resistance", "闪电抗性", "閃電抗性"],
     ["Link", "连线", "連線"],
     ["Links", "连线", "連線"],
     ["Listing Count", "挂单数", "掛單數"],
@@ -458,6 +474,7 @@ const INLINE_UI = [
     ["Pinpoint Critical", "精准暴击", "精準暴擊"],
     ["PoEDB", "编年史", "編年史"],
     ["Portal Scroll", "传送卷轴", "傳送卷軸"],
+    ["Prefix", "前缀", "前綴"],
     ["Previous", "上一页", "上一頁"],
     ["Price", "价格", "價格"],
     ["Price history", "价格历史", "價格歷史"],
@@ -500,10 +517,12 @@ const INLINE_UI = [
     ["Rings", "戒指", "戒指"],
     ["Romira's Requital", "罗米拉的报复", "羅米拉的報復"],
     ["Rows per page", "每页行数", "每頁列數"],
+    ["Rune", "符文", "符文"],
     ["Runeforged Secured Wraps", "符文锻造护腕", "符文鍛造護腕"],
     ["Runic Ward", "符文护盾", "符文護盾"],
     ["Saboteur", "破坏者", "破壞者"],
     ["Salvo", "齐射", "齊射"],
+    ["Sanctified", "圣化的", "聖化的"],
     ["Scarab", "圣甲虫", "聖甲蟲"],
     ["Scarabs", "圣甲虫", "聖甲蟲"],
     ["Scarred Faith", "伤痕信仰", "傷痕信仰"],
@@ -543,16 +562,19 @@ const INLINE_UI = [
     ["Socketed Skill", "已镶嵌技能", "已鑲嵌技能"],
     ["Sockets", "插槽", "插槽"],
     ["Sort", "排序", "排序"],
+    ["Soul Core", "魂核", "魂核"],
     ["Sparkline", "价格走势", "價格走勢"],
     ["Spear Throw", "战矛投掷", "戰矛投擲"],
     ["Spell Damage", "法术伤害", "法術傷害"],
     ["Spiked Shield", "尖刺盾", "尖刺盾"],
+    ["Spirit", "精魂", "精魂"],
     ["Split", "已分裂", "已分裂"],
     ["Spray and Pray", "散射快射", "散射快射"],
     ["Stack size", "堆叠数量", "堆疊數量"],
     ["Statistics", "统计", "統計"],
     ["Strength", "力量", "力量"],
     ["Subterfuge Mask", "诡诈面具", "詭詐面具"],
+    ["Suffix", "后缀", "後綴"],
     ["Supply", "供给量", "供給量"],
     ["Support the site", "支持本站", "支持本站"],
     ["SupportClarityPlayerTwo", "清晰 II（辅助）", "清晰 II（輔助）"],
@@ -575,6 +597,7 @@ const INLINE_UI = [
     ["Trickster", "欺诈师", "欺詐師"],
     ["Trinity", "三位一体", "三位一體"],
     ["Tul's Stillness", "托沃的寂静", "托沃的寂靜"],
+    ["Twice Corrupted", "二次腐化", "二次腐化"],
     ["Twister", "旋风", "旋風"],
     ["Twofold", "双重", "雙重"],
     ["Type", "类型", "類型"],
@@ -616,6 +639,7 @@ const INLINE_UI = [
     ["Vitality II", "活力 II", "活力 II"],
     ["Volume", "成交量", "成交量"],
     ["Vulgar Methods", "粗俗手段", "卑鄙手段"],
+    ["Ward", "结界", "結界"],
     ["Warden", "守望者", "守望者"],
     ["Watch Intro", "观看介绍", "觀看介紹"],
     ["Weapon", "武器", "武器"],
@@ -660,6 +684,7 @@ const INLINE_TERMS = [
     ["accuracy", "命中", "命中"],
     ["accuracy rating", "命中值", "命中值"],
     ["accuracy rating while moving", "移动时命中值", "移動時命中值"],
+    ["added", "附加", "附加"],
     ["additional", "额外", "額外"],
     ["adds", "附加", "附加"],
     ["affinity", "亲和", "親和"],
@@ -787,11 +812,12 @@ const INLINE_TERMS = [
     ["cooldown time", "冷却时间", "冷卻時間"],
     ["cooldowns recover", "冷却回复", "冷卻回復"],
     ["copy", "复制", "複製"],
-    ["corrupted", "已腐化", "已汙染"],
+    ["corrupted", "已腐化", "已腐化"],
     ["cost", "消耗", "消耗"],
     ["cost multiplier", "消耗倍率", "消耗倍率"],
     ["crafted", "工艺", "工藝"],
     ["crit", "暴击", "暴擊"],
+    ["critical", "暴击", "暴擊"],
     ["critical damage bonus", "暴击伤害加成", "暴擊傷害加成"],
     ["critical hit", "暴击", "暴擊"],
     ["critical hit chance", "暴击率", "暴擊率"],
@@ -808,6 +834,7 @@ const INLINE_TERMS = [
     ["dealing", "造成", "造成"],
     ["dealt", "造成的伤害", "造成的傷害"],
     ["debuff", "减益", "減益"],
+    ["decreased", "降低", "降低"],
     ["defensive", "防御", "防禦"],
     ["deflect", "偏转", "偏轉"],
     ["deflected", "偏斜", "偏斜"],
@@ -822,6 +849,7 @@ const INLINE_TERMS = [
     ["does not", "不会", "不會"],
     ["dps", "每秒伤害", "每秒傷害"],
     ["duration", "持续时间", "持續時間"],
+    ["during", "期间", "期間"],
     ["each", "每个", "每個"],
     ["effect", "效果", "效果"],
     ["effective", "有效", "有效"],
@@ -960,6 +988,7 @@ const INLINE_TERMS = [
     ["lineage", "血统", "血統"],
     ["listings", "挂单数", "掛單數"],
     ["loading", "加载中", "載入中"],
+    ["lose", "失去", "失去"],
     ["lose a", "失去一个", "失去一個"],
     ["maces", "锤", "錘"],
     ["magic", "魔法", "魔法"],
@@ -972,7 +1001,7 @@ const INLINE_TERMS = [
     ["martial", "军械", "軍械"],
     ["mastery", "精通", "精通"],
     ["max", "最大", "最大"],
-    ["maximum", "最大", "最大"],
+    ["maximum", "最高", "最高"],
     ["maximum life", "最大生命", "最大生命"],
     ["melee", "近战", "近戰"],
     ["merging", "融合", "融合"],
@@ -981,9 +1010,9 @@ const INLINE_TERMS = [
     ["metres", "米", "米"],
     ["min", "最小", "最小"],
     ["mindful", "正念", "正念"],
-    ["minimum", "最小", "最小"],
-    ["minion", "召唤物", "召喚物"],
-    ["minions", "召唤物", "召喚物"],
+    ["minimum", "最低", "最低"],
+    ["minion", "召唤生物", "召喚生物"],
+    ["minions", "召唤生物", "召喚生物"],
     ["mirage", "幻影", "幻影"],
     ["mitigation", "减伤", "減傷"],
     ["modifier", "词缀", "詞綴"],
@@ -997,6 +1026,7 @@ const INLINE_TERMS = [
     ["moving", "移动中", "移動中"],
     ["multiple", "多个", "多個"],
     ["muster", "集结", "集結"],
+    ["nearby", "附近", "附近"],
     ["next", "下一页", "下一頁"],
     ["non-", "非", "非"],
     ["normal", "普通", "普通"],
@@ -1027,6 +1057,7 @@ const INLINE_TERMS = [
     ["penetrates", "穿透", "穿透"],
     ["penetration", "穿透", "穿透"],
     ["per", "每", "每"],
+    ["per second", "每秒", "每秒"],
     ["per stage", "每阶段", "每階段"],
     ["persistent", "持续", "持續"],
     ["physical", "物理", "物理"],
@@ -1060,7 +1091,7 @@ const INLINE_TERMS = [
     ["recover", "回复", "回復"],
     ["recovers", "回复", "回復"],
     ["recovery", "回复", "回復"],
-    ["reduced", "降低", "降低"],
+    ["reduced", "减少", "減少"],
     ["refresh", "刷新", "重新整理"],
     ["regen", "回复", "回復"],
     ["regenerate", "再生", "再生"],
@@ -1163,6 +1194,7 @@ const INLINE_TERMS = [
     ["trigger", "触发", "觸發"],
     ["trigger a", "触发一次", "觸發一次"],
     ["triggered", "触发", "觸發"],
+    ["twice", "两次", "兩次"],
     ["two-handed", "双手", "雙手"],
     ["twofold", "双重", "雙重"],
     ["unique", "传奇", "傳奇"],
@@ -1174,7 +1206,7 @@ const INLINE_TERMS = [
     ["wands", "短杖", "短杖"],
     ["warcries", "战吼", "戰吼"],
     ["warcry", "战吼", "戰吼"],
-    ["ward", "护盾", "護盾"],
+    ["ward", "结界", "結界"],
     ["water djinn", "水之巨灵", "水之巨靈"],
     ["waystone", "引路石", "引路石"],
     ["weapon", "武器", "武器"],
@@ -1185,7 +1217,7 @@ const INLINE_TERMS = [
     ["when you kill a", "当你击杀一个", "當你擊殺一個"],
     ["which", "其", "其"],
     ["which can be boosted by", "可被以下加成", "可被以下加成"],
-    ["while", "当", "當"],
+    ["while", "当……时", "當……時"],
     ["while active", "激活期间", "啟用期間"],
     ["while active,", "激活期间，", "啟用期間，"],
     ["whirlwind", "旋风", "旋風"],
@@ -1982,7 +2014,10 @@ const INLINE_GEMS = [
   const state = {
     ready: false,
     lang: GM.get(K_LANG, 'cn'),            // 'cn' | 'tw' | 'off'
-    apiData: GM.get(K_APIDATA, true),      // 是否翻译接口数据
+    // 是否翻译接口数据（页面自己 /api/ 返回的 JSON）。
+    // 默认关闭：poe.ninja 会用 name 字段去查技能图标与描述，改成中文后查不到，
+    // 技能就会丢图标和描述。DOM 层在渲染后改文本，不影响这些查询，所以默认走 DOM。
+    apiData: GM.get(K_APIDATA, false),     // 是否翻译接口数据
     keepOriginal: GM.get(K_ORIG, true),    // 悬浮显示英文原文
     mergeAcross: GM.get(K_MERGE, true),    // 跨相邻节点合并翻译（数值高亮被拆开时靠它）
     dict: { cn: Object.create(null), tw: Object.create(null) },   // 物品名 英→中
@@ -2360,6 +2395,41 @@ const INLINE_GEMS = [
     return s;
   }
 
+  /* ------------------------------------------------------------
+   * 专有名词（物品名 / 技能名）的「全有或全无」规则
+   *
+   * 逐词降级翻译会造出「风暴 Song」「Twice 已腐化」这种半吊子结果，
+   * 比全英文更难认。所以形态像专有名词的短语：要么整串命中，
+   * 要么每个实词都有译名，否则一律保持原样。
+   * ---------------------------------------------------------- */
+  const PN_CONNECTORS = new Set(['of', 'the', 'and', 'to', 'in', 'on', 'at', 'for', 'with', 'a', 'an', 'from', 'de']);
+
+  /** 是否像专有名词：2~6 个词、不含数字、每个词首字母大写（连接词除外） */
+  function isProperNounShape(trim) {
+    if (!/^[A-Za-z'’\- ]+$/.test(trim)) return false;   // 含数字/标点 → 词缀，不是名字
+    if (/\s\s/.test(trim)) return false;
+    const words = trim.split(' ').filter(Boolean);
+    if (words.length < 2 || words.length > 6) return false;
+    return words.every((w) => PN_CONNECTORS.has(w.toLowerCase()) || /^[A-Z]/.test(w));
+  }
+
+  /**
+   * 专有名词整串翻译。能全翻就返回译文，翻不全返回 null（调用方应保持原文）。
+   * 返回 undefined 表示"不是专有名词形态"，交给常规逐词逻辑处理。
+   */
+  function translateProperNoun(trim) {
+    if (!isProperNounShape(trim)) return undefined;
+    const words = trim.split(' ').filter(Boolean);
+    const out = [];
+    for (const w of words) {
+      const low = w.toLowerCase();
+      const r = lookupLoose(w) || (PN_CONNECTORS.has(low) ? lookupLoose(low) : null);
+      if (!r) return null;                    // 有词翻不了 → 整体不翻
+      out.push(r.zh);
+    }
+    return out.join('');
+  }
+
   /** 短语翻译（DOM 文本节点）：整体 → 最长词组 → 单词 */
   function translatePhrase(src) {
     const s = String(src);
@@ -2371,6 +2441,11 @@ const INLINE_GEMS = [
       if (direct) return s.replace(trim, direct);
       const loose = lookupLoose(trim);
       if (loose) return s.replace(trim, loose.head + loose.zh + loose.tail);
+
+      // 专有名词：全有或全无
+      const pn = translateProperNoun(trim);
+      if (pn === null) { collectMissing(trim); return s; }   // 翻不全 → 保持英文
+      if (pn !== undefined) return s.replace(trim, pn);
     }
 
     // 切成「单词 / 空白 / 标点」三类 token，只在连续单词上做最长匹配
@@ -2827,8 +2902,10 @@ const INLINE_GEMS = [
     GM.menu(`📡 翻译接口数据（当前：${state.apiData ? '开' : '关'}）`, () => {
       state.apiData = !state.apiData;
       GM.set(K_APIDATA, state.apiData);
-      GM.notify('已' + (state.apiData ? '开启' : '关闭') + '接口数据翻译，刷新后生效');
-      setTimeout(() => location.reload(), 600);
+      GM.notify(state.apiData
+        ? '已开启：搜索框可直接搜中文；但 poe.ninja 用 name 查图标/描述，可能导致部分技能丢图标和描述'
+        : '已关闭：只翻译渲染后的页面文字，图标与描述不受影响', 6000);
+      setTimeout(() => location.reload(), 900);
     });
     GM.menu(`🏷 悬浮显示英文原文（当前：${state.keepOriginal ? '开' : '关'}）`, () => {
       state.keepOriginal = !state.keepOriginal;
