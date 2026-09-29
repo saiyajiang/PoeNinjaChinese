@@ -56,8 +56,9 @@
 国服接口需要登录态（POESESSID）。**没登录国服就会静默失败并自动降级到 poedb**，
 不会打扰你——想让官方译名生效，先在浏览器登录一次国服官网即可。
 
-**第二优先：poedb.tw / poe2db.tw**。官方没有的（比如 PoE2 的全部内容，国服尚未引进），
-由编年史的公开 autocomplete 词表补齐，按 slug 做英→中对齐。
+**第二优先：poedb.tw / poe2db.tw**。官方没有的由编年史补齐，按 slug 做英→中对齐。
+注意：autocomplete 词表**只含物品名**，所以**技能宝石必须另外抓页面**
+（`/us/` 与 `/cn/` 同名页面按序对齐），这部分已固化进 `data/gems.json`。
 
 菜单里只有一项「🔄 更新词库」，内部固定按「腾讯官方 → poedb 补缺」的顺序跑，不需要选源。
 
@@ -99,8 +100,9 @@ node tools/sync-inline.mjs  # 把 data/*.json 写回脚本内置区块（--check
 `data/` 是词库的单一数据源：改 JSON → 跑 `sync-inline` → 脚本内置生效，不要手改脚本里的数组。
 
 ```
-data/ui.json       界面文案 + 专有名词（精确/小写匹配，494 条）
-data/terms.json    通用术语（小写匹配，大小写不敏感，522 条）
+data/ui.json       界面文案 + 专有名词（精确/小写匹配，536 条）
+data/gems.json     PoE2 技能/精魂/辅助宝石译名（771 条，由 poe2db.tw 中英页面对齐生成）
+data/terms.json    通用术语（小写匹配，大小写不敏感，548 条）
 data/overrides.json  人工纠错层（优先级最高）
 ```
 
