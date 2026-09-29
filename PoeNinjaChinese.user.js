@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      1.4.0
+// @version      1.5.0
 // @description  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-CN  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-TW  中文譯名優先取騰訊官方（國服），官方沒有的再從 poedb.tw 補齊；把 poe.ninja 的物品、通貨、寶石、地圖、基底與介面文案翻譯成中文（簡/繁可切換，原文懸浮可見）
@@ -52,7 +52,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '1.4.0';
+  const SCRIPT_VERSION = '1.5.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -1200,6 +1200,782 @@ const INLINE_TERMS = [
   ];
   /* INLINE_TERMS:END */
 
+  /* INLINE_GEMS:BEGIN */
+const INLINE_GEMS = [
+    ["Abiding Hex", "恒远魔蛊", ""],
+    ["Abyssal Pact", "深渊契约", ""],
+    ["Accelerated Growth II", "迅猛绽放II", ""],
+    ["Acidic Concoction", "酸性灵药", ""],
+    ["Acrimony", "尖刻", ""],
+    ["Adhesive Grenades I", "榴弹 I", ""],
+    ["Adhesive Grenades II", "相性 II", ""],
+    ["Admixture", "混合物", ""],
+    ["Advancing Storm", "风暴行军", ""],
+    ["Affliction III", "大好时机 III", ""],
+    ["Aftershock I", "护甲破损 I", ""],
+    ["Aftershock II", "先祖召唤 II", ""],
+    ["Agony", "剧烈痛苦", ""],
+    ["Alchemist's Boon", "炼金师的恩典", ""],
+    ["Align Fate", "命运同调", ""],
+    ["Alignment II", "节省弹药 II", ""],
+    ["Alignment III", "节省弹药 III", ""],
+    ["Ambrosia", "仙馔", ""],
+    ["Ambush", "伏击", ""],
+    ["Ammo Conservation I", "致盲 I", ""],
+    ["Ammo Conservation II", "丰饶 II", ""],
+    ["Ammo Conservation III", "致盲 III", ""],
+    ["Ancestral Call I", "护甲破损 I", ""],
+    ["Ancestral Call II", "荆棘倒刺 II", ""],
+    ["Ancestral Cry", "先祖战吼", ""],
+    ["Ancestral Spirits", "先祖之灵", ""],
+    ["Ancestral Warrior Totem", "先祖战士图腾", ""],
+    ["Animus Exchange", "命源交换", ""],
+    ["Animus Splinters", "命源碎片", ""],
+    ["Apocalypse", "天灾", ""],
+    ["Arc", "电弧", ""],
+    ["Archmage", "大法师", ""],
+    ["Archon of Chayula", "夏乌拉执政官", ""],
+    ["Arctic Armour", "极地装甲", ""],
+    ["Arctic Howl", "极地战嚎", ""],
+    ["Armament I", "处决 I", ""],
+    ["Armour Breaker", "摧甲重击", ""],
+    ["Armour Piercing Rounds", "贯甲弹药", ""],
+    ["Artillery Ballista", "火力弩炮", ""],
+    ["Attrition", "持久鏖战", ""],
+    ["Atziri's Call", "阿兹里的呼唤", ""],
+    ["Atziri's Impatience", "阿兹里的焦躁", ""],
+    ["Auto Reload", "自动装填", ""],
+    ["Axe Slash", "斧挥砍", ""],
+    ["Azmerian Swarms", "阿兹莫里虫群", ""],
+    ["Azmerian Wolf", "阿兹莫里巨狼", ""],
+    ["Ball Lightning", "天雷之珠", ""],
+    ["Barbs II", "流血 II", ""],
+    ["Barbs III", "荆棘倒刺 III", ""],
+    ["Barkskin", "树肤术", ""],
+    ["Barrage", "弹幕", ""],
+    ["Barrier Invocation", "屏障咒言", ""],
+    ["Battershout", "震撼战吼", ""],
+    ["Behead II", "流血 II", ""],
+    ["Berserk", "盛怒", ""],
+    ["Bhatair's Vengeance", "巴蒂尔的复仇", ""],
+    ["Bind Spectre", "束缚灵体", ""],
+    ["Bitter Dead", "苦涩死亡", ""],
+    ["Black Powder Blitz", "黑火药闪击", ""],
+    ["Blasphemy", "诅咒光环", ""],
+    ["Bleed I", "崩溃边缘 I", ""],
+    ["Bleed II", "分叉裂缝 II", ""],
+    ["Bleed IV", "流血 IV", ""],
+    ["Bleeding Concoction", "创伤灵药", ""],
+    ["Blind I", "丰饶 I", ""],
+    ["Blindside", "盲点", ""],
+    ["Blink", "闪现", ""],
+    ["Blood Boil", "血沸", ""],
+    ["Blood Hunt", "猎血寻腥", ""],
+    ["Bloodhound's Mark", "血犬印记", ""],
+    ["Bloodlust", "血怒", ""],
+    ["Bone Blast", "针刺爆发", ""],
+    ["Bone Cage", "画地为牢", ""],
+    ["Bone Offering", "装甲奉献", ""],
+    ["Bone Shrapnel", "钙质碎片", ""],
+    ["Boneshatter", "七伤破", ""],
+    ["Bonestorm", "尖刺风暴", ""],
+    ["Boundless Energy II", "迅猛增幅 II", ""],
+    ["Bounty", "魔力丰沛", ""],
+    ["Bow Shot", "弓射击", ""],
+    ["Brambleslam", "遍地荆棘", ""],
+    ["Branching Fissures I", "崩溃边缘 I", ""],
+    ["Branching Fissures II", "野性残暴 II", ""],
+    ["Breachlord's Amalgam", "裂隙领主的融合体", ""],
+    ["Briarpatch", "荆刺之缚", ""],
+    ["Brink I", "野性残暴 I", ""],
+    ["Brittle Armour", "脆弱护甲", ""],
+    ["Brutality I", "持续时间压缩 I", ""],
+    ["Burgeon I", "清晰 I", ""],
+    ["Burning Inscription", "燃烧铭文", ""],
+    ["Bursting Fen Toad", "爆裂沼蟾", ""],
+    ["Bursting Plague", "迸发之疫", ""],
+    ["Cackling Companions", "鬣狗同伴", ""],
+    ["Cadence", "节律", ""],
+    ["Called Shots", "言出箭随", ""],
+    ["Caltrops", "铁蒺藜", ""],
+    ["Capacitor", "能量电容", ""],
+    ["Cast on Block", "格挡时施放", ""],
+    ["Cast on Charm Use", "使用咒符时施放", ""],
+    ["Cast on Critical", "暴击时施放", ""],
+    ["Cast on Dodge", "躲闪时施放", ""],
+    ["Cast on Elemental Ailment", "元素异常状态时施放", ""],
+    ["Cast on Freeze", "冻结时施放", ""],
+    ["Cast on Ignite", "点燃时施放", ""],
+    ["Cast on Minion Death", "召唤生物死亡时施放", ""],
+    ["Cast on Shock", "感电时施放", ""],
+    ["Catalysing Elements", "元素催化", ""],
+    ["Catha's Brilliance", "卡莎的光辉", ""],
+    ["Catharsis", "泄除", ""],
+    ["Channelling Ahn's Citadel", "吟唱汉恩的城塞", ""],
+    ["Chaos Attunement", "混沌协调", ""],
+    ["Chaos Bolt", "混沌箭", ""],
+    ["Chaos Mastery", "混沌专精", ""],
+    ["Chaotic Freeze", "混沌冻结", ""],
+    ["Chaotic Surge", "混沌涌动", ""],
+    ["Charge Profusion I", "连击终结 I", ""],
+    ["Charged Staff", "充能杖", ""],
+    ["Chimes", "辅助艾利丝钟琴", ""],
+    ["Cirel's Cultivation", "西雷尔的教化", ""],
+    ["Clash", "形势逆转", ""],
+    ["Claw Stab", "爪突刺", ""],
+    ["Close Combat I", "连击终结 I", ""],
+    ["Close Combat II", "终结 II", ""],
+    ["Cluster Grenade", "集束榴弹", ""],
+    ["Coiling Bolts", "盘绕魔弹", ""],
+    ["Cold Attunement", "冰霜协调", ""],
+    ["Cold Exposure", "冰霜曝露", ""],
+    ["Cold Mastery", "冰霜专精", ""],
+    ["Cold Penetration", "冰霜穿透", ""],
+    ["Combo Finisher II", "冷却回复 II", ""],
+    ["Comet", "彗星落", ""],
+    ["Commandment", "调遣", ""],
+    ["Commiserate", "以己度人", ""],
+    ["Compressed Duration I", "双管齐下 I", ""],
+    ["Concentrated Area", "范围集中", ""],
+    ["Concoct II", "焚躯烈焰 II", ""],
+    ["Concussive Runes", "震荡符文", ""],
+    ["Concussive Spells", "冲击法术", ""],
+    ["Conductive Runes", "导电符文", ""],
+    ["Conductivity", "导电", ""],
+    ["Consecrate", "奉献", ""],
+    ["Considered Casting", "审慎施法", ""],
+    ["Contagion", "瘟疫", ""],
+    ["Controlled Destruction", "精准破坏", ""],
+    ["Convalescence", "康复", ""],
+    ["Cool Headed", "冷静头脑", ""],
+    ["Cooldown Recovery I", "登峰造极 I", ""],
+    ["Corpse Conservation", "灵柩留存", ""],
+    ["Corrosion", "腐蚀", ""],
+    ["Corrupting Cry II", "凌迟 II", ""],
+    ["Coursing Current", "奔雷疾走", ""],
+    ["Crackling Barrier", "霹雳屏障", ""],
+    ["Crackling Palm", "霹雳掌", ""],
+    ["Crater", "陨坑", ""],
+    ["Crazed Minions", "癫狂召唤生物", ""],
+    ["Creeping Chill", "蔓延霜寒", ""],
+    ["Critical I", "范围扩大 I", ""],
+    ["Cross Slash", "双爪劈击", ""],
+    ["Crossbow Shot", "战弩射击", ""],
+    ["Crushing Fear", "恐惧终结", ""],
+    ["Cry", "愤怒战吼", ""],
+    ["Crystalline Shards", "水晶碎片", ""],
+    ["Cull The Weak", "终结弱者", ""],
+    ["Culling Strike II", "登峰造极 II", ""],
+    ["Culmination II", "穿透 II", ""],
+    ["Curse", "强效诅咒", ""],
+    ["Dagger Stab", "匕首突刺", ""],
+    ["Danse Macabre", "死亡之舞", ""],
+    ["Dark Effigy", "黑暗塑像", ""],
+    ["Dark Pact", "暗夜契约", ""],
+    ["Dauntless", "不动如山", ""],
+    ["Deadly Herald", "致命之捷", ""],
+    ["Deadly Resolve", "致命决心", ""],
+    ["Deathmarch", "终末行军", ""],
+    ["Decaying Hex", "衰颓魔蛊", ""],
+    ["Decompose", "降解", ""],
+    ["Deep Cuts I", "战争铁拳 I", ""],
+    ["Deep Cuts II", "顽抗 II", ""],
+    ["Deep Freeze", "深度冻结", ""],
+    ["Defiance Banner", "抗争战旗", ""],
+    ["Defy I", "蛮勇打击 I", ""],
+    ["Defy II", "双管齐下 II", ""],
+    ["Delayed Gratification", "延迟满足", ""],
+    ["Delayed Reaction", "延迟激活", ""],
+    ["Deliberation", "从容不迫", ""],
+    ["Demon Form", "走火入魔", ""],
+    ["Derange", "错乱", ""],
+    ["Despair", "绝望", ""],
+    ["Detonate Dead", "爆灵术", ""],
+    ["Detonate Living", "活体引爆", ""],
+    ["Detonating Arrow", "爆破箭", ""],
+    ["Devour", "吞噬", ""],
+    ["Direstrike I", "双管齐下 I", ""],
+    ["Discipline", "纪律", ""],
+    ["Disengage", "退避三舍", ""],
+    ["Dominus' Grasp", "神主之握", ""],
+    ["Double Barrel I", "效能 I", ""],
+    ["Double Barrel II", "元素军械 II", ""],
+    ["Double Barrel III", "元素军械 III", ""],
+    ["Drain Ailments", "异常状态吸收", ""],
+    ["Dread Banner", "恐怖战旗", ""],
+    ["Dreamer's Knell", "幻梦者的丧钟", ""],
+    ["Durability", "耐久度", ""],
+    ["Duration I", "狂怒 I", ""],
+    ["Earthquake", "震地", ""],
+    ["Earthshatter", "尖刺战吼", ""],
+    ["Echoing Cry", "回荡战嚎", ""],
+    ["Efficiency I", "元素军械 I", ""],
+    ["Efficiency II", "燃怒战吼 II", ""],
+    ["Electrocute", "触电", ""],
+    ["Electrocuting Arrow", "电殛箭", ""],
+    ["Electromagnetism", "电磁力场", ""],
+    ["Elemental Armament III", "燃怒战吼 III", ""],
+    ["Elemental Army", "元素大军", ""],
+    ["Elemental Conflux", "元素汇流", ""],
+    ["Elemental Discharge", "元素解放", ""],
+    ["Elemental Expression", "元素表现", ""],
+    ["Elemental Focus", "元素集中", ""],
+    ["Elemental Invocation", "元素祈求", ""],
+    ["Elemental Storm", "元素风暴", ""],
+    ["Elemental Sundering", "元素碎裂", ""],
+    ["Elemental Surge", "元素涌动", ""],
+    ["Elemental Weakness", "元素要害", ""],
+    ["Ember Fusillade", "灰烬连射", ""],
+    ["Embitter", "苦寒之意", ""],
+    ["Emergency Reload", "紧急装填", ""],
+    ["Encase in Jade", "青玉囚笼", ""],
+    ["Encroaching Ground", "侵蚀地面", ""],
+    ["Enduring Impact I", "长明烈焰 I", ""],
+    ["Enduring Impact II", "药草学 II", ""],
+    ["Enervating Nova", "衰颓新星", ""],
+    ["Enfeeble", "衰弱", ""],
+    ["Enraged Warcry II", "处决 II", ""],
+    ["Entangle", "纠缠", ""],
+    ["Eruption", "熔火喷发", ""],
+    ["Escalating Poison", "毒性加剧", ""],
+    ["Escape Shot", "逃脱射击", ""],
+    ["Esh's Prowess", "艾许的骁勇", ""],
+    ["Essence Drain", "精华吸取", ""],
+    ["Essence Harvest", "收割精华", ""],
+    ["Eternal Flame II", "点燃 II", ""],
+    ["Eternal March", "永恒行军", ""],
+    ["Eternal Rage", "永恒狂怒", ""],
+    ["Excise", "净除", ""],
+    ["Execrate", "怨恨", ""],
+    ["Execute I", "战争铁拳 I", ""],
+    ["Execute III", "火焰穿透 III", ""],
+    ["Expand", "扩展", ""],
+    ["Expanse", "开疆", ""],
+    ["Exploit Weakness", "开发要害", ""],
+    ["Explosion", "护甲爆破", ""],
+    ["Explosive Concoction", "爆破灵药", ""],
+    ["Explosive Grenade", "高爆榴弹", ""],
+    ["Explosive Shot", "爆炸射击", ""],
+    ["Explosive Spear", "爆破战矛", ""],
+    ["Explosive Transmutation", "烈性转化", ""],
+    ["Exposure", "闪电曝露", ""],
+    ["Exsanguinate", "赤炼魔光", ""],
+    ["Extraction", "萃取", ""],
+    ["Eye of Winter", "凛冬之眼", ""],
+    ["Falling Thunder", "霹雳闪", ""],
+    ["Fan The Flames", "煽风点火", ""],
+    ["Fan The Flames II", "煽风点火II", ""],
+    ["Fangs of Frost", "刺骨寒冰", ""],
+    ["Feast of Flesh", "血肉盛宴", ""],
+    ["Feeding Frenzy I", "和谐残迹 I", ""],
+    ["Feral Invocation", "野性召唤", ""],
+    ["Ferocious Roar", "凶蛮咆哮", ""],
+    ["Ferocity", "狂暴", ""],
+    ["Fiery Death", "炽灭", ""],
+    ["Fire Attunement", "火焰协调", ""],
+    ["Fire Exposure", "火焰曝露", ""],
+    ["Fire Penetration I", "新装箭匣 I", ""],
+    ["Fire Spell on Hit", "击中时火焰法术", ""],
+    ["Fireball", "火球", ""],
+    ["Firebolt", "火焰弹", ""],
+    ["Firestorm", "烈炎风暴", ""],
+    ["Fist Of Kalguur", "卡古兰之拳", ""],
+    ["Flail Strike", "连枷打击", ""],
+    ["Flame Breath", "龙炎吐息", ""],
+    ["Flame I", "点燃 I", ""],
+    ["Flame II", "蛮勇打击 II", ""],
+    ["Flame Wall", "烈焰之墙", ""],
+    ["Flameblast", "烈焰爆破", ""],
+    ["Flamepierce", "烈焰穿刺", ""],
+    ["Flammability", "易燃", ""],
+    ["Flash Grenade", "闪光榴弹", ""],
+    ["Flicker Strike", "闪现打击", ""],
+    ["Fluke", "运势", ""],
+    ["Focused Curse", "聚焦诅咒", ""],
+    ["Font of Blood", "血脉源泉", ""],
+    ["Font of Mana", "魔力源泉", ""],
+    ["Forge Hammer", "锻造之锤", ""],
+    ["Fork", "分叉", ""],
+    ["Fortifying Cry", "坚韧战吼", ""],
+    ["Fortress II", "狂野碎片 II", ""],
+    ["Fragmentation Rounds", "碎裂弹药", ""],
+    ["Fragments Of The Past", "往昔碎片", ""],
+    ["Freeze", "冻结", ""],
+    ["Freezefork", "冻结分叉", ""],
+    ["Freezing Mark", "冰冻印记", ""],
+    ["Freezing Salvo", "冻结齐射", ""],
+    ["Freezing Shards", "急冻碎片", ""],
+    ["Frenzied Riposte", "狂怒反击", ""],
+    ["Fresh Clip I", "坚韧图腾 I", ""],
+    ["Fresh Clip II", "坚韧图腾 II", ""],
+    ["Frost Bomb", "寒霜爆", ""],
+    ["Frost Darts", "冰霜飞镖", ""],
+    ["Frost Wall", "冰墙", ""],
+    ["Frostbolt", "寒冰弹", ""],
+    ["Frostfire", "霜火", ""],
+    ["Frostflame Nova", "霜焰新星", ""],
+    ["Frozen Locus", "冰凌座", ""],
+    ["Frozen Spite", "冰冻怨恨", ""],
+    ["Fulminating Concoction", "雷鸣灵药", ""],
+    ["Fulmination", "轰鸣烈焰", ""],
+    ["Furious Slam", "狂怒猛击", ""],
+    ["Fury of the Mountain", "山岳之怒", ""],
+    ["Future-Past", "未来的过去", ""],
+    ["Galvanic Field", "电流场", ""],
+    ["Galvanic Shards", "电光散射", ""],
+    ["Gambleshot", "投机射击", ""],
+    ["Gas Arrow", "瓦斯之箭", ""],
+    ["Gas Grenade", "瓦斯榴弹", ""],
+    ["Gathering Storm", "聚风雨", ""],
+    ["Gemini Surge", "双灵涌动", ""],
+    ["Glacial Bolt", "冰川弩箭", ""],
+    ["Glacial Cascade", "冰川之刺", ""],
+    ["Glacial Lance", "冰川长枪", ""],
+    ["Glacier", "冰川", ""],
+    ["Gorge", "狼吞虎咽", ""],
+    ["Grim Feast", "饕餮飨宴", ""],
+    ["Grim Pillars", "阴森之柱", ""],
+    ["Ground", "诅咒之地", ""],
+    ["Growth", "迅猛绽放", ""],
+    ["Haemocrystals", "赤炼水晶", ""],
+    ["Hailstorm Rounds", "冰雹弹药", ""],
+    ["Hammer of the Gods", "诸天之锤", ""],
+    ["Hand of Chayula", "夏乌拉之手", ""],
+    ["Harbinger of Madness", "疯魔先驱", ""],
+    ["Hazard", "受控危技", ""],
+    ["Healing Runes", "治疗符文", ""],
+    ["Heart of Ice", "冰雪之心", ""],
+    ["Heavy Swing", "沉重挥舞", ""],
+    ["Heft", "势大力沉", ""],
+    ["Heightened Accuracy I", "冗余 I", ""],
+    ["Helbrym's Hide", "赫尔布林的隐瞒", ""],
+    ["Herald of Blood", "赤血之捷", ""],
+    ["Herald of Plague", "荒芜之捷", ""],
+    ["Herald of the Royal Queen", "皇后之捷", ""],
+    ["Herbalism I", "炎军 I", ""],
+    ["Hex Bloom", "魔蛊绽放", ""],
+    ["Hexblast", "魔蛊爆炸", ""],
+    ["High Velocity Rounds", "高速弹药", ""],
+    ["Hit and Run", "连打带跑", ""],
+    ["Hollow Focus", "虚空钟灵", ""],
+    ["Hollow Form", "虚空魅影", ""],
+    ["Hollow Resonance", "虚空和鸣", ""],
+    ["Hollow Shell", "虚空之壳", ""],
+    ["Holy Descent", "神圣降临", ""],
+    ["Hourglass", "时之沙漏", ""],
+    ["Hulking Minions", "魁梧仆从", ""],
+    ["Hypothermia", "急冻", ""],
+    ["Ice Nova", "冰霜新星", ""],
+    ["Ice Shards", "冰屑", ""],
+    ["Ice Shot", "冰霜射击", ""],
+    ["Ice Strike", "幽寒打", ""],
+    ["Ice-Tipped Arrows", "冰尖箭矢", ""],
+    ["Icestorm", "冰风暴", ""],
+    ["Icicle", "冰刺", ""],
+    ["Ignite III", "炎军 III", ""],
+    ["Immolate", "献祭", ""],
+    ["Impact Shockwave", "冲击震波", ""],
+    ["Impale", "穿刺", ""],
+    ["Impending Doom", "末日将至", ""],
+    ["Impurity", "不净", ""],
+    ["Incendiary Shot", "燃烧射击", ""],
+    ["Incinerate", "烧毁", ""],
+    ["Incision", "创口", ""],
+    ["Inevitable Agony", "命定苦痛", ""],
+    ["Inexorable Critical II", "活体闪电 II", ""],
+    ["Infernal Cry", "炽焰战吼", ""],
+    ["Infernal Legion I", "崎岖之地 I", ""],
+    ["Infernal Legion II", "崎岖之地 II", ""],
+    ["Inhibitor", "抑制器", ""],
+    ["Innervate", "闪电支配", ""],
+    ["Into the Breach", "投身裂隙", ""],
+    ["Iron Ward", "钢铁看守", ""],
+    ["Jagged Ground I", "生命偷取 I", ""],
+    ["Jagged Ground II", "生命偷取 II", ""],
+    ["Kelari's Deception", "凯拉里之诡计", ""],
+    ["Kelari's Embrace", "凯拉里之拥抱", ""],
+    ["Kelari's Judgment", "凯拉里之审判", ""],
+    ["Kelari's Malediction", "凯拉里之诅咒", ""],
+    ["Kelari, the Tainted Sands", "凯拉里,污秽沙暴", ""],
+    ["Killing Palm", "终结掌", ""],
+    ["Knockback", "击退", ""],
+    ["Last Gasp", "亡命之息", ""],
+    ["Leap", "电震跃击", ""],
+    ["Leap Slam", "跃击", ""],
+    ["Leech II", "肉盾 II", ""],
+    ["Leylines", "地脉", ""],
+    ["Life Bounty", "生命丰沛", ""],
+    ["Life Drain", "生命榨取", ""],
+    ["Life Leech III", "加长引线 III", ""],
+    ["Life Remnants", "生命残片", ""],
+    ["Lifetap", "赤炼", ""],
+    ["Lightning Arrow", "闪电箭矢", ""],
+    ["Lightning Attunement", "闪电协调", ""],
+    ["Lightning Bolt", "闪电", ""],
+    ["Lightning Conduit", "闪电通道", ""],
+    ["Lightning Mastery", "闪电专精", ""],
+    ["Lightning Penetration", "闪电穿透", ""],
+    ["Lightning Rod", "引雷针", ""],
+    ["Lightning Spear", "闪电战矛", ""],
+    ["Lightning Warp", "闪电传送", ""],
+    ["Lingering Illusion", "徘徊幻影", ""],
+    ["Living Bomb", "活动炸弹", ""],
+    ["Living Lightning", "活体闪电", ""],
+    ["Lockdown", "封锁", ""],
+    ["Long Fuse I", "死亡印记 I", ""],
+    ["Long Fuse II", "召唤生物溅射伤害 II", ""],
+    ["Loyalty", "忠诚", ""],
+    ["Lunar Assault", "月痕突袭", ""],
+    ["Lunar Blessing", "月神赐福", ""],
+    ["Mace Strike", "锤打击", ""],
+    ["Magma Barrier", "岩浆屏障", ""],
+    ["Magnetic Salvo", "磁性齐射", ""],
+    ["Maim", "瘫痪", ""],
+    ["Malady", "错乱病症", ""],
+    ["Malice", "怨毒", ""],
+    ["Mana Drain", "魔力吸取", ""],
+    ["Mana Flare", "魔力耀斑", ""],
+    ["Mana Leech", "魔力偷取", ""],
+    ["Mana Remnants", "魔力残片", ""],
+    ["Mana Tempest", "魔力风暴", ""],
+    ["Manifest", "显化武器", ""],
+    ["Manifest Weapon", "显化武器", ""],
+    ["Mantra of Destruction", "毁灭之兆", ""],
+    ["Mark", "充能印记", ""],
+    ["Mark for Death", "死亡印记", ""],
+    ["Mark of Siphoning", "虹吸印记", ""],
+    ["Mark of Siphoning II", "虹吸印记II", ""],
+    ["Maul", "重殴", ""],
+    ["Meat Shield II", "持久地面 II", ""],
+    ["Meditate", "凝神思", ""],
+    ["Medved's Felling", "梅德维德的砍伐", ""],
+    ["Midnight Zenith", "午夜天顶", ""],
+    ["Minion Instability", "复仇之灵", ""],
+    ["Minion Mastery", "召唤生物专精", ""],
+    ["Minion Pact II", "灵秘 II", ""],
+    ["Minion Splash I", "持久地面 I", ""],
+    ["Mirage Archer", "幻影射手", ""],
+    ["Mirage Deadeye", "蜃影神射", ""],
+    ["Mirror of Refraction", "折射之镜", ""],
+    ["Mist Raven", "雾鸦", ""],
+    ["Mobility", "机动", ""],
+    ["Molten Blast", "熔岩爆裂", ""],
+    ["Molten Crash", "熔岩冲击", ""],
+    ["Molten Shower", "熔岩骤雨", ""],
+    ["Moment of Vulnerability", "脆弱瞬间", ""],
+    ["Momentum", "动量", ""],
+    ["Mortar Cannon", "迫击大炮", ""],
+    ["Murderous Intent", "坚韧磨砺", ""],
+    ["Muster", "海纳百川", ""],
+    ["Mysticism II", "快速施法 II", ""],
+    ["Mórrigan's Insight", "莫丽根的洞察", ""],
+    ["Navira's Embrace", "纳薇拉之拥抱", ""],
+    ["Navira's Fracturing", "纳薇拉之裂", ""],
+    ["Navira's Oasis", "纳薇拉之绿洲", ""],
+    ["Navira's Well", "纳薇拉之井", ""],
+    ["Navira, the Last Mirage", "纳薇拉,终末幻影", ""],
+    ["Nimble Reload", "敏捷装填", ""],
+    ["Oil Barrage", "黏油炮弹", ""],
+    ["Oil Grenade", "黏油榴弹", ""],
+    ["Olroth's Hubris", "欧罗什的傲慢", ""],
+    ["Opening Move", "起手式", ""],
+    ["Orb of Storms", "风暴漩涡", ""],
+    ["Overcharge", "过载", ""],
+    ["Overextend", "竭力痛击", ""],
+    ["Overreach", "过度延伸", ""],
+    ["Overwhelming Presence", "压迫气场", ""],
+    ["Pain Offering", "苦痛奉献", ""],
+    ["Parry", "招架", ""],
+    ["Payload", "子母弹", ""],
+    ["Penetration II", "战争铁拳 II", ""],
+    ["Perfect Strike", "完美一击", ""],
+    ["Perfected Endurance", "完美耐力", ""],
+    ["Perfection", "完美", ""],
+    ["Permafrost Bolts", "永冻弩箭", ""],
+    ["Persistent Ground II", "持续时间延长 II", ""],
+    ["Persistent Ground III", "狂怒 III", ""],
+    ["Phantasmal Arrow", "幻灵箭", ""],
+    ["Physical Mastery", "物理专精", ""],
+    ["Pierce I", "定身 I", ""],
+    ["Pierce III", "定身 III", ""],
+    ["Pin I", "中毒 I", ""],
+    ["Pin II", "助力之风 II", ""],
+    ["Pin III", "中毒 III", ""],
+    ["Pinnacle of Power", "力量巅峰", ""],
+    ["Plague Bearer", "瘟疫使者", ""],
+    ["Plasma Blast", "离子轰击", ""],
+    ["Poison I", "精准 I", ""],
+    ["Poison III", "投射物加速 III", ""],
+    ["Poison Spores", "毒孢迸溅", ""],
+    ["Poisonburst Arrow", "毒爆箭", ""],
+    ["Potency III", "反击 III", ""],
+    ["Pounce", "巨狼猛扑", ""],
+    ["Power Siphon", "力量抽取", ""],
+    ["Powered by Verisium", "维金供能", ""],
+    ["Practical Magic I", "实用魔法I", ""],
+    ["Practical Magic II", "实用魔法II", ""],
+    ["Practiced Combo", "娴熟连击", ""],
+    ["Precision I", "投射物加速 I", ""],
+    ["Primal Bounty", "枭羽馈赠", ""],
+    ["Primal Strikes", "原始打击", ""],
+    ["Profane Ritual", "不敬之礼", ""],
+    ["Profanity II", "快速施法 II", ""],
+    ["Projectile Acceleration I", "投射物减速 I", ""],
+    ["Projectile Acceleration II", "快速攻击 II", ""],
+    ["Projectile Arbiter's Reach", "投射物仲裁官之握", ""],
+    ["Projectile Deceleration I", "迫近追逐 I", ""],
+    ["Projection", "星界投射", ""],
+    ["Prototype Seventeen", "原型十七", ""],
+    ["Punch", "拳击", ""],
+    ["Punch Through", "击穿", ""],
+    ["Pursuit I", "快速攻击 I", ""],
+    ["Pursuit II", "重新武装 II", ""],
+    ["Pursuit III", "快速攻击 III", ""],
+    ["Quarterstaff Strike", "节杖打击", ""],
+    ["Queen's Procession", "女王冲锋", ""],
+    ["Quill Burst", "棘刺爆发", ""],
+    ["Rage I", "坚定 I", ""],
+    ["Rage II", "怒火锤炼 II", ""],
+    ["Rageforged II", "折射 II", ""],
+    ["Raging Spirits", "愤怒狂灵", ""],
+    ["Rain of Arrows", "箭雨", ""],
+    ["Rain of Blades", "刀刃之雨", ""],
+    ["Raise Shield", "架盾", ""],
+    ["Raise Zombie", "魔卫复苏", ""],
+    ["Rake", "斜掠", ""],
+    ["Rampage", "横冲直撞", ""],
+    ["Rapid Assault", "极速进攻", ""],
+    ["Rapid Attacks I", "撤退 I", ""],
+    ["Rapid Attacks II", "助力之风 II", ""],
+    ["Rapid Casting I", "替罪羔羊 I", ""],
+    ["Rapid Casting II", "升流 II", ""],
+    ["Rapid Casting III", "狂野碎片 III", ""],
+    ["Rapid Shot", "快速射击", ""],
+    ["Ravenous Swarm", "饕餮虫群", ""],
+    ["Reap", "赤炼收割", ""],
+    ["Reaper's Invocation", "收割祈求", ""],
+    ["Rearm I", "撤退 I", ""],
+    ["Rearm II", "撤退 II", ""],
+    ["Refraction II", "增强图腾 II", ""],
+    ["Refutation", "反制", ""],
+    ["Reinforced Totems II", "碎片图腾 II", ""],
+    ["Remnant Potency I", "反击 I", ""],
+    ["Remnants of Kalguur", "卡古兰残片", ""],
+    ["Rend", "龙爪撕裂", ""],
+    ["Rending Apex", "撕裂巅峰", ""],
+    ["Repulsion", "斥退", ""],
+    ["Requiem", "镇魂曲", ""],
+    ["Resolve", "格鲁坎的决心", ""],
+    ["Resonating Shield", "共振护盾", ""],
+    ["Retaliate II", "短暂引信 II", ""],
+    ["Retention", "能量保存", ""],
+    ["Retreat III", "助力之风 III", ""],
+    ["Rhoa Mount", "恐喙鸟坐骑", ""],
+    ["Ricochet II", "相性 II", ""],
+    ["Rip", "撕裂", ""],
+    ["Rising Tempest", "风暴骤起", ""],
+    ["Rite of Restoration", "恢复圣仪", ""],
+    ["Ritual Sacrifice", "秘法奉献", ""],
+    ["Ritualistic Curse", "仪祭诅咒", ""],
+    ["Rolling Magma", "熔岩奔涌", ""],
+    ["Rolling Slam", "轰动猛击", ""],
+    ["Runeforged Blades", "符文之刃", ""],
+    ["Runic Extraction", "符文提取", ""],
+    ["Runic Infusion", "符文灌注", ""],
+    ["Runic Reprieve", "符文援护", ""],
+    ["Runic Tempering", "符文淬炼", ""],
+    ["Rupture", "残破", ""],
+    ["Rusted Spikes", "锈蚀尖刺", ""],
+    ["Ruzhan's Embrace", "鲁詹之拥抱", ""],
+    ["Ruzhan's Fury", "鲁詹之怒火", ""],
+    ["Ruzhan's Reckoning", "鲁詹之清算", ""],
+    ["Ruzhan's Trap", "鲁詹之陷阱", ""],
+    ["Ruzhan, the Blazing Sword", "鲁詹,炽焰之剑", ""],
+    ["Sacrifice", "替代牺牲", ""],
+    ["Sacrificial Offering", "牺牲供奉", ""],
+    ["Sanguine Revelry", "嗜血狂宴", ""],
+    ["Savage Fury", "凶蛮怒火", ""],
+    ["Scavenged Plating", "装甲回收", ""],
+    ["Scouring Flame", "涤罪之火", ""],
+    ["Searing Flame I", "凌迟 I", ""],
+    ["Second Wind III", "极速腐化 III", ""],
+    ["Seismic Cry", "震地战吼", ""],
+    ["Selfless Remnants", "无我残片", ""],
+    ["Seraph's Heart", "炽天使之心", ""],
+    ["Shard Scavenger", "碎片回收", ""],
+    ["Shattering Concoction", "碎冰灵药", ""],
+    ["Shattering Palm", "冰裂掌", ""],
+    ["Shattering Spite", "碎裂恶意", ""],
+    ["Shield Charge", "重盾冲锋", ""],
+    ["Shield Wall", "盾墙", ""],
+    ["Shock", "感电", ""],
+    ["Shock Conduction", "感电传导", ""],
+    ["Shock Siphon", "感电虹吸", ""],
+    ["Shockburst Rounds", "震爆弹药", ""],
+    ["Shockchain Arrow", "连环震击箭", ""],
+    ["Shockwave Totem", "震波图腾", ""],
+    ["Short Fuse I", "飞掠石 I", ""],
+    ["Short Fuse II", "飞掠石 II", ""],
+    ["Shred", "狼爪撕裂", ""],
+    ["Siege Ballista", "攻城炮台", ""],
+    ["Siege Cascade", "摧城倾泻", ""],
+    ["Sigil of Power", "威能法印", ""],
+    ["Siphon Elements", "汲取元素", ""],
+    ["Siphoning Strike", "汲能击", ""],
+    ["Skeletal Arsonist", "魔侍焚焰使", ""],
+    ["Skeletal Brute", "魔侍蛮兵", ""],
+    ["Skeletal Cleric", "魔侍祭司", ""],
+    ["Skeletal Frost Mage", "魔侍冰霜法师", ""],
+    ["Skeletal Reaver", "魔侍掠夺者", ""],
+    ["Skeletal Sniper", "魔侍神射手", ""],
+    ["Skeletal Storm Mage", "魔侍风暴法师", ""],
+    ["Skeletal Warrior", "魔侍武士", ""],
+    ["Skyfall", "天降杀机", ""],
+    ["Slow Potency", "减速效能", ""],
+    ["Snap", "激变", ""],
+    ["Snipe", "狙击", ""],
+    ["Soaring Midnight", "午夜翱翔", ""],
+    ["Solar Orb", "日曜球", ""],
+    ["Sorcery Ward", "元素结界", ""],
+    ["Soul Drain", "魂魔榨取", ""],
+    ["Soul Offering", "灵之奉献", ""],
+    ["Soulrend", "裂魂术", ""],
+    ["Spar", "角力", ""],
+    ["Spark", "电球", ""],
+    ["Sparks II", "狂噬 II", ""],
+    ["Spear Stab", "战矛突刺", ""],
+    ["Spear of Solaris", "日耀之矛", ""],
+    ["Spearfield", "枪林矛阵", ""],
+    ["Spell Cascade", "多重范围施法", ""],
+    ["Spell Echo", "施法回响", ""],
+    ["Spell Totem", "法术图腾", ""],
+    ["Spellslinger", "法术节魔", ""],
+    ["Spiral Volley", "螺旋齐射", ""],
+    ["Spiraling Conspiracy", "鸦群密谋", ""],
+    ["Splash II", "持久地面 II", ""],
+    ["Splinter Totem I", "坚定 I", ""],
+    ["Splinter Totem II", "坚忍 II", ""],
+    ["Staggering Palm", "惊风掌", ""],
+    ["Stampede", "奔踏", ""],
+    ["Starborn Onslaught", "星辰冲击", ""],
+    ["Static Shocks", "静电脉冲", ""],
+    ["Steadfast II", "坚忍 II", ""],
+    ["Stoicism II", "晕眩 II", ""],
+    ["Stomping Ground", "震撼大地", ""],
+    ["Stone II", "晕眩 II", ""],
+    ["Storm Lance", "岚舞长枪", ""],
+    ["Storm Wave", "移风岚", ""],
+    ["Stormblast Bolts", "轰雷弩箭", ""],
+    ["Stormcaller Arrow", "唤雷箭", ""],
+    ["Stormchain", "风暴连锁", ""],
+    ["Stormfire", "风暴之炎", ""],
+    ["Streamlined Rounds", "流线弹药", ""],
+    ["Strike I", "致命毒素 I", ""],
+    ["Strong Hearted", "强健心灵", ""],
+    ["Stun I", "荆棘皮肤 I", ""],
+    ["Styrn's Ferocity", "斯泰恩的凶残", ""],
+    ["Styrn's Mountain", "斯泰恩的山岳", ""],
+    ["Summon Infernal Hound", "召唤炽焰猎犬", ""],
+    ["Sunder", "大地震击", ""],
+    ["Supercharged Slam", "蓄威神锤", ""],
+    ["Supercritical", "特化暴击", ""],
+    ["Supporting Fire", "支援火力", ""],
+    ["Surge", "秘术增强", ""],
+    ["Swift Affliction I", "大好时机 I", ""],
+    ["Sword Slash", "剑挥砍", ""],
+    ["Syzygy", "朔望", ""],
+    ["Tame Beast", "驯服野兽", ""],
+    ["Tangmazu's Thurible", "唐玛祖的香炉", ""],
+    ["Tasalio's Rhythm", "塔萨里奥的律动", ""],
+    ["Tear", "撕扯", ""],
+    ["Tectonic Slams", "破釜一击", ""],
+    ["Temper", "淬炼武器", ""],
+    ["Temper Weapon", "淬炼武器", ""],
+    ["Tempest Bell", "风雷钟", ""],
+    ["Tempest Flurry", "风暴乱舞", ""],
+    ["Temporal Chains", "时空锁链", ""],
+    ["Temporal Rift", "时空裂隙", ""],
+    ["The Stars Answer", "群星召唤", ""],
+    ["Thornskin II", "紧急图腾 II", ""],
+    ["Thrashing Vines", "鞭笞藤蔓", ""],
+    ["Thrill of the Kill", "杀戮快感", ""],
+    ["Thrill of the Kill II", "杀戮快感II", ""],
+    ["Thunder", "伊奥尼尔的雷霆", ""],
+    ["Thundergod's Wrath", "雷霆神祇之怒", ""],
+    ["Thunderous Leap", "雷鸣飞跃", ""],
+    ["Thunderstorm", "雷霆风暴", ""],
+    ["Time Freeze", "时间冻结", ""],
+    ["Time Snap", "时间捕捉", ""],
+    ["Time of Need", "紧急时刻", ""],
+    ["Tireless", "冷酷", ""],
+    ["Tornado", "龙卷旋风", ""],
+    ["Tornado Shot", "龙卷射击", ""],
+    ["Totems I", "药草学 I", ""],
+    ["Totems II", "持续冲击 II", ""],
+    ["Touch", "凋零之触", ""],
+    ["Toxic Domain", "毒性领域", ""],
+    ["Toxic Growth", "剧毒增生", ""],
+    ["Trail of Caltrops", "铁蒺藜之路", ""],
+    ["Trickster's Shard", "欺诈者碎片", ""],
+    ["Triskelion Cascade", "三耀辉轮", ""],
+    ["Tul's Avalanche", "托沃的雪崩", ""],
+    ["Uhtred's Rite", "乌崔德仪式", ""],
+    ["Unbound Avatar", "不羁化身", ""],
+    ["Unearth", "开掘", ""],
+    ["Unleash", "释出", ""],
+    ["Untether", "深渊心爆", ""],
+    ["Upheaval I", "先锋 I", ""],
+    ["Upwelling II", "奉命 II", ""],
+    ["Urgent Totems I", "先锋 I", ""],
+    ["Urgent Totems II", "余震 II", ""],
+    ["Urgent Totems III", "活力 III", ""],
+    ["Valako's Charge", "瓦拉克怒冲", ""],
+    ["Vaulting Impact", "跳跃撞击", ""],
+    ["Verglas", "雨淞", ""],
+    ["Verisium Manifestations", "维金化形", ""],
+    ["Vessel", "灵魂容器", ""],
+    ["Vine Arrow", "藤缠箭", ""],
+    ["Vivid Stampede", "雄鹿践踏", ""],
+    ["Void Illusion", "虚空幻影", ""],
+    ["Volatile Dead", "灵体火球", ""],
+    ["Volatility", "无常", ""],
+    ["Volcanic Fissure", "火山裂缝", ""],
+    ["Volcano", "火山", ""],
+    ["Volley", "灵体齐射", ""],
+    ["Volt", "电伏积聚", ""],
+    ["Voltaic Barrier", "电能屏障", ""],
+    ["Voltaic Grenade", "电涌榴弹", ""],
+    ["Voltaic Mark", "流电印记", ""],
+    ["Vorana's Siege", "沃拉娜的围城", ""],
+    ["Vruun's Inevitability", "弗伦的必然", ""],
+    ["Vulnerability", "脆弱", ""],
+    ["Walking Calamity", "灾厄行者", ""],
+    ["War Banner", "战旗", ""],
+    ["Warcry I", "处决 I", ""],
+    ["Wardbound Minions", "结界仆从", ""],
+    ["Warm Blooded", "温热血脉", ""],
+    ["Wave of Frost", "寒霜浪涌", ""],
+    ["Whirling Assault", "旋风击", ""],
+    ["Whirlwind Lance", "旋风投枪", ""],
+    ["Wild Protector", "野性守护", ""],
+    ["Wildfire", "野火", ""],
+    ["Wildwood's Gifts", "荒林之赐", ""],
+    ["Wind Blast", "迅风爆", ""],
+    ["Wind Serpent's Fury", "腾蛇之怒", ""],
+    ["Window of Opportunity I", "胶粘榴弹 I", ""],
+    ["Wing Blast", "烈风吹袭", ""],
+    ["Wither", "死亡凋零", ""],
+    ["Withering Presence", "凋零姿态", ""],
+    ["Wolf Pack", "狼群", ""],
+    ["Zarokh's Revolt", "扎洛卡的反叛", ""],
+    ["Zerphi's Infamy", "泽佛伊的恶名", ""],
+    ["of War I", "持续冲击 I", ""],
+    ["the Blazing Sword", "炽焰之剑", ""],
+    ["the Last Mirage", "终末幻影", ""],
+    ["the Tainted Sands", "污秽沙暴", ""]
+  ];
+  /* INLINE_GEMS:END */
+
   /* ============================================================
    * 3. 运行时状态
    * ========================================================== */
@@ -1229,6 +2005,12 @@ const INLINE_TERMS = [
       const k = en.toLowerCase();
       if (cn) state.terms.cn[k] = cn;
       if (tw) state.terms.tw[k] = tw;
+    }
+    for (const row of INLINE_GEMS) {
+      const [en, cn, tw] = row;
+      if (!en) continue;
+      if (cn) state.ui.cn[en] = cn;
+      if (tw) state.ui.tw[en] = tw;
     }
     reindexLower();
   }
@@ -1313,34 +2095,44 @@ const INLINE_TERMS = [
    * 国服 API 需要登录态（POESESSID）；取不到就静默失败，交给 poedb 兜底。
    * ---------------------------------------------------------- */
   // 国服（腾讯）与国际服的 trade 数据接口。内容两端同步、只是译名不同，
-  // 所以对齐后拿到的就是官方全量译名。域名按游戏版本切换，并逐个探测候选。
-  const API_CANDIDATES = {
-    poe1: {
-      en: ['https://www.pathofexile.com/api/trade/data/'],
-      cn: ['https://poe.game.qq.com/api/trade/data/']
-    },
-    poe2: {
-      en: ['https://www.pathofexile.com/api/trade2/data/', 'https://www.pathofexile.com/api/trade/data/'],
-      cn: ['https://poe2.game.qq.com/api/trade2/data/', 'https://poe2.game.qq.com/api/trade/data/',
-           'https://poe.game.qq.com/api/trade2/data/', 'https://poe.game.qq.com/api/trade/data/']
-    }
+  // 所以对齐后拿到的就是官方译名。
+  //
+  // 关键：英文侧与中文侧必须落在**同一个 trade 版本**上（trade = PoE1，trade2 = PoE2），
+  // 否则组数对不上、一条都对齐不了。所以按「版本对」整体探测，而不是两端各自挑。
+  const API_PAIRS = {
+    poe2: [
+      { tag: 'trade2', en: 'https://www.pathofexile.com/api/trade2/data/',
+        cn: ['https://poe2.game.qq.com/api/trade2/data/', 'https://poe.game.qq.com/api/trade2/data/'] },
+      { tag: 'trade', en: 'https://www.pathofexile.com/api/trade/data/',
+        cn: ['https://poe2.game.qq.com/api/trade/data/', 'https://poe.game.qq.com/api/trade/data/'] }
+    ],
+    poe1: [
+      { tag: 'trade', en: 'https://www.pathofexile.com/api/trade/data/',
+        cn: ['https://poe.game.qq.com/api/trade/data/'] }
+    ]
   };
 
-  let resolvedAPI = { en: null, cn: null };   // 探测成功的域名，缓存下来复用
+  let resolvedPair = null;   // { en, cn, tag }
+  let lastOfficial = null;   // 上一次官方同步的详细结果（诊断用）
 
-  /** 逐个尝试候选域名，返回第一个真能取到数据的 */
-  async function resolveAPI(kind) {
-    if (resolvedAPI[kind]) return resolvedAPI[kind];
-    const list = API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1;
+  /** 按「版本对」探测：先确定英文源，再在同一版本下找中文源 */
+  async function resolvePair() {
+    if (resolvedPair) return resolvedPair;
+    const pairs = API_PAIRS[gameKey()] || API_PAIRS.poe1;
     let lastErr;
-    for (const base of list[kind]) {
-      try {
-        const r = await tradeData(base, 'items');
-        resolvedAPI[kind] = base;
-        return base;
-      } catch (e) { lastErr = e; }
+    for (const p of pairs) {
+      let enData;
+      try { enData = await tradeData(p.en, 'items'); }
+      catch (e) { lastErr = e; continue; }
+      for (const cnBase of p.cn) {
+        try {
+          const cnData = await tradeData(cnBase, 'items');
+          resolvedPair = { en: p.en, cn: cnBase, tag: p.tag, enData, cnData };
+          return resolvedPair;
+        } catch (e) { lastErr = e; }
+      }
     }
-    throw lastErr || new Error(kind + ' 所有候选域名都取不到');
+    throw lastErr || new Error('没有可用的官方词库源（多数情况是没有登录国服）');
   }
 
   async function tradeData(base, name) {
@@ -1354,26 +2146,35 @@ const INLINE_TERMS = [
     return list;
   }
 
-  /** 按索引对齐两端条目；组数或组内条数不一致就整组放弃，宁缺勿错 */
+  /**
+   * 按索引对齐两端条目。
+   * 组内条目数必须完全一致才对齐——国服如果过滤掉了某些物品，错位对齐比缺词更糟。
+   * 返回 { map, groups, of, detail }，detail 供诊断看清是哪几组没对上。
+   */
   function alignGroups(enList, cnList, pick) {
-    const out = Object.create(null);
+    const map = Object.create(null);
+    const detail = [];
     const usable = Math.min(enList.length, cnList.length);
+    let groups = 0;
     for (let g = 0; g < usable; g++) {
       const eg = enList[g], cg = cnList[g];
       if (!eg || !cg) continue;
       const ee = eg.entries || [], ce = cg.entries || [];
-      if (ee.length !== ce.length) continue;      // 版本不同步 → 跳过该组
-      for (let i = 0; i < ee.length; i++) pick(out, ee[i], ce[i]);
+      const ok = ee.length === ce.length && ee.length > 0;
+      detail.push({ g, en: ee.length, cn: ce.length, ok, label: eg.label || '' });
+      if (!ok) continue;
+      groups++;
+      for (let i = 0; i < ee.length; i++) pick(map, ee[i], ce[i]);
     }
-    return out;
+    return { map, groups, of: usable, detail };
   }
 
   async function syncFromTencent() {
-    const enBase = await resolveAPI('en');
-    const cnBase = await resolveAPI('cn');
+    const pair = await resolvePair();
+    const enBase = pair.en, cnBase = pair.cn;
     const [enItems, cnItems] = await Promise.all([tradeData(enBase, 'items'), tradeData(cnBase, 'items')]);
     /** 物品名：英文 name → 官方简中 name */
-    const items = alignGroups(enItems, cnItems, (out, e, c) => {
+    const aligned = alignGroups(enItems, cnItems, (out, e, c) => {
       const en = cleanStr(e && (e.name || e.type));
       const cn = cleanStr(c && (c.name || c.type));
       if (!en || !cn || en === cn) return;        // 官方没翻译的保持英文
@@ -1381,6 +2182,7 @@ const INLINE_TERMS = [
       if (/[^A-Za-z0-9'’\- ]/.test(en)) return;   // 只收纯英文名，数字/符号条目跳过
       if (!(en in out)) out[en] = cn;
     });
+    const items = aligned.map;
 
     // 词缀：id 两端一致，直接按 id 建索引再对齐，比顺序可靠
     let stats = Object.create(null);
@@ -1404,7 +2206,11 @@ const INLINE_TERMS = [
 
     const host = cnBase.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
     applyItems(Object.assign({}, items, stats), '腾讯官方（' + host + '）', false);
-    return { n, host, items: Object.keys(items).length, stats: Object.keys(stats).length };
+    const res = { n, host, tag: pair.tag, items: Object.keys(items).length,
+                  stats: Object.keys(stats).length, groups: aligned.groups, of: aligned.of,
+                  detail: aligned.detail };
+    lastOfficial = res;   // 留给诊断用
+    return res;
   }
 
   function cleanStr(s) {
@@ -1954,42 +2760,47 @@ const INLINE_TERMS = [
     say('内存中物品名词库：' + Object.keys(state.dict[activeLang()]).length + ' 条　来源：' + (state.source || '（空）'));
     say('');
 
-    const enList = (API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1).en;
-    const cnList = (API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1).cn;
-
-    for (const base of enList) {
-      try { const r = await tradeData(base, 'items'); say('✅ 英文源 ' + base + ' → ' + r.length + ' 组'); }
-      catch (e) { say('❌ 英文源 ' + base + ' → ' + e.message); }
-    }
-    for (const base of cnList) {
-      try {
-        const [en, cn] = await Promise.all([
-          tradeData((resolvedAPI.en && resolvedAPI.en) || enList[0], 'items'),
-          tradeData(base, 'items')
-        ]);
-        let n = 0, groups = 0;
-        const usable = Math.min(en.length, cn.length);
-        for (let g = 0; g < usable; g++) {
-          const ee = (en[g] || {}).entries || [], ce = (cn[g] || {}).entries || [];
-          if (ee.length !== ce.length) continue;
-          groups++;
-          for (let i = 0; i < ee.length; i++) {
-            const a = cleanStr(ee[i] && (ee[i].name || ee[i].type));
-            const b = cleanStr(ce[i] && (ce[i].name || ce[i].type));
-            if (a && b && a !== b) n++;
+    // 官方源：按「版本对」探测，两端必须落在同一个 trade 版本上
+    const pairs = API_PAIRS[gameKey()] || API_PAIRS.poe1;
+    for (const p of pairs) {
+      let enData;
+      try { enData = await tradeData(p.en, 'items'); say(`✅ 英文源 [${p.tag}] ${p.en} → ${enData.length} 组`); }
+      catch (e) { say(`❌ 英文源 [${p.tag}] ${p.en} → ${e.message}`); continue; }
+      for (const cnBase of p.cn) {
+        try {
+          const cnData = await tradeData(cnBase, 'items');
+          const a = alignGroups(enData, cnData, (out, e, c) => {
+            const en = cleanStr(e && (e.name || e.type));
+            const cn = cleanStr(c && (c.name || c.type));
+            if (en && cn && en !== cn) out[en] = cn;
+          });
+          const bad = a.detail.filter((d) => !d.ok);
+          say(`✅ 中文源 [${p.tag}] ${cnBase} → 中文 ${cnData.length} 组，对齐 ${a.groups}/${a.of} 组，得到 ${Object.keys(a.map).length} 条`);
+          if (bad.length) {
+            say('   ↳ 未对齐的组（英文条目数/中文条目数）：');
+            for (const d of bad.slice(0, 12)) say(`      #${d.g} ${d.label || '(无名)'} ${d.en} / ${d.cn}`);
+            if (bad.length > 12) say(`      …还有 ${bad.length - 12} 组`);
           }
-        }
-        say('✅ 中文源 ' + base + ' → 对齐 ' + groups + '/' + usable + ' 组，得到 ' + n + ' 条译名');
-      } catch (e) { say('❌ 中文源 ' + base + ' → ' + e.message); }
+        } catch (e) { say(`❌ 中文源 [${p.tag}] ${cnBase} → ${e.message || e}`); }
+      }
     }
 
+    // poedb：autocomplete 只覆盖物品名，不含技能宝石
     const poedbHost = gameKey() === 'poe2' ? 'https://poe2db.tw' : 'https://poedb.tw';
     say('');
     try {
       const us = await getJSON(`${poedbHost}/json/autocomplete_us.json`);
       const cn = await getJSON(`${poedbHost}/json/autocomplete_cn.json`);
-      say('✅ poedb ' + poedbHost + ' → us ' + us.length + ' 条 / cn ' + cn.length + ' 条');
-    } catch (e) { say('❌ poedb ' + poedbHost + ' → ' + e.message); }
+      say(`✅ poedb ${poedbHost} → us ${us.length} 条 / cn ${cn.length} 条（仅物品名，不含技能宝石）`);
+    } catch (e) { say(`❌ poedb ${poedbHost} → ${e.message || e}`); }
+
+    // 抽查几个页面上看得见的英文名，看它们到底有没有进词库
+    say('');
+    say('抽查（页面上的英文 → 当前词库结果）：');
+    const probes = gameKey() === 'poe2'
+      ? ['Navira, the Last Mirage', 'Bidding II', 'Muster', 'Water Djinn', 'Rakiata\'s Flow', 'Tabula Rasa', 'Divine Orb']
+      : ['Tabula Rasa', 'Divine Orb', 'Headhunter'];
+    for (const p of probes) say(`   ${p} → ${translatePhrase(p)}`);
 
     download('poeninja-diagnose-' + new Date().toISOString().slice(0, 10) + '.json', { lines });
     try { alert(lines.join('\n')); } catch (e) {}
