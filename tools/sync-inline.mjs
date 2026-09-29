@@ -62,9 +62,14 @@ const toRows = (map) => Object.keys(map)
 /** 生成 JS 数组源码，按英文原词排序，便于 diff */
 function render(name) {
   if (name === 'INLINE_GEMS') {
-    // 技能词库只有简体（编年史 /cn/ 页面），繁体留空由运行时 poedb /tw/ 补
+    // 技能词库：简体取自编年史 /cn/ 页面、繁体取自 /tw/ 页面（两套翻译，确实不同）
     const keys = Object.keys(gems).filter((k) => !k.startsWith('_')).sort();
-    const lines = keys.map((k) => `    [${JSON.stringify(k)}, ${JSON.stringify(gems[k])}, ""]`);
+    const lines = keys.map((k) => {
+      const v = gems[k];
+      const cn = typeof v === 'string' ? v : (v && v.cn) || '';
+      const tw = typeof v === 'string' ? '' : (v && v.tw) || '';
+      return `    [${JSON.stringify(k)}, ${JSON.stringify(cn)}, ${JSON.stringify(tw)}]`;
+    });
     return `const ${name} = [\n${lines.join(',\n')}\n  ];`;
   }
   const src = name === 'INLINE_UI' ? ui : terms;
