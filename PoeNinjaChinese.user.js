@@ -2404,12 +2404,31 @@ const INLINE_GEMS = [
    * ---------------------------------------------------------- */
   const PN_CONNECTORS = new Set(['of', 'the', 'and', 'to', 'in', 'on', 'at', 'for', 'with', 'a', 'an', 'from', 'de']);
 
-  /** 是否像专有名词：2~6 个词、不含数字、每个词首字母大写（连接词除外） */
+  /* 以这些词开头的短语是词缀而不是名字（词缀在 UI 里也常首字母大写）。
+   * 不加这条的话，"Increased Area of Effect" 会被当成专有名词而整条不翻。 */
+  const MOD_LEADERS = new Set([
+    'increased', 'increases', 'increase', 'reduced', 'reduces', 'reduce',
+    'adds', 'add', 'added', 'additional', 'more', 'less',
+    'gain', 'gains', 'grants', 'grant', 'granted', 'has', 'have',
+    'deal', 'deals', 'take', 'takes', 'taken', 'lose', 'loses', 'lost',
+    'regenerates', 'regenerate', 'recovers', 'recover', 'recharges', 'recharge',
+    'causes', 'cause', 'applies', 'apply', 'inflict', 'inflicts',
+    'trigger', 'triggers', 'cannot', 'can', 'will', 'may',
+    'when', 'while', 'during', 'if', 'each', 'every', 'per',
+    'on', 'at', 'to', 'from', 'with', 'by', 'for', 'of', 'and', 'or', 'in',
+    'your', 'you', 'enemy', 'enemies', 'ally', 'allies',
+    'damage', 'attacks', 'attack', 'spells', 'spell', 'critical', 'crit',
+    'minion', 'minions', 'socketed', 'supported', 'support', 'skills', 'skill',
+    'maximum', 'minimum', 'total', 'base', 'extra', 'chance'
+  ]);
+
+  /** 是否像专有名词：2~6 个词、不含数字、每个词首字母大写（连接词除外）、首词不是词缀标志词 */
   function isProperNounShape(trim) {
     if (!/^[A-Za-z'’\- ]+$/.test(trim)) return false;   // 含数字/标点 → 词缀，不是名字
     if (/\s\s/.test(trim)) return false;
     const words = trim.split(' ').filter(Boolean);
     if (words.length < 2 || words.length > 6) return false;
+    if (MOD_LEADERS.has(words[0].toLowerCase())) return false;
     return words.every((w) => PN_CONNECTORS.has(w.toLowerCase()) || /^[A-Z]/.test(w));
   }
 
