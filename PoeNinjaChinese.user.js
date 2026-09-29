@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      1.3.0
+// @version      1.4.0
 // @description  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-CN  中文译名优先取腾讯官方（国服），官方没有的再从 poedb.tw 补齐；把 poe.ninja 的物品、通货、宝石、地图、基底与界面文案翻译成中文（简/繁可切换，原文悬浮可见）
 // @description:zh-TW  中文譯名優先取騰訊官方（國服），官方沒有的再從 poedb.tw 補齊；把 poe.ninja 的物品、通貨、寶石、地圖、基底與介面文案翻譯成中文（簡/繁可切換，原文懸浮可見）
@@ -14,6 +14,7 @@
 // @connect      poedb.tw
 // @connect      poe2db.tw
 // @connect      poe.game.qq.com
+// @connect      poe2.game.qq.com
 // @connect      www.pathofexile.com
 // @connect      cdn.jsdelivr.net
 // @connect      raw.githubusercontent.com
@@ -51,7 +52,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '1.3.0';
+  const SCRIPT_VERSION = '1.4.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -120,13 +121,19 @@ const INLINE_UI = [
     ["Advanced Thaumaturgy", "高等奇术", "高等奇術"],
     ["Advertise on this site", "在本站投放广告", "在本站投放廣告"],
     ["Affinity", "亲和", "親和"],
+    ["Ahn's Citadel", "汉恩的城塞", "漢恩的城塞"],
+    ["Ailith's Chimes", "艾利丝钟琴", "艾利絲鐘琴"],
     ["Alchemy Shard", "点金碎片", "點金碎片"],
     ["All leagues", "全部联盟", "全部聯盟"],
     ["Allflame Ember", "全焰余烬", "全焰餘燼"],
+    ["Amanamu's Tithe", "阿曼娜姆的奉纳", "阿曼娜姆的奉納"],
     ["Amulet", "项链", "項鍊"],
     ["Ancestral Tiara", "先祖之冠", "先祖之冠"],
     ["Apply", "应用", "套用"],
+    ["Arakaali's Lust", "阿拉卡力的欲望", "阿拉卡力的慾望"],
+    ["Arbiter's Ignition", "仲裁官的点燃", "仲裁官的點燃"],
     ["Area Level", "区域等级", "區域等級"],
+    ["Arjun's Medal", "阿尔琼的勋章", "阿爾瓊的勳章"],
     ["Armageddon Pace", "末日步伐", "末日步伐"],
     ["Armageddon Pace, Daggerfoot Shoes", "末日步伐，匕足之靴", "末日步伐，匕足之靴"],
     ["Armour", "护甲", "護甲"],
@@ -140,10 +147,13 @@ const INLINE_UI = [
     ["Ascendancy & Keystones", "升华与核心天赋", "昇華與核心天賦"],
     ["Ascending", "升序", "遞增"],
     ["Assassin", "刺客", "刺客"],
+    ["Atalui's Bloodletting", "阿图鲁伊的放血术", "阿圖魯伊的放血術"],
     ["Atlas", "异界", "異界"],
     ["Atlas Trees", "异界天赋树", "異界天賦樹"],
     ["Attack Damage", "攻击伤害", "攻擊傷害"],
     ["Attacks per Second", "每秒攻击次数", "每秒攻擊次數"],
+    ["Atziri's Allure", "阿兹里的魅惑", "阿茲里的魅惑"],
+    ["Atziri's Communion", "阿兹里的呼唤", "阿茲里的呼喚"],
     ["Average", "平均", "平均"],
     ["Back to", "返回", "返回"],
     ["Base Type", "基底类型", "基底類型"],
@@ -159,6 +169,7 @@ const INLINE_UI = [
     ["Blind II", "致盲 II", "致盲 II"],
     ["Block", "格挡", "格擋"],
     ["Breachlord's Rift", "裂界之主的裂隙", "裂界之主的裂隙"],
+    ["Brutus' Brain", "布鲁特斯之脑", "布魯特斯之腦"],
     ["Build Planner", "天赋树规划器", "天賦樹規劃器"],
     ["Builds", "构筑", "構築"],
     ["Builds - Path of Exile 1", "构筑 — 流放之路 1", "構築 — 流放之路 1"],
@@ -216,6 +227,7 @@ const INLINE_UI = [
     ["Daggerfoot Shoes", "匕足之靴", "匕足之靴"],
     ["Daily change", "日涨跌", "日漲跌"],
     ["Damage", "伤害", "傷害"],
+    ["Daresso's Passion", "德瑞索的热情", "德瑞索的熱情"],
     ["Dark mode", "深色模式", "深色模式"],
     ["Data dumps", "数据下载", "資料下載"],
     ["Data from", "数据来源", "資料來源"],
@@ -228,6 +240,7 @@ const INLINE_UI = [
     ["Details", "详情", "詳情"],
     ["Details Id", "详情 ID", "詳情 ID"],
     ["Dexterity", "敏捷", "敏捷"],
+    ["Dialla's Desire", "达拉的渴望", "達拉的渴望"],
     ["Diamond", "钻石", "鑽石"],
     ["Disable", "停用", "停用"],
     ["Divination Card", "命运卡", "命運卡"],
@@ -235,6 +248,7 @@ const INLINE_UI = [
     ["Divine Orb", "神圣石", "神聖石"],
     ["Divine Value", "神圣石价值", "神聖石價值"],
     ["Docs & FAQ", "文档与常见问题", "文件與常見問題"],
+    ["Doedre's Undoing", "德瑞的毁灭", "德瑞的毀滅"],
     ["Duelist", "决斗者", "決鬥者"],
     ["Economy", "经济", "經濟"],
     ["Economy - Path of Exile 1", "经济 — 流放之路 1", "經濟 — 流放之路 1"],
@@ -244,6 +258,7 @@ const INLINE_UI = [
     ["Effective mitigation", "有效减伤", "有效減傷"],
     ["Effective mitigation 61", "有效减伤 61", "有效減傷 61"],
     ["Efficiency", "效率", "效率"],
+    ["Einhar's Beastrite", "伊恩哈尔的魔物仪式", "伊恩哈爾的魔物儀式"],
     ["Elemental Armament II", "元素军备 II", "元素軍備 II"],
     ["Elemental DPS", "元素 DPS", "元素 DPS"],
     ["Elemental Damage", "元素伤害", "元素傷害"],
@@ -259,6 +274,7 @@ const INLINE_UI = [
     ["Enlarge", "放大", "放大"],
     ["Equipment", "装备", "裝備"],
     ["Error", "错误", "錯誤"],
+    ["Esh's Radiance", "艾许的光辉", "艾許的光輝"],
     ["Essence", "精髓", "精髓"],
     ["Essence of Virtue", "美德精髓", "美德精髓"],
     ["Essences", "精髓", "精髓"],
@@ -301,7 +317,9 @@ const INLINE_UI = [
     ["Goddess of Justice", "正义女神", "正義女神"],
     ["Great White One", "大白鲨", "大白鯊"],
     ["Guardian", "守护者", "守護者"],
+    ["Guatelitzi's Ablation", "瓜铁雷兹的消融", "瓜鐵雷茲的消融"],
     ["Halls of the Dead", "亡者之厅", "亡者之廳"],
+    ["Hayoxi's Fulmination", "海幽夏的诛罚", "海幽夏的誅罰"],
     ["Heart of the Well", "井中之心", "井中之心"],
     ["Heightened Charges", "强化充能", "強化充能"],
     ["Helmet Enchant", "头盔附魔", "頭盔附魔"],
@@ -331,11 +349,17 @@ const INLINE_UI = [
     ["Item Level", "物品等级", "物品等級"],
     ["Item Quantity", "物品数量", "物品數量"],
     ["Item Rarity", "物品稀有度", "物品稀有度"],
+    ["Ixchel's Torment", "伊克切尔的折磨", "伊克切爾的折磨"],
     ["Jeweller\"s Orb", "工匠石", "工匠石"],
     ["Jewels", "珠宝", "珠寶"],
     ["Juggernaut", "勇士", "勇士"],
+    ["Kalisa's Crescendo", "卡莉莎的强音", "卡莉莎的強音"],
+    ["Kaom's Madness", "冈姆的疯狂", "岡姆的瘋狂"],
     ["Keystone", "核心天赋", "核心天賦"],
     ["Keystones", "核心天赋", "核心天賦"],
+    ["Khatal's Rejuvenation", "卡哈塔的复苏", "卡哈塔的復甦"],
+    ["Kulemak's Dominion", "库勒马克的统治", "庫勒馬克的統治"],
+    ["Kurgal's Leash", "古加尔的缰绳", "古加爾的韁繩"],
     ["Ladder", "天梯", "天梯"],
     ["Language", "语言", "語言"],
     ["Last 7 days", "近 7 天", "近 7 天"],
@@ -381,6 +405,7 @@ const INLINE_UI = [
     ["Mirrored", "已复制", "已複製"],
     ["Monster Level", "怪物等级", "怪物等級"],
     ["More", "更多", "更多"],
+    ["Morgana's Tempest", "莫甘娜的暴风", "莫甘娜的暴風"],
     ["Mote", "微粒", "微粒"],
     ["Motoric Implants", "运动植入体", "運動植入體"],
     ["Movement Speed", "移动速度", "移動速度"],
@@ -396,6 +421,7 @@ const INLINE_UI = [
     ["Offhand", "副手", "副手"],
     ["Oil", "油", "油"],
     ["Oils", "油", "油"],
+    ["Oisín's Oath", "奥辛之誓", "奧辛之誓"],
     ["Olroth's Conviction", "欧洛斯的信念", "歐洛斯的信念"],
     ["Omen", "预兆", "預兆"],
     ["Omens", "预兆", "預兆"],
@@ -413,6 +439,7 @@ const INLINE_UI = [
     ["POE 1", "流放之路 1", "流放之路 1"],
     ["POE 2", "流放之路 2", "流放之路 2"],
     ["Page", "页", "頁"],
+    ["Paquate's Pact", "帕夸特的契约", "帕夸特的契約"],
     ["Passive Skill Tree", "天赋树", "天賦樹"],
     ["Passive tree", "天赋树", "天賦樹"],
     ["Passives", "天赋树", "天賦樹"],
@@ -452,6 +479,7 @@ const INLINE_UI = [
     ["Rank", "排名", "排名"],
     ["Rapid Attacks III", "快速攻击 III", "快速攻擊 III"],
     ["Rarity", "稀有度", "稀有度"],
+    ["Ratha's Assault", "拉莎的突袭", "拉莎的突襲"],
     ["Refresh", "刷新", "重新整理"],
     ["Regal Orb", "富豪石", "富豪石"],
     ["Remove from favorites", "取消收藏", "取消收藏"],
@@ -470,6 +498,7 @@ const INLINE_UI = [
     ["Righteous Descent", "正义天降", "正義天降"],
     ["Rigwald's Ferocity", "瑞佛的凶猛", "瑞佛的凶猛"],
     ["Rings", "戒指", "戒指"],
+    ["Romira's Requital", "罗米拉的报复", "羅米拉的報復"],
     ["Rows per page", "每页行数", "每頁列數"],
     ["Runeforged Secured Wraps", "符文锻造护腕", "符文鍛造護腕"],
     ["Runic Ward", "符文护盾", "符文護盾"],
@@ -502,6 +531,7 @@ const INLINE_UI = [
     ["Show more", "显示更多", "顯示更多"],
     ["Sign in", "登录", "登入"],
     ["Sign up", "注册", "註冊"],
+    ["Sione's Temper", "西奥妮的怒火", "西奧妮的怒火"],
     ["Skill", "技能", "技能"],
     ["Skill Gem", "技能宝石", "技能寶石"],
     ["Skill Gems", "技能宝石", "技能寶石"],
@@ -526,8 +556,11 @@ const INLINE_UI = [
     ["Supply", "供给量", "供給量"],
     ["Support the site", "支持本站", "支持本站"],
     ["SupportClarityPlayerTwo", "清晰 II（辅助）", "清晰 II（輔助）"],
+    ["Tacati's Ire", "塔卡提之怒", "塔卡提之怒"],
     ["Tasalio's Test", "塔萨罗的考验", "塔薩羅的考驗"],
+    ["Tawhoa's Tending", "塔赫亚的照料", "塔赫亞的照料"],
     ["Tawhoa's Test", "塔霍亚的考验", "塔霍亞的考驗"],
+    ["Tecrod's Revenge", "特克罗的复仇", "特克羅的復仇"],
     ["Templar", "圣堂武僧", "聖堂武僧"],
     ["The Seven Pillars", "七灵柱", "七靈柱"],
     ["The Venom Crypts", "毒蛇地穴", "毒蛇地穴"],
@@ -541,10 +574,14 @@ const INLINE_UI = [
     ["Tree", "天赋树", "天賦樹"],
     ["Trickster", "欺诈师", "欺詐師"],
     ["Trinity", "三位一体", "三位一體"],
+    ["Tul's Stillness", "托沃的寂静", "托沃的寂靜"],
     ["Twister", "旋风", "旋風"],
     ["Twofold", "双重", "雙重"],
     ["Type", "类型", "類型"],
+    ["Uhtred's Augury", "乌崔德的占卜", "烏崔德的占卜"],
     ["Uhtred's Constellation", "乌崔德的星座", "烏崔德的星座"],
+    ["Uhtred's Exodus", "乌崔德的出走", "烏崔德的出走"],
+    ["Uhtred's Omen", "乌崔德的预兆", "烏崔德的預兆"],
     ["Uncorrupted", "未腐化", "未汙染"],
     ["Unique Accessories", "传奇饰品", "傳奇飾品"],
     ["Unique Accessory", "传奇饰品", "傳奇飾品"],
@@ -561,16 +598,19 @@ const INLINE_UI = [
     ["Unique Weapon", "传奇武器", "傳奇武器"],
     ["Unique Weapons", "传奇武器", "傳奇武器"],
     ["Uniques", "传奇", "傳奇"],
-    ["Uruk's Smelting", "乌鲁克的熔铸", "烏魯克的熔鑄"],
+    ["Uruk's Smelting", "厄罗克的熔炼术", "厄羅克的熔煉術"],
+    ["Uul-Netol's Embrace", "乌尔尼多的拥抱", "烏爾尼多的擁抱"],
     ["Vaal Orb", "瓦尔宝珠", "瓦爾寶珠"],
     ["Vale Shelter", "谷地庇护", "谷地庇護"],
     ["Valley of the Titans", "泰坦之谷", "泰坦之谷"],
     ["Value", "价值", "價值"],
+    ["Varashta's Blessing", "瓦拉煞的祝福", "瓦拉煞的祝福"],
     ["Variant", "变体", "變體"],
     ["Vial", "小瓶", "小瓶"],
     ["Vials", "小瓶", "小瓶"],
     ["View Profile", "查看资料", "檢視資料"],
     ["View all posts", "查看全部公告", "查看全部公告"],
+    ["Vilenta's Propulsion", "薇伦塔之推进", "薇倫塔之推進"],
     ["Virtuous Barrier", "美德壁垒", "美德壁壘"],
     ["VirtuousBarrierPlayer", "美德壁垒", "美德壁壘"],
     ["Vitality II", "活力 II", "活力 II"],
@@ -585,6 +625,9 @@ const INLINE_UI = [
     ["Wiki", "维基", "維基"],
     ["Wind Dancer", "风舞者", "風舞者"],
     ["Witch", "女巫", "女巫"],
+    ["Xibaqua's Rending", "夏巴夸亚的撕裂", "夏巴夸亞的撕裂"],
+    ["Xoph's Pyre", "索伏的葬火", "索伏的葬火"],
+    ["Zarokh's Refrain", "扎洛卡的克制", "扎洛卡的克制"],
     ["ago", "前", "前"],
     ["day", "天", "天"],
     ["days", "天", "天"],
@@ -611,6 +654,7 @@ const INLINE_TERMS = [
     ["100% more", "100% 更多", "100% 更多"],
     ["20 (max)", "20（最大）", "20（最大）"],
     ["about", "关于", "關於"],
+    ["absorbs", "吸收", "吸收"],
     ["acceleration", "加速", "加速"],
     ["account", "账号", "帳號"],
     ["accuracy", "命中", "命中"],
@@ -663,6 +707,7 @@ const INLINE_TERMS = [
     ["based on a portion of", "基于一部分", "基於一部分"],
     ["bear", "熊", "熊"],
     ["belt", "腰带", "腰帶"],
+    ["bidding", "号令", "號令"],
     ["bifurcate", "分岔", "分岔"],
     ["bifurcates", "分岔", "分岔"],
     ["bleeding", "流血", "流血"],
@@ -679,9 +724,11 @@ const INLINE_TERMS = [
     ["bows", "弓", "弓"],
     ["break", "破坏", "破壞"],
     ["broken", "破碎", "破碎"],
+    ["bubble", "气泡", "氣泡"],
     ["buff", "增益", "增益"],
     ["buffs", "增益", "增益"],
     ["buildup", "积蓄", "積蓄"],
+    ["burst", "破裂", "破裂"],
     ["but will", "但会", "但會"],
     ["by", "被", "被"],
     ["can be boosted by multiple", "可被多个加成", "可被多個加成"],
@@ -710,6 +757,7 @@ const INLINE_TERMS = [
     ["checkpoints", "检查点", "檢查點"],
     ["chill", "冰缓", "冰緩"],
     ["chilled", "冰缓", "冰緩"],
+    ["chilled ground", "冰缓地面", "冰緩地面"],
     ["clarity", "清晰", "清晰"],
     ["class", "职业", "職業"],
     ["claw", "爪", "爪"],
@@ -722,6 +770,7 @@ const INLINE_TERMS = [
     ["colour", "颜色", "顏色"],
     ["combo", "连击", "連擊"],
     ["command", "指令", "指令"],
+    ["commands", "指令", "指令"],
     ["companion", "同伴", "同伴"],
     ["companions", "同伴", "同伴"],
     ["condition", "条件", "條件"],
@@ -768,6 +817,7 @@ const INLINE_TERMS = [
     ["dexterity", "敏捷", "敏捷"],
     ["disable", "停用", "停用"],
     ["divine value", "神圣石价值", "神聖石價值"],
+    ["djinn", "巨灵", "巨靈"],
     ["dodge", "躲避", "躲避"],
     ["does not", "不会", "不會"],
     ["dps", "每秒伤害", "每秒傷害"],
@@ -782,6 +832,7 @@ const INLINE_TERMS = [
     ["elemental", "元素", "元素"],
     ["elemental damage", "元素伤害", "元素傷害"],
     ["elemental resistances", "元素抗性", "元素抗性"],
+    ["embrace", "拥抱", "擁抱"],
     ["emit an", "释放出一道", "釋放出一道理"],
     ["empower", "强化", "強化"],
     ["empowered", "强化的", "強化的"],
@@ -824,6 +875,7 @@ const INLINE_TERMS = [
     ["flask charges gained", "获得的药剂充能", "獲得的藥劑充能"],
     ["flow", "流动", "流動"],
     ["flow state", "流动状态", "流動狀態"],
+    ["for", "持续", "持續"],
     ["found", "找到", "找到"],
     ["fractured", "碎裂", "碎裂"],
     ["freeze", "冰冻", "冰凍"],
@@ -831,12 +883,13 @@ const INLINE_TERMS = [
     ["freezes", "冰冻", "冰凍"],
     ["freezing", "冰冻", "冰凍"],
     ["frenzy charge", "狂怒球", "狂怒球"],
-    ["from", "从", "從"],
+    ["from", "来自", "來自"],
     ["frost", "冰霜", "冰霜"],
     ["fully break", "完全破坏", "完全破壞"],
     ["gain", "获得", "獲得"],
     ["gale force", "疾风之力", "疾風之力"],
     ["gem", "宝石", "寶石"],
+    ["gem level", "宝石等级", "寶石等級"],
     ["gems", "宝石", "寶石"],
     ["generating", "生成", "生成"],
     ["generating a", "生成一个", "生成一個"],
@@ -851,6 +904,7 @@ const INLINE_TERMS = [
     ["has 3", "拥有 3", "擁有 3"],
     ["have", "有", "有"],
     ["hazard", "险境", "險境"],
+    ["heals", "治疗", "治療"],
     ["helmet", "头盔", "頭盔"],
     ["herald", "捷", "捷"],
     ["hide", "隐藏", "隱藏"],
@@ -877,6 +931,7 @@ const INLINE_TERMS = [
     ["intelligence", "智慧", "智慧"],
     ["inverted", "反转", "反轉"],
     ["invocation", "祈唤", "祈喚"],
+    ["invulnerable", "无敌", "無敵"],
     ["is", "是", "是"],
     ["is in your", "在你的", "在你的"],
     ["item", "物品", "物品"],
@@ -891,11 +946,13 @@ const INLINE_TERMS = [
     ["knocks back", "击退", "擊退"],
     ["language", "语言", "語言"],
     ["league", "联盟", "聯盟"],
+    ["leave a", "留下一片", "留下一片"],
     ["leech", "偷取", "偷取"],
     ["less", "更少", "更少"],
     ["level", "等级", "等級"],
     ["level of all", "所有……等级", "所有……等級"],
     ["level requirement", "等级需求", "等級需求"],
+    ["level:", "等级：", "等級："],
     ["levels from gem", "来自宝石的等级", "來自寶石的等級"],
     ["life", "生命", "生命"],
     ["lightning", "闪电", "閃電"],
@@ -921,12 +978,13 @@ const INLINE_TERMS = [
     ["merging", "融合", "融合"],
     ["meta", "元", "元"],
     ["metre", "米", "公尺"],
-    ["metres", "米", "公尺"],
+    ["metres", "米", "米"],
     ["min", "最小", "最小"],
     ["mindful", "正念", "正念"],
     ["minimum", "最小", "最小"],
     ["minion", "召唤物", "召喚物"],
     ["minions", "召唤物", "召喚物"],
+    ["mirage", "幻影", "幻影"],
     ["mitigation", "减伤", "減傷"],
     ["modifier", "词缀", "詞綴"],
     ["modifiers", "词缀", "詞綴"],
@@ -938,6 +996,7 @@ const INLINE_TERMS = [
     ["movement speed", "移动速度", "移動速度"],
     ["moving", "移动中", "移動中"],
     ["multiple", "多个", "多個"],
+    ["muster", "集结", "集結"],
     ["next", "下一页", "下一頁"],
     ["non-", "非", "非"],
     ["normal", "普通", "普通"],
@@ -948,6 +1007,7 @@ const INLINE_TERMS = [
     ["of", "之", "之"],
     ["of base", "基础值的", "基礎值的"],
     ["of explosion", "爆炸的", "爆炸的"],
+    ["of the damage", "的伤害", "的傷害"],
     ["of you and", "你和", "你和"],
     ["off hand", "副手", "副手"],
     ["offensive", "攻击", "攻擊"],
@@ -958,6 +1018,7 @@ const INLINE_TERMS = [
     ["on you", "在你身上", "在你身上"],
     ["orb", "法球", "法球"],
     ["other", "其他", "其他"],
+    ["outside", "外部", "外部"],
     ["parry", "招架", "招架"],
     ["passive", "天赋", "天賦"],
     ["passives", "天赋", "天賦"],
@@ -1009,6 +1070,7 @@ const INLINE_TERMS = [
     ["repeat", "重复", "重複"],
     ["repeatable", "可重复", "可重複"],
     ["requirement", "需求", "需求"],
+    ["requirements", "需求", "需求"],
     ["requires", "需求", "需求"],
     ["requires:", "需求：", "需求："],
     ["reservation", "保留", "保留"],
@@ -1024,12 +1086,14 @@ const INLINE_TERMS = [
     ["seal", "封印", "封印"],
     ["sealing", "封印", "封印"],
     ["search", "搜索", "搜尋"],
+    ["seconds", "秒", "秒"],
     ["secured", "加固", "加固"],
     ["settings", "设置", "設定"],
     ["shapeshift", "变形", "變形"],
     ["shatter", "碎裂", "碎裂"],
     ["shattering", "碎裂", "碎裂"],
     ["shield", "盾牌", "盾牌"],
+    ["shield bubble", "气泡护盾", "氣泡護盾"],
     ["shock", "感电", "感電"],
     ["shock magnitude", "感电效果", "感電效果"],
     ["shocked", "感电", "感電"],
@@ -1058,6 +1122,7 @@ const INLINE_TERMS = [
     ["spells", "法术", "法術"],
     ["spirit", "精魂", "精魂"],
     ["spirit gem", "精魂宝石", "精魂寶石"],
+    ["spirit gems", "精魂宝石", "精魂寶石"],
     ["stack size", "堆叠数量", "堆疊數量"],
     ["staff", "法杖", "法杖"],
     ["stage", "阶段", "階段"],
@@ -1072,6 +1137,8 @@ const INLINE_TERMS = [
     ["stun", "眩晕", "眩暈"],
     ["stun threshold", "眩晕门槛", "眩暈門檻"],
     ["subterfuge", "诡诈", "詭詐"],
+    ["summon", "召唤", "召喚"],
+    ["summons", "召唤", "召喚"],
     ["support", "辅助", "輔助"],
     ["support gem", "辅助宝石", "輔助寶石"],
     ["supports", "辅助", "輔助"],
@@ -1108,11 +1175,13 @@ const INLINE_TERMS = [
     ["warcries", "战吼", "戰吼"],
     ["warcry", "战吼", "戰吼"],
     ["ward", "护盾", "護盾"],
+    ["water djinn", "水之巨灵", "水之巨靈"],
     ["waystone", "引路石", "引路石"],
     ["weapon", "武器", "武器"],
     ["wells", "水井", "水井"],
     ["werewolf", "狼人", "狼人"],
     ["when", "当", "當"],
+    ["when it", "当它", "當它"],
     ["when you kill a", "当你击杀一个", "當你擊殺一個"],
     ["which", "其", "其"],
     ["which can be boosted by", "可被以下加成", "可被以下加成"],
@@ -1243,8 +1312,36 @@ const INLINE_TERMS = [
    *
    * 国服 API 需要登录态（POESESSID）；取不到就静默失败，交给 poedb 兜底。
    * ---------------------------------------------------------- */
-  const CN_API = 'https://poe.game.qq.com/api/trade/data/';
-  const EN_API = 'https://www.pathofexile.com/api/trade/data/';
+  // 国服（腾讯）与国际服的 trade 数据接口。内容两端同步、只是译名不同，
+  // 所以对齐后拿到的就是官方全量译名。域名按游戏版本切换，并逐个探测候选。
+  const API_CANDIDATES = {
+    poe1: {
+      en: ['https://www.pathofexile.com/api/trade/data/'],
+      cn: ['https://poe.game.qq.com/api/trade/data/']
+    },
+    poe2: {
+      en: ['https://www.pathofexile.com/api/trade2/data/', 'https://www.pathofexile.com/api/trade/data/'],
+      cn: ['https://poe2.game.qq.com/api/trade2/data/', 'https://poe2.game.qq.com/api/trade/data/',
+           'https://poe.game.qq.com/api/trade2/data/', 'https://poe.game.qq.com/api/trade/data/']
+    }
+  };
+
+  let resolvedAPI = { en: null, cn: null };   // 探测成功的域名，缓存下来复用
+
+  /** 逐个尝试候选域名，返回第一个真能取到数据的 */
+  async function resolveAPI(kind) {
+    if (resolvedAPI[kind]) return resolvedAPI[kind];
+    const list = API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1;
+    let lastErr;
+    for (const base of list[kind]) {
+      try {
+        const r = await tradeData(base, 'items');
+        resolvedAPI[kind] = base;
+        return base;
+      } catch (e) { lastErr = e; }
+    }
+    throw lastErr || new Error(kind + ' 所有候选域名都取不到');
+  }
 
   async function tradeData(base, name) {
     const url = base + name;
@@ -1272,7 +1369,9 @@ const INLINE_TERMS = [
   }
 
   async function syncFromTencent() {
-    const [enItems, cnItems] = await Promise.all([tradeData(EN_API, 'items'), tradeData(CN_API, 'items')]);
+    const enBase = await resolveAPI('en');
+    const cnBase = await resolveAPI('cn');
+    const [enItems, cnItems] = await Promise.all([tradeData(enBase, 'items'), tradeData(cnBase, 'items')]);
     /** 物品名：英文 name → 官方简中 name */
     const items = alignGroups(enItems, cnItems, (out, e, c) => {
       const en = cleanStr(e && (e.name || e.type));
@@ -1286,7 +1385,7 @@ const INLINE_TERMS = [
     // 词缀：id 两端一致，直接按 id 建索引再对齐，比顺序可靠
     let stats = Object.create(null);
     try {
-      const [enStats, cnStats] = await Promise.all([tradeData(EN_API, 'stats'), tradeData(CN_API, 'stats')]);
+      const [enStats, cnStats] = await Promise.all([tradeData(enBase, 'stats'), tradeData(cnBase, 'stats')]);
       const cnById = new Map();
       for (const g of cnStats) for (const e of (g.entries || [])) {
         if (e && e.id && e.text) cnById.set(e.id, cleanStr(e.text));
@@ -1303,8 +1402,9 @@ const INLINE_TERMS = [
     const n = Object.keys(items).length + Object.keys(stats).length;
     if (!n) throw new Error('腾讯官方接口未返回可用译名');
 
-    applyItems(Object.assign({}, items, stats), '腾讯官方（poe.game.qq.com）', false);
-    return { n, host: 'poe.game.qq.com', items: Object.keys(items).length, stats: Object.keys(stats).length };
+    const host = cnBase.replace(/^https?:\/\//, '').replace(/\/.*$/, '');
+    applyItems(Object.assign({}, items, stats), '腾讯官方（' + host + '）', false);
+    return { n, host, items: Object.keys(items).length, stats: Object.keys(stats).length };
   }
 
   function cleanStr(s) {
@@ -1818,16 +1918,82 @@ const INLINE_TERMS = [
   /* ============================================================
    * 9. 菜单与工具
    * ========================================================== */
-  function exportMissing() {
-    const list = Array.from(state.missing);
-    const blob = new Blob([JSON.stringify({ url: location.href, game: gameKey(), lang: activeLang(), count: list.length, items: list }, null, 2)], { type: 'application/json' });
+  function download(filename, obj) {
+    const blob = new Blob([JSON.stringify(obj, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = `poeninja-missing-${activeLang()}-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+
+  function exportMissing() {
+    const list = Array.from(state.missing);
+    download(`poeninja-missing-${gameKey()}-${activeLang()}-${new Date().toISOString().slice(0, 10)}.json`,
+      { url: location.href, game: gameKey(), lang: activeLang(), count: list.length, items: list });
     GM.notify('已导出 ' + list.length + ' 条未翻译字符串');
+  }
+
+  /** 导出当前生效的词库，用于把它内置进脚本（开发者补词库用） */
+  function exportDict() {
+    const lang = activeLang();
+    const dict = state.dict[lang];
+    const keys = Object.keys(dict);
+    download(`poeninja-dict-${gameKey()}-${lang}-${new Date().toISOString().slice(0, 10)}.json`,
+      { game: gameKey(), lang, source: state.source, count: keys.length, dict });
+    GM.notify('已导出词库 ' + keys.length + ' 条（来源：' + (state.source || '内置') + '）');
+  }
+
+  /** 逐个探测词库源，把结果弹出来——排查"为什么还是英文"用这个 */
+  async function diagnose() {
+    const lines = [`PoeNinjaChinese v${SCRIPT_VERSION}`, `页面：${gameKey()}　语言：${activeLang()}`, ''];
+    const say = (s) => { lines.push(s); console.log('[PoeNinjaChinese] ' + s); };
+
+    say('内置：界面 ' + Object.keys(state.ui.cn).length + ' 条 / 术语 ' + Object.keys(state.terms.cn).length + ' 条');
+    say('内存中物品名词库：' + Object.keys(state.dict[activeLang()]).length + ' 条　来源：' + (state.source || '（空）'));
+    say('');
+
+    const enList = (API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1).en;
+    const cnList = (API_CANDIDATES[gameKey()] || API_CANDIDATES.poe1).cn;
+
+    for (const base of enList) {
+      try { const r = await tradeData(base, 'items'); say('✅ 英文源 ' + base + ' → ' + r.length + ' 组'); }
+      catch (e) { say('❌ 英文源 ' + base + ' → ' + e.message); }
+    }
+    for (const base of cnList) {
+      try {
+        const [en, cn] = await Promise.all([
+          tradeData((resolvedAPI.en && resolvedAPI.en) || enList[0], 'items'),
+          tradeData(base, 'items')
+        ]);
+        let n = 0, groups = 0;
+        const usable = Math.min(en.length, cn.length);
+        for (let g = 0; g < usable; g++) {
+          const ee = (en[g] || {}).entries || [], ce = (cn[g] || {}).entries || [];
+          if (ee.length !== ce.length) continue;
+          groups++;
+          for (let i = 0; i < ee.length; i++) {
+            const a = cleanStr(ee[i] && (ee[i].name || ee[i].type));
+            const b = cleanStr(ce[i] && (ce[i].name || ce[i].type));
+            if (a && b && a !== b) n++;
+          }
+        }
+        say('✅ 中文源 ' + base + ' → 对齐 ' + groups + '/' + usable + ' 组，得到 ' + n + ' 条译名');
+      } catch (e) { say('❌ 中文源 ' + base + ' → ' + e.message); }
+    }
+
+    const poedbHost = gameKey() === 'poe2' ? 'https://poe2db.tw' : 'https://poedb.tw';
+    say('');
+    try {
+      const us = await getJSON(`${poedbHost}/json/autocomplete_us.json`);
+      const cn = await getJSON(`${poedbHost}/json/autocomplete_cn.json`);
+      say('✅ poedb ' + poedbHost + ' → us ' + us.length + ' 条 / cn ' + cn.length + ' 条');
+    } catch (e) { say('❌ poedb ' + poedbHost + ' → ' + e.message); }
+
+    download('poeninja-diagnose-' + new Date().toISOString().slice(0, 10) + '.json', { lines });
+    try { alert(lines.join('\n')); } catch (e) {}
+    GM.notify('诊断完成，结果已弹窗并导出');
   }
 
   function registerMenu() {
@@ -1866,6 +2032,8 @@ const INLINE_TERMS = [
       setTimeout(() => location.reload(), 600);
     });
     GM.menu('📤 导出未翻译字符串', exportMissing);
+    GM.menu('📦 导出当前词库（给开发者补词库用）', exportDict);
+    GM.menu('🔍 诊断词库源', diagnose);
     GM.menu('🧹 清除本地词库缓存', () => { GM.set(K_NAME, null); GM.notify('已清除，刷新后重新拉取'); });
     GM.menu('ℹ️ 关于 PoeNinjaChinese v' + SCRIPT_VERSION, () => {
       GM.notify(`版本 ${SCRIPT_VERSION}　词库来源：${state.source || '内置'}\n简体 ${Object.keys(state.dict.cn).length} 条 / 繁體 ${Object.keys(state.dict.tw).length} 条`);
