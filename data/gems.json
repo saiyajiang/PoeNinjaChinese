@@ -1,773 +1,3910 @@
 {
- "Iron Ward": "钢铁看守",
- "Magma Barrier": "岩浆屏障",
- "Scavenged Plating": "装甲回收",
- "Overwhelming Presence": "压迫气场",
- "Time of Need": "紧急时刻",
- "Berserk": "盛怒",
- "Eternal Rage": "永恒狂怒",
- "Plague Bearer": "瘟疫使者",
- "Herald of Plague": "荒芜之捷",
- "Mirage Archer": "幻影射手",
- "Trail of Caltrops": "铁蒺藜之路",
- "Alchemist's Boon": "炼金师的恩典",
- "Rhoa Mount": "恐喙鸟坐骑",
- "Arctic Armour": "极地装甲",
- "Convalescence": "康复",
- "Grim Feast": "饕餮飨宴",
- "Mana Remnants": "魔力残片",
- "Raging Spirits": "愤怒狂灵",
- "Ravenous Swarm": "饕餮虫群",
- "Withering Presence": "凋零姿态",
- "Blasphemy": "诅咒光环",
- "Blink": "闪现",
- "Cast on Minion Death": "召唤生物死亡时施放",
- "Siphon Elements": "汲取元素",
- "Archmage": "大法师",
- "Cast on Critical": "暴击时施放",
- "Cast on Elemental Ailment": "元素异常状态时施放",
- "Elemental Conflux": "元素汇流",
- "Sacrifice": "替代牺牲",
- "Attrition": "持久鏖战",
- "Briarpatch": "荆刺之缚",
- "Herald of Blood": "赤血之捷",
- "Savage Fury": "凶蛮怒火",
- "War Banner": "战旗",
- "Barkskin": "树肤术",
- "Barrier Invocation": "屏障咒言",
- "Defiance Banner": "抗争战旗",
- "Elemental Invocation": "元素祈求",
- "Lingering Illusion": "徘徊幻影",
- "Shard Scavenger": "碎片回收",
- "Wolf Pack": "狼群",
- "Cast on Dodge": "躲闪时施放",
- "Dread Banner": "恐怖战旗",
- "Feral Invocation": "野性召唤",
- "Reaper's Invocation": "收割祈求",
- "Boneshatter": "七伤破",
- "Earthquake": "震地",
- "Rolling Slam": "轰动猛击",
- "Armour Breaker": "摧甲重击",
- "Infernal Cry": "炽焰战吼",
- "Shield Charge": "重盾冲锋",
- "Shockwave Totem": "震波图腾",
- "Molten Blast": "熔岩爆裂",
- "Perfect Strike": "完美一击",
- "Resonating Shield": "共振护盾",
- "Earthshatter": "尖刺战吼",
- "Leap Slam": "跃击",
- "Shield Wall": "盾墙",
- "Volcanic Fissure": "火山裂缝",
- "Forge Hammer": "锻造之锤",
- "Fortifying Cry": "坚韧战吼",
- "Sunder": "大地震击",
- "Seismic Cry": "震地战吼",
- "Stampede": "奔踏",
- "Supercharged Slam": "蓄威神锤",
- "Ancestral Cry": "先祖战吼",
- "Ancestral Warrior Totem": "先祖战士图腾",
- "Hammer of the Gods": "诸天之锤",
- "Disengage": "退避三舍",
- "Escape Shot": "逃脱射击",
- "Explosive Spear": "爆破战矛",
- "Lightning Arrow": "闪电箭矢",
- "Lightning Rod": "引雷针",
- "Poisonburst Arrow": "毒爆箭",
- "Cull The Weak": "终结弱者",
- "Fangs of Frost": "刺骨寒冰",
- "Freezing Salvo": "冻结齐射",
- "Lightning Spear": "闪电战矛",
- "Rake": "斜掠",
- "Snipe": "狙击",
- "Stormcaller Arrow": "唤雷箭",
- "Vine Arrow": "藤缠箭",
- "Barrage": "弹幕",
- "Electrocuting Arrow": "电殛箭",
- "Ice-Tipped Arrows": "冰尖箭矢",
- "Rapid Assault": "极速进攻",
- "Spearfield": "枪林矛阵",
- "Storm Lance": "岚舞长枪",
- "Toxic Growth": "剧毒增生",
- "Blood Hunt": "猎血寻腥",
- "Gas Arrow": "瓦斯之箭",
- "Glacial Lance": "冰川长枪",
- "Tame Beast": "驯服野兽",
- "Voltaic Mark": "流电印记",
- "Bloodhound's Mark": "血犬印记",
- "Detonating Arrow": "爆破箭",
- "Ice Shot": "冰霜射击",
- "Primal Strikes": "原始打击",
- "Rain of Arrows": "箭雨",
- "Thunderous Leap": "雷鸣飞跃",
- "Elemental Sundering": "元素碎裂",
- "Shockchain Arrow": "连环震击箭",
- "Tornado Shot": "龙卷射击",
- "Whirlwind Lance": "旋风投枪",
- "Magnetic Salvo": "磁性齐射",
- "Spear of Solaris": "日耀之矛",
- "Spiral Volley": "螺旋齐射",
- "Toxic Domain": "毒性领域",
- "Wind Serpent's Fury": "腾蛇之怒",
- "Untether": "深渊心爆",
- "Abyssal Pact": "深渊契约",
- "Bone Blast": "针刺爆发",
- "Cast on Freeze": "冻结时施放",
- "Cast on Ignite": "点燃时施放",
- "Cast on Shock": "感电时施放",
- "Chaos Bolt": "混沌箭",
- "Coiling Bolts": "盘绕魔弹",
- "Conductivity": "导电",
- "Decompose": "降解",
- "Dark Pact": "暗夜契约",
- "Discipline": "纪律",
- "Enervating Nova": "衰颓新星",
- "Exsanguinate": "赤炼魔光",
- "Feast of Flesh": "血肉盛宴",
- "Firebolt": "火焰弹",
- "Flammability": "易燃",
- "Freezing Shards": "急冻碎片",
- "Fulmination": "轰鸣烈焰",
- "Galvanic Field": "电流场",
- "Heart of Ice": "冰雪之心",
- "Hypothermia": "急冻",
- "Icestorm": "冰风暴",
- "Impurity": "不净",
- "Lightning Bolt": "闪电",
- "Malice": "怨毒",
- "Mana Drain": "魔力吸取",
- "Mirror of Refraction": "折射之镜",
- "Power Siphon": "力量抽取",
- "Reap": "赤炼收割",
- "Sigil of Power": "威能法印",
- "Skeletal Sniper": "魔侍神射手",
- "Skeletal Warrior": "魔侍武士",
- "Solar Orb": "日曜球",
- "Soulrend": "裂魂术",
- "Spellslinger": "法术节魔",
- "Spiraling Conspiracy": "鸦群密谋",
- "Ember Fusillade": "灰烬连射",
- "Spark": "电球",
- "Unleash": "释出",
- "Volatile Dead": "灵体火球",
- "Wither": "死亡凋零",
- "Contagion": "瘟疫",
- "Flame Wall": "烈焰之墙",
- "Frost Bomb": "寒霜爆",
- "Ice Nova": "冰霜新星",
- "Unearth": "开掘",
- "Bone Cage": "画地为牢",
- "Enfeeble": "衰弱",
- "Essence Drain": "精华吸取",
- "Fireball": "火球",
- "Frost Darts": "冰霜飞镖",
- "Living Bomb": "活动炸弹",
- "Orb of Storms": "风暴漩涡",
- "Skeletal Arsonist": "魔侍焚焰使",
- "Arc": "电弧",
- "Bonestorm": "尖刺风暴",
- "Frostbolt": "寒冰弹",
- "Pain Offering": "苦痛奉献",
- "Raise Zombie": "魔卫复苏",
- "Skeletal Frost Mage": "魔侍冰霜法师",
- "Snap": "激变",
- "Bind Spectre": "束缚灵体",
- "Detonate Dead": "爆灵术",
- "Elemental Weakness": "元素要害",
- "Mana Tempest": "魔力风暴",
- "Profane Ritual": "不敬之礼",
- "Temporal Chains": "时空锁链",
- "Vulnerability": "脆弱",
- "Dark Effigy": "黑暗塑像",
- "Despair": "绝望",
- "Frost Wall": "冰墙",
- "Incinerate": "烧毁",
- "Lightning Warp": "闪电传送",
- "Skeletal Reaver": "魔侍掠夺者",
- "Ball Lightning": "天雷之珠",
- "Bone Offering": "装甲奉献",
- "Comet": "彗星落",
- "Firestorm": "烈炎风暴",
- "Hexblast": "魔蛊爆炸",
- "Skeletal Storm Mage": "魔侍风暴法师",
- "Eye of Winter": "凛冬之眼",
- "Flameblast": "烈焰爆破",
- "Lightning Conduit": "闪电通道",
- "Skeletal Brute": "魔侍蛮兵",
- "Skeletal Cleric": "魔侍祭司",
- "Soul Offering": "灵之奉献",
- "Ancestral Spirits": "先祖之灵",
- "Wildwood's Gifts": "荒林之赐",
- "Animus Exchange": "命源交换",
- "Animus Splinters": "命源碎片",
- "Apocalypse": "天灾",
- "Archon of Chayula": "夏乌拉执政官",
- "Align Fate": "命运同调",
- "Bleeding Concoction": "创伤灵药",
- "Ruzhan's Trap": "鲁詹之陷阱",
- "Ruzhan's Fury": "鲁詹之怒火",
- "Ruzhan's Reckoning": "鲁詹之清算",
- "Kelari's Deception": "凯拉里之诡计",
- "Kelari's Judgment": "凯拉里之审判",
- "Navira's Well": "纳薇拉之井",
- "Navira's Fracturing": "纳薇拉之裂",
- "Navira's Oasis": "纳薇拉之绿洲",
- "Kelari's Malediction": "凯拉里之诅咒",
- "Elemental Expression": "元素表现",
- "Elemental Storm": "元素风暴",
- "Encase in Jade": "青玉囚笼",
- "Explosive Concoction": "爆破灵药",
- "Fulminating Concoction": "雷鸣灵药",
- "Life Remnants": "生命残片",
- "Meditate": "凝神思",
- "Moment of Vulnerability": "脆弱瞬间",
- "Acidic Concoction": "酸性灵药",
- "Shattering Concoction": "碎冰灵药",
- "the Blazing Sword": "炽焰之剑",
- "Summon Infernal Hound": "召唤炽焰猎犬",
- "the Tainted Sands": "污秽沙暴",
- "the Last Mirage": "终末幻影",
- "Elemental Surge": "元素涌动",
- "Unbound Avatar": "不羁化身",
- "Azmerian Swarms": "阿兹莫里虫群",
- "Azmerian Wolf": "阿兹莫里巨狼",
- "Maul": "重殴",
- "Bitter Dead": "苦涩死亡",
- "Black Powder Blitz": "黑火药闪击",
- "Blood Boil": "血沸",
- "Fire Spell on Hit": "击中时火焰法术",
- "Thundergod's Wrath": "雷霆神祇之怒",
- "Cast on Block": "格挡时施放",
- "Cast on Charm Use": "使用咒符时施放",
- "Chaotic Surge": "混沌涌动",
- "Conductive Runes": "导电符文",
- "Crackling Palm": "霹雳掌",
- "Requiem": "镇魂曲",
- "Crushing Fear": "恐惧终结",
- "Demon Form": "走火入魔",
- "Detonate Living": "活体引爆",
- "Eternal March": "永恒行军",
- "Bursting Fen Toad": "爆裂沼蟾",
- "Explosive Transmutation": "烈性转化",
- "Fragments Of The Past": "往昔碎片",
- "Frostflame Nova": "霜焰新星",
- "Future-Past": "未来的过去",
- "Gemini Surge": "双灵涌动",
- "Grim Pillars": "阴森之柱",
- "Harbinger of Madness": "疯魔先驱",
- "Hollow Focus": "虚空钟灵",
- "Hollow Form": "虚空魅影",
- "Hollow Resonance": "虚空和鸣",
- "Hollow Shell": "虚空之壳",
- "Cackling Companions": "鬣狗同伴",
- "Inevitable Agony": "命定苦痛",
- "Into the Breach": "投身裂隙",
- "Leylines": "地脉",
- "Manifest": "显化武器",
- "Called Shots": "言出箭随",
- "Midnight Zenith": "午夜天顶",
- "Mirage Deadeye": "蜃影神射",
- "Mist Raven": "雾鸦",
- "Molten Crash": "熔岩冲击",
- "Molten Shower": "熔岩骤雨",
- "Soaring Midnight": "午夜翱翔",
- "Parry": "招架",
- "Phantasmal Arrow": "幻灵箭",
- "Pinnacle of Power": "力量巅峰",
- "Axe Slash": "斧挥砍",
- "Mace Strike": "锤打击",
- "Sword Slash": "剑挥砍",
- "Bow Shot": "弓射击",
- "Claw Stab": "爪突刺",
- "Crossbow Shot": "战弩射击",
- "Dagger Stab": "匕首突刺",
- "Flail Strike": "连枷打击",
- "Quarterstaff Strike": "节杖打击",
- "Spear Stab": "战矛突刺",
- "Punch": "拳击",
- "Powered by Verisium": "维金供能",
- "Primal Bounty": "枭羽馈赠",
- "Queen's Procession": "女王冲锋",
- "Rain of Blades": "刀刃之雨",
- "Refutation": "反制",
- "Remnants of Kalguur": "卡古兰残片",
- "Repulsion": "斥退",
- "Ritual Sacrifice": "秘法奉献",
- "Runic Reprieve": "符文援护",
- "Runic Tempering": "符文淬炼",
- "Sanguine Revelry": "嗜血狂宴",
- "Shattering Spite": "碎裂恶意",
- "Raise Shield": "架盾",
- "Rite of Restoration": "恢复圣仪",
- "Skyfall": "天降杀机",
- "Sorcery Ward": "元素结界",
- "Vessel": "灵魂容器",
- "Consecrate": "奉献",
- "Starborn Onslaught": "星辰冲击",
- "Supporting Fire": "支援火力",
- "Temper": "淬炼武器",
- "Temporal Rift": "时空裂隙",
- "The Stars Answer": "群星召唤",
- "Time Freeze": "时间冻结",
- "Time Snap": "时间捕捉",
- "Triskelion Cascade": "三耀辉轮",
- "Herald of the Royal Queen": "皇后之捷",
- "Valako's Charge": "瓦拉克怒冲",
- "Verisium Manifestations": "维金化形",
- "Vivid Stampede": "雄鹿践踏",
- "Void Illusion": "虚空幻影",
- "Voltaic Barrier": "电能屏障",
- "Wardbound Minions": "结界仆从",
- "Wild Protector": "野性守护",
- "Shred": "狼爪撕裂",
- "Rend": "龙爪撕裂",
- "Armour Piercing Rounds": "贯甲弹药",
- "Entangle": "纠缠",
- "Explosive Grenade": "高爆榴弹",
- "Falling Thunder": "霹雳闪",
- "Fragmentation Rounds": "碎裂弹药",
- "Frozen Locus": "冰凌座",
- "Furious Slam": "狂怒猛击",
- "Glacial Cascade": "冰川之刺",
- "Killing Palm": "终结掌",
- "Lunar Assault": "月痕突袭",
- "Permafrost Bolts": "永冻弩箭",
- "Volcano": "火山",
- "Flash Grenade": "闪光榴弹",
- "High Velocity Rounds": "高速弹药",
- "Incendiary Shot": "燃烧射击",
- "Rolling Magma": "熔岩奔涌",
- "Staggering Palm": "惊风掌",
- "Tempest Bell": "风雷钟",
- "Wind Blast": "迅风爆",
- "Wing Blast": "烈风吹袭",
- "Pounce": "巨狼猛扑",
- "Fury of the Mountain": "山岳之怒",
- "Galvanic Shards": "电光散射",
- "Ice Shards": "冰屑",
- "Ice Strike": "幽寒打",
- "Rapid Shot": "快速射击",
- "Tempest Flurry": "风暴乱舞",
- "Thunderstorm": "雷霆风暴",
- "Gas Grenade": "瓦斯榴弹",
- "Vaulting Impact": "跳跃撞击",
- "Arctic Howl": "极地战嚎",
- "Devour": "吞噬",
- "Artillery Ballista": "火力弩炮",
- "Explosive Shot": "爆炸射击",
- "Ferocious Roar": "凶蛮咆哮",
- "Freezing Mark": "冰冻印记",
- "Glacial Bolt": "冰川弩箭",
- "Spell Totem": "法术图腾",
- "Voltaic Grenade": "电涌榴弹",
- "Siphoning Strike": "汲能击",
- "Storm Wave": "移风岚",
- "Wave of Frost": "寒霜浪涌",
- "Cross Slash": "双爪劈击",
- "Charged Staff": "充能杖",
- "Hand of Chayula": "夏乌拉之手",
- "Mantra of Destruction": "毁灭之兆",
- "Oil Barrage": "黏油炮弹",
- "Oil Grenade": "黏油榴弹",
- "Siege Ballista": "攻城炮台",
- "Stormblast Bolts": "轰雷弩箭",
- "Thrashing Vines": "鞭笞藤蔓",
- "Rampage": "横冲直撞",
- "Emergency Reload": "紧急装填",
- "Hailstorm Rounds": "冰雹弹药",
- "Mortar Cannon": "迫击大炮",
- "Shattering Palm": "冰裂掌",
- "Shockburst Rounds": "震爆弹药",
- "Tornado": "龙卷旋风",
- "Whirling Assault": "旋风击",
- "Cluster Grenade": "集束榴弹",
- "Flicker Strike": "闪现打击",
- "Gathering Storm": "聚风雨",
- "Plasma Blast": "离子轰击",
- "Siege Cascade": "摧城倾泻",
- "Walking Calamity": "灾厄行者",
- "Lunar Blessing": "月神赐福",
- "Flame Breath": "龙炎吐息",
- "Auto Reload": "自动装填",
- "Bloodlust": "血怒",
- "Cirel's Cultivation": "西雷尔的教化",
- "Dauntless": "不动如山",
- "Flamepierce": "烈焰穿刺",
- "Helbrym's Hide": "赫尔布林的隐瞒",
- "Rusted Spikes": "锈蚀尖刺",
- "Spar": "角力",
- "Vruun's Inevitability": "弗伦的必然",
- "Zerphi's Infamy": "泽佛伊的恶名",
- "Fire Attunement": "火焰协调",
- "Explosion": "护甲爆破",
- "Battershout": "震撼战吼",
- "Bleed I": "崩溃边缘 I",
- "Brink I": "野性残暴 I",
- "Brutality I": "持续时间压缩 I",
- "Compressed Duration I": "双管齐下 I",
- "Double Barrel I": "效能 I",
- "Efficiency I": "元素军械 I",
- "Armament I": "处决 I",
- "Execute I": "战争铁拳 I",
- "of War I": "持续冲击 I",
- "Enduring Impact I": "长明烈焰 I",
- "Flame I": "点燃 I",
- "Impact Shockwave": "冲击震波",
- "Opening Move": "起手式",
- "Duration I": "狂怒 I",
- "Rage I": "坚定 I",
- "Stomping Ground": "震撼大地",
- "Tireless": "冷酷",
- "Upheaval I": "先锋 I",
- "Aftershock I": "护甲破损 I",
- "Font of Blood": "血脉源泉",
- "Lifetap": "赤炼",
- "Crater": "陨坑",
- "Defy I": "蛮勇打击 I",
- "Direstrike I": "双管齐下 I",
- "Double Barrel II": "元素军械 II",
- "Exploit Weakness": "开发要害",
- "Fan The Flames": "煽风点火",
- "Fire Penetration I": "新装箭匣 I",
- "Fresh Clip I": "坚韧图腾 I",
- "Totems I": "药草学 I",
- "Herbalism I": "炎军 I",
- "Infernal Legion I": "崎岖之地 I",
- "Jagged Ground I": "生命偷取 I",
- "Mark for Death": "死亡印记",
- "Minion Splash I": "持久地面 I",
- "Cry": "愤怒战吼",
- "Remnant Potency I": "反击 I",
- "Selfless Remnants": "无我残片",
- "Short Fuse I": "飞掠石 I",
- "Tectonic Slams": "破釜一击",
- "Stun I": "荆棘皮肤 I",
- "Urgent Totems I": "先锋 I",
- "Eruption": "熔火喷发",
- "Behead II": "流血 II",
- "Bleed II": "分叉裂缝 II",
- "Branching Fissures I": "崩溃边缘 I",
- "Clash": "形势逆转",
- "Cool Headed": "冷静头脑",
- "Deadly Resolve": "致命决心",
- "Searing Flame I": "凌迟 I",
- "Deep Cuts I": "战争铁拳 I",
- "Haemocrystals": "赤炼水晶",
- "Eternal Flame II": "点燃 II",
- "Immolate": "献祭",
- "Knockback": "击退",
- "Leech II": "肉盾 II",
- "Meat Shield II": "持久地面 II",
- "Persistent Ground II": "持续时间延长 II",
- "Quill Burst": "棘刺爆发",
- "Refraction II": "增强图腾 II",
- "Rending Apex": "撕裂巅峰",
- "Rip": "撕裂",
- "Rupture": "残破",
- "Splinter Totem I": "坚定 I",
- "Steadfast II": "坚忍 II",
- "Tear": "撕扯",
- "Urgent Totems II": "余震 II",
- "Aftershock II": "先祖召唤 II",
- "Ancestral Call I": "护甲破损 I",
- "Concoct II": "焚躯烈焰 II",
- "Flame II": "蛮勇打击 II",
- "Echoing Cry": "回荡战嚎",
- "Efficiency II": "燃怒战吼 II",
- "Warcry I": "处决 I",
- "Fan The Flames II": "煽风点火II",
- "Fire Exposure": "火焰曝露",
- "Fresh Clip II": "坚韧图腾 II",
- "Totems II": "持续冲击 II",
- "Enduring Impact II": "药草学 II",
- "Incision": "创口",
- "Long Fuse I": "死亡印记 I",
- "Heavy Swing": "沉重挥舞",
- "Rage II": "怒火锤炼 II",
- "Potency III": "反击 III",
- "Retaliate II": "短暂引信 II",
- "Short Fuse II": "飞掠石 II",
- "Stone II": "晕眩 II",
- "Syzygy": "朔望",
- "Thornskin II": "紧急图腾 II",
- "Urgent Totems III": "活力 III",
- "Ancestral Call II": "荆棘倒刺 II",
- "Barbs III": "荆棘倒刺 III",
- "Barbs II": "流血 II",
- "Bleed IV": "流血 IV",
- "Brambleslam": "遍地荆棘",
- "Branching Fissures II": "野性残暴 II",
- "Corrupting Cry II": "凌迟 II",
- "Deep Cuts II": "顽抗 II",
- "Defy II": "双管齐下 II",
- "Double Barrel III": "元素军械 III",
- "Elemental Armament III": "燃怒战吼 III",
- "Enraged Warcry II": "处决 II",
- "Execute III": "火焰穿透 III",
- "Penetration II": "战争铁拳 II",
- "Heft": "势大力沉",
- "Holy Descent": "神圣降临",
- "Ignite III": "炎军 III",
- "Infernal Legion II": "崎岖之地 II",
- "Jagged Ground II": "生命偷取 II",
- "Life Leech III": "加长引线 III",
- "Long Fuse II": "召唤生物溅射伤害 II",
- "Splash II": "持久地面 II",
- "Persistent Ground III": "狂怒 III",
- "Rageforged II": "折射 II",
- "Reinforced Totems II": "碎片图腾 II",
- "Splinter Totem II": "坚忍 II",
- "Stoicism II": "晕眩 II",
- "Chimes": "辅助艾利丝钟琴",
- "Atziri's Impatience": "阿兹里的焦躁",
- "Dreamer's Knell": "幻梦者的丧钟",
- "Murderous Intent": "坚韧磨砺",
- "Thunder": "伊奥尼尔的雷霆",
- "Ferocity": "狂暴",
- "Resolve": "格鲁坎的决心",
- "Life Bounty": "生命丰沛",
- "Lockdown": "封锁",
- "Malady": "错乱病症",
- "Bounty": "魔力丰沛",
- "Overextend": "竭力痛击",
- "Dominus' Grasp": "神主之握",
- "Stormchain": "风暴连锁",
- "Tasalio's Rhythm": "塔萨里奥的律动",
- "Lightning Attunement": "闪电协调",
- "Blindside": "盲点",
- "Charge Profusion I": "连击终结 I",
- "Corrosion": "腐蚀",
- "Escalating Poison": "毒性加剧",
- "Heightened Accuracy I": "冗余 I",
- "Innervate": "闪电支配",
- "Life Drain": "生命榨取",
- "Pierce I": "定身 I",
- "Pin I": "中毒 I",
- "Poison I": "精准 I",
- "Precision I": "投射物加速 I",
- "Projectile Acceleration I": "投射物减速 I",
- "Projectile Deceleration I": "迫近追逐 I",
- "Pursuit I": "快速攻击 I",
- "Rapid Attacks I": "撤退 I",
- "Shock": "感电",
- "Slow Potency": "减速效能",
- "Swift Affliction I": "大好时机 I",
- "Window of Opportunity I": "胶粘榴弹 I",
- "Adhesive Grenades I": "榴弹 I",
- "Admixture": "混合物",
- "Ammo Conservation I": "致盲 I",
- "Blind I": "丰饶 I",
- "Cadence": "节律",
- "Inhibitor": "抑制器",
- "Commiserate": "以己度人",
- "Delayed Gratification": "延迟满足",
- "Durability": "耐久度",
- "Electrocute": "触电",
- "Frenzied Riposte": "狂怒反击",
- "Frozen Spite": "冰冻怨恨",
- "Lightning Penetration": "闪电穿透",
- "Maim": "瘫痪",
- "Momentum": "动量",
- "Overreach": "过度延伸",
- "Pin II": "助力之风 II",
- "Leap": "电震跃击",
- "Bursting Plague": "迸发之疫",
- "Volt": "电伏积聚",
- "Adhesive Grenades II": "相性 II",
- "Caltrops": "铁蒺藜",
- "Close Combat I": "连击终结 I",
- "Combo Finisher II": "冷却回复 II",
- "Cooldown Recovery I": "登峰造极 I",
- "Deadly Herald": "致命之捷",
- "Deliberation": "从容不迫",
- "Fork": "分叉",
- "Soul Drain": "魂魔榨取",
- "Mobility": "机动",
- "Poison Spores": "毒孢迸溅",
- "Practiced Combo": "娴熟连击",
- "Punch Through": "击穿",
- "Pursuit II": "重新武装 II",
- "Rearm I": "撤退 I",
- "Streamlined Rounds": "流线弹药",
- "Warm Blooded": "温热血脉",
- "Alignment II": "节省弹药 II",
- "Ammo Conservation II": "丰饶 II",
- "Hazard": "受控危技",
- "Strike I": "致命毒素 I",
- "Delayed Reaction": "延迟激活",
- "Hit and Run": "连打带跑",
- "Impale": "穿刺",
- "Exposure": "闪电曝露",
- "Nimble Reload": "敏捷装填",
- "Overcharge": "过载",
- "Payload": "子母弹",
- "Perfected Endurance": "完美耐力",
- "Perfection": "完美",
- "Projectile Acceleration II": "快速攻击 II",
- "Rapid Attacks II": "助力之风 II",
- "Volley": "灵体齐射",
- "Ricochet II": "相性 II",
- "Alignment III": "节省弹药 III",
- "Ammo Conservation III": "致盲 III",
- "Mark": "充能印记",
- "Close Combat II": "终结 II",
- "Culling Strike II": "登峰造极 II",
- "Culmination II": "穿透 II",
- "Pierce III": "定身 III",
- "Pin III": "中毒 III",
- "Poison III": "投射物加速 III",
- "Pursuit III": "快速攻击 III",
- "Rearm II": "撤退 II",
- "Retreat III": "助力之风 III",
- "Second Wind III": "极速腐化 III",
- "Affliction III": "大好时机 III",
- "Channelling Ahn's Citadel": "吟唱汉恩的城塞",
- "Atziri's Call": "阿兹里的呼唤",
- "Bhatair's Vengeance": "巴蒂尔的复仇",
- "Commandment": "调遣",
- "Shock Siphon": "感电虹吸",
- "Freezefork": "冻结分叉",
- "Zarokh's Revolt": "扎洛卡的反叛",
- "Cold Attunement": "冰霜协调",
- "Ambush": "伏击",
- "Surge": "秘术增强",
- "Burgeon I": "清晰 I",
- "Concentrated Area": "范围集中",
- "Controlled Destruction": "精准破坏",
- "Creeping Chill": "蔓延霜寒",
- "Crystalline Shards": "水晶碎片",
- "Curse": "强效诅咒",
- "Coursing Current": "奔雷疾走",
- "Elemental Army": "元素大军",
- "Expanse": "开疆",
- "Hourglass": "时之沙漏",
- "Impending Doom": "末日将至",
- "Last Gasp": "亡命之息",
- "Deep Freeze": "深度冻结",
- "Mark of Siphoning": "虹吸印记",
- "Rapid Casting I": "替罪羔羊 I",
- "Spell Cascade": "多重范围施法",
- "Thrill of the Kill": "杀戮快感",
- "Touch": "凋零之触",
- "Abiding Hex": "恒远魔蛊",
- "Acrimony": "尖刻",
- "Ambrosia": "仙馔",
- "Bone Shrapnel": "钙质碎片",
- "Catharsis": "泄除",
- "Cold Penetration": "冰霜穿透",
- "Considered Casting": "审慎施法",
- "Crackling Barrier": "霹雳屏障",
- "Danse Macabre": "死亡之舞",
- "Deathmarch": "终末行军",
- "Embitter": "苦寒之意",
- "Encroaching Ground": "侵蚀地面",
- "Excise": "净除",
- "Growth": "迅猛绽放",
- "Fiery Death": "炽灭",
- "Focused Curse": "聚焦诅咒",
- "Freeze": "冻结",
- "Glacier": "冰川",
- "Gorge": "狼吞虎咽",
- "Icicle": "冰刺",
- "Agony": "剧烈痛苦",
- "Living Lightning": "活体闪电",
- "Loyalty": "忠诚",
- "Mana Flare": "魔力耀斑",
- "Font of Mana": "魔力源泉",
- "Mana Leech": "魔力偷取",
- "Minion Instability": "复仇之灵",
- "Shock Conduction": "感电传导",
- "Spell Echo": "施法回响",
- "Rising Tempest": "风暴骤起",
- "Wildfire": "野火",
- "Chaos Attunement": "混沌协调",
- "Projection": "星界投射",
- "Brittle Armour": "脆弱护甲",
- "Chaotic Freeze": "混沌冻结",
- "Corpse Conservation": "灵柩留存",
- "Ground": "诅咒之地",
- "Decaying Hex": "衰颓魔蛊",
- "Drain Ailments": "异常状态吸收",
- "Elemental Discharge": "元素解放",
- "Elemental Focus": "元素集中",
- "Capacitor": "能量电容",
- "Retention": "能量保存",
- "Essence Harvest": "收割精华",
- "Execrate": "怨恨",
- "Extraction": "萃取",
- "Feeding Frenzy I": "和谐残迹 I",
- "Fluke": "运势",
- "Frostfire": "霜火",
- "Gambleshot": "投机射击",
- "Hex Bloom": "魔蛊绽放",
- "Supercritical": "特化暴击",
- "Critical I": "范围扩大 I",
- "Muster": "海纳百川",
- "Practical Magic I": "实用魔法I",
- "Ritualistic Curse": "仪祭诅咒",
- "Sacrificial Offering": "牺牲供奉",
- "Electromagnetism": "电磁力场",
- "Static Shocks": "静电脉冲",
- "Stormfire": "风暴之炎",
- "Strong Hearted": "强健心灵",
- "Thrill of the Kill II": "杀戮快感II",
- "Verglas": "雨淞",
- "Volatility": "无常",
- "Fortress II": "狂野碎片 II",
- "Advancing Storm": "风暴行军",
- "Boundless Energy II": "迅猛增幅 II",
- "Burning Inscription": "燃烧铭文",
- "Cold Exposure": "冰霜曝露",
- "Concussive Spells": "冲击法术",
- "Crazed Minions": "癫狂召唤生物",
- "Derange": "错乱",
- "Sparks II": "狂噬 II",
- "Hulking Minions": "魁梧仆从",
- "Inexorable Critical II": "活体闪电 II",
- "Mark of Siphoning II": "虹吸印记II",
- "Minion Pact II": "灵秘 II",
- "Mysticism II": "快速施法 II",
- "Rapid Casting II": "升流 II",
- "Upwelling II": "奉命 II",
- "Catalysing Elements": "元素催化",
- "Chaos Mastery": "混沌专精",
- "Cold Mastery": "冰霜专精",
- "Expand": "扩展",
- "Accelerated Growth II": "迅猛绽放II",
- "Lightning Mastery": "闪电专精",
- "Minion Mastery": "召唤生物专精",
- "Physical Mastery": "物理专精",
- "Practical Magic II": "实用魔法II",
- "Profanity II": "快速施法 II",
- "Rapid Casting III": "狂野碎片 III",
- "Projectile Arbiter's Reach": "投射物仲裁官之握",
- "Breachlord's Amalgam": "裂隙领主的融合体",
- "Catha's Brilliance": "卡莎的光辉",
- "Concussive Runes": "震荡符文",
- "Esh's Prowess": "艾许的骁勇",
- "Fist Of Kalguur": "卡古兰之拳",
- "Healing Runes": "治疗符文",
- "Medved's Felling": "梅德维德的砍伐",
- "Mórrigan's Insight": "莫丽根的洞察",
- "Olroth's Hubris": "欧罗什的傲慢",
- "Prototype Seventeen": "原型十七",
- "Runeforged Blades": "符文之刃",
- "Runic Extraction": "符文提取",
- "Runic Infusion": "符文灌注",
- "Scouring Flame": "涤罪之火",
- "Seraph's Heart": "炽天使之心",
- "Styrn's Ferocity": "斯泰恩的凶残",
- "Styrn's Mountain": "斯泰恩的山岳",
- "Tangmazu's Thurible": "唐玛祖的香炉",
- "Trickster's Shard": "欺诈者碎片",
- "Tul's Avalanche": "托沃的雪崩",
- "Uhtred's Rite": "乌崔德仪式",
- "Vorana's Siege": "沃拉娜的围城",
- "Ruzhan, the Blazing Sword": "鲁詹,炽焰之剑",
- "Kelari, the Tainted Sands": "凯拉里,污秽沙暴",
- "Navira, the Last Mirage": "纳薇拉,终末幻影",
- "Manifest Weapon": "显化武器",
- "Temper Weapon": "淬炼武器",
- "Navira's Embrace": "纳薇拉之拥抱",
- "Kelari's Embrace": "凯拉里之拥抱",
- "Ruzhan's Embrace": "鲁詹之拥抱"
+ "Herald of Ash": {
+  "cn": "灰烬之捷",
+  "tw": "灰燼之捷"
+ },
+ "Iron Ward": {
+  "cn": "钢铁看守",
+  "tw": "鋼鐵守護"
+ },
+ "Magma Barrier": {
+  "cn": "岩浆屏障",
+  "tw": "熔岩屏障"
+ },
+ "Scavenged Plating": {
+  "cn": "装甲回收",
+  "tw": "拾荒者護板"
+ },
+ "Overwhelming Presence": {
+  "cn": "压迫气场",
+  "tw": "壓倒性的存在"
+ },
+ "Time of Need": {
+  "cn": "紧急时刻",
+  "tw": "緊急時刻"
+ },
+ "Berserk": {
+  "cn": "盛怒",
+  "tw": "狂戰"
+ },
+ "Eternal Rage": {
+  "cn": "永恒狂怒",
+  "tw": "無盡怒火"
+ },
+ "Herald of Thunder": {
+  "cn": "闪电之捷",
+  "tw": "閃電之捷"
+ },
+ "Plague Bearer": {
+  "cn": "瘟疫使者",
+  "tw": "病疫之難"
+ },
+ "Wind Dancer": {
+  "cn": "风舞者",
+  "tw": "風魔舞者"
+ },
+ "Combat Frenzy": {
+  "cn": "战斗狂怒",
+  "tw": "戰鬥狂怒"
+ },
+ "Herald of Plague": {
+  "cn": "荒芜之捷",
+  "tw": "瘟疫之捷"
+ },
+ "Mirage Archer": {
+  "cn": "幻影射手",
+  "tw": "幻影射手"
+ },
+ "Trail of Caltrops": {
+  "cn": "铁蒺藜之路",
+  "tw": "蒺藜之徑"
+ },
+ "Alchemist's Boon": {
+  "cn": "炼金师的恩典",
+  "tw": "煉金師恩惠"
+ },
+ "Rhoa Mount": {
+  "cn": "恐喙鸟坐骑",
+  "tw": "恐喙鳥坐騎"
+ },
+ "Arctic Armour": {
+  "cn": "极地装甲",
+  "tw": "極地裝甲"
+ },
+ "Convalescence": {
+  "cn": "康复",
+  "tw": "恢復期"
+ },
+ "Grim Feast": {
+  "cn": "饕餮飨宴",
+  "tw": "冷酷之宴"
+ },
+ "Mana Remnants": {
+  "cn": "魔力残片",
+  "tw": "魔力痕跡"
+ },
+ "Raging Spirits": {
+  "cn": "愤怒狂灵",
+  "tw": "憤怒狂靈"
+ },
+ "Ravenous Swarm": {
+  "cn": "饕餮虫群",
+  "tw": "貪婪蟲群"
+ },
+ "Withering Presence": {
+  "cn": "凋零姿态",
+  "tw": "凋零光環"
+ },
+ "Blasphemy": {
+  "cn": "诅咒光环",
+  "tw": "詛咒光環"
+ },
+ "Blink": {
+  "cn": "闪现",
+  "tw": "閃現"
+ },
+ "Cast on Minion Death": {
+  "cn": "召唤生物死亡时施放",
+  "tw": "召喚生物死亡時施放"
+ },
+ "Siphon Elements": {
+  "cn": "汲取元素",
+  "tw": "汲取元素"
+ },
+ "Archmage": {
+  "cn": "大法师",
+  "tw": "大法師"
+ },
+ "Cast on Critical": {
+  "cn": "暴击时施放",
+  "tw": "暴擊時施放"
+ },
+ "Cast on Elemental Ailment": {
+  "cn": "元素异常状态时施放",
+  "tw": "元素異常狀態時施放"
+ },
+ "Elemental Conflux": {
+  "cn": "元素汇流",
+  "tw": "元素匯流"
+ },
+ "Sacrifice": {
+  "cn": "替代牺牲",
+  "tw": "替代犧牲"
+ },
+ "Attrition": {
+  "cn": "持久鏖战",
+  "tw": "持久鏖戰"
+ },
+ "Briarpatch": {
+  "cn": "荆刺之缚",
+  "tw": "荊刺之縛"
+ },
+ "Ghost Dance": {
+  "cn": "幽灵舞步",
+  "tw": "幽靈舞步"
+ },
+ "Herald of Blood": {
+  "cn": "赤血之捷",
+  "tw": "鮮血之捷"
+ },
+ "Herald of Ice": {
+  "cn": "寒冰之捷",
+  "tw": "冰霜之捷"
+ },
+ "Savage Fury": {
+  "cn": "凶蛮怒火",
+  "tw": "殘猛狂怒"
+ },
+ "War Banner": {
+  "cn": "战旗",
+  "tw": "戰爭之旗"
+ },
+ "Barkskin": {
+  "cn": "树肤术",
+  "tw": "木質外膚"
+ },
+ "Barrier Invocation": {
+  "cn": "屏障咒言",
+  "tw": "屏障祈願"
+ },
+ "Defiance Banner": {
+  "cn": "抗争战旗",
+  "tw": "反抗之旗"
+ },
+ "Elemental Invocation": {
+  "cn": "元素祈求",
+  "tw": "元素祈願"
+ },
+ "Lingering Illusion": {
+  "cn": "徘徊幻影",
+  "tw": "殘留幻象"
+ },
+ "Shard Scavenger": {
+  "cn": "碎片回收",
+  "tw": "碎片清除者"
+ },
+ "Wolf Pack": {
+  "cn": "狼群",
+  "tw": "召喚惡狼"
+ },
+ "Cast on Dodge": {
+  "cn": "躲闪时施放",
+  "tw": "閃避時施放"
+ },
+ "Charge Regulation": {
+  "cn": "能量球调节",
+  "tw": "充能調節"
+ },
+ "Dread Banner": {
+  "cn": "恐怖战旗",
+  "tw": "恐怖戰旗"
+ },
+ "Feral Invocation": {
+  "cn": "野性召唤",
+  "tw": "野性召喚"
+ },
+ "Reaper's Invocation": {
+  "cn": "收割祈求",
+  "tw": "收割祈求"
+ },
+ "Trinity": {
+  "cn": "三位一体",
+  "tw": "三位一體"
+ },
+ "Boneshatter": {
+  "cn": "七伤破",
+  "tw": "碎骨"
+ },
+ "Earthquake": {
+  "cn": "震地",
+  "tw": "震地"
+ },
+ "Rolling Slam": {
+  "cn": "轰动猛击",
+  "tw": "翻騰重擊"
+ },
+ "Armour Breaker": {
+  "cn": "摧甲重击",
+  "tw": "護甲碎擊"
+ },
+ "Infernal Cry": {
+  "cn": "炽焰战吼",
+  "tw": "煉獄戰吼"
+ },
+ "Shield Charge": {
+  "cn": "重盾冲锋",
+  "tw": "重盾衝鋒"
+ },
+ "Shockwave Totem": {
+  "cn": "震波图腾",
+  "tw": "震波圖騰"
+ },
+ "Molten Blast": {
+  "cn": "熔岩爆裂",
+  "tw": "熔火爆破"
+ },
+ "Perfect Strike": {
+  "cn": "完美一击",
+  "tw": "完美打擊"
+ },
+ "Resonating Shield": {
+  "cn": "共振护盾",
+  "tw": "共鳴之盾"
+ },
+ "Earthshatter": {
+  "cn": "尖刺战吼",
+  "tw": "碎地重擊"
+ },
+ "Leap Slam": {
+  "cn": "跃击",
+  "tw": "躍擊"
+ },
+ "Shield Wall": {
+  "cn": "盾墙",
+  "tw": "盾牆"
+ },
+ "Volcanic Fissure": {
+  "cn": "火山裂缝",
+  "tw": "炎火脈動"
+ },
+ "Forge Hammer": {
+  "cn": "锻造之锤",
+  "tw": "鍛造之錘"
+ },
+ "Fortifying Cry": {
+  "cn": "坚韧战吼",
+  "tw": "堅韌之吼"
+ },
+ "Sunder": {
+  "cn": "大地震击",
+  "tw": "大地震擊"
+ },
+ "Seismic Cry": {
+  "cn": "震地战吼",
+  "tw": "裂地戰吼"
+ },
+ "Stampede": {
+  "cn": "奔踏",
+  "tw": "踐踏"
+ },
+ "Supercharged Slam": {
+  "cn": "蓄威神锤",
+  "tw": "超載重擊"
+ },
+ "Ancestral Cry": {
+  "cn": "先祖战吼",
+  "tw": "先祖戰吼"
+ },
+ "Ancestral Warrior Totem": {
+  "cn": "先祖战士图腾",
+  "tw": "先祖戰士圖騰"
+ },
+ "Hammer of the Gods": {
+  "cn": "诸天之锤",
+  "tw": "眾神之錘"
+ },
+ "Disengage": {
+  "cn": "退避三舍",
+  "tw": "脫離戰鬥"
+ },
+ "Escape Shot": {
+  "cn": "逃脱射击",
+  "tw": "逃脫之矢"
+ },
+ "Explosive Spear": {
+  "cn": "爆破战矛",
+  "tw": "爆炸長矛"
+ },
+ "Lightning Arrow": {
+  "cn": "闪电箭矢",
+  "tw": "閃電箭矢"
+ },
+ "Lightning Rod": {
+  "cn": "引雷针",
+  "tw": "雷霆之杖"
+ },
+ "Poisonburst Arrow": {
+  "cn": "毒爆箭",
+  "tw": "毒爆箭矢"
+ },
+ "Twister": {
+  "cn": "旋龙",
+  "tw": "旋風"
+ },
+ "Whirling Slash": {
+  "cn": "回旋挥斩",
+  "tw": "迴旋斬"
+ },
+ "Cull The Weak": {
+  "cn": "终结弱者",
+  "tw": "撲殺弱者"
+ },
+ "Fangs of Frost": {
+  "cn": "刺骨寒冰",
+  "tw": "刺骨寒冰"
+ },
+ "Freezing Salvo": {
+  "cn": "冻结齐射",
+  "tw": "凍結齊射"
+ },
+ "Lightning Spear": {
+  "cn": "闪电战矛",
+  "tw": "閃電長矛"
+ },
+ "Rake": {
+  "cn": "斜掠",
+  "tw": "陰爪"
+ },
+ "Snipe": {
+  "cn": "狙击",
+  "tw": "狙擊"
+ },
+ "Stormcaller Arrow": {
+  "cn": "唤雷箭",
+  "tw": "風暴呼喚箭矢"
+ },
+ "Vine Arrow": {
+  "cn": "藤缠箭",
+  "tw": "藤蔓箭矢"
+ },
+ "Barrage": {
+  "cn": "弹幕",
+  "tw": "彈幕"
+ },
+ "Electrocuting Arrow": {
+  "cn": "电殛箭",
+  "tw": "電極箭矢"
+ },
+ "Ice-Tipped Arrows": {
+  "cn": "冰尖箭矢",
+  "tw": "冰鏃箭矢"
+ },
+ "Rapid Assault": {
+  "cn": "极速进攻",
+  "tw": "極速進攻"
+ },
+ "Spearfield": {
+  "cn": "枪林矛阵",
+  "tw": "長矛之錐"
+ },
+ "Storm Lance": {
+  "cn": "岚舞长枪",
+  "tw": "風暴之槍"
+ },
+ "Toxic Growth": {
+  "cn": "剧毒增生",
+  "tw": "毒素植栽"
+ },
+ "Blood Hunt": {
+  "cn": "猎血寻腥",
+  "tw": "鮮血狩獵"
+ },
+ "Gas Arrow": {
+  "cn": "瓦斯之箭",
+  "tw": "毒氣箭矢"
+ },
+ "Glacial Lance": {
+  "cn": "冰川长枪",
+  "tw": "冰川之槍"
+ },
+ "Sniper's Mark": {
+  "cn": "狙击印记",
+  "tw": "狙擊者印記"
+ },
+ "Tame Beast": {
+  "cn": "驯服野兽",
+  "tw": "馴獸"
+ },
+ "Voltaic Mark": {
+  "cn": "流电印记",
+  "tw": "電流印記"
+ },
+ "Bloodhound's Mark": {
+  "cn": "血犬印记",
+  "tw": "鮮血獵犬印記"
+ },
+ "Detonating Arrow": {
+  "cn": "爆破箭",
+  "tw": "爆破箭矢"
+ },
+ "Ice Shot": {
+  "cn": "冰霜射击",
+  "tw": "冰霜射擊"
+ },
+ "Primal Strikes": {
+  "cn": "原始打击",
+  "tw": "原始打擊"
+ },
+ "Rain of Arrows": {
+  "cn": "箭雨",
+  "tw": "箭雨"
+ },
+ "Thunderous Leap": {
+  "cn": "雷鸣飞跃",
+  "tw": "雷霆跳躍"
+ },
+ "Elemental Sundering": {
+  "cn": "元素碎裂",
+  "tw": "元素崩裂"
+ },
+ "Shockchain Arrow": {
+  "cn": "连环震击箭",
+  "tw": "電鍊箭矢"
+ },
+ "Tornado Shot": {
+  "cn": "龙卷射击",
+  "tw": "龍捲射擊"
+ },
+ "Whirlwind Lance": {
+  "cn": "旋风投枪",
+  "tw": "旋風之槍"
+ },
+ "Magnetic Salvo": {
+  "cn": "磁性齐射",
+  "tw": "電磁齊射"
+ },
+ "Spear of Solaris": {
+  "cn": "日耀之矛",
+  "tw": "日耀長矛"
+ },
+ "Spiral Volley": {
+  "cn": "螺旋齐射",
+  "tw": "螺旋之弦"
+ },
+ "Toxic Domain": {
+  "cn": "毒性领域",
+  "tw": "毒素領域"
+ },
+ "Wind Serpent's Fury": {
+  "cn": "腾蛇之怒",
+  "tw": "勁風蝮蛇之怒"
+ },
+ "Untether": {
+  "cn": "深渊心爆",
+  "tw": "解脫"
+ },
+ "Abyssal Pact": {
+  "cn": "深渊契约",
+  "tw": "深淵冥約"
+ },
+ "Bone Blast": {
+  "cn": "针刺爆发",
+  "tw": "骨之爆破"
+ },
+ "Cast on Freeze": {
+  "cn": "冻结时施放",
+  "tw": "冰凍時施放"
+ },
+ "Cast on Ignite": {
+  "cn": "点燃时施放",
+  "tw": "點燃時施放"
+ },
+ "Cast on Shock": {
+  "cn": "感电时施放",
+  "tw": "感電時施放"
+ },
+ "Chaos Bolt": {
+  "cn": "混沌箭",
+  "tw": "混沌弩箭"
+ },
+ "Coiling Bolts": {
+  "cn": "盘绕魔弹",
+  "tw": "寂纏彈"
+ },
+ "Conductivity": {
+  "cn": "导电",
+  "tw": "導電"
+ },
+ "Decompose": {
+  "cn": "降解",
+  "tw": "降解"
+ },
+ "Dark Pact": {
+  "cn": "暗夜契约",
+  "tw": "暗夜血契"
+ },
+ "Discipline": {
+  "cn": "纪律",
+  "tw": "紀律"
+ },
+ "Enervating Nova": {
+  "cn": "衰颓新星",
+  "tw": "超能新星"
+ },
+ "Exsanguinate": {
+  "cn": "赤炼魔光",
+  "tw": "抽血"
+ },
+ "Feast of Flesh": {
+  "cn": "血肉盛宴",
+  "tw": "血肉盛宴"
+ },
+ "Firebolt": {
+  "cn": "火焰弹",
+  "tw": "火彈"
+ },
+ "Flammability": {
+  "cn": "易燃",
+  "tw": "易燃"
+ },
+ "Freezing Shards": {
+  "cn": "急冻碎片",
+  "tw": "冰凍裂片"
+ },
+ "Fulmination": {
+  "cn": "轰鸣烈焰",
+  "tw": "劇烈爆發"
+ },
+ "Galvanic Field": {
+  "cn": "电流场",
+  "tw": "電光領域"
+ },
+ "Heart of Ice": {
+  "cn": "冰雪之心",
+  "tw": "冰雪之心"
+ },
+ "Hypothermia": {
+  "cn": "急冻",
+  "tw": "急凍"
+ },
+ "Icestorm": {
+  "cn": "冰风暴",
+  "tw": "冰風暴"
+ },
+ "Impurity": {
+  "cn": "不净",
+  "tw": "不淨"
+ },
+ "Lightning Bolt": {
+  "cn": "闪电",
+  "tw": "雷彈"
+ },
+ "Malice": {
+  "cn": "怨毒",
+  "tw": "絕滅恨惡"
+ },
+ "Mana Drain": {
+  "cn": "魔力吸取",
+  "tw": "魔力吸取"
+ },
+ "Mirror of Refraction": {
+  "cn": "折射之镜",
+  "tw": "鏡面折射"
+ },
+ "Power Siphon": {
+  "cn": "力量抽取",
+  "tw": "力量抽取"
+ },
+ "Purity of Fire": {
+  "cn": "火焰净化",
+  "tw": "火焰淨化"
+ },
+ "Purity of Ice": {
+  "cn": "冰霜净化",
+  "tw": "冰霜淨化"
+ },
+ "Purity of Lightning": {
+  "cn": "闪电净化",
+  "tw": "閃電淨化"
+ },
+ "Reap": {
+  "cn": "赤炼收割",
+  "tw": "收割"
+ },
+ "Sigil of Power": {
+  "cn": "威能法印",
+  "tw": "咒符之力"
+ },
+ "Skeletal Sniper": {
+  "cn": "魔侍神射手",
+  "tw": "骷髏狙擊手"
+ },
+ "Skeletal Warrior": {
+  "cn": "魔侍武士",
+  "tw": "骷髏战士"
+ },
+ "Solar Orb": {
+  "cn": "日曜球",
+  "tw": "日耀球"
+ },
+ "Soulrend": {
+  "cn": "裂魂术",
+  "tw": "裂魂術"
+ },
+ "Spellslinger": {
+  "cn": "法术节魔",
+  "tw": "法術節魔"
+ },
+ "Spiraling Conspiracy": {
+  "cn": "鸦群密谋",
+  "tw": "鴉羣密謀"
+ },
+ "Ember Fusillade": {
+  "cn": "灰烬连射",
+  "tw": "灰燼連射"
+ },
+ "Spark": {
+  "cn": "电球",
+  "tw": "電球"
+ },
+ "Unleash": {
+  "cn": "释出",
+  "tw": "釋放"
+ },
+ "Volatile Dead": {
+  "cn": "灵体火球",
+  "tw": "致命之息"
+ },
+ "Wither": {
+  "cn": "死亡凋零",
+  "tw": "死亡凋零"
+ },
+ "Contagion": {
+  "cn": "瘟疫",
+  "tw": "瘟疫"
+ },
+ "Flame Wall": {
+  "cn": "烈焰之墙",
+  "tw": "烈焰之牆"
+ },
+ "Frost Bomb": {
+  "cn": "寒霜爆",
+  "tw": "寒霜爆"
+ },
+ "Ice Nova": {
+  "cn": "冰霜新星",
+  "tw": "冰霜新星"
+ },
+ "Unearth": {
+  "cn": "开掘",
+  "tw": "開掘"
+ },
+ "Bone Cage": {
+  "cn": "画地为牢",
+  "tw": "畫地爲牢"
+ },
+ "Enfeeble": {
+  "cn": "衰弱",
+  "tw": "衰弱"
+ },
+ "Essence Drain": {
+  "cn": "精华吸取",
+  "tw": "靈魂吸取"
+ },
+ "Fireball": {
+  "cn": "火球",
+  "tw": "火球"
+ },
+ "Frost Darts": {
+  "cn": "冰霜飞镖",
+  "tw": "寒霜之鏢"
+ },
+ "Living Bomb": {
+  "cn": "活动炸弹",
+  "tw": "活體炸彈"
+ },
+ "Orb of Storms": {
+  "cn": "风暴漩涡",
+  "tw": "風暴漩渦"
+ },
+ "Skeletal Arsonist": {
+  "cn": "魔侍焚焰使",
+  "tw": "骷髏縱火者"
+ },
+ "Arc": {
+  "cn": "电弧",
+  "tw": "電弧"
+ },
+ "Bonestorm": {
+  "cn": "尖刺风暴",
+  "tw": "尖刺風暴"
+ },
+ "Frostbolt": {
+  "cn": "寒冰弹",
+  "tw": "寒冰彈"
+ },
+ "Pain Offering": {
+  "cn": "苦痛奉献",
+  "tw": "苦痛奉獻"
+ },
+ "Raise Zombie": {
+  "cn": "魔卫复苏",
+  "tw": "魔衛復甦"
+ },
+ "Skeletal Frost Mage": {
+  "cn": "魔侍冰霜法师",
+  "tw": "魔侍冰霜法師"
+ },
+ "Snap": {
+  "cn": "激变",
+  "tw": "激變"
+ },
+ "Bind Spectre": {
+  "cn": "束缚灵体",
+  "tw": "束縛靈體"
+ },
+ "Detonate Dead": {
+  "cn": "爆灵术",
+  "tw": "爆靈術"
+ },
+ "Elemental Weakness": {
+  "cn": "元素要害",
+  "tw": "元素要害"
+ },
+ "Mana Tempest": {
+  "cn": "魔力风暴",
+  "tw": "魔力風暴"
+ },
+ "Profane Ritual": {
+  "cn": "不敬之礼",
+  "tw": "不敬之禮"
+ },
+ "Temporal Chains": {
+  "cn": "时空锁链",
+  "tw": "時空鎖鏈"
+ },
+ "Vulnerability": {
+  "cn": "脆弱",
+  "tw": "脆弱"
+ },
+ "Dark Effigy": {
+  "cn": "黑暗塑像",
+  "tw": "黑暗塑像"
+ },
+ "Despair": {
+  "cn": "绝望",
+  "tw": "絕望"
+ },
+ "Frost Wall": {
+  "cn": "冰墙",
+  "tw": "冰牆"
+ },
+ "Incinerate": {
+  "cn": "烧毁",
+  "tw": "燒毀"
+ },
+ "Lightning Warp": {
+  "cn": "闪电传送",
+  "tw": "閃電傳送"
+ },
+ "Skeletal Reaver": {
+  "cn": "魔侍掠夺者",
+  "tw": "魔侍掠奪者"
+ },
+ "Ball Lightning": {
+  "cn": "天雷之珠",
+  "tw": "天雷之珠"
+ },
+ "Bone Offering": {
+  "cn": "装甲奉献",
+  "tw": "裝甲奉獻"
+ },
+ "Comet": {
+  "cn": "彗星落",
+  "tw": "彗星"
+ },
+ "Firestorm": {
+  "cn": "烈炎风暴",
+  "tw": "烈炎風暴"
+ },
+ "Hexblast": {
+  "cn": "魔蛊爆炸",
+  "tw": "咒術枯萎"
+ },
+ "Skeletal Storm Mage": {
+  "cn": "魔侍风暴法师",
+  "tw": "骷髏風暴法師"
+ },
+ "Eye of Winter": {
+  "cn": "凛冬之眼",
+  "tw": "凜冬之眼"
+ },
+ "Flameblast": {
+  "cn": "烈焰爆破",
+  "tw": "烈焰爆破"
+ },
+ "Lightning Conduit": {
+  "cn": "闪电通道",
+  "tw": "導雷"
+ },
+ "Skeletal Brute": {
+  "cn": "魔侍蛮兵",
+  "tw": "骷髏巨獸"
+ },
+ "Skeletal Cleric": {
+  "cn": "魔侍祭司",
+  "tw": "骷髏牧師"
+ },
+ "Soul Offering": {
+  "cn": "灵之奉献",
+  "tw": "灵魂獻祭"
+ },
+ "Ancestral Spirits": {
+  "cn": "先祖之灵",
+  "tw": "先祖之魂"
+ },
+ "Wildwood's Gifts": {
+  "cn": "荒林之赐",
+  "tw": "荒林禮贈"
+ },
+ "Animus Exchange": {
+  "cn": "命源交换",
+  "tw": "意志轉換"
+ },
+ "Animus Splinters": {
+  "cn": "命源碎片",
+  "tw": "意志斷片"
+ },
+ "Apocalypse": {
+  "cn": "天灾",
+  "tw": "壞滅災變"
+ },
+ "Archon of Chayula": {
+  "cn": "夏乌拉执政官",
+  "tw": "夏烏拉統治者"
+ },
+ "Align Fate": {
+  "cn": "命运同调",
+  "tw": "命運同調"
+ },
+ "Bleeding Concoction": {
+  "cn": "创伤灵药",
+  "tw": "流血混合物"
+ },
+ "Ruzhan's Trap": {
+  "cn": "鲁詹之陷阱",
+  "tw": "魯兹安的陷阱"
+ },
+ "Ruzhan's Fury": {
+  "cn": "鲁詹之怒火",
+  "tw": "魯兹安的怒火"
+ },
+ "Ruzhan's Reckoning": {
+  "cn": "鲁詹之清算",
+  "tw": "魯兹安的清算"
+ },
+ "Kelari's Deception": {
+  "cn": "凯拉里之诡计",
+  "tw": "克拉里的欺瞞"
+ },
+ "Kelari's Judgment": {
+  "cn": "凯拉里之审判",
+  "tw": "克拉里的審判"
+ },
+ "Navira's Well": {
+  "cn": "纳薇拉之井",
+  "tw": "納維拉的水井"
+ },
+ "Navira's Fracturing": {
+  "cn": "纳薇拉之裂",
+  "tw": "納維拉的封凍"
+ },
+ "Navira's Oasis": {
+  "cn": "纳薇拉之绿洲",
+  "tw": "納維拉的綠洲"
+ },
+ "Kelari's Malediction": {
+  "cn": "凯拉里之诅咒",
+  "tw": "克拉里的惡言"
+ },
+ "Elemental Expression": {
+  "cn": "元素表现",
+  "tw": "元素表現"
+ },
+ "Elemental Storm": {
+  "cn": "元素风暴",
+  "tw": "元素風暴"
+ },
+ "Encase in Jade": {
+  "cn": "青玉囚笼",
+  "tw": "包覆於翠玉中"
+ },
+ "Explosive Concoction": {
+  "cn": "爆破灵药",
+  "tw": "爆裂物"
+ },
+ "Fulminating Concoction": {
+  "cn": "雷鸣灵药",
+  "tw": "烈性混合物"
+ },
+ "Virtuous Barrier": {
+  "cn": "美德壁垒",
+  "tw": "高尚禦盾"
+ },
+ "Life Remnants": {
+  "cn": "生命残片",
+  "tw": "生命痕跡"
+ },
+ "Meditate": {
+  "cn": "凝神思",
+  "tw": "冥想"
+ },
+ "Moment of Vulnerability": {
+  "cn": "脆弱瞬间",
+  "tw": "可趁之刻"
+ },
+ "Acidic Concoction": {
+  "cn": "酸性灵药",
+  "tw": "酸性靈藥"
+ },
+ "Shattering Concoction": {
+  "cn": "碎冰灵药",
+  "tw": "粉碎混合物"
+ },
+ "the Blazing Sword": {
+  "cn": "炽焰之剑",
+  "tw": "赤炎利劍.魯兹安"
+ },
+ "Summon Infernal Hound": {
+  "cn": "召唤炽焰猎犬",
+  "tw": "召喚獄炎獵犬"
+ },
+ "the Tainted Sands": {
+  "cn": "污秽沙暴",
+  "tw": "黯染飛砂.克拉里"
+ },
+ "the Last Mirage": {
+  "cn": "终末幻影",
+  "tw": "最終幻象.納維拉"
+ },
+ "Elemental Surge": {
+  "cn": "元素涌动",
+  "tw": "元素波動"
+ },
+ "Unbound Avatar": {
+  "cn": "不羁化身",
+  "tw": "不羈化身"
+ },
+ "Azmerian Swarms": {
+  "cn": "阿兹莫里虫群",
+  "tw": "阿茲莫裏蟲羣"
+ },
+ "Azmerian Wolf": {
+  "cn": "阿兹莫里巨狼",
+  "tw": "阿茲莫里巨狼"
+ },
+ "Maul": {
+  "cn": "重殴",
+  "tw": "爪擊"
+ },
+ "Bitter Dead": {
+  "cn": "苦涩死亡",
+  "tw": "苦澀衰亡"
+ },
+ "Black Powder Blitz": {
+  "cn": "黑火药闪击",
+  "tw": "黑火藥閃擊"
+ },
+ "Blood Boil": {
+  "cn": "血沸",
+  "tw": "血沸"
+ },
+ "Fire Spell on Hit": {
+  "cn": "击中时火焰法术",
+  "tw": "擊中時火焰法術"
+ },
+ "Thundergod's Wrath": {
+  "cn": "雷霆神祇之怒",
+  "tw": "雷神之怒"
+ },
+ "Cast on Block": {
+  "cn": "格挡时施放",
+  "tw": "格擋時施放"
+ },
+ "Cast on Charm Use": {
+  "cn": "使用咒符时施放",
+  "tw": "使用護符時施放"
+ },
+ "Chaotic Surge": {
+  "cn": "混沌涌动",
+  "tw": "混沌波動"
+ },
+ "Conductive Runes": {
+  "cn": "导电符文",
+  "tw": "傳導符文"
+ },
+ "Crackling Palm": {
+  "cn": "霹雳掌",
+  "tw": "霹靂掌"
+ },
+ "Requiem": {
+  "cn": "镇魂曲",
+  "tw": "安魂曲"
+ },
+ "Crushing Fear": {
+  "cn": "恐惧终结",
+  "tw": "死懼碎擊"
+ },
+ "Demon Form": {
+  "cn": "走火入魔",
+  "tw": "惡魔變身"
+ },
+ "Detonate Living": {
+  "cn": "活体引爆",
+  "tw": "活體引爆"
+ },
+ "Eternal March": {
+  "cn": "永恒行军",
+  "tw": "永恆行軍"
+ },
+ "Bursting Fen Toad": {
+  "cn": "爆裂沼蟾",
+  "tw": "爆發沼地蟾蜍"
+ },
+ "Explosive Transmutation": {
+  "cn": "烈性转化",
+  "tw": "爆炸轉化"
+ },
+ "Fragments Of The Past": {
+  "cn": "往昔碎片",
+  "tw": "往昔碎片"
+ },
+ "Frostflame Nova": {
+  "cn": "霜焰新星",
+  "tw": "霜火新星"
+ },
+ "Future-Past": {
+  "cn": "未来的过去",
+  "tw": "未來昔日"
+ },
+ "Gemini Surge": {
+  "cn": "双灵涌动",
+  "tw": "雙靈波動"
+ },
+ "Grim Pillars": {
+  "cn": "阴森之柱",
+  "tw": "恐怖之柱"
+ },
+ "Harbinger of Madness": {
+  "cn": "疯魔先驱",
+  "tw": "神諭之狂"
+ },
+ "Hollow Focus": {
+  "cn": "虚空钟灵",
+  "tw": "空無專注"
+ },
+ "Hollow Form": {
+  "cn": "虚空魅影",
+  "tw": "空無型態"
+ },
+ "Hollow Resonance": {
+  "cn": "虚空和鸣",
+  "tw": "空無共鳴"
+ },
+ "Hollow Shell": {
+  "cn": "虚空之壳",
+  "tw": "空無披甲"
+ },
+ "Cackling Companions": {
+  "cn": "鬣狗同伴",
+  "tw": "奸笑鬣狗群"
+ },
+ "Inevitable Agony": {
+  "cn": "命定苦痛",
+  "tw": "命定苦痛"
+ },
+ "Into the Breach": {
+  "cn": "投身裂隙",
+  "tw": "遁入裂痕"
+ },
+ "Leylines": {
+  "cn": "地脉",
+  "tw": "地脈"
+ },
+ "Manifest": {
+  "cn": "显化武器",
+  "tw": "幻化武器"
+ },
+ "Called Shots": {
+  "cn": "言出箭随",
+  "tw": "預告射擊"
+ },
+ "Midnight Zenith": {
+  "cn": "午夜天顶",
+  "tw": "午夜天頂"
+ },
+ "Mirage Deadeye": {
+  "cn": "蜃影神射",
+  "tw": "幻影銳眼"
+ },
+ "Mist Raven": {
+  "cn": "雾鸦",
+  "tw": "迷霧渡鴉"
+ },
+ "Molten Crash": {
+  "cn": "熔岩冲击",
+  "tw": "熔岩破滅"
+ },
+ "Molten Shower": {
+  "cn": "熔岩骤雨",
+  "tw": "熔火噴濺"
+ },
+ "Soaring Midnight": {
+  "cn": "午夜翱翔",
+  "tw": "午夜飛掠"
+ },
+ "Parry": {
+  "cn": "招架",
+  "tw": "招架"
+ },
+ "Phantasmal Arrow": {
+  "cn": "幻灵箭",
+  "tw": "幻影箭矢"
+ },
+ "Pinnacle of Power": {
+  "cn": "力量巅峰",
+  "tw": "力量巔峰"
+ },
+ "Axe Slash": {
+  "cn": "斧挥砍",
+  "tw": "斧鉞斬"
+ },
+ "Mace Strike": {
+  "cn": "锤打击",
+  "tw": "鏈錘打擊"
+ },
+ "Sword Slash": {
+  "cn": "剑挥砍",
+  "tw": "劍揮砍"
+ },
+ "Bow Shot": {
+  "cn": "弓射击",
+  "tw": "弓箭射擊"
+ },
+ "Claw Stab": {
+  "cn": "爪突刺",
+  "tw": "爪突刺"
+ },
+ "Crossbow Shot": {
+  "cn": "战弩射击",
+  "tw": "戰弩射擊"
+ },
+ "Dagger Stab": {
+  "cn": "匕首突刺",
+  "tw": "匕首刺擊"
+ },
+ "Flail Strike": {
+  "cn": "连枷打击",
+  "tw": "連枷打擊"
+ },
+ "Quarterstaff Strike": {
+  "cn": "节杖打击",
+  "tw": "細杖打擊"
+ },
+ "Spear Stab": {
+  "cn": "战矛突刺",
+  "tw": "戰矛突刺"
+ },
+ "Spear Throw": {
+  "cn": "战矛飞掷",
+  "tw": "戰矛飛擲"
+ },
+ "Punch": {
+  "cn": "拳击",
+  "tw": "拳擊"
+ },
+ "Powered by Verisium": {
+  "cn": "维金供能",
+  "tw": "維金供能"
+ },
+ "Primal Bounty": {
+  "cn": "枭羽馈赠",
+  "tw": "梟羽饋贈"
+ },
+ "Queen's Procession": {
+  "cn": "女王冲锋",
+  "tw": "女王衝鋒"
+ },
+ "Rain of Blades": {
+  "cn": "刀刃之雨",
+  "tw": "刀刃之雨"
+ },
+ "Refutation": {
+  "cn": "反制",
+  "tw": "反制"
+ },
+ "Remnants of Kalguur": {
+  "cn": "卡古兰残片",
+  "tw": "卡古蘭殘片"
+ },
+ "Repulsion": {
+  "cn": "斥退",
+  "tw": "斥退"
+ },
+ "Righteous Descent": {
+  "cn": "正义天降",
+  "tw": "正義天降"
+ },
+ "Ritual Sacrifice": {
+  "cn": "秘法奉献",
+  "tw": "祕法奉獻"
+ },
+ "Runic Reprieve": {
+  "cn": "符文援护",
+  "tw": "符文援護"
+ },
+ "Runic Tempering": {
+  "cn": "符文淬炼",
+  "tw": "符文淬鍊"
+ },
+ "Sanguine Revelry": {
+  "cn": "嗜血狂宴",
+  "tw": "嗜血狂宴"
+ },
+ "Shattering Spite": {
+  "cn": "碎裂恶意",
+  "tw": "碎裂惡意"
+ },
+ "Raise Shield": {
+  "cn": "架盾",
+  "tw": "架盾"
+ },
+ "Rite of Restoration": {
+  "cn": "恢复圣仪",
+  "tw": "恢復聖儀"
+ },
+ "Skyfall": {
+  "cn": "天降杀机",
+  "tw": "天降殺機"
+ },
+ "Sorcery Ward": {
+  "cn": "元素结界",
+  "tw": "元素結界"
+ },
+ "Vessel": {
+  "cn": "灵魂容器",
+  "tw": "靈魂容器"
+ },
+ "Consecrate": {
+  "cn": "奉献",
+  "tw": "奉獻"
+ },
+ "Starborn Onslaught": {
+  "cn": "星辰冲击",
+  "tw": "星辰衝擊"
+ },
+ "Supporting Fire": {
+  "cn": "支援火力",
+  "tw": "支援火力"
+ },
+ "Temper": {
+  "cn": "淬炼武器",
+  "tw": "淬鍊武器"
+ },
+ "Temporal Rift": {
+  "cn": "时空裂隙",
+  "tw": "時空裂隙"
+ },
+ "The Stars Answer": {
+  "cn": "群星召唤",
+  "tw": "羣星召喚"
+ },
+ "Time Freeze": {
+  "cn": "时间冻结",
+  "tw": "時間凍結"
+ },
+ "Time Snap": {
+  "cn": "时间捕捉",
+  "tw": "時間捕捉"
+ },
+ "Triskelion Cascade": {
+  "cn": "三耀辉轮",
+  "tw": "三耀輝輪"
+ },
+ "Herald of the Royal Queen": {
+  "cn": "皇后之捷",
+  "tw": "皇后之捷"
+ },
+ "Valako's Charge": {
+  "cn": "瓦拉克怒冲",
+  "tw": "瓦拉克怒衝"
+ },
+ "Verisium Manifestations": {
+  "cn": "维金化形",
+  "tw": "維金化形"
+ },
+ "Vivid Stampede": {
+  "cn": "雄鹿践踏",
+  "tw": "雄鹿踐踏"
+ },
+ "Void Illusion": {
+  "cn": "虚空幻影",
+  "tw": "虛空幻影"
+ },
+ "Voltaic Barrier": {
+  "cn": "电能屏障",
+  "tw": "電能屏障"
+ },
+ "Wardbound Minions": {
+  "cn": "结界仆从",
+  "tw": "結界僕從"
+ },
+ "Wild Protector": {
+  "cn": "野性守护",
+  "tw": "野性守護"
+ },
+ "Shred": {
+  "cn": "狼爪撕裂",
+  "tw": "狼爪撕裂"
+ },
+ "Rend": {
+  "cn": "龙爪撕裂",
+  "tw": "龍爪撕裂"
+ },
+ "Armour Piercing Rounds": {
+  "cn": "贯甲弹药",
+  "tw": "貫甲彈藥"
+ },
+ "Entangle": {
+  "cn": "纠缠",
+  "tw": "糾纏"
+ },
+ "Explosive Grenade": {
+  "cn": "高爆榴弹",
+  "tw": "高爆榴彈"
+ },
+ "Falling Thunder": {
+  "cn": "霹雳闪",
+  "tw": "霹靂閃"
+ },
+ "Fragmentation Rounds": {
+  "cn": "碎裂弹药",
+  "tw": "碎裂彈藥"
+ },
+ "Frozen Locus": {
+  "cn": "冰凌座",
+  "tw": "冰凌座"
+ },
+ "Furious Slam": {
+  "cn": "狂怒猛击",
+  "tw": "狂怒猛擊"
+ },
+ "Glacial Cascade": {
+  "cn": "冰川之刺",
+  "tw": "冰川之刺"
+ },
+ "Killing Palm": {
+  "cn": "终结掌",
+  "tw": "終結掌"
+ },
+ "Lunar Assault": {
+  "cn": "月痕突袭",
+  "tw": "月痕突襲"
+ },
+ "Permafrost Bolts": {
+  "cn": "永冻弩箭",
+  "tw": "永凍弩箭"
+ },
+ "Volcano": {
+  "cn": "火山",
+  "tw": "火山"
+ },
+ "Flash Grenade": {
+  "cn": "闪光榴弹",
+  "tw": "閃光榴彈"
+ },
+ "High Velocity Rounds": {
+  "cn": "高速弹药",
+  "tw": "高速彈藥"
+ },
+ "Incendiary Shot": {
+  "cn": "燃烧射击",
+  "tw": "燃燒射擊"
+ },
+ "Rolling Magma": {
+  "cn": "熔岩奔涌",
+  "tw": "熔巖奔湧"
+ },
+ "Staggering Palm": {
+  "cn": "惊风掌",
+  "tw": "驚風掌"
+ },
+ "Tempest Bell": {
+  "cn": "风雷钟",
+  "tw": "風雷鍾"
+ },
+ "Wind Blast": {
+  "cn": "迅风爆",
+  "tw": "迅風爆"
+ },
+ "Wing Blast": {
+  "cn": "烈风吹袭",
+  "tw": "烈風吹襲"
+ },
+ "Pounce": {
+  "cn": "巨狼猛扑",
+  "tw": "巨狼猛撲"
+ },
+ "Fury of the Mountain": {
+  "cn": "山岳之怒",
+  "tw": "山嶽之怒"
+ },
+ "Galvanic Shards": {
+  "cn": "电光散射",
+  "tw": "電光散射"
+ },
+ "Ice Shards": {
+  "cn": "冰屑",
+  "tw": "冰屑"
+ },
+ "Ice Strike": {
+  "cn": "幽寒打",
+  "tw": "幽寒打"
+ },
+ "Rapid Shot": {
+  "cn": "快速射击",
+  "tw": "快速射擊"
+ },
+ "Tempest Flurry": {
+  "cn": "风暴乱舞",
+  "tw": "風暴亂舞"
+ },
+ "Thunderstorm": {
+  "cn": "雷霆风暴",
+  "tw": "雷霆風暴"
+ },
+ "Gas Grenade": {
+  "cn": "瓦斯榴弹",
+  "tw": "瓦斯榴彈"
+ },
+ "Vaulting Impact": {
+  "cn": "跳跃撞击",
+  "tw": "跳躍撞擊"
+ },
+ "Arctic Howl": {
+  "cn": "极地战嚎",
+  "tw": "極地戰嚎"
+ },
+ "Devour": {
+  "cn": "吞噬",
+  "tw": "吞噬"
+ },
+ "Artillery Ballista": {
+  "cn": "火力弩炮",
+  "tw": "火力弩炮"
+ },
+ "Explosive Shot": {
+  "cn": "爆炸射击",
+  "tw": "爆炸射擊"
+ },
+ "Ferocious Roar": {
+  "cn": "凶蛮咆哮",
+  "tw": "兇蠻咆哮"
+ },
+ "Freezing Mark": {
+  "cn": "冰冻印记",
+  "tw": "冰凍印記"
+ },
+ "Glacial Bolt": {
+  "cn": "冰川弩箭",
+  "tw": "冰川弩箭"
+ },
+ "Spell Totem": {
+  "cn": "法术图腾",
+  "tw": "法術圖騰"
+ },
+ "Voltaic Grenade": {
+  "cn": "电涌榴弹",
+  "tw": "電湧榴彈"
+ },
+ "Siphoning Strike": {
+  "cn": "汲能击",
+  "tw": "汲能擊"
+ },
+ "Storm Wave": {
+  "cn": "移风岚",
+  "tw": "移風嵐"
+ },
+ "Wave of Frost": {
+  "cn": "寒霜浪涌",
+  "tw": "寒霜浪湧"
+ },
+ "Cross Slash": {
+  "cn": "双爪劈击",
+  "tw": "雙爪劈擊"
+ },
+ "Charged Staff": {
+  "cn": "充能杖",
+  "tw": "充能杖"
+ },
+ "Hand of Chayula": {
+  "cn": "夏乌拉之手",
+  "tw": "夏烏拉之手"
+ },
+ "Mantra of Destruction": {
+  "cn": "毁灭之兆",
+  "tw": "毀滅之兆"
+ },
+ "Oil Barrage": {
+  "cn": "黏油炮弹",
+  "tw": "黏油炮彈"
+ },
+ "Oil Grenade": {
+  "cn": "黏油榴弹",
+  "tw": "黏油榴彈"
+ },
+ "Siege Ballista": {
+  "cn": "攻城炮台",
+  "tw": "攻城炮臺"
+ },
+ "Stormblast Bolts": {
+  "cn": "轰雷弩箭",
+  "tw": "轟雷弩箭"
+ },
+ "Thrashing Vines": {
+  "cn": "鞭笞藤蔓",
+  "tw": "鞭笞藤蔓"
+ },
+ "Rampage": {
+  "cn": "横冲直撞",
+  "tw": "橫衝直撞"
+ },
+ "Emergency Reload": {
+  "cn": "紧急装填",
+  "tw": "緊急裝填"
+ },
+ "Hailstorm Rounds": {
+  "cn": "冰雹弹药",
+  "tw": "冰雹彈藥"
+ },
+ "Mortar Cannon": {
+  "cn": "迫击大炮",
+  "tw": "迫擊大炮"
+ },
+ "Shattering Palm": {
+  "cn": "冰裂掌",
+  "tw": "冰裂掌"
+ },
+ "Shockburst Rounds": {
+  "cn": "震爆弹药",
+  "tw": "震爆彈藥"
+ },
+ "Tornado": {
+  "cn": "龙卷旋风",
+  "tw": "龍捲旋風"
+ },
+ "Whirling Assault": {
+  "cn": "旋风击",
+  "tw": "旋風擊"
+ },
+ "Cluster Grenade": {
+  "cn": "集束榴弹",
+  "tw": "集束榴彈"
+ },
+ "Flicker Strike": {
+  "cn": "闪现打击",
+  "tw": "閃現打擊"
+ },
+ "Gathering Storm": {
+  "cn": "聚风雨",
+  "tw": "聚風雨"
+ },
+ "Plasma Blast": {
+  "cn": "离子轰击",
+  "tw": "離子轟擊"
+ },
+ "Siege Cascade": {
+  "cn": "摧城倾泻",
+  "tw": "摧城傾瀉"
+ },
+ "Walking Calamity": {
+  "cn": "灾厄行者",
+  "tw": "災厄行者"
+ },
+ "Lunar Blessing": {
+  "cn": "月神赐福",
+  "tw": "月神賜福"
+ },
+ "Flame Breath": {
+  "cn": "龙炎吐息",
+  "tw": "龍炎吐息"
+ },
+ "Amanamu's Tithe": {
+  "cn": "阿曼娜姆的奉纳",
+  "tw": "阿姆那姆的稅賦"
+ },
+ "Atalui's Bloodletting": {
+  "cn": "阿图鲁伊的放血术",
+  "tw": "阿特路伊的出血"
+ },
+ "Auto Reload": {
+  "cn": "自动装填",
+  "tw": "自動裝填"
+ },
+ "Bloodlust": {
+  "cn": "血怒",
+  "tw": "嗜血"
+ },
+ "Brutus' Brain": {
+  "cn": "布鲁特斯之脑",
+  "tw": "布魯特斯的腦"
+ },
+ "Cirel's Cultivation": {
+  "cn": "西雷尔的教化",
+  "tw": "西瑞爾的耕植"
+ },
+ "Paquate's Pact": {
+  "cn": "帕夸特的契约",
+  "tw": "帕科特的協議"
+ },
+ "Daresso's Passion": {
+  "cn": "德瑞索的热情",
+  "tw": "德瑞索的熱情"
+ },
+ "Lineage Dauntless": {
+  "cn": "不动如山",
+  "tw": "無畏"
+ },
+ "Einhar's Beastrite": {
+  "cn": "伊恩哈尔的魔物仪式",
+  "tw": "埃哈的野獸儀式"
+ },
+ "Flamepierce": {
+  "cn": "烈焰穿刺",
+  "tw": "烈焰穿透"
+ },
+ "Tawhoa's Tending": {
+  "cn": "塔赫亚的照料",
+  "tw": "塔赫亞的照顧"
+ },
+ "Helbrym's Hide": {
+  "cn": "赫尔布林的隐瞒",
+  "tw": "海爾賓姆的躲藏"
+ },
+ "Buff Infernal Legion III": {
+  "cn": "炎军 III",
+  "tw": "煉獄軍團 III"
+ },
+ "Kaom's Madness": {
+  "cn": "冈姆的疯狂",
+  "tw": "岡姆的癲狂"
+ },
+ "Rusted Spikes": {
+  "cn": "锈蚀尖刺",
+  "tw": "銹蝕尖刺"
+ },
+ "Spar": {
+  "cn": "角力",
+  "tw": "打擊練習"
+ },
+ "Uhtred's Augury": {
+  "cn": "乌崔德的占卜",
+  "tw": "烏特雷的占卜術"
+ },
+ "Uhtred's Exodus": {
+  "cn": "乌崔德的出走",
+  "tw": "烏特雷的出走"
+ },
+ "Uhtred's Omen": {
+  "cn": "乌崔德的预兆",
+  "tw": "烏特雷的徵兆"
+ },
+ "Uruk's Smelting": {
+  "cn": "厄罗克的熔炼术",
+  "tw": "厄羅克的鍛鍊"
+ },
+ "Uul-Netol's Embrace": {
+  "cn": "乌尔尼多的拥抱",
+  "tw": "烏爾尼多的擁抱"
+ },
+ "Vruun's Inevitability": {
+  "cn": "弗伦的必然",
+  "tw": "弗倫的必然"
+ },
+ "Xoph's Pyre": {
+  "cn": "索伏的葬火",
+  "tw": "索伏的燃焰"
+ },
+ "Zerphi's Infamy": {
+  "cn": "泽佛伊的恶名",
+  "tw": "澤佛伊的惡名"
+ },
+ "Fire Attunement": {
+  "cn": "火焰协调",
+  "tw": "火焰同調"
+ },
+ "Armour Demolisher I": {
+  "cn": "护甲破坏者 I",
+  "tw": "護甲破壞者 I"
+ },
+ "Explosion": {
+  "cn": "护甲爆破",
+  "tw": "護甲爆破"
+ },
+ "Battershout": {
+  "cn": "震撼战吼",
+  "tw": "震撼戰吼"
+ },
+ "Brink I": {
+  "cn": "崩溃边缘 I",
+  "tw": "崩潰邊緣 I"
+ },
+ "Brutality I": {
+  "cn": "野性残暴 I",
+  "tw": "野性殘暴 I"
+ },
+ "Compressed Duration I": {
+  "cn": "持续时间压缩 I",
+  "tw": "縮短持續時間 I"
+ },
+ "Double Barrel I": {
+  "cn": "双管齐下 I",
+  "tw": "雙管 I"
+ },
+ "Efficiency I": {
+  "cn": "效能 I",
+  "tw": "效率 I"
+ },
+ "Armament I": {
+  "cn": "元素军械 I",
+  "tw": "元素武裝 I"
+ },
+ "Execute I": {
+  "cn": "处决 I",
+  "tw": "處刑 I"
+ },
+ "of War I": {
+  "cn": "战争铁拳 I",
+  "tw": "拳霸 I"
+ },
+ "Enduring Impact I": {
+  "cn": "持续冲击 I",
+  "tw": "堅忍衝擊 I"
+ },
+ "Flame I": {
+  "cn": "长明烈焰 I",
+  "tw": "永恆烈焰 I"
+ },
+ "Ignite I": {
+  "cn": "点燃 I",
+  "tw": "點燃 I"
+ },
+ "Impact Shockwave": {
+  "cn": "冲击震波",
+  "tw": "衝擊震波"
+ },
+ "Meat Shield I": {
+  "cn": "肉盾 I",
+  "tw": "肉盾 I"
+ },
+ "Opening Move": {
+  "cn": "起手式",
+  "tw": "先聲奪人"
+ },
+ "Duration I": {
+  "cn": "持续时间延长 I",
+  "tw": "延長持續時間 I"
+ },
+ "Rage I": {
+  "cn": "狂怒 I",
+  "tw": "狂怒 I"
+ },
+ "Steadfast I": {
+  "cn": "坚定 I",
+  "tw": "堅定 I"
+ },
+ "Stomping Ground": {
+  "cn": "震撼大地",
+  "tw": "震撼大地"
+ },
+ "Tireless": {
+  "cn": "冷酷",
+  "tw": "冷酷"
+ },
+ "Upheaval I": {
+  "cn": "冷酷",
+  "tw": "冷酷"
+ },
+ "I": {
+  "cn": "剧变 I",
+  "tw": "野性碎片 I"
+ },
+ "Buff, Persistent Aftershock I": {
+  "cn": "活力 I",
+  "tw": "活力 I"
+ },
+ "Slam Armour Break I": {
+  "cn": "余震 I",
+  "tw": "餘震 I"
+ },
+ "Melee, Strike Font of Blood": {
+  "cn": "斩首 I",
+  "tw": "斬首 I"
+ },
+ "Lifetap": {
+  "cn": "血脉源泉",
+  "tw": "鮮血器皿"
+ },
+ "II": {
+  "cn": "赤炼",
+  "tw": "萌發 II"
+ },
+ "Physical Concoct I": {
+  "cn": "野性残暴 II",
+  "tw": "野性殘暴 II"
+ },
+ "Crater": {
+  "cn": "调和术 I",
+  "tw": "調製 I"
+ },
+ "Attack, AoE, Melee, Trigger, Fire, Duration Defy I": {
+  "cn": "陨坑",
+  "tw": "隕石坑"
+ },
+ "Persistent Double Barrel II": {
+  "cn": "蛮勇打击 I",
+  "tw": "極惡打擊 I"
+ },
+ "Elemental Armament II": {
+  "cn": "双管齐下 II",
+  "tw": "雙管 II"
+ },
+ "Weakness": {
+  "cn": "元素军械 II",
+  "tw": "元素武裝 II"
+ },
+ "Fan The Flames": {
+  "cn": "开发要害",
+  "tw": "攻其之弱"
+ },
+ "AoE, Trigger, Fire Fire Penetration I": {
+  "cn": "煽风点火",
+  "tw": "灼炎扇舞I"
+ },
+ "Totem Herbalism I": {
+  "cn": "坚韧图腾 I",
+  "tw": "堅韌圖騰 I"
+ },
+ "Persistent Infernal Legion I": {
+  "cn": "药草学 I",
+  "tw": "藥草學 I"
+ },
+ "Fire Jagged Ground I": {
+  "cn": "炎军 I",
+  "tw": "煉獄軍團 I"
+ },
+ "Slam, Duration Life Leech I": {
+  "cn": "崎岖之地 I",
+  "tw": "碎裂地面 I"
+ },
+ "Death": {
+  "cn": "生命偷取 I",
+  "tw": "生命偷取 I"
+ },
+ "Minion Splash I": {
+  "cn": "死亡印记",
+  "tw": "死亡標記"
+ },
+ "Melee, Strike Persistent Ground I": {
+  "cn": "召唤生物溅射伤害 I",
+  "tw": "召喚物擴散I"
+ },
+ "Cry": {
+  "cn": "持久地面 I",
+  "tw": "暴露戰吼"
+ },
+ "Warcry Refraction I": {
+  "cn": "愤怒战吼",
+  "tw": "憤怒戰吼"
+ },
+ "Persistent Remnant Potency I": {
+  "cn": "折射 I",
+  "tw": "折射 I"
+ },
+ "Melee Selfless Remnants": {
+  "cn": "反击 I",
+  "tw": "報復 I"
+ },
+ "Fuse I": {
+  "cn": "无我残片",
+  "tw": "無私痕跡"
+ },
+ "Minion, Trigger, Physical, Duration Tectonic Slams": {
+  "cn": "飞掠石 I",
+  "tw": "飛掠之石 I"
+ },
+ "Buff, Persistent Urgent Totems I": {
+  "cn": "荆棘皮肤 I",
+  "tw": "荊棘之皮 I"
+ },
+ "Eruption": {
+  "cn": "先锋 II",
+  "tw": "無懼先鋒 II"
+ },
+ "Attack, Melee, Strike Behead II": {
+  "cn": "荆棘倒刺 I",
+  "tw": "倒刺 I"
+ },
+ "Bleed II": {
+  "cn": "斩首 II",
+  "tw": "斬首 II"
+ },
+ "Attack, Melee Cannibalism I": {
+  "cn": "崩溃边缘 II",
+  "tw": "邊緣 II"
+ },
+ "Clash": {
+  "cn": "吞灵 I",
+  "tw": "食人 I"
+ },
+ "Compressed Duration II": {
+  "cn": "形势逆转",
+  "tw": "交鋒"
+ },
+ "Headed": {
+  "cn": "持续时间压缩 II",
+  "tw": "縮短持續時間 II"
+ },
+ "Persistent Corrupting Cry I": {
+  "cn": "冷静头脑",
+  "tw": "冷靜頭腦"
+ },
+ "Physical, Duration Deadly Resolve": {
+  "cn": "腐化战吼 I",
+  "tw": "腐化戰吼 I"
+ },
+ "Channelling, Staged Searing Flame I": {
+  "cn": "致命决心",
+  "tw": "致命決心"
+ },
+ "Fist of War II": {
+  "cn": "战争铁拳 II",
+  "tw": "戰爭鐵拳 II"
+ },
+ "Haemocrystals": {
+  "cn": "赤炼水晶",
+  "tw": "赤煉水晶"
+ },
+ "Eternal Flame II": {
+  "cn": "长明烈焰 II",
+  "tw": "長明烈焰 II"
+ },
+ "Ignite II": {
+  "cn": "点燃 II",
+  "tw": "點燃 II"
+ },
+ "Immolate": {
+  "cn": "献祭",
+  "tw": "犧牲"
+ },
+ "Knockback": {
+  "cn": "击退",
+  "tw": "擊退"
+ },
+ "Leech II": {
+  "cn": "生命偷取 II",
+  "tw": "生命偷取 II"
+ },
+ "Meat Shield II": {
+  "cn": "肉盾 II",
+  "tw": "肉盾 II"
+ },
+ "Persistent Ground II": {
+  "cn": "持久地面 II",
+  "tw": "持續地面 II"
+ },
+ "Duration II": {
+  "cn": "持续时间延长 II",
+  "tw": "延長持續時間 II"
+ },
+ "Quill Burst": {
+  "cn": "棘刺爆发",
+  "tw": "驟羽爆發"
+ },
+ "Refraction II": {
+  "cn": "折射 II",
+  "tw": "折射 II"
+ },
+ "Reinforced Totems I": {
+  "cn": "增强图腾 I",
+  "tw": "強化圖騰 I"
+ },
+ "Remnant Potency II": {
+  "cn": "残片效能 II",
+  "tw": "痕跡強度 II"
+ },
+ "Rending Apex": {
+  "cn": "撕裂巅峰",
+  "tw": "撕裂頂點"
+ },
+ "Rip": {
+  "cn": "撕裂",
+  "tw": "撕毀"
+ },
+ "Rupture": {
+  "cn": "残破",
+  "tw": "殘破"
+ },
+ "Splinter Totem I": {
+  "cn": "碎片图腾 I",
+  "tw": "殘片圖騰 I"
+ },
+ "Steadfast II": {
+  "cn": "坚定 II",
+  "tw": "穩若泰山 II"
+ },
+ "Stoicism I": {
+  "cn": "坚忍 I",
+  "tw": "堅忍 I"
+ },
+ "Tear": {
+  "cn": "撕扯",
+  "tw": "撕裂"
+ },
+ "Urgent Totems II": {
+  "cn": "紧急图腾 II",
+  "tw": "應急圖騰 II"
+ },
+ "Aftershock II": {
+  "cn": "余震 II",
+  "tw": "餘震 II"
+ },
+ "Ancestral Call I": {
+  "cn": "先祖召唤 I",
+  "tw": "先祖怒嚎 I"
+ },
+ "Armour Break III": {
+  "cn": "护甲破损 III",
+  "tw": "護甲破壞 III"
+ },
+ "Cannibalism II": {
+  "cn": "吞灵 II",
+  "tw": "食人 II"
+ },
+ "Concoct II": {
+  "cn": "调和术 II",
+  "tw": "調製 II"
+ },
+ "Flame II": {
+  "cn": "焚躯烈焰 II",
+  "tw": "燒灼烈焰 II"
+ },
+ "Direstrike II": {
+  "cn": "蛮勇打击 II",
+  "tw": "極惡打擊 II"
+ },
+ "Echoing Cry": {
+  "cn": "回荡战嚎",
+  "tw": "迴響戰吼"
+ },
+ "Efficiency II": {
+  "cn": "效能 II",
+  "tw": "效率 II"
+ },
+ "Warcry I": {
+  "cn": "燃怒战吼 I",
+  "tw": "激怒戰吼 I"
+ },
+ "Execute II": {
+  "cn": "处决 II",
+  "tw": "處刑 II"
+ },
+ "Fan The Flames II": {
+  "cn": "煽风点火II",
+  "tw": "灼炎扇舞II"
+ },
+ "Fire Exposure": {
+  "cn": "火焰曝露",
+  "tw": "火焰曝曬"
+ },
+ "Fresh Clip II": {
+  "cn": "新装箭匣 II",
+  "tw": "全新彈夾 II"
+ },
+ "Totems II": {
+  "cn": "坚韧图腾 II",
+  "tw": "堅韌圖騰 II"
+ },
+ "Enduring Impact II": {
+  "cn": "持续冲击 II",
+  "tw": "堅忍衝擊 II"
+ },
+ "Eternal Flame III": {
+  "cn": "长明烈焰 III",
+  "tw": "永恆烈焰 III"
+ },
+ "Incision": {
+  "cn": "创口",
+  "tw": "切割"
+ },
+ "Long Fuse I": {
+  "cn": "加长引线 I",
+  "tw": "長引線 I"
+ },
+ "for Death II": {
+  "cn": "死亡印记 II",
+  "tw": "死亡標記 II"
+ },
+ "Heavy Swing": {
+  "cn": "沉重挥舞",
+  "tw": "沉重揮擊"
+ },
+ "Rage II": {
+  "cn": "狂怒 II",
+  "tw": "盛怒 II"
+ },
+ "Rageforged I": {
+  "cn": "怒火锤炼 I",
+  "tw": "盛怒鍛造 I"
+ },
+ "Potency III": {
+  "cn": "残片效能 III",
+  "tw": "痕跡強度 III"
+ },
+ "Retaliate II": {
+  "cn": "反击 II",
+  "tw": "報復 II"
+ },
+ "Short Fuse II": {
+  "cn": "短暂引信 II",
+  "tw": "易怒 II"
+ },
+ "Stone II": {
+  "cn": "飞掠石 II",
+  "tw": "飛掠之石 II"
+ },
+ "Stun II": {
+  "cn": "晕眩 II",
+  "tw": "暈眩 II"
+ },
+ "Syzygy": {
+  "cn": "朔望",
+  "tw": "朔望"
+ },
+ "Thornskin II": {
+  "cn": "荆棘皮肤 II",
+  "tw": "荊棘之皮 II"
+ },
+ "Urgent Totems III": {
+  "cn": "紧急图腾 III",
+  "tw": "應急圖騰 III"
+ },
+ "Vitality II": {
+  "cn": "活力 II",
+  "tw": "活力 II"
+ },
+ "Ancestral Call II": {
+  "cn": "先祖召唤 II",
+  "tw": "先祖召喚 II"
+ },
+ "Barbs III": {
+  "cn": "荆棘倒刺 III",
+  "tw": "荊棘倒刺 III"
+ },
+ "Barbs II": {
+  "cn": "荆棘倒刺 II",
+  "tw": "荊棘倒刺 II"
+ },
+ "Brambleslam": {
+  "cn": "遍地荆棘",
+  "tw": "遍地荊棘"
+ },
+ "Branching Fissures II": {
+  "cn": "分叉裂缝 II",
+  "tw": "分岔裂縫 II"
+ },
+ "III": {
+  "cn": "野性残暴 III",
+  "tw": "堅忍 II"
+ },
+ "Corrupting Cry II": {
+  "cn": "腐化战吼 II",
+  "tw": "腐化戰吼 II"
+ },
+ "Deep Cuts II": {
+  "cn": "凌迟 II",
+  "tw": "凌遲 II"
+ },
+ "Defy II": {
+  "cn": "顽抗 II",
+  "tw": "頑抗 II"
+ },
+ "Double Barrel III": {
+  "cn": "顽抗 II",
+  "tw": "頑抗 II"
+ },
+ "Projectile Elemental Armament III": {
+  "cn": "双管齐下 III",
+  "tw": "雙管齊下 III"
+ },
+ "Warcry II": {
+  "cn": "元素军械 III",
+  "tw": "元素軍械 III"
+ },
+ "Execute III": {
+  "cn": "燃怒战吼 II",
+  "tw": "激怒戰吼 II"
+ },
+ "Fire Fist of War III": {
+  "cn": "火焰穿透 II",
+  "tw": "火焰穿透 II"
+ },
+ "Melee, Slam Heft": {
+  "cn": "战争铁拳 III",
+  "tw": "拳霸 III"
+ },
+ "Descent": {
+  "cn": "势大力沉",
+  "tw": "分量"
+ },
+ "Duration Ignite III": {
+  "cn": "神圣降临",
+  "tw": "神聖血統"
+ },
+ "Legion II": {
+  "cn": "点燃 III",
+  "tw": "點燃 III"
+ },
+ "AoE, Fire Jagged Ground II": {
+  "cn": "炎军 II",
+  "tw": "煉獄軍團 II"
+ },
+ "Slam, Duration Life Leech III": {
+  "cn": "崎岖之地 II",
+  "tw": "碎裂地面 II"
+ },
+ "Attack, Minion, Melee, Strike Persistent Ground III": {
+  "cn": "召唤生物溅射伤害 II",
+  "tw": "召喚物擴散II"
+ },
+ "Attack, Melee Rageforged II": {
+  "cn": "狂怒 III",
+  "tw": "盛怒 III"
+ },
+ "Buff, Persistent Reinforced Totems II": {
+  "cn": "折射 III",
+  "tw": "折射 III"
+ },
+ "Totem II": {
+  "cn": "增强图腾 II",
+  "tw": "強化圖騰 II"
+ },
+ "Stoicism II": {
+  "cn": "碎片图腾 II",
+  "tw": "殘片圖騰 II"
+ },
+ "Chimes": {
+  "cn": "辅助艾利丝钟琴",
+  "tw": "輔助艾利絲鐘琴"
+ },
+ "Arjun's Medal": {
+  "cn": "阿尔琼的勋章",
+  "tw": "阿爾瓊的勳章"
+ },
+ "Arakaali's Lust": {
+  "cn": "阿拉卡力的欲望",
+  "tw": "阿拉卡力的欲望"
+ },
+ "Atziri's Impatience": {
+  "cn": "阿兹里的焦躁",
+  "tw": "阿茲裏的焦躁"
+ },
+ "Ratha's Assault": {
+  "cn": "拉莎的突袭",
+  "tw": "拉莎的突襲"
+ },
+ "Dreamer's Knell": {
+  "cn": "幻梦者的丧钟",
+  "tw": "幻夢者的喪鐘"
+ },
+ "Murderous Intent": {
+  "cn": "坚韧磨砺",
+  "tw": "殺人意圖"
+ },
+ "Thunder": {
+  "cn": "伊奥尼尔的雷霆",
+  "tw": "伊歐涅的雷霆"
+ },
+ "Ferocity": {
+  "cn": "狂暴",
+  "tw": "狂暴"
+ },
+ "Resolve": {
+  "cn": "格鲁坎的决心",
+  "tw": "卡洛翰的決心"
+ },
+ "Overabundance III": {
+  "cn": "冗余 III",
+  "tw": "過剩 III"
+ },
+ "Life Bounty": {
+  "cn": "生命丰沛",
+  "tw": "生命恩惠"
+ },
+ "Lockdown": {
+  "cn": "封锁",
+  "tw": "封鎖"
+ },
+ "Malady": {
+  "cn": "错乱病症",
+  "tw": "疾病"
+ },
+ "Bounty": {
+  "cn": "魔力丰沛",
+  "tw": "魔力恩惠"
+ },
+ "Overextend": {
+  "cn": "竭力痛击",
+  "tw": "過分擴張"
+ },
+ "Dominus' Grasp": {
+  "cn": "神主之握",
+  "tw": "神主的掌握"
+ },
+ "Rakiata's Flow": {
+  "cn": "拉其塔之流",
+  "tw": "萊基亞塔的流動"
+ },
+ "Rigwald's Ferocity": {
+  "cn": "瑞佛的凶猛",
+  "tw": "瑞佛的狂暴"
+ },
+ "Stormchain": {
+  "cn": "风暴连锁",
+  "tw": "風暴之鏈"
+ },
+ "Tacati's Ire": {
+  "cn": "塔卡提之怒",
+  "tw": "特卡蒂的憤怒"
+ },
+ "Tasalio's Rhythm": {
+  "cn": "塔萨里奥的律动",
+  "tw": "塔薩里奧的律動"
+ },
+ "Ricochet III": {
+  "cn": "弹射 III",
+  "tw": "彈射 III"
+ },
+ "Tul's Stillness": {
+  "cn": "托沃的寂静",
+  "tw": "托沃的寧靜"
+ },
+ "Lightning Attunement": {
+  "cn": "闪电协调",
+  "tw": "閃電同調"
+ },
+ "Blindside": {
+  "cn": "盲点",
+  "tw": "盲點"
+ },
+ "Charge Profusion I": {
+  "cn": "能量球激增 I",
+  "tw": "能量球激增 I"
+ },
+ "Finisher I": {
+  "cn": "连击终结 I",
+  "tw": "連擊終結輔助 I"
+ },
+ "Corrosion": {
+  "cn": "腐蚀",
+  "tw": "衰敗"
+ },
+ "Escalating Poison": {
+  "cn": "毒性加剧",
+  "tw": "遞增之毒"
+ },
+ "Heightened Accuracy I": {
+  "cn": "精准增强 I",
+  "tw": "強化命中 I"
+ },
+ "Overabundance I": {
+  "cn": "冗余 I",
+  "tw": "過剩 I"
+ },
+ "Innervate": {
+  "cn": "闪电支配",
+  "tw": "亢奮"
+ },
+ "Life Drain": {
+  "cn": "生命榨取",
+  "tw": "生命吸取"
+ },
+ "Pierce I": {
+  "cn": "穿透 I",
+  "tw": "穿透 I"
+ },
+ "Pin I": {
+  "cn": "定身 I",
+  "tw": "釘身 I"
+ },
+ "Poison I": {
+  "cn": "中毒 I",
+  "tw": "致命毒藥 I"
+ },
+ "Precision I": {
+  "cn": "精准 I",
+  "tw": "精準 I"
+ },
+ "Projectile Acceleration I": {
+  "cn": "投射物加速 I",
+  "tw": "投射物加速 I"
+ },
+ "Projectile Deceleration I": {
+  "cn": "投射物减速 I",
+  "tw": "投射物減速 I"
+ },
+ "Pursuit I": {
+  "cn": "迫近追逐 I",
+  "tw": "追擊 I"
+ },
+ "Rapid Attacks I": {
+  "cn": "快速攻击 I",
+  "tw": "疾速攻擊 I"
+ },
+ "Retreat I": {
+  "cn": "撤退 I",
+  "tw": "撤退 I"
+ },
+ "Shock": {
+  "cn": "感电",
+  "tw": "持續感電"
+ },
+ "Slow Potency": {
+  "cn": "减速效能",
+  "tw": "緩速強度"
+ },
+ "Swift Affliction I": {
+  "cn": "极速腐化 I",
+  "tw": "極速苦痛 I"
+ },
+ "Window of Opportunity I": {
+  "cn": "大好时机 I",
+  "tw": "機會之窗 I"
+ },
+ "Adhesive Grenades I": {
+  "cn": "胶粘榴弹 I",
+  "tw": "黏性擲彈 I"
+ },
+ "Grenade Admixture": {
+  "cn": "混合物",
+  "tw": "混合劑"
+ },
+ "Ammo Conservation I": {
+  "cn": "节省弹药 I",
+  "tw": "彈藥保存 I"
+ },
+ "Blind I": {
+  "cn": "致盲 I",
+  "tw": "致盲 I"
+ },
+ "Cadence": {
+  "cn": "节律",
+  "tw": "節律"
+ },
+ "Inhibitor": {
+  "cn": "抑制器",
+  "tw": "抑制劑"
+ },
+ "Commiserate": {
+  "cn": "以己度人",
+  "tw": "憐憫"
+ },
+ "Delayed Gratification": {
+  "cn": "延迟满足",
+  "tw": "延遲滿足感"
+ },
+ "Durability": {
+  "cn": "耐久度",
+  "tw": "耐久"
+ },
+ "Electrocute": {
+  "cn": "触电",
+  "tw": "電刑"
+ },
+ "Longshot I": {
+  "cn": "远射 I",
+  "tw": "遠程射擊 I"
+ },
+ "Frenzied Riposte": {
+  "cn": "狂怒反击",
+  "tw": "狂亂反擊"
+ },
+ "Frozen Spite": {
+  "cn": "冰冻怨恨",
+  "tw": "凍結怨恨"
+ },
+ "Heightened Charges": {
+  "cn": "强化能量球",
+  "tw": "能量球增強"
+ },
+ "Lightning Penetration": {
+  "cn": "闪电穿透",
+  "tw": "閃電穿透"
+ },
+ "Maim": {
+  "cn": "瘫痪",
+  "tw": "癱瘓"
+ },
+ "Momentum": {
+  "cn": "中毒 II",
+  "tw": "中毒 II"
+ },
+ "Overreach": {
+  "cn": "击穿",
+  "tw": "透勁拳"
+ },
+ "Pin II": {
+  "cn": "迫近追逐 II",
+  "tw": "追擊 II"
+ },
+ "Wind I": {
+  "cn": "重新武装 I",
+  "tw": "重新佈署 I"
+ },
+ "Leap": {
+  "cn": "撤退 II",
+  "tw": "撤退 II"
+ },
+ "Duration Bursting Plague": {
+  "cn": "齐射",
+  "tw": "齊射"
+ },
+ "Physical, Chaos Ricochet I": {
+  "cn": "流线弹药",
+  "tw": "子彈如流"
+ },
+ "Volt": {
+  "cn": "极速腐化 II",
+  "tw": "極速苦痛 II"
+ },
+ "Projectile, Lightning Adhesive Grenades II": {
+  "cn": "温热血脉",
+  "tw": "滿腔熱血"
+ },
+ "Caltrops": {
+  "cn": "节省弹药 II",
+  "tw": "彈藥保存 II"
+ },
+ "Projectile, Trigger, Duration, Hazard Charged Shots I": {
+  "cn": "丰饶 II",
+  "tw": "懸賞 II"
+ },
+ "Attack, Projectile Close Combat I": {
+  "cn": "受控危技",
+  "tw": "危險抑制"
+ },
+ "Combo Finisher II": {
+  "cn": "冷却回复 II",
+  "tw": "冷卻時間恢復 II"
+ },
+ "Attack, Melee, Strike, Conditional Cooldown Recovery I": {
+  "cn": "终结 I",
+  "tw": "撲殺 I"
+ },
+ "Melee, Conditional Deadly Herald": {
+  "cn": "延迟激活",
+  "tw": "延遲反應"
+ },
+ "Deliberation": {
+  "cn": "连打带跑",
+  "tw": "打帶跑"
+ },
+ "Fork": {
+  "cn": "冗余 II",
+  "tw": "冗餘 II"
+ },
+ "Projectile Heightened Accuracy II": {
+  "cn": "闪电曝露",
+  "tw": "閃電曝露"
+ },
+ "Drain": {
+  "cn": "敏捷装填",
+  "tw": "敏捷裝填"
+ },
+ "Mobility": {
+  "cn": "新星投射物 II",
+  "tw": "新星投射物 II"
+ },
+ "Overload": {
+  "cn": "过载",
+  "tw": "過載"
+ },
+ "Pierce II": {
+  "cn": "子母弹",
+  "tw": "子母彈"
+ },
+ "Projectile Poison Spores": {
+  "cn": "完美耐力",
+  "tw": "完美耐力"
+ },
+ "Chaos Practiced Combo": {
+  "cn": "精准 II",
+  "tw": "精準 II"
+ },
+ "Strike Projectile Deceleration II": {
+  "cn": "投射物加速 II",
+  "tw": "投射物加速 II"
+ },
+ "Punch Through": {
+  "cn": "快速攻击 II",
+  "tw": "快速攻擊 II"
+ },
+ "Melee Pursuit II": {
+  "cn": "助力之风 II",
+  "tw": "助力之風 II"
+ },
+ "Attack, Melee Rearm I": {
+  "cn": "灵体齐射",
+  "tw": "靈體齊射"
+ },
+ "Salvo": {
+  "cn": "相性 III",
+  "tw": "相性 III"
+ },
+ "Streamlined Rounds": {
+  "cn": "节省弹药 III",
+  "tw": "節省彈藥 III"
+ },
+ "Swift Affliction II": {
+  "cn": "致盲 II",
+  "tw": "致盲 II"
+ },
+ "Alignment II": {
+  "cn": "能量球激增 II",
+  "tw": "能量球激增 II"
+ },
+ "Attack, Projectile Ammo Conservation II": {
+  "cn": "节省弹药 II",
+  "tw": "節省彈藥 II"
+ },
+ "Bounty II": {
+  "cn": "丰饶 II",
+  "tw": "豐饒 II"
+ },
+ "Hazard": {
+  "cn": "受控危技",
+  "tw": "受控危技"
+ },
+ "Cooldown Recovery II": {
+  "cn": "冷却回复 II",
+  "tw": "冷卻回復 II"
+ },
+ "Strike I": {
+  "cn": "终结 I",
+  "tw": "終結 I"
+ },
+ "Deadly Poison II": {
+  "cn": "致命毒素 II",
+  "tw": "致命毒素 II"
+ },
+ "Delayed Reaction": {
+  "cn": "延迟激活",
+  "tw": "延遲激活"
+ },
+ "Hit and Run": {
+  "cn": "连打带跑",
+  "tw": "連打帶跑"
+ },
+ "Impale": {
+  "cn": "穿刺",
+  "tw": "穿刺"
+ },
+ "Overabundance II": {
+  "cn": "冗余 II",
+  "tw": "冗餘 II"
+ },
+ "Exposure": {
+  "cn": "闪电曝露",
+  "tw": "強力曝曬"
+ },
+ "Nimble Reload": {
+  "cn": "敏捷装填",
+  "tw": "靈活裝填"
+ },
+ "Nova Projectiles II": {
+  "cn": "新星投射物 II",
+  "tw": "新星投射物II"
+ },
+ "Overcharge": {
+  "cn": "过载",
+  "tw": "強化聚能"
+ },
+ "Payload": {
+  "cn": "子母弹",
+  "tw": "承載"
+ },
+ "Grenade Perfected Endurance": {
+  "cn": "完美耐力",
+  "tw": "絕對堅毅"
+ },
+ "Perfection": {
+  "cn": "完美",
+  "tw": "完美"
+ },
+ "Projectile Acceleration II": {
+  "cn": "投射物加速 II",
+  "tw": "投射物加速 II"
+ },
+ "Rapid Attacks II": {
+  "cn": "快速攻击 II",
+  "tw": "疾速攻擊 II"
+ },
+ "Second Wind II": {
+  "cn": "助力之风 II",
+  "tw": "恢復 II"
+ },
+ "Volley": {
+  "cn": "灵体齐射",
+  "tw": "靈體齊射"
+ },
+ "Ricochet II": {
+  "cn": "弹射 II",
+  "tw": "彈射 II"
+ },
+ "Alignment III": {
+  "cn": "相性 III",
+  "tw": "聯合 III"
+ },
+ "Ammo Conservation III": {
+  "cn": "节省弹药 III",
+  "tw": "彈藥保存 III"
+ },
+ "Blind II": {
+  "cn": "致盲 II",
+  "tw": "致盲 II"
+ },
+ "Charge Profusion II": {
+  "cn": "能量球激增 II",
+  "tw": "能量球激增 II"
+ },
+ "Mark": {
+  "cn": "充能印记",
+  "tw": "充能印記"
+ },
+ "Charged Shots II": {
+  "cn": "充能射击 II",
+  "tw": "充能射擊 II"
+ },
+ "Culling Strike II": {
+  "cn": "终结 II",
+  "tw": "終結 II"
+ },
+ "Culmination II": {
+  "cn": "登峰造极 II",
+  "tw": "登峯造極 II"
+ },
+ "Pierce III": {
+  "cn": "穿透 III",
+  "tw": "穿透 III"
+ },
+ "Pin III": {
+  "cn": "定身 III",
+  "tw": "釘身 III"
+ },
+ "Poison III": {
+  "cn": "中毒 III",
+  "tw": "中毒 III"
+ },
+ "Projectile Acceleration III": {
+  "cn": "投射物加速 III",
+  "tw": "投射物加速 III"
+ },
+ "Pursuit III": {
+  "cn": "迫近追逐 III",
+  "tw": "追擊 III"
+ },
+ "Rapid Attacks III": {
+  "cn": "快速攻击 III",
+  "tw": "疾速攻擊 III"
+ },
+ "Rearm II": {
+  "cn": "重新武装 II",
+  "tw": "重新佈署 II"
+ },
+ "Retreat III": {
+  "cn": "撤退 III",
+  "tw": "撤退 III"
+ },
+ "Second Wind III": {
+  "cn": "助力之风 III",
+  "tw": "恢復 III"
+ },
+ "Affliction III": {
+  "cn": "极速腐化 III",
+  "tw": "極速苦痛 III"
+ },
+ "Window of Opportunity II": {
+  "cn": "大好时机 II",
+  "tw": "機會之窗 II"
+ },
+ "Channelling Ahn's Citadel": {
+  "cn": "吟唱汉恩的城塞",
+  "tw": "漢恩的城塞"
+ },
+ "Arbiter's Ignition": {
+  "cn": "仲裁官的点燃",
+  "tw": "仲裁者的燃灼"
+ },
+ "Atziri's Allure": {
+  "cn": "阿兹里的魅惑",
+  "tw": "阿茲里的魅惑"
+ },
+ "Atziri's Call": {
+  "cn": "阿兹里的呼唤",
+  "tw": "阿茲里的呼喚"
+ },
+ "Atziri's Communion": {
+  "cn": "阿兹里的圣礼",
+  "tw": "阿茲里的共融"
+ },
+ "Bhatair's Vengeance": {
+  "cn": "巴蒂尔的复仇",
+  "tw": "瓦特爾的復仇"
+ },
+ "Commandment": {
+  "cn": "调遣",
+  "tw": "誡命"
+ },
+ "Dialla's Desire": {
+  "cn": "达拉的渴望",
+  "tw": "達拉的渴望"
+ },
+ "Doedre's Undoing": {
+  "cn": "德瑞的毁灭",
+  "tw": "德瑞的毀滅"
+ },
+ "Shock Siphon": {
+  "cn": "感电虹吸",
+  "tw": "電擊虹吸"
+ },
+ "Esh's Radiance": {
+  "cn": "艾许的光辉",
+  "tw": "艾許的光芒"
+ },
+ "Ixchel's Torment": {
+  "cn": "伊克切尔的折磨",
+  "tw": "薩雷許的折磨"
+ },
+ "Freezefork": {
+  "cn": "冻结分叉",
+  "tw": "冰凍之叉"
+ },
+ "Guatelitzi's Ablation": {
+  "cn": "瓜铁雷兹的消融",
+  "tw": "瓜特利斯的消融"
+ },
+ "Hayoxi's Fulmination": {
+  "cn": "海幽夏的诛罚",
+  "tw": "荷霖蔡的轟鳴"
+ },
+ "Kalisa's Crescendo": {
+  "cn": "卡莉莎的强音",
+  "tw": "卡莉莎的漸強"
+ },
+ "Khatal's Rejuvenation": {
+  "cn": "卡哈塔的复苏",
+  "tw": "卡塔爾的恢復"
+ },
+ "Kulemak's Dominion": {
+  "cn": "库勒马克的统治",
+  "tw": "骷髏馬克的支配"
+ },
+ "Kurgal's Leash": {
+  "cn": "古加尔的缰绳",
+  "tw": "柯戈的繩索"
+ },
+ "Morgana's Tempest": {
+  "cn": "莫甘娜的暴风",
+  "tw": "魔甘娜的風暴"
+ },
+ "Storm Oisín's Oath": {
+  "cn": "奥辛之誓",
+  "tw": "歐辛的誓言"
+ },
+ "Romira's Requital": {
+  "cn": "罗米拉的报复",
+  "tw": "羅米拉的報復"
+ },
+ "Shock Conduction II": {
+  "cn": "感电传导 II",
+  "tw": "感電傳導II"
+ },
+ "Tecrod's Revenge": {
+  "cn": "特克罗的复仇",
+  "tw": "特克羅德的復仇"
+ },
+ "Varashta's Blessing": {
+  "cn": "瓦拉煞的祝福",
+  "tw": "瓦拉什塔的祝福"
+ },
+ "Vilenta's Propulsion": {
+  "cn": "薇伦塔之推进",
+  "tw": "范尼達的奮進"
+ },
+ "Sione's Temper": {
+  "cn": "西奥妮的怒火",
+  "tw": "西奧妮的鍛鍊"
+ },
+ "Xibaqua's Rending": {
+  "cn": "夏巴夸亚的撕裂",
+  "tw": "賽巴昆的撕裂"
+ },
+ "Zarokh's Refrain": {
+  "cn": "扎洛卡的克制",
+  "tw": "澤洛克的克制"
+ },
+ "Zarokh's Revolt": {
+  "cn": "扎洛卡的反叛",
+  "tw": "澤洛克的反叛"
+ },
+ "Cold Attunement": {
+  "cn": "冰霜协调",
+  "tw": "冰冷同調"
+ },
+ "Ambush": {
+  "cn": "伏击",
+  "tw": "伏擊"
+ },
+ "Surge": {
+  "cn": "秘术增强",
+  "tw": "秘能波動"
+ },
+ "Burgeon I": {
+  "cn": "迅猛增幅 I",
+  "tw": "萌發 I"
+ },
+ "Clarity I": {
+  "cn": "清晰 I",
+  "tw": "清晰 I"
+ },
+ "Concentrated Area": {
+  "cn": "范围集中",
+  "tw": "集中範圍"
+ },
+ "Controlled Destruction": {
+  "cn": "精准破坏",
+  "tw": "精準破壞"
+ },
+ "Creeping Chill": {
+  "cn": "蔓延霜寒",
+  "tw": "寒冰蔓延"
+ },
+ "Crescendo I": {
+  "cn": "渐入佳境 I",
+  "tw": "逐漸增強 I"
+ },
+ "Crystalline Shards": {
+  "cn": "水晶碎片",
+  "tw": "結晶碎片"
+ },
+ "Curse": {
+  "cn": "强效诅咒",
+  "tw": "增強詛咒"
+ },
+ "Coursing Current": {
+  "cn": "奔雷疾走",
+  "tw": "雷鳴湍流"
+ },
+ "Elemental Army": {
+  "cn": "元素大军",
+  "tw": "元素軍隊"
+ },
+ "Expanse": {
+  "cn": "开疆",
+  "tw": "廣闊區域"
+ },
+ "Hourglass": {
+  "cn": "时之沙漏",
+  "tw": "沙漏"
+ },
+ "Bite I": {
+  "cn": "霜咬 I",
+  "tw": "霜咬 I"
+ },
+ "Impending Doom": {
+  "cn": "末日将至",
+  "tw": "末日厄運"
+ },
+ "Last Gasp": {
+  "cn": "亡命之息",
+  "tw": "臨終恐息"
+ },
+ "Deep Freeze": {
+  "cn": "深度冻结",
+  "tw": "深度冰凍"
+ },
+ "Magnified Area I": {
+  "cn": "范围扩大 I",
+  "tw": "增幅光環 I"
+ },
+ "Mark of Siphoning": {
+  "cn": "虹吸印记",
+  "tw": "汲取印記"
+ },
+ "Minion Pact I": {
+  "cn": "召唤契约 I",
+  "tw": "召喚物契約 I"
+ },
+ "Perpetual Charge": {
+  "cn": "永续充能",
+  "tw": "永恆充能"
+ },
+ "Rapid Casting I": {
+  "cn": "快速施法 I",
+  "tw": "疾速施法 I"
+ },
+ "Sacrificial Lamb I": {
+  "cn": "替罪羔羊 I",
+  "tw": "獻祭羔羊 I"
+ },
+ "Spell Cascade": {
+  "cn": "多重范围施法",
+  "tw": "秘能爆發"
+ },
+ "Thrill of the Kill": {
+  "cn": "杀戮快感",
+  "tw": "殺戮渴望"
+ },
+ "Fortress I": {
+  "cn": "坚城 I",
+  "tw": "堡壘 I"
+ },
+ "Touch": {
+  "cn": "凋零之触",
+  "tw": "凋零之觸"
+ },
+ "Zenith I": {
+  "cn": "天顶 I",
+  "tw": "極盛 I"
+ },
+ "Abiding Hex": {
+  "cn": "恒远魔蛊",
+  "tw": "永久咒術"
+ },
+ "Acrimony": {
+  "cn": "尖刻",
+  "tw": "毒辣"
+ },
+ "Ambrosia": {
+  "cn": "仙馔",
+  "tw": "仙饌蜜酒"
+ },
+ "Bone Shrapnel": {
+  "cn": "钙质碎片",
+  "tw": "骨片"
+ },
+ "Boundless Energy I": {
+  "cn": "无边能量 I",
+  "tw": "無盡能量 I"
+ },
+ "Catharsis": {
+  "cn": "泄除",
+  "tw": "宣洩"
+ },
+ "Frost Nexus": {
+  "cn": "封冻枢纽",
+  "tw": "冰霜匯聚"
+ },
+ "Cold Penetration": {
+  "cn": "冰霜穿透",
+  "tw": "冰冷穿透"
+ },
+ "Considered Casting": {
+  "cn": "审慎施法",
+  "tw": "細思施法"
+ },
+ "Crackling Barrier": {
+  "cn": "霹雳屏障",
+  "tw": "電流屏障"
+ },
+ "Danse Macabre": {
+  "cn": "死亡之舞",
+  "tw": "骷髏之舞"
+ },
+ "Deathmarch": {
+  "cn": "终末行军",
+  "tw": "死亡行進"
+ },
+ "Embitter": {
+  "cn": "苦寒之意",
+  "tw": "激怒"
+ },
+ "Empowered Sparks I": {
+  "cn": "强化火花 I",
+  "tw": "強化電球I"
+ },
+ "Encroaching Ground": {
+  "cn": "侵蚀地面",
+  "tw": "進逼地面"
+ },
+ "Excise": {
+  "cn": "净除",
+  "tw": "切除"
+ },
+ "Growth": {
+  "cn": "迅猛绽放",
+  "tw": "飛速生長"
+ },
+ "Fiery Death": {
+  "cn": "炽灭",
+  "tw": "火熱死寂"
+ },
+ "Harmonic Remnants I": {
+  "cn": "和谐残迹 I",
+  "tw": "和諧的痕跡 I"
+ },
+ "Focused Curse": {
+  "cn": "聚焦诅咒",
+  "tw": "專注詛咒"
+ },
+ "Freeze": {
+  "cn": "冻结",
+  "tw": "冰凍"
+ },
+ "Glacier": {
+  "cn": "冰川",
+  "tw": "冰河"
+ },
+ "Gorge": {
+  "cn": "狼吞虎咽",
+  "tw": "峽谷"
+ },
+ "Icicle": {
+  "cn": "冰刺",
+  "tw": "冰柱"
+ },
+ "Agony": {
+  "cn": "剧烈痛苦",
+  "tw": "劇烈苦痛"
+ },
+ "Living Lightning": {
+  "cn": "活体闪电",
+  "tw": "活躍閃電"
+ },
+ "Loyalty": {
+  "cn": "忠诚",
+  "tw": "忠誠"
+ },
+ "Mana Flare": {
+  "cn": "魔力耀斑",
+  "tw": "魔力閃焰"
+ },
+ "Font of Mana": {
+  "cn": "魔力源泉",
+  "tw": "魔力器皿"
+ },
+ "Mana Leech": {
+  "cn": "魔力偷取",
+  "tw": "魔力偷取"
+ },
+ "Minion Instability": {
+  "cn": "复仇之灵",
+  "tw": "復仇之靈"
+ },
+ "Mysticism I": {
+  "cn": "灵秘 I",
+  "tw": "秘術 I"
+ },
+ "Pinpoint Critical": {
+  "cn": "精准暴击",
+  "tw": "精確暴擊"
+ },
+ "Shock Conduction": {
+  "cn": "感电传导",
+  "tw": "感電傳導"
+ },
+ "Spell Echo": {
+  "cn": "施法回响",
+  "tw": "法術迴響"
+ },
+ "Rising Tempest": {
+  "cn": "风暴骤起",
+  "tw": "崛起風暴"
+ },
+ "Wildfire": {
+  "cn": "野火",
+  "tw": "燐火"
+ },
+ "Chaos Attunement": {
+  "cn": "混沌协调",
+  "tw": "混沌同調"
+ },
+ "Ambrosia II": {
+  "cn": "仙馔 II",
+  "tw": "仙饌蜜酒 II"
+ },
+ "Projection": {
+  "cn": "星界投射",
+  "tw": "星空投影"
+ },
+ "Frost I": {
+  "cn": "刺骨寒意 I",
+  "tw": "刺骨冰霜I"
+ },
+ "Brittle Armour": {
+  "cn": "脆弱护甲",
+  "tw": "易碎鎧甲"
+ },
+ "Chaotic Freeze": {
+  "cn": "混沌冻结",
+  "tw": "混沌冰凍"
+ },
+ "Corpse Conservation": {
+  "cn": "灵柩留存",
+  "tw": "屍體保存"
+ },
+ "Ground": {
+  "cn": "诅咒之地",
+  "tw": "詛咒地面"
+ },
+ "Decaying Hex": {
+  "cn": "衰颓魔蛊",
+  "tw": "腐朽咒術"
+ },
+ "Drain Ailments": {
+  "cn": "异常状态吸收",
+  "tw": "汲取異常狀態"
+ },
+ "Elemental Discharge": {
+  "cn": "元素解放",
+  "tw": "元素解放"
+ },
+ "Elemental Focus": {
+  "cn": "元素集中",
+  "tw": "元素專注"
+ },
+ "Capacitor": {
+  "cn": "能量电容",
+  "tw": "儲能"
+ },
+ "Retention": {
+  "cn": "能量保存",
+  "tw": "能量保留"
+ },
+ "Essence Harvest": {
+  "cn": "收割精华",
+  "tw": "精髓收割"
+ },
+ "Eternal Mark": {
+  "cn": "永恒印记",
+  "tw": "永恆印記"
+ },
+ "Execrate": {
+  "cn": "怨恨",
+  "tw": "咒怨"
+ },
+ "Extraction": {
+  "cn": "萃取",
+  "tw": "提取"
+ },
+ "Feeding Frenzy I": {
+  "cn": "狂噬 I",
+  "tw": "豢養狂熱 I"
+ },
+ "Harmonic Remnants II": {
+  "cn": "和谐残迹 II",
+  "tw": "和諧的痕跡 II"
+ },
+ "Fluke": {
+  "cn": "运势",
+  "tw": "僥倖"
+ },
+ "Frostfire": {
+  "cn": "霜火",
+  "tw": "霜火"
+ },
+ "Gambleshot": {
+  "cn": "投机射击",
+  "tw": "博弈射擊"
+ },
+ "Hex Bloom": {
+  "cn": "魔蛊绽放",
+  "tw": "咒術綻放"
+ },
+ "Ice Bite II": {
+  "cn": "霜咬 II",
+  "tw": "霜咬 II"
+ },
+ "Supercritical": {
+  "cn": "特化暴击",
+  "tw": "超暴擊"
+ },
+ "Critical I": {
+  "cn": "命定绝杀 I",
+  "tw": "無情暴擊 I"
+ },
+ "Area II": {
+  "cn": "范围扩大 II",
+  "tw": "增幅光環 II"
+ },
+ "Muster": {
+  "cn": "海纳百川",
+  "tw": "召集"
+ },
+ "Practical Magic I": {
+  "cn": "实用魔法I",
+  "tw": "實用魔法 I"
+ },
+ "Ritualistic Curse": {
+  "cn": "仪祭诅咒",
+  "tw": "儀式詛咒"
+ },
+ "Sacrificial Lamb II": {
+  "cn": "替罪羔羊 II",
+  "tw": "獻祭羔羊 II"
+ },
+ "Sacrificial Offering": {
+  "cn": "牺牲供奉",
+  "tw": "犧牲奉獻"
+ },
+ "Electromagnetism": {
+  "cn": "电磁力场",
+  "tw": "磁化電極"
+ },
+ "Payoff Static Shocks": {
+  "cn": "静电脉冲",
+  "tw": "靜電震盪"
+ },
+ "Duration Stormfire": {
+  "cn": "风暴之炎",
+  "tw": "烈風暴"
+ },
+ "Strong Hearted": {
+  "cn": "强健心灵",
+  "tw": "不屈之心"
+ },
+ "Thrill of the Kill II": {
+  "cn": "杀戮快感II",
+  "tw": "殺戮渴望II"
+ },
+ "Verglas": {
+  "cn": "雨淞",
+  "tw": "冰淞"
+ },
+ "Volatility": {
+  "cn": "无常",
+  "tw": "易爆"
+ },
+ "Fortress II": {
+  "cn": "坚城 II",
+  "tw": "堡壘 II"
+ },
+ "Zenith II": {
+  "cn": "天顶 II",
+  "tw": "極盛 II"
+ },
+ "Advancing Storm": {
+  "cn": "风暴行军",
+  "tw": "推進風暴"
+ },
+ "Storm Bidding II": {
+  "cn": "奉命 II",
+  "tw": "出價 II"
+ },
+ "Blazing Critical": {
+  "cn": "炽烈绝杀",
+  "tw": "燃焰暴擊"
+ },
+ "Boundless Energy II": {
+  "cn": "无边能量 II",
+  "tw": "無盡能量 II"
+ },
+ "Burning Inscription": {
+  "cn": "燃烧铭文",
+  "tw": "爆燃銘文"
+ },
+ "Clarity II": {
+  "cn": "清晰 II",
+  "tw": "清晰 II"
+ },
+ "Cold Exposure": {
+  "cn": "冰霜曝露",
+  "tw": "冰冷曝曬"
+ },
+ "Concussive Spells": {
+  "cn": "冲击法术",
+  "tw": "震盪法術"
+ },
+ "Crazed Minions": {
+  "cn": "癫狂召唤生物",
+  "tw": "發狂召喚物"
+ },
+ "Crescendo II": {
+  "cn": "渐入佳境 II",
+  "tw": "逐漸增強 II"
+ },
+ "Derange": {
+  "cn": "错乱",
+  "tw": "精神錯亂"
+ },
+ "Sparks II": {
+  "cn": "强化火花 II",
+  "tw": "強化電球II"
+ },
+ "Feeding Frenzy II": {
+  "cn": "狂噬 II",
+  "tw": "豢養狂熱 II"
+ },
+ "Hulking Minions": {
+  "cn": "魁梧仆从",
+  "tw": "巨大召喚物"
+ },
+ "Inexorable Critical II": {
+  "cn": "命定绝杀 II",
+  "tw": "無情暴擊 II"
+ },
+ "Lightning II": {
+  "cn": "活体闪电 II",
+  "tw": "活躍閃電 II"
+ },
+ "Mark of Siphoning II": {
+  "cn": "虹吸印记II",
+  "tw": "汲取印記 II"
+ },
+ "Minion Pact II": {
+  "cn": "召唤契约 II",
+  "tw": "召喚物契約 II"
+ },
+ "Mysticism II": {
+  "cn": "灵秘 II",
+  "tw": "秘術 II"
+ },
+ "Rapid Casting II": {
+  "cn": "快速施法 II",
+  "tw": "疾速施法 II"
+ },
+ "Upwelling II": {
+  "cn": "升流 II",
+  "tw": "湧升流 I"
+ },
+ "Bidding III": {
+  "cn": "奉命 III",
+  "tw": "奉命 III"
+ },
+ "Biting Frost II": {
+  "cn": "刺骨寒意 II",
+  "tw": "刺骨寒意 II"
+ },
+ "Catalysing Elements": {
+  "cn": "元素催化",
+  "tw": "催化元素"
+ },
+ "Chaos Mastery": {
+  "cn": "混沌专精",
+  "tw": "混沌專精"
+ },
+ "Cold Mastery": {
+  "cn": "冰霜专精",
+  "tw": "冰冷專精"
+ },
+ "Crescendo III": {
+  "cn": "渐入佳境 III",
+  "tw": "逐漸增強 III"
+ },
+ "Expand": {
+  "cn": "扩展",
+  "tw": "擴展"
+ },
+ "Accelerated Growth II": {
+  "cn": "迅猛绽放II",
+  "tw": "飛速生長II"
+ },
+ "Fire Mastery": {
+  "cn": "火焰专精",
+  "tw": "火焰專精"
+ },
+ "Lightning Mastery": {
+  "cn": "闪电专精",
+  "tw": "閃電專精"
+ },
+ "Minion Mastery": {
+  "cn": "召唤生物专精",
+  "tw": "召喚物專精"
+ },
+ "Physical Mastery": {
+  "cn": "物理专精",
+  "tw": "物理專精"
+ },
+ "Practical Magic II": {
+  "cn": "实用魔法II",
+  "tw": "實用魔法 II"
+ },
+ "Profanity II": {
+  "cn": "不敬 II",
+  "tw": "褻瀆 II"
+ },
+ "Rapid Casting III": {
+  "cn": "快速施法 III",
+  "tw": "疾速施法 III"
+ },
+ "Wildshards II": {
+  "cn": "狂野碎片 II",
+  "tw": "野性碎片 II"
+ },
+ "Projectile Arbiter's Reach": {
+  "cn": "投射物仲裁官之握",
+  "tw": "投射物仲裁官之握"
+ },
+ "Breachlord's Amalgam": {
+  "cn": "裂隙领主的融合体",
+  "tw": "裂隙領主的融合體"
+ },
+ "Catha's Brilliance": {
+  "cn": "卡莎的光辉",
+  "tw": "卡莎的光輝"
+ },
+ "Concussive Runes": {
+  "cn": "震荡符文",
+  "tw": "震蕩符文"
+ },
+ "Esh's Prowess": {
+  "cn": "艾许的骁勇",
+  "tw": "艾許的驍勇"
+ },
+ "Fist Of Kalguur": {
+  "cn": "卡古兰之拳",
+  "tw": "卡古蘭之拳"
+ },
+ "Healing Runes": {
+  "cn": "治疗符文",
+  "tw": "治療符文"
+ },
+ "Her Declaration": {
+  "cn": "她的宣言",
+  "tw": "她的宣言"
+ },
+ "Medved's Felling": {
+  "cn": "梅德维德的砍伐",
+  "tw": "梅德維德的砍伐"
+ },
+ "Mórrigan's Insight": {
+  "cn": "莫丽根的洞察",
+  "tw": "莫麗根的洞察"
+ },
+ "Olroth's Conviction": {
+  "cn": "欧罗什的信念",
+  "tw": "歐羅什的信念"
+ },
+ "Olroth's Hubris": {
+  "cn": "欧罗什的傲慢",
+  "tw": "歐羅什的傲慢"
+ },
+ "Prototype Seventeen": {
+  "cn": "原型十七",
+  "tw": "原型十七"
+ },
+ "Runeforged Blades": {
+  "cn": "符文之刃",
+  "tw": "符文之刃"
+ },
+ "Runic Extraction": {
+  "cn": "符文提取",
+  "tw": "符文提取"
+ },
+ "Runic Infusion": {
+  "cn": "符文灌注",
+  "tw": "符文灌注"
+ },
+ "Scouring Flame": {
+  "cn": "涤罪之火",
+  "tw": "滌罪之火"
+ },
+ "Seraph's Heart": {
+  "cn": "炽天使之心",
+  "tw": "熾天使之心"
+ },
+ "Styrn's Ferocity": {
+  "cn": "斯泰恩的凶残",
+  "tw": "斯泰恩的兇殘"
+ },
+ "Styrn's Mountain": {
+  "cn": "斯泰恩的山岳",
+  "tw": "斯泰恩的山嶽"
+ },
+ "Tangmazu's Thurible": {
+  "cn": "唐玛祖的香炉",
+  "tw": "唐瑪祖的香爐"
+ },
+ "Trickster's Shard": {
+  "cn": "欺诈者碎片",
+  "tw": "欺詐者碎片"
+ },
+ "Tul's Avalanche": {
+  "cn": "托沃的雪崩",
+  "tw": "託沃的雪崩"
+ },
+ "Uhtred's Constellation": {
+  "cn": "乌崔德的星图",
+  "tw": "烏崔德的星圖"
+ },
+ "Uhtred's Rite": {
+  "cn": "乌崔德仪式",
+  "tw": "烏崔德儀式"
+ },
+ "Vorana's Siege": {
+  "cn": "沃拉娜的围城",
+  "tw": "沃拉娜的圍城"
+ },
+ "Dauntless": {
+  "cn": "不动如山",
+  "tw": "不動如山"
+ },
+ "Bleed I": {
+  "cn": "崩溃边缘 I",
+  "tw": "崩潰邊緣 I"
+ },
+ "Aftershock I": {
+  "cn": "护甲破损 I",
+  "tw": "護甲破損 I"
+ },
+ "Font of Blood": {
+  "cn": "血脉源泉",
+  "tw": "血脈源泉"
+ },
+ "Defy I": {
+  "cn": "蛮勇打击 I",
+  "tw": "蠻勇打擊 I"
+ },
+ "Direstrike I": {
+  "cn": "双管齐下 I",
+  "tw": "雙管齊下 I"
+ },
+ "Double Barrel II": {
+  "cn": "元素军械 II",
+  "tw": "元素軍械 II"
+ },
+ "Exploit Weakness": {
+  "cn": "开发要害",
+  "tw": "開發要害"
+ },
+ "Fire Penetration I": {
+  "cn": "新装箭匣 I",
+  "tw": "新裝箭匣 I"
+ },
+ "Fresh Clip I": {
+  "cn": "坚韧图腾 I",
+  "tw": "堅韌圖騰 I"
+ },
+ "Totems I": {
+  "cn": "药草学 I",
+  "tw": "藥草學 I"
+ },
+ "Herbalism I": {
+  "cn": "炎军 I",
+  "tw": "炎軍 I"
+ },
+ "Infernal Legion I": {
+  "cn": "崎岖之地 I",
+  "tw": "崎嶇之地 I"
+ },
+ "Jagged Ground I": {
+  "cn": "生命偷取 I",
+  "tw": "生命偷取 I"
+ },
+ "Mark for Death": {
+  "cn": "死亡印记",
+  "tw": "死亡印記"
+ },
+ "Remnant Potency I": {
+  "cn": "反击 I",
+  "tw": "反擊 I"
+ },
+ "Selfless Remnants": {
+  "cn": "无我残片",
+  "tw": "無我殘片"
+ },
+ "Short Fuse I": {
+  "cn": "飞掠石 I",
+  "tw": "飛掠石 I"
+ },
+ "Tectonic Slams": {
+  "cn": "破釜一击",
+  "tw": "破釜一擊"
+ },
+ "Stun I": {
+  "cn": "荆棘皮肤 I",
+  "tw": "荊棘皮膚 I"
+ },
+ "Urgent Totems I": {
+  "cn": "先锋 I",
+  "tw": "先鋒 I"
+ },
+ "Behead II": {
+  "cn": "流血 II",
+  "tw": "流血 II"
+ },
+ "Branching Fissures I": {
+  "cn": "崩溃边缘 I",
+  "tw": "崩潰邊緣 I"
+ },
+ "Cool Headed": {
+  "cn": "冷静头脑",
+  "tw": "冷靜頭腦"
+ },
+ "Deadly Resolve": {
+  "cn": "致命决心",
+  "tw": "致命決心"
+ },
+ "Searing Flame I": {
+  "cn": "凌迟 I",
+  "tw": "凌遲 I"
+ },
+ "Deep Cuts I": {
+  "cn": "战争铁拳 I",
+  "tw": "戰爭鐵拳 I"
+ },
+ "Bleed IV": {
+  "cn": "流血 IV",
+  "tw": "流血 IV"
+ },
+ "Elemental Armament III": {
+  "cn": "燃怒战吼 III",
+  "tw": "燃怒戰吼 III"
+ },
+ "Enraged Warcry II": {
+  "cn": "处决 II",
+  "tw": "處決 II"
+ },
+ "Penetration II": {
+  "cn": "战争铁拳 II",
+  "tw": "戰爭鐵拳 II"
+ },
+ "Heft": {
+  "cn": "势大力沉",
+  "tw": "勢大力沉"
+ },
+ "Holy Descent": {
+  "cn": "神圣降临",
+  "tw": "神聖降臨"
+ },
+ "Ignite III": {
+  "cn": "炎军 III",
+  "tw": "炎軍 III"
+ },
+ "Infernal Legion II": {
+  "cn": "崎岖之地 II",
+  "tw": "崎嶇之地 II"
+ },
+ "Jagged Ground II": {
+  "cn": "生命偷取 II",
+  "tw": "生命偷取 II"
+ },
+ "Life Leech III": {
+  "cn": "加长引线 III",
+  "tw": "加長引線 III"
+ },
+ "Long Fuse II": {
+  "cn": "召唤生物溅射伤害 II",
+  "tw": "召喚生物濺射傷害 II"
+ },
+ "Splash II": {
+  "cn": "持久地面 II",
+  "tw": "持久地面 II"
+ },
+ "Persistent Ground III": {
+  "cn": "狂怒 III",
+  "tw": "狂怒 III"
+ },
+ "Rageforged II": {
+  "cn": "折射 II",
+  "tw": "折射 II"
+ },
+ "Reinforced Totems II": {
+  "cn": "碎片图腾 II",
+  "tw": "碎片圖騰 II"
+ },
+ "Splinter Totem II": {
+  "cn": "坚忍 II",
+  "tw": "堅忍 II"
+ },
+ "Admixture": {
+  "cn": "混合物",
+  "tw": "混合物"
+ },
+ "Bursting Plague": {
+  "cn": "迸发之疫",
+  "tw": "迸發之疫"
+ },
+ "Adhesive Grenades II": {
+  "cn": "相性 II",
+  "tw": "相性 II"
+ },
+ "Close Combat I": {
+  "cn": "连击终结 I",
+  "tw": "連擊終結 I"
+ },
+ "Cooldown Recovery I": {
+  "cn": "登峰造极 I",
+  "tw": "登峯造極 I"
+ },
+ "Deadly Herald": {
+  "cn": "致命之捷",
+  "tw": "致命之捷"
+ },
+ "Soul Drain": {
+  "cn": "魂魔榨取",
+  "tw": "魂魔榨取"
+ },
+ "Poison Spores": {
+  "cn": "毒孢迸溅",
+  "tw": "毒孢迸濺"
+ },
+ "Practiced Combo": {
+  "cn": "娴熟连击",
+  "tw": "嫺熟連擊"
+ },
+ "Pursuit II": {
+  "cn": "重新武装 II",
+  "tw": "重新武裝 II"
+ },
+ "Rearm I": {
+  "cn": "撤退 I",
+  "tw": "撤退 I"
+ },
+ "Warm Blooded": {
+  "cn": "温热血脉",
+  "tw": "溫熱血脈"
+ },
+ "Ammo Conservation II": {
+  "cn": "丰饶 II",
+  "tw": "豐饒 II"
+ },
+ "Perfected Endurance": {
+  "cn": "完美耐力",
+  "tw": "完美耐力"
+ },
+ "Close Combat II": {
+  "cn": "终结 II",
+  "tw": "終結 II"
+ },
+ "Static Shocks": {
+  "cn": "静电脉冲",
+  "tw": "靜電脈衝"
+ },
+ "Stormfire": {
+  "cn": "风暴之炎",
+  "tw": "風暴之炎"
+ },
+ "Ruzhan, the Blazing Sword": {
+  "cn": "鲁詹,炽焰之剑",
+  "tw": "魯詹,熾焰之劍"
+ },
+ "Kelari, the Tainted Sands": {
+  "cn": "凯拉里,污秽沙暴",
+  "tw": "凱拉裏,污穢沙暴"
+ },
+ "Navira, the Last Mirage": {
+  "cn": "纳薇拉,终末幻影",
+  "tw": "納薇拉,終末幻影"
+ },
+ "Manifest Weapon": {
+  "cn": "显化武器",
+  "tw": "顯化武器"
+ },
+ "Temper Weapon": {
+  "cn": "淬炼武器",
+  "tw": "淬鍊武器"
+ },
+ "Navira's Embrace": {
+  "cn": "纳薇拉之拥抱",
+  "tw": "納薇拉之擁抱"
+ },
+ "Kelari's Embrace": {
+  "cn": "凯拉里之拥抱",
+  "tw": "凱拉裏之擁抱"
+ },
+ "Ruzhan's Embrace": {
+  "cn": "鲁詹之拥抱",
+  "tw": "魯詹之擁抱"
+ }
 }
