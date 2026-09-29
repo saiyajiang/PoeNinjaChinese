@@ -38,6 +38,7 @@ function extractArray(name) {
 // 1) 把脚本里现存的手工词条并入 JSON（JSON 已有同名键时以 JSON 为准）
 const ui = readJSON(join(ROOT, 'data/ui.json'));
 const terms = readJSON(join(ROOT, 'data/terms.json'));
+const gems = readJSON(join(ROOT, 'data/gems.json'));
 const legacy = extractArray('INLINE_UI') || [];
 let merged = 0;
 for (const row of legacy) {
@@ -59,13 +60,18 @@ const toRows = (map) => Object.keys(map)
   .sort(cmp);
 
 /** 生成 JS 数组源码，按英文原词排序，便于 diff */
-function render(name, lang) {
+function render(name) {
+  if (name === 'INLINE_GEMS') {
+    // 技能词库只有简体（编年史 /cn/ 页面），繁体留空由运行时 poedb /tw/ 补
+    const keys = Object.keys(gems).filter((k) => !k.startsWith('_')).sort();
+    const lines = keys.map((k) => `    [${JSON.stringify(k)}, ${JSON.stringify(gems[k])}, ""]`);
+    return `const ${name} = [\n${lines.join(',\n')}\n  ];`;
+  }
   const src = name === 'INLINE_UI' ? ui : terms;
   const keys = Object.keys(src.cn).filter((k) => !k.startsWith('_')).sort();
   const lines = keys.map((k) => {
-    const en = name === 'INLINE_UI' ? k : k;
     const cn = src.cn[k], tw = src.tw[k] || src.cn[k];
-    return `    [${JSON.stringify(en)}, ${JSON.stringify(cn)}, ${JSON.stringify(tw)}]`;
+    return `    [${JSON.stringify(k)}, ${JSON.stringify(cn)}, ${JSON.stringify(tw)}]`;
   });
   return `const ${name} = [\n${lines.join(',\n')}\n  ];`;
 }
@@ -82,8 +88,10 @@ function replace(src, name, block) {
 
 const nextUI = render('INLINE_UI');
 const nextTerms = render('INLINE_TERMS');
+const nextGems = render('INLINE_GEMS');
 let out = replace(code, 'INLINE_UI', nextUI);
 out = replace(out, 'INLINE_TERMS', nextTerms);
+out = replace(out, 'INLINE_GEMS', nextGems);
 
 if (CHECK) {
   const same = out.trim() === code.trim();
