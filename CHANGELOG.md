@@ -2,7 +2,14 @@
 
 本项目版本号遵循 [SemVer](https://semver.org/)。
 
+## 1.8.1
+
+- 加上脚本图标：暗底圆角 + PoE 金边框 + 金色「译」字，`@icon` 用 data URI 内联，
+  不依赖网络，装完在 Tampermonkey / 脚本管理列表里立刻能显示
+- 仓库补 `assets/`：icon.png（128）、icon.ico、icon-cn.png、icon-tw.png
+
 ## 1.8.0
+
 
 - **简体与繁体现在是两套独立译名**，不再是简转繁糊弄。编年史（poe2db.tw）的 `/cn/` 与 `/tw/`
   本来就是两套翻译，差别很大：
