@@ -1,10 +1,29 @@
 # PoeNinjaChinese
 
-> 给 [poe.ninja](https://poe.ninja) 做中文化的油猴脚本，中文译名优先取腾讯官方（国服），官方没有的再从 **poedb.tw / poe2db.tw**（流亡编年史）补齐。
-
-简体 / 繁體一键切换，界面文案、物品名、通货、技能宝石、地图、基底类型全覆盖；鼠标悬停可看英文原文，搜索框也能直接搜中文。
+> 把 [poe.ninja](https://poe.ninja) 的**官方繁體中文版**转换成**简体中文（腾讯国服译名优先）**的油猴脚本。
 
 [![Greasyfork](https://img.shields.io/badge/Greasyfork-安装-7c3aed)](https://greasyfork.org/zh-CN/scripts/596361)
+
+---
+
+## 为什么是 v2
+
+poe.ninja 在 **2026-10-30** 上线了官方多语言支持（含繁體中文，站顶 `Language` 选择器）。
+页面文字本身已经是中文了，旧版「英文 → 中文」的大词库替换就不再必要——而且它有个绕不过去的短板：
+**只有词库里收录的条目才能翻**，官方新加的物品、词缀、基底类型一律漏掉。
+
+v2 把架构翻过来：以官方繁中为源，整页转换，覆盖面上从「词库命中」变成「整页文字」。
+
+| | v1（`old` 分支） | v2（`main`） |
+|---|---|---|
+| 输入 | 英文页面 | **官方繁體中文页面** |
+| 主逻辑 | 英文 → 中文，靠词库逐条查 | **繁 → 简**（用词对照 + 字形转换） |
+| 覆盖 | 词库里有的才翻 | 整页中文全部转简，不依赖词库 |
+| 残留英文 | 主要缺口 | 只作兜底，用旧词库补 |
+| 译名来源 | 腾讯官方 + 编年史 | 腾讯国服优先，编年史 `/cn/` 兜底 |
+
+> **v1 完整源码在 [`old` 分支](https://github.com/saiyajiang/PoeNinjaChinese/tree/old)**（含 1.0.0–1.8.1 全部历史）。
+> `main` 只保留 v2。
 
 ---
 
@@ -12,149 +31,139 @@
 
 | | 说明 |
 |---|---|
-| **三层翻译** | ① 拦截页面自己的 `/api/` 响应，在数据进前端前改字段（**默认关闭**，见下）<br>② DOM 文本节点替换，主力：覆盖表格、弹窗、懒加载内容<br>③ 内置界面文案词典，断网也能翻按钮和表头 |
-| **不做半翻译** | 专有名词要么整串命中、要么每个词都有译名，否则保持原样。不会出现「风暴 Song」这种半吊子 |
-| **中文来源** | **腾讯官方优先**：国服市集 API 的官方简体译名；官方没有的再降级到 poedb.tw / poe2db.tw |
-| **跨节点合并** | poe.ninja 把数值高亮拆成多个 `<span>`，脚本会把相邻文本片段拼起来做最长匹配 |
-| **通用术语** | 约 400 条游戏术语（伤害/充能/钉住/破防…），大小写不敏感，专治被数值高亮拆碎的词缀 |
-| **脚本图标** | 暗底圆角 + PoE 金边 + 金色「译」字，`@icon` 内联 data URI，装完在脚本管理列表里即显示 |
-| **简繁两套译名** | 简体取自编年史 `/cn/`、繁體取自 `/tw/`，**不是简转繁**——两套翻译确实不同（七伤破/碎骨、魔侍蛮兵/骷髏巨獸）。右下角按钮循环切换 `译·简 → 譯·繁 → 译·关` |
-| **保留原文** | 翻译后的节点 `title` 里保留英文，鼠标悬停即可对照；可关 |
-| **未翻译收集** | `Alt + 点击`右下按钮（或油猴菜单）导出未命中字符串，方便补词条 |
-| **PoE1 / PoE2** | 按 URL 自动识别 `/poe1`、`/poe2`，切换到对应词库源站 |
+| **用词层** | 官方繁体用词 → 简体用词，**569 条**真正的译名差异，最长匹配。例如 `鋼鐵守護 → 钢铁看守`、`骷髏巨獸 → 魔侍蛮兵`、`萊基亞塔的流動 → 拉其塔之流`、`碎骨 → 七伤破` |
+| **字形层** | 剩余繁体字逐字转简，**3419 个**简繁异体字，覆盖 CJK 基本区。例如 `風暴編織者 → 风暴编织者`、`每秒攻擊次數 → 每秒攻击次数` |
+| **腾讯国服优先** | `data/tencent.json` 是腾讯国服译名覆盖层，优先级最高；运行时同步到的国服简体还会与编年史繁体按英文键对齐，动态补进用词表 |
+| **残留英文兜底** | 官方繁中尚未翻译的新物品 / 词缀仍是英文，这部分继续用旧词库翻译（简繁各一套） |
+| **三种模式** | `译·简` 繁转简 ／ `譯·繁` 保持官方繁体原文（仅补残留英文）／ `译·关` 不处理。右下角按钮循环切换 |
+| **保留原文** | 转换后的节点 `title` 保留官方繁体，鼠标悬停可对照；可关 |
+| **图标安全** | 数据层默认关闭——poe.ninja 用 `name` 查技能图标与描述，改成中文会导致技能丢图标和描述 |
+| **PoE1 / PoE2** | 按 URL 自动识别 `/poe1`、`/poe2` |
+| **脚本图标** | 暗底圆角 + PoE 金边 + 金色「译」字，`@icon` 内联 data URI，无需联网 |
+
+---
 
 ## 安装
 
 1. 浏览器装 [Tampermonkey](https://www.tampermonkey.net/)（或 Violentmonkey / 脚本猫）
 2. **从 Greasyfork 安装（推荐，带自动更新）**：
    [https://greasyfork.org/zh-CN/scripts/596361](https://greasyfork.org/zh-CN/scripts/596361)
-3. 或者从 GitHub 直装：打开下面的「脚本直链」，Tampermonkey 会自动识别并跳转到安装页
-4. 或者手动安装：新建脚本 → 粘贴 `PoeNinjaChinese.user.js` 全部内容 → 保存
+3. 或 GitHub 直装：打开[脚本直链](https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js)
+4. 或手动新建脚本，粘贴 `PoeNinjaChinese.user.js` 全部内容
 
-仓库地址：https://github.com/saiyajiang/PoeNinjaChinese
-脚本直链：https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js
+> ⚠️ **先在 poe.ninja 站顶把 `Language` 切成「繁體中文」**。
+> 若仍是英文，脚本只能靠旧词库兜底，繁转简不会生效。
+> 点油猴菜单「🔍 诊断词库源」可确认当前页面语言状态。
 
-> 首次打开 poe.ninja 会自动拉一次词库（腾讯官方优先，之后缓存 7 天）。
+仓库：https://github.com/saiyajiang/PoeNinjaChinese
+
+---
 
 ## 使用
 
-- **右下角按钮**：点击在 `译·简 → 譯·繁 → 译·关` 之间切换；`Alt + 点击` 导出未翻译字符串
+- **右下角按钮**：`译·简 → 譯·繁 → 译·关` 循环；`Alt + 点击` 导出未翻译字符串
 - **油猴菜单**：
-  - 🔄 更新词库（一次拉齐：CDN 词库 → 腾讯官方 → PoEDB 补缺）
-  - 📡 翻译接口数据 开/关（**默认关**：开启后搜索框可搜中文，但 poe.ninja 用 `name` 查图标和
-    描述，改成中文会导致部分技能丢图标和描述；想要中文搜索再手动开）
-  - 🌐 显示语言 简体 / 繁體 / 关闭
-  - 📡 翻译接口数据 开/关（关掉后只做页面文字翻译）
-  - 🏷 悬浮显示英文原文 开/关
-  - 🧩 跨节点合并翻译 开/关
-  - 📤 导出未翻译字符串 / 🧹 清除缓存 / ℹ️ 关于
+  - 🔄 更新词库（CDN 词库 → 腾讯官方 → PoEDB 补缺）
+  - 🌐 显示语言（简体·繁转简 / 官方繁体 / 关闭）
+  - 🔍 诊断词库源 —— 显示 `<html lang>`、正文繁体特征字数量、转换层规模、繁转简抽验
+  - 📡 翻译接口数据 开/关（默认关，见「图标安全」）
+  - 🏷 悬浮显示原文 / 🧩 跨节点合并 / 📤 导出未翻译 / 🧹 清除缓存 / ℹ️ 关于
 
-## 中文译名从哪来
+---
 
-**第一优先：腾讯官方（国服）**。脚本运行时会取 `https://poe.game.qq.com/api/trade/data/`：
+## 译名从哪来
 
-- `/items` —— 官方简体物品名，按「分组序号 + 组内序号」与国际服数据对齐
-  （组数或组内条数不一致就整组跳过，宁缺勿错）
-- `/stats` —— 官方简体词缀文本，两端 `id` 完全一致，可**精确对齐**，用来翻词缀
+**第一优先：腾讯国服**。脚本运行时取国服市集 API（`/api/trade/data/items`、`/stats`）拿官方简体译名，
+与「英文 → 繁中」词库按英文键对齐，动态生成「繁中 → 简中」映射并覆盖编年史用词。
+国服接口需要登录态（POESESSID），取不到就静默降级。
 
-国服接口需要登录态（POESESSID）。**没登录国服就会静默失败并自动降级到 poedb**，
-不会打扰你——想让官方译名生效，先在浏览器登录一次国服官网即可。
+**第二优先：编年史 `/cn/`**。`data/gems.json`（977 条技能/精魂/辅助宝石，含 cn 与 tw）
+和 `data/ui.json`（601 条界面文案）已按英文对齐出两套译名，构建时转成用词对照表。
 
-**第二优先：poedb.tw / poe2db.tw**。官方没有的由编年史补齐，按 slug 做英→中对齐。
-注意：autocomplete 词表**只含物品名**，所以**技能宝石必须另外抓页面**
-（`/us/` 与 `/cn/` 同名页面按序对齐），这部分已固化进 `data/gems.json`。
+**第三层：字形转换**。前两层没覆盖的普通文本，按 3419 字单字表逐字转简。
 
-菜单里只有一项「🔄 更新词库」，内部固定按「腾讯官方 → poedb 补缺」的顺序跑，不需要选源。
+> 已知限制：PoE2 国服 trade 接口此前诊断只对齐到 3/10 组，可用性有限；
+> 因此 PoE2 大部分简体用词来自编年史 `/cn/`（与国服简中同源）。
+> 需要精确国服叫法的条目，直接填进 `data/tencent.json` 即可，优先级最高。
 
-## 词库怎么更新
+---
 
-三种途径，任选：
+## 词库怎么改
 
-1. **自动**：GitHub Actions 每周一跑 `tools/build-dict.mjs`，把 `data/dict.min.json` 推回仓库，脚本缓存到期后自动取新版
-2. **手动**：脚本菜单「🌏 直接从 PoEDB 同步词库」，绕过仓库直接抓 poedb.tw（首次安装会自动走一次这一步）
-3. **本地构建**：
-   ```bash
-   node tools/build-dict.mjs                 # PoE1，源站 poedb.tw
-   node tools/build-dict.mjs --poe2          # PoE2，源站 poe2db.tw
-   node tools/build-dict.mjs --local ./snap  # 用本地快照离线构建
-   ```
-   产物：`data/dict.json`（带缩进，方便 diff）与 `data/dict.min.json`（脚本加载用）
-
-   源策略：`--source both`（默认，腾讯优先）/ `tencent` / `poedb`；
-   国服接口要登录时可传 `--cookie "POESESSID=xxx"`。
-   注意：腾讯官方只提供**简体**，繁体仍然全部来自 poedb。
-
-**改译名**请改 `data/overrides.json`（优先级最高，覆盖官方翻译），改完重新构建；补界面文案改 `data/ui.json`。
-
-> ⚠️ 工作流文件目前放在 `workflows/update-dict.yml`，GitHub 只识别 `.github/workflows/` 下的文件。
-> clone 到本地后执行一条命令即可启用自动更新（也可以在仓库网页上直接手动触发一次 Actions）：
-> ```bash
-> mkdir -p .github/workflows && git mv workflows/update-dict.yml .github/workflows/ && rmdir workflows
-> ```
-
-## 开发
+改 `data/tencent.json`（腾讯国服覆盖层）或 `data/overrides.json`（人工纠错）后：
 
 ```bash
-node tools/smoke-test.mjs   # 冒烟测试：在 Node 里用 DOM stub 跑翻译核心
-node tools/coverage.mjs 未翻译导出.json   # 用真实页面的导出文件测覆盖率
-node tools/build-dict.mjs   # 从 poedb.tw 构建物品名词库
-node tools/sync-inline.mjs  # 把 data/*.json 写回脚本内置区块（--check 只校验）
+pip install zhconv
+python3 tools/build-conversion.py   # 重建 h2s_packed.json / tencent.json / tw2cn.json
+node tools/sync-inline.mjs          # 写回脚本内联区块
+node tools/smoke-test.mjs           # 冒烟测试
 ```
 
-`data/` 是词库的单一数据源：改 JSON → 跑 `sync-inline` → 脚本内置生效，不要手改脚本里的数组。
+文件结构：
 
 ```
-data/ui.json       界面文案 + 专有名词（精确/小写匹配，536 条）
-data/gems.json     PoE2 技能/精魂/辅助宝石译名（977 条，简体取自 /cn/、繁體取自 /tw/）
-data/terms.json    通用术语（小写匹配，大小写不敏感，548 条）
-data/overrides.json  人工纠错层（优先级最高）
+PoeNinjaChinese.user.js   脚本本体（MIT，单文件可用）
+data/h2s_packed.json      繁→简 单字表（紧凑编码，3419 字）
+data/tw2cn.json           用词对照表（569 条，含腾讯层）
+data/tencent.json         腾讯国服覆盖层（最高优先）
+data/gems.json            技能宝石简繁双语（977 条）
+data/ui.json              界面文案简繁双语（601 条）
+data/terms.json           通用术语（556 条）
+data/overrides.json       人工纠错层
+tools/build-conversion.py 转换表构建
+tools/sync-inline.mjs     内联词库同步
+tools/smoke-test.mjs      冒烟测试
+tools/coverage.mjs        覆盖率检查
+assets/                   图标资源
 ```
 
-脚本结构（单文件，按编号分节）：
+---
 
-```
-0 常量配置      1 GM API 封装   2 内置 UI 词典   3 运行时状态
-4 词库加载      5 翻译核心      6 数据层拦截     7 DOM 层
-8 悬浮按钮      9 菜单与工具    10 启动
-```
+## 已知限制
 
-浏览器控制台里可以用 `__PoeNinjaChinese.translatePhrase('Tabula Rasa')` 自查命中情况。
+- **必须先切官方繁體中文**，否则繁转简无从谈起
+- 官方繁中本身没翻译的新物品/词缀仍是英文，由旧词库兜底，覆盖不全
+- 569 条用词对照来自编年史 `/cn/` 与 `/tw/` 对齐，少量条目可能有版本差异；
+  发现错译请填 `data/tencent.json`
+- 字形转换只覆盖 CJK 基本区（游戏文本不会出现扩展区生僻字）
+- 部分辅助宝石译名来自按序对齐，个别可能错位
 
-## 发布
+---
 
-| | 地址 |
+## 分支与发布
+
+| 分支 | 内容 |
 |---|---|
-| **Greasyfork（推荐安装）** | https://greasyfork.org/zh-CN/scripts/596361 |
-| GitHub 仓库 | https://github.com/saiyajiang/PoeNinjaChinese |
-| 脚本直链 | https://raw.githubusercontent.com/saiyajiang/PoeNinjaChinese/main/PoeNinjaChinese.user.js |
+| `main` | v2.0.0+（繁转简） |
+| `old` | v1.0.0–1.8.1 完整历史（英译中） |
 
-**fork 后必做**：脚本顶部 `const OWNER = 'saiyajiang'` 换成你自己的用户名，同时改 `@namespace`、`@downloadURL`、`@updateURL`、`@homepageURL`、`@supportURL`，否则自动更新和 CDN 词库都会指向原仓库。
+Greasyfork 若当初是「从 URL 导入」，会自动跟 `main` 同步；
+若是粘贴源码，需要手动重新提交一次。
 
-Greasyfork 与 GitHub 的关系：
+### 本地推送 v2
 
-- Greasyfork 脚本设为「从 URL 导入」，指向上面的脚本直链，推新版本时两边自动同步
-- `@downloadURL` / `@updateURL` 必须与仓库里的文件路径一致，否则自动更新失效
-- 只有 `@version` 变了 Greasyfork 才会推送更新，**改完记得升版本号**
-- 元信息里 `@name` / `@description` 的 `zh-CN`、`zh-TW` 变体都要填，Greasyfork 会校验非空
+v1 曾通过 GitHub API 逐文件提交，远程 `main` 与本地 git 历史可能不完全一致。
+最稳妥的做法（不会遇到 non-fast-forward）：
 
-## 已知限制 / TODO
+```bash
+# 1) 在 GitHub 网页上：Branches → New branch，基于 main 建 old
+# 2) 本地重新对齐远程，再覆盖 v2 文件
+git fetch origin
+git reset --hard origin/main
+#    把 v2 的文件（PoeNinjaChinese.user.js、data/、tools/、README.md、CHANGELOG.md）覆盖进来
+git add -A
+git commit -m "feat: v2.0.0 官方繁体→简体中文（腾讯国服译名优先）"
+git push origin main
+```
 
-- **部分繁体是字形转换**：977 条里 665 条来自编年史真繁体，其余 247 条繁体页未收录、
-  由简体转繁生成（字形对但用词可能不准）
-- **装备基底类型**（`Rattling Sceptre`、`Expert Sealed Mantle` 之类）尚未入库，仍显示英文。
-  需要 poe2db.tw 的 Base Types 页面做中英对齐，目前抓取受限；
-  可用菜单「📦 导出当前词库」把官方译名导出后手动补进 `data/overrides.json`
-- **词缀覆盖不全**：已翻译的是常见词缀与术语（提高/减少/抗性/暴击…），
-  poedb 的完整 mod 词库（上万条）尚未接入
-- **语序**：poe.ninja 把数值与词缀拆进不同 span，只能逐节点翻译，输出形如「30% 提高 全域 伤害」，
-  而非「提高 30% 全域伤害」。彻底解决需要引入 poedb 的词缀（mod）词库做整行匹配
-- **技能描述长句**：整句描述（如技能说明段落）不在词库覆盖范围内，仍是英文
-- 稀有物品的随机名（`Phoenix Wound` 之类）**故意不翻译**，避免误导
-- 品牌名、账号名、角色名不翻译
-- poe.ninja 改版换接口路径时，数据层可能失效，DOM 层会自动兜底
+若已确认本地 `old` 分支就是要归档的版本，也可以一并推：`git push origin old`。
+
+---
 
 ## 版权与致谢
 
-- 脚本本体：MIT
-- 中文译名：腾讯《流放之路》国服（官方简体，优先）+ [poedb.tw](https://poedb.tw) / [poe2db.tw](https://poe2db.tw)（内容以 CC BY-NC-SA 3.0 发布）
-- 游戏文本版权归 Grinding Gear Games 所有，本项目仅作非商业的个人辅助用途
+- 译名数据来自 [poedb.tw](https://poedb.tw) / [poe2db.tw](https://poe2db.tw)（CC BY-NC-SA 3.0）
+  与腾讯国服官方数据
+- poe.ninja 官方繁體中文版由 poe.ninja 提供
+- 本站与 Grinding Gear Games、腾讯、poe.ninja 均无隶属关系
+- 脚本本体 MIT License

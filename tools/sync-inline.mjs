@@ -39,6 +39,8 @@ function extractArray(name) {
 const ui = readJSON(join(ROOT, 'data/ui.json'));
 const terms = readJSON(join(ROOT, 'data/terms.json'));
 const gems = readJSON(join(ROOT, 'data/gems.json'));
+const h2s = readJSON(join(ROOT, 'data/h2s_packed.json'));      // 紧凑字符串
+const tw2cn = readJSON(join(ROOT, 'data/tw2cn.json'));         // {繁体词: 简体词}
 const legacy = extractArray('INLINE_UI') || [];
 let merged = 0;
 for (const row of legacy) {
@@ -61,6 +63,14 @@ const toRows = (map) => Object.keys(map)
 
 /** 生成 JS 数组源码，按英文原词排序，便于 diff */
 function render(name) {
+  if (name === 'INLINE_H2S') {
+    return `const H2S_PACKED = ${JSON.stringify(h2s)};`;
+  }
+  if (name === 'INLINE_TW2CN') {
+    const keys = Object.keys(tw2cn).sort((a, b) => b.length - a.length || a.localeCompare(b));
+    const lines = keys.map((k) => `    [${JSON.stringify(k)}, ${JSON.stringify(tw2cn[k])}]`);
+    return `const INLINE_TW2CN = [\n${lines.join(',\n')}\n  ];`;
+  }
   if (name === 'INLINE_GEMS') {
     // 技能词库：简体取自编年史 /cn/ 页面、繁体取自 /tw/ 页面（两套翻译，确实不同）
     const keys = Object.keys(gems).filter((k) => !k.startsWith('_')).sort();
@@ -94,9 +104,13 @@ function replace(src, name, block) {
 const nextUI = render('INLINE_UI');
 const nextTerms = render('INLINE_TERMS');
 const nextGems = render('INLINE_GEMS');
+const nextH2S = render('INLINE_H2S');
+const nextTW2CN = render('INLINE_TW2CN');
 let out = replace(code, 'INLINE_UI', nextUI);
 out = replace(out, 'INLINE_TERMS', nextTerms);
 out = replace(out, 'INLINE_GEMS', nextGems);
+out = replace(out, 'INLINE_H2S', nextH2S);
+out = replace(out, 'INLINE_TW2CN', nextTW2CN);
 
 if (CHECK) {
   const same = out.trim() === code.trim();
