@@ -3,10 +3,10 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      2.1.0
-// @description  仅对 poe.ninja 官方繁體中文版生效：腾讯国服译名优先、找不到再用编年史，转换成简体中文；切到英文版自动停手不覆盖；简/繁/关可切换
-// @description:zh-CN  仅对 poe.ninja 官方繁体中文版生效：腾讯国服译名优先、找不到再用编年史，转换成简体中文；切到英文版自动停手不覆盖；简/繁/关可切换
-// @description:zh-TW  僅對 poe.ninja 官方繁體中文版生效：騰訊國服譯名優先、找不到再用編年史，轉換成簡體中文；切到英文版自動停手不覆蓋；簡/繁/關可切換
+// @version      2.2.0
+// @description  把 poe.ninja 官方繁體中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；切到 English 自动停手；只有「替换 / 不替换」一个开关
+// @description:zh-CN  把 poe.ninja 官方繁体中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；切到 English 自动停手；只有「替换 / 不替换」一个开关
+// @description:zh-TW  把 poe.ninja 官方繁體中文版整頁轉成簡體中文（騰訊國服譯名優先、找不到再用編年史）；切到 English 自動停手；只有「替換 / 不替換」一個開關
 // @author       saiyajiang
 // @license      MIT
 // @icon         data:image/png;base64,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
@@ -36,11 +36,13 @@
  * PoeNinjaChinese —— poe.ninja 中文化
  *
  * v2.0.0 起：poe.ninja 已自带官方繁體中文版，架构从「英译中」改为「繁转简」；
- * v2.1.0 加上官方语言检测 —— 只有繁中页面才覆盖，英文版自动停手。
+ * v2.2.0：页面语言由 poe.ninja 站顶控制，脚本只保留「替换 / 不替换」一个开关。
+ *   页面语言靠「正文汉字数量」判定 —— 繁→简只换字形、汉字数不变，信号稳定，
+ *   因此每次可重新检测：切到 English 立刻停手，切回繁中立刻恢复，不再锁死。
  *   1. 腾讯国服层：data/tencent.json + 运行时同步的国服简体（最高优先）
  *   2. 编年史层：data/tw2cn_poedb.json（腾讯层查不到才用）
- *   3. 字形层：3419 个简繁异体单字
- *   4. 兜底层：官方繁中未覆盖的残留英文，仍用旧词库翻译（简/繁各自一套）
+ *   3. 字形层：3419 个简繁异体单字 —— 每个繁体「字」都会转简，不只是词条
+ *   4. 兜底层：官方繁中未覆盖的残留英文，仍用旧词库翻译（仅中文页面生效）
  *   5. 数据层：默认关闭（poe.ninja 用 name 查图标/描述，改中文会导致技能丢图标）
  * 词库来源：poedb.tw / poe2db.tw 的 /cn/ 与 /tw/ 页面（CC BY-NC-SA 3.0）
  *
@@ -56,7 +58,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '2.1.0';
+  const SCRIPT_VERSION = '2.2.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -2848,7 +2850,9 @@ const INLINE_TW2CN = [
    * ========================================================== */
   const state = {
     ready: false,
-    lang: GM.get(K_LANG, 'cn'),            // 'cn' | 'tw' | 'off'
+    // v2.2：只有「替换 / 不替换」两态。页面语言由 poe.ninja 站顶控制。
+    // 兼容旧值：'cn' / 'tw' 一律迁移为 'on'
+    lang: (function (v) { return v === 'off' ? 'off' : 'on'; })(GM.get(K_LANG, 'on')),
     // 是否翻译接口数据（页面自己 /api/ 返回的 JSON）。
     // 默认关闭：poe.ninja 会用 name 字段去查技能图标与描述，改成中文后查不到，
     // 技能就会丢图标和描述。DOM 层在渲染后改文本，不影响这些查询，所以默认走 DOM。
@@ -2999,23 +3003,33 @@ const INLINE_TW2CN = [
     return { text: out, converted: changed };
   }
 
-  const TW_CHAR_RE = /[體護擊傷風龍鐵鋼獸骷髏臺後裡麼發髮乾麵衝擊靈氣點數傷害護甲閃避暴擊幾率範圍效果區域需求等級物品賦予詞綴昇華職業聯盟]/g;
-
   /* ------------------------------------------------------------
-   * 官方页面语言检测（v2.1）
+   * 页面语言检测（v2.2）
    *
-   * 只在「官方繁體中文」页面上做覆盖。切到 English 时脚本完全不干预，
-   * 用户随时可以回去看英文原版；简体中文页（别的插件产物）也不动。
+   * 只在官方中文（繁體）页面上做替换；站顶切到 English 时完全停手。
    *
-   * 难点：脚本自己会把繁体改成简体，正文里的繁体特征字会越来越少，
-   * 若每次重新检测就会误判成「不是繁中」。所以结果在页面生命周期内锁定，
-   * 只在 <html lang> 变化或用户手动「重新检测」时才重置。
+   * v2.1 的教训：用「繁体特征字」当信号会在脚本自己转简后消失，
+   * 于是把结果锁死，导致「切到英文还在替换」「繁中页反而不转换」。
+   * v2.2 改用**汉字总数**：繁→简只是换字形，汉字数量不变，信号稳定，
+   * 因此可以每次重新检测、不锁定，语言切换后能立刻跟着变。
    * ---------------------------------------------------------- */
-  let langLock = null;          // null=未定 / true=官方繁中 / false=非繁中
-  let convertedNodes = 0;       // 已转换节点数，用来佐证「之前是繁中」
-  const langInfo = { htmlLang: '', twHits: 0, cjk: 0, reason: '' };
+  const pageLang = {
+    isZH: false,       // 当前是否中文页面（唯一的生效开关）
+    ready: false,      // 是否已采样到足够文本
+    checkedAt: 0,
+    forced: null,      // 仅供调试/测试强制指定；生产环境恒为 null
+    cjk: 0, latin: 0, ratio: 0, htmlLang: '', reason: ''
+  };
+  const LANG_TTL = 500;   // ms，采样缓存，避免每个文本节点都读一次 innerText
 
-  function readLangSample() {
+  function refreshPageLang(force) {
+    if (pageLang.forced !== null) return pageLang.forced;   // 调试/测试接管
+    const now = Date.now();
+    if (!force && pageLang.checkedAt && now - pageLang.checkedAt < LANG_TTL) {
+      return pageLang.isZH;
+    }
+    pageLang.checkedAt = now;
+
     const doc = document.documentElement;
     const htmlLang = (doc && (doc.getAttribute('lang') || doc.lang) || '').toLowerCase();
     let sample = '';
@@ -3023,69 +3037,68 @@ const INLINE_TW2CN = [
       const b = document.body;
       sample = b ? (b.innerText || b.textContent || '').slice(0, 12000) : '';
     } catch (e) {}
+
     const cjk = (sample.match(/[㐀-鿿]/g) || []).length;
-    const twHits = (sample.match(TW_CHAR_RE) || []).length;
-    const letters = (sample.match(/[A-Za-z㐀-鿿]/g) || []).length;
-    return { htmlLang, cjk, twHits, letters };
-  }
+    const latin = (sample.match(/[A-Za-z]/g) || []).length;
+    const total = cjk + latin;
+    pageLang.htmlLang = htmlLang;
+    pageLang.cjk = cjk;
+    pageLang.latin = latin;
+    pageLang.ratio = total ? cjk / total : 0;
 
-  /** 返回 true/false/null（null = 页面还没渲染完，暂不判定，也不做覆盖） */
-  function isOfficialTraditional() {
-    if (langLock !== null) return langLock;
-    const r = readLangSample();
-    langInfo.htmlLang = r.htmlLang;
-    langInfo.cjk = r.cjk;
-    langInfo.twHits = r.twHits;
-
-    // <html lang> 明确写成繁中 → 直接判定
-    const explicit = /^(zh[-_](tw|hant|hk|mo)|zh-hant|zh-tw|zh-hk)/.test(r.htmlLang);
-    if (explicit) {
-      langLock = true; langInfo.reason = '<html lang> 标为繁中';
-      return true;
-    }
-    // 页面还没渲染出足够文本 → 不下结论，等下一轮
-    if (r.letters < 150) {
-      langInfo.reason = '页面尚未渲染完成，等待中';
-      return null;
-    }
-    // <html lang> 明确是英文、正文又没有繁体特征字 → 英文原版，直接停手
-    if (/^en(?:[-_]|$)/.test(r.htmlLang) && r.twHits < 8) {
-      langLock = false;
-      langInfo.reason = '<html lang> 为英文且正文无繁体特征字（英文原版）';
+    // 页面还没渲染出足够文本 → 不下结论，也先不替换，等下一轮
+    if (total < 150) {
+      pageLang.ready = false;
+      pageLang.isZH = false;
+      pageLang.reason = '页面尚未渲染完成，等待中';
       return false;
     }
-    // 脚本此前已转换过节点 → 说明之前判定过是繁中，避免自我否定
-    if (convertedNodes > 0) {
-      langLock = true; langInfo.reason = '已有转换记录';
+    pageLang.ready = true;
+
+    // <html lang> 明确是中文语系 → 直接认（不受占比波动影响）
+    if (/^zh(?:[-_]|$)/.test(htmlLang)) {
+      pageLang.isZH = true;
+      pageLang.reason = `<html lang="${htmlLang}"> 标为中文`;
       return true;
     }
-    const isTW = r.twHits >= 8 || (r.cjk > 30 && r.twHits >= 3);
-    langLock = isTW;
-    langInfo.reason = isTW
-      ? `正文繁体特征字 ${r.twHits} 处`
-      : `正文繁体特征字仅 ${r.twHits} 处（疑为英文/简体页面）`;
-    return isTW;
+    // 汉字数量 + 占比双条件：英文页几乎不可能凑出这么多汉字；
+    // 转成简体后汉字数不变，所以这个判定不会因为脚本自身修改而翻转。
+    const isZH = cjk >= 50 && pageLang.ratio >= 0.04;
+    pageLang.isZH = isZH;
+    pageLang.reason = isZH
+      ? `正文汉字 ${cjk} 个（占比 ${(pageLang.ratio * 100).toFixed(1)}%）`
+      : `正文汉字仅 ${cjk} 个（占比 ${(pageLang.ratio * 100).toFixed(1)}%），判为英文版`;
+    return isZH;
   }
 
-  function resetLangLock() {
-    langLock = null;
-    convertedNodes = 0;
-    langInfo.reason = '已重置，等待重新检测';
-    paintToggle();
-    needFull = true;
-    schedule();
+  /** 供翻译入口读取的快捷判断（带缓存） */
+  function isOfficialTraditional() {
+    return refreshPageLang(false) === true;
   }
 
-  /** 监听 <html lang> 变化：站顶切换 Language 通常会导致它变化 */
-  function watchHtmlLang() {
-    try {
-      const doc = document.documentElement;
-      if (!doc) return;
-      new MutationObserver(() => {
-        const cur = (doc.getAttribute('lang') || '').toLowerCase();
-        if (cur && cur !== langInfo.htmlLang) resetLangLock();
-      }).observe(doc, { attributes: true, attributeFilter: ['lang'] });
-    } catch (e) {}
+  /**
+   * 后台轮询：站顶切语言后（SPA 可能不刷新、也不改 <html lang>），
+   * 靠汉字数量的变化自动发现，并在状态翻转时更新按钮 / 重新扫描。
+   */
+  let lastLangState = null;
+  function pollPageLang() {
+    const before = lastLangState;
+    const nowZH = refreshPageLang(true);
+    if (before === null) { lastLangState = nowZH; paintToggle(); return; }
+    if (before !== nowZH) {
+      lastLangState = nowZH;
+      paintToggle();
+      if (nowZH) {
+        GM.notify('已检测到官方繁體中文，恢复替换（繁→简）', 5000);
+        needFull = true;
+        schedule();
+      } else {
+        GM.notify('已检测到 English，脚本从此刻起停止替换。\n'
+          + '刷新一次页面即可看到完整英文原版；想恢复简体再切回「繁體中文」。', 7000);
+      }
+    } else {
+      paintToggle();
+    }
   }
 
   buildIndex();
@@ -3130,7 +3143,7 @@ const INLINE_TW2CN = [
       mergeDict(payload);
       state.source = cached.src || 'cache';
     }
-    const needRemote = force || !isFresh(cached) || Object.keys(state.dict[state.lang] || {}).length === 0;
+    const needRemote = force || !isFresh(cached) || Object.keys(state.dict[activeLang()] || {}).length === 0;
 
     if (needRemote) {
       const sources = [CDN_BASE + DICT_FILE, RAW_BASE + DICT_FILE];
@@ -3303,7 +3316,7 @@ const INLINE_TW2CN = [
   async function syncFromPoedb() {
     const host = gameKey() === 'poe2' ? 'https://poe2db.tw' : 'https://poedb.tw';
     const beta = host.indexOf('poe2db') >= 0 ? '_cb' : '';
-    const lang = state.lang === 'tw' ? 'tw' : 'cn';
+    const lang = activeLang();   // v2.2 固定简体
 
     async function auto(l) {
       const tries = [`${host}/json/autocomplete${beta}_${l}.json`, `${host}/json/autocomplete_${l}.json`];
@@ -3368,7 +3381,9 @@ const INLINE_TW2CN = [
     return /^\/poe2(\/|$)/.test(location.pathname) ? 'poe2' : 'poe1';
   }
 
-  function activeLang() { return state.lang === 'tw' ? 'tw' : 'cn'; }
+  // v2.2 去掉脚本内的简/繁/英三态：替换模式的目标语言固定为简体中文。
+  // 想看官方繁體就用站顶 Language + 关闭替换，不需要脚本再维护一套繁体词库。
+  function activeLang() { return 'cn'; }
 
   /** 单词条查表：物品词典 → 界面词典 → 术语词典（术语大小写不敏感） */
   function lookup(raw) {
@@ -3478,18 +3493,17 @@ const INLINE_TW2CN = [
     return out.join('');
   }
 
-  /** 短语翻译（DOM 文本节点）：官方繁体 → 简体 → 残留英文兜底 */
+  /** 短语翻译（DOM 文本节点）：整页繁→简 + 残留英文兜底 */
   function translatePhrase(src) {
-    if (state.lang === 'off') return src;
-    // v2.1：只有页面是「官方繁體中文」时才覆盖。
-    // 英文版 / 简体中文页 / 尚未渲染完，一律原样保留 —— 用户随时能回去看英文原版。
-    if (isOfficialTraditional() !== true) return src;
+    // 两道门槛，任一不满足就原样返回：
+    //   ① 用户关掉了「替换」
+    //   ② 页面不是官方中文版（英文版 / 还没渲染完）—— 站顶切 English 时完全不插手
+    if (state.lang !== 'on' || !isOfficialTraditional()) return src;
     let s = String(src);
 
-    // ① 官方繁体 → 简体中文。页面自 2026-10-30 起自带繁中，这一步取代了
-    //    旧版「英文 → 中文」的大词库替换，覆盖面从「词库里有的」变成「整页」。
-    //    繁体模式（tw）保持官方原文，只补残留英文；关闭模式（off）不处理。
-    if (state.lang === 'cn' && /[㐀-鿿]/.test(s)) {
+    // ① 整页繁→简：腾讯国服 → 编年史 → 字形，逐字扫描，
+    //    所以每一个繁体字都会被换成简体字，不再只看词库命中。
+    if (/[㐀-鿿]/.test(s)) {
       const conv = toSimplified(s);
       if (conv.converted) s = conv.text;
     }
@@ -3735,7 +3749,6 @@ const INLINE_TW2CN = [
     const solo = translatePhrase(src);
     if (solo !== src) {
       node.nodeValue = solo;
-      convertedNodes++;          // 佐证「当前页面是官方繁中」，防止检测自我否定
       markOriginal(node, src);
       return;
     }
@@ -3750,7 +3763,6 @@ const INLINE_TW2CN = [
         const out = translatePhrase(joined);
         if (out !== joined) {
           node.nodeValue = out;
-          convertedNodes++;
           for (let i = 0; i < n; i++) { follow[i].nodeValue = ''; seen.add(follow[i]); }
           markOriginal(node, joined);
           return;
@@ -3779,7 +3791,7 @@ const INLINE_TW2CN = [
 
   function flush() {
     if (!state.ready || state.lang === 'off') return;
-    isOfficialTraditional();      // 尽早判定，并让按钮 tooltip 反映真实状态
+    refreshPageLang(false);       // 刷新页面语言判定，按钮 tooltip 随之更新
     paintToggle();
     if (obs) obs.disconnect();
     try {
@@ -3827,8 +3839,8 @@ const INLINE_TW2CN = [
   display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.45);user-select:none;opacity:.86}
 #pnc-toggle:hover{opacity:1;border-color:#e8c07d}
 #pnc-toggle[data-state="off"]{color:#8b8b8b;border-color:#333}
-#pnc-toggle[data-page-lang="other"]{opacity:.6;border-color:#6b4b2a;border-style:dashed}
-#pnc-toggle[data-page-lang="other"]::before{content:"! ";color:#e8a04b}
+#pnc-toggle[data-page-lang="en"]{opacity:.6;border-color:#6b4b2a;border-style:dashed}
+#pnc-toggle[data-page-lang="en"]::before{content:"! ";color:#e8a04b}
 #pnc-toggle[data-page-lang="pending"]{opacity:.7}`;
     try { GM_addStyle(css); }
     catch (e) { const s = document.createElement('style'); s.textContent = css; document.head.appendChild(s); }
@@ -3839,11 +3851,9 @@ const INLINE_TW2CN = [
     const btn = document.createElement('div');
     btn.id = 'pnc-toggle';
     btn.setAttribute('data-pnc-skip', '1');
-    btn.title = '点击切换：简体 / 繁體 / 关闭　·　Alt+点击 导出未翻译字符串';
     btn.addEventListener('click', (e) => {
       if (e.altKey) { exportMissing(); return; }
-      const next = state.lang === 'cn' ? 'tw' : (state.lang === 'tw' ? 'off' : 'cn');
-      setLang(next);
+      setLang(state.lang === 'on' ? 'off' : 'on');
     });
     document.body.appendChild(btn);
     paintToggle();
@@ -3852,24 +3862,24 @@ const INLINE_TW2CN = [
   function paintToggle() {
     const btn = document.getElementById('pnc-toggle');
     if (!btn) return;
-    const label = state.lang === 'cn' ? '译·简' : (state.lang === 'tw' ? '譯·繁' : '译·关');
-    btn.textContent = label;
-    btn.dataset.state = state.lang;
-    const page = langLock === true ? '官方繁體中文 ✅'
-               : langLock === false ? '非繁中（英文/简体）· 脚本不覆盖'
-               : '页面语言检测中…';
-    btn.title = `页面：${page}\n模式：`
-      + (state.lang === 'cn' ? '官方繁體 → 简体（腾讯国服优先）'
-       : state.lang === 'tw' ? '保持官方繁體原文' : '关闭翻译')
-      + '\n\n想用英文原版？站顶 Language 切 English 即可';
-    btn.dataset.pageLang = langLock === true ? 'tw' : (langLock === false ? 'other' : 'pending');
+    const on = state.lang === 'on';
+    btn.textContent = on ? '替换' : '不替换';
+    btn.dataset.state = on ? 'on' : 'off';
+    const zh = pageLang.ready && pageLang.isZH;
+    const page = !pageLang.ready ? '页面语言检测中…'
+               : zh ? '官方繁體中文 ✅（正在转简体）'
+                    : 'English（脚本已停手，不替换）';
+    btn.title = `页面：${page}\n开关：${on ? '替换（繁→简，腾讯国服优先）' : '不替换（页面保持原样）'}`
+      + `\n\n点击切换「替换 / 不替换」；Alt+点击 导出未翻译字符串`
+      + `\n想看英文原版：站顶 Language 切 English，脚本自动停手`;
+    btn.dataset.pageLang = !pageLang.ready ? 'pending' : (zh ? 'zh' : 'en');
   }
 
+  /** 两态切换。已转简的中文无法还原成繁体，所以一律刷新整页最干净。 */
   function setLang(lang) {
-    state.lang = lang;
-    GM.set(K_LANG, lang);
+    state.lang = lang === 'off' ? 'off' : 'on';
+    GM.set(K_LANG, state.lang);
     paintToggle();
-    // 页面上的中文无法还原成英文，切换语言一律刷新整页最稳
     setTimeout(() => { try { location.reload(); } catch (e) {} }, 200);
   }
 
@@ -3905,18 +3915,20 @@ const INLINE_TW2CN = [
 
   /** 逐个探测词库源，把结果弹出来——排查"为什么还是英文"用这个 */
   async function diagnose() {
-    const lines = [`PoeNinjaChinese v${SCRIPT_VERSION}`, `页面：${gameKey()}　模式：${state.lang === 'cn' ? '简体（繁转简）' : state.lang === 'tw' ? '官方繁体' : '关闭'}`, ''];
+    const lines = [`PoeNinjaChinese v${SCRIPT_VERSION}`,
+      `页面：${gameKey()}　开关：${state.lang === 'on' ? '替换（繁→简）' : '不替换'}`, ''];
     const say = (s) => { lines.push(s); console.log('[PoeNinjaChinese] ' + s); };
 
-    // v2 核心：官方语言检测 + 繁转简分层
-    const langNow = isOfficialTraditional();
-    say(`官方语言：<html lang="${langInfo.htmlLang || '(无)'}">　繁体特征字 ${langInfo.twHits} 处 / 中文字 ${langInfo.cjk} 个`);
-    say(`判定：${langNow === true ? '✅ 官方繁體中文 → 脚本覆盖中'
-          : langNow === false ? '⛔ 非繁中（英文/简体）→ 脚本停手，页面保持原样'
-          : '⏳ 页面未渲染完，暂未判定'}　（${langInfo.reason}）`);
-    say(langNow !== true
-      ? '→ 需要简体：站顶 Language 选「繁體中文」并刷新；需要英文原版：保持 English，脚本不会覆盖'
-      : '→ 想看英文原版：站顶 Language 切 English，脚本会自动停手');
+    // v2.2：靠「汉字数量 / 占比」判定页面语言，这个信号转简后不会消失
+    const langNow = refreshPageLang(true);
+    say(`页面语言：<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 拉丁字母 ${pageLang.latin} 个（汉字占比 ${(pageLang.ratio * 100).toFixed(1)}%）`);
+    say(`判定：${!pageLang.ready ? '⏳ 页面未渲染完，暂不替换'
+          : langNow ? '✅ 官方中文（繁體）→ 整页转简体'
+                    : '⛔ English → 脚本停手，页面保持英文原样'}　（${pageLang.reason}）`);
+    say(`替换开关：${state.lang === 'on' ? '开（腾讯国服 → 编年史 → 字形）' : '关（页面完全不动）'}`);
+    say(langNow
+      ? '→ 想看英文原版：站顶 Language 切 English，脚本自动停手'
+      : '→ 需要简体：站顶 Language 切「繁體中文」，脚本会自动恢复替换');
     say(`译名优先级：腾讯国服 ${countIndex(TENCENT_BY_HEAD)} 条（含动态补入 ${tencentAugmented} 条）`
       + ` → 编年史 ${countIndex(POEDB_BY_HEAD)} 条 → 字形 ${Object.keys(H2S).length} 字`);
     say('内置：界面 ' + Object.keys(state.ui.cn).length + ' 条 / 术语 ' + Object.keys(state.terms.cn).length + ' 条');
@@ -3976,25 +3988,22 @@ const INLINE_TW2CN = [
   }
 
   function registerMenu() {
-    GM.menu('⚠️ 需将 poe.ninja 切为「繁體中文」（点此检测）', () => {
-      langLock = null;
-      convertedNodes = 0;
-      const ok = isOfficialTraditional();
-      const detail = `<html lang="${langInfo.htmlLang || '(无)'}">　繁体特征字 ${langInfo.twHits} 处　${langInfo.reason}`;
-      if (ok === true) {
-        GM.notify(`✅ 已检测到官方繁體中文，脚本正常覆盖。\n${detail}\n\n想看英文原版：站顶 Language 切 English 即可，脚本会自动停手。`, 8000);
-      } else if (ok === null) {
+    GM.menu('⚠️ 页面语言：需切「繁體中文」才替换（点此检测）', () => {
+      const ok = refreshPageLang(true);
+      const detail = `<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 占比 ${(pageLang.ratio * 100).toFixed(1)}%　${pageLang.reason}`;
+      if (!pageLang.ready) {
         GM.notify(`⏳ 页面还没渲染完，暂未判定。\n${detail}\n稍后再点一次检测。`, 8000);
+      } else if (ok) {
+        GM.notify(`✅ 已检测到官方繁體中文，脚本正在整页转简体。\n${detail}\n\n想看英文原版：站顶 Language 切 English，脚本会自动停手。`, 8000);
       } else {
-        GM.notify(`⛔ 当前不是官方繁體中文，脚本已停手（页面保持原样）。\n${detail}\n\n需要简体：站顶 Language → 繁體中文，然后刷新页面。\n需要英文原版：保持 English 即可，脚本不会覆盖。`, 10000);
+        GM.notify(`⛔ 当前是 English，脚本已停手 —— 页面保持英文原样，一个字都不会替换。\n${detail}\n\n需要简体：站顶 Language → 繁體中文。`, 10000);
       }
       paintToggle();
       needFull = true;
       schedule();
     });
-    GM.menu(`🌐 显示语言（当前：${state.lang === 'cn' ? '简体·繁转简' : state.lang === 'tw' ? '官方繁体' : '关闭'}）`, () => {
-      const next = state.lang === 'cn' ? 'tw' : (state.lang === 'tw' ? 'off' : 'cn');
-      setLang(next);
+    GM.menu(`🔁 替换 / 不替换（当前：${state.lang === 'on' ? '替换' : '不替换'}）`, () => {
+      setLang(state.lang === 'on' ? 'off' : 'on');
     });
     GM.menu('🔄 更新词库', async () => {
       GM.notify('正在更新词库…');
@@ -4034,7 +4043,8 @@ const INLINE_TW2CN = [
     GM.menu('🧹 清除本地词库缓存', () => { GM.set(K_NAME, null); GM.notify('已清除，刷新后重新拉取'); });
     GM.menu('ℹ️ 关于 PoeNinjaChinese v' + SCRIPT_VERSION, () => {
       GM.notify(`版本 ${SCRIPT_VERSION}　词库来源：${state.source || '内置'}\n`
-        + `页面语言：${langLock === true ? '官方繁體中文（覆盖中）' : langLock === false ? '非繁中（脚本停手）' : '检测中'}\n`
+        + `页面语言：${!pageLang.ready ? '检测中' : pageLang.isZH ? '官方繁體中文（替换中）' : 'English（脚本停手）'}\n`
+        + `开关：${state.lang === 'on' ? '替换' : '不替换'}\n`
         + `译名：腾讯国服 ${countIndex(TENCENT_BY_HEAD)} → 编年史 ${countIndex(POEDB_BY_HEAD)} → 字形 ${Object.keys(H2S).length}\n`
         + `简体 ${Object.keys(state.dict.cn).length} 条 / 繁體 ${Object.keys(state.dict.tw).length} 条`);
     });
@@ -4048,10 +4058,11 @@ const INLINE_TW2CN = [
 
   async function boot() {
     try { await loadDict(false); } catch (e) { state.ready = true; }
-    if (state.lang === 'off') return;
+    // 「不替换」时也保留按钮与菜单，否则用户没法切回来
     addStyle();
     startObserver();
-    watchHtmlLang();
+    // 站顶切 Language 后即使 SPA 不刷新、也不改 <html lang>，轮询汉字数量也能发现
+    try { setInterval(pollPageLang, 1500); } catch (e) {}
 
     // 首次安装（或仓库还没生成 dict.min.json）时，后台补一次物品名词库：
     // 腾讯官方优先，取不到（多半是没登录国服）再自动降级到 poedb。
@@ -4096,11 +4107,18 @@ const INLINE_TW2CN = [
       syncItems,
       exportMissing,
       toSimplified,
+      refreshPageLang,
       isOfficialTraditional,
-      resetLangLock,
       addTencent,
-      setPageLang(v) { langLock = !!v; langInfo.reason = '调试手动设定'; paintToggle(); },
-      langInfo
+      setPageLang(v) {
+        pageLang.forced = !!v;
+        pageLang.isZH = !!v;
+        pageLang.ready = true;
+        pageLang.reason = '调试手动设定';
+        paintToggle();
+      },
+      setReplace(on) { state.lang = on ? 'on' : 'off'; GM.set(K_LANG, state.lang); paintToggle(); },
+      pageLang
     };
   } catch (e) {}
 
