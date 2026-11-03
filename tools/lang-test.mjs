@@ -65,12 +65,16 @@ const TW = '鋼鐵守護 風魔舞者 骷髏巨獸 每秒攻擊次數 物品等�
 const EN = 'Builds Path of Exile 2 Available Leagues Gemling Legionnaire Stormweaver '
          + 'Titan Blood Mage Deadeye Infernalist Oracle Disciple of Varashta '.repeat(14);
 
-function setPage(htmlLang, text) {
+function setPage(htmlLang, text, path = '/poe2/builds') {
   docEl._lang = htmlLang;
+  sandbox.location.pathname = path;
+  sandbox.location.href = 'https://poe.ninja' + path;
   body.innerText = text;
   body.textContent = text;
   return api.refreshPageLang(true);      // 强制刷新，绕过 TTL 缓存
 }
+
+const SHORT_TW = '經濟 流派 天賦樹 返回搜尋 統計 能力值 移動速度';   // 文本量不足 150 字
 
 const results = [];
 function check(name, got, expect) {
@@ -117,10 +121,37 @@ check('开启替换：恢复转简', api.translatePhrase('風魔舞者'), '风�
 check('开启替换：状态为 on', api.state.lang, 'on');
 check('两态之外没有 tw 状态', ['on', 'off'].includes(api.state.lang), true);
 
-// ── 6. 页面未渲染完：不替换 ──
+// ── 6. 页面未渲染完（无 URL/lang 信号）：不替换 ──
 setPage('en', '');
 check('空白页：判定为非中文', api.isOfficialTraditional(), false);
 check('空白页：不替换', api.translatePhrase('鋼鐵守護'), '鋼鐵守護');
+
+// ── 7. v2.2.1：官方 URL 路径前缀 /zh-tw/ 是最强信号 ──
+// 复现用户截图：poe.ninja/zh-tw/poe2/builds/... 首屏文本不足 150 字，
+// 旧版判「未就绪」→ 首屏节点被 seen 永久跳过 → 刷新后仍是繁体。
+setPage('', SHORT_TW, '/zh-tw/poe2/builds/forbiddenrites/character/xxx');
+check('URL=/zh-tw/ 且首屏文本不足：仍判为中文页', api.isOfficialTraditional(), true);
+check('URL=/zh-tw/ 首屏即整页转简', api.translatePhrase('經濟 天賦樹 統計'), '经济 天赋树 统计');
+check('URL=/zh-tw/ 页面标记已就绪', api.pageLang.ready, true);
+
+// URL 无前缀、文本量不足 → 仍需等渲染
+setPage('', SHORT_TW, '/poe2/builds');
+check('无 URL 信号且首屏文本不足：不就绪', api.isOfficialTraditional(), false);
+
+// ── 8. URL 未随语言切换更新时，正文英文必须压过 URL ──
+setPage('', EN, '/zh-tw/poe2/builds');
+check('URL=/zh-tw/ 但正文是英文：判为英文版', api.isOfficialTraditional(), false);
+check('URL=/zh-tw/ 但正文是英文：不替换', api.translatePhrase('鋼鐵守護'), '鋼鐵守護');
+
+// 切回繁中内容（URL 不变，SPA 只换正文）
+setPage('', TW, '/zh-tw/poe2/builds');
+check('同一 URL 换回繁中正文：恢复中文页', api.isOfficialTraditional(), true);
+check('同一 URL 换回繁中正文：恢复替换', api.translatePhrase('風魔舞者'), '风舞者');
+
+// ── 9. 站顶切 English 后 URL 变成无前缀 ──
+setPage('en', EN, '/poe2/builds');
+check('切到无前缀英文 URL：判定翻转', api.isOfficialTraditional(), false);
+check('切到无前缀英文 URL：立刻停手', api.translatePhrase('鋼鐵守護'), '鋼鐵守護');
 
 const pass = results.filter((r) => r[1]).length;
 console.log(`\n${pass}/${results.length} 通过`);
