@@ -51,6 +51,9 @@ await new Promise((r) => setTimeout(r, 60));
 const api = sandbox.__PoeNinjaChinese;
 if (!api) { console.error('❌ 脚本未暴露调试入口'); process.exit(1); }
 
+// v2.1 起只有「官方繁體中文」页面才做覆盖；测试里模拟已判定为繁中
+api.setPageLang(true);
+
 // 注入一批假词条，模拟 poedb 词库
 Object.assign(api.state.dict.cn, {
   'Tabula Rasa': '白袍',
@@ -101,5 +104,35 @@ const okPayload =
 console.log(`${okPayload ? '✅' : '❌'} 接口数据翻译（name 翻译、detailsId/icon 不动）→`, JSON.stringify(payload.lines[0]));
 if (okPayload) pass++;
 
-console.log(`\n${pass}/${cases.length + 1} 通过`);
-process.exit(pass === cases.length + 1 ? 0 : 1);
+// ── v2.1：繁转简分层 + 官方语言门槛 ──
+const extra = [];
+
+// ① 编年史层（腾讯层没有这个词）
+extra.push(['编年史层用词转换', api.toSimplified('鋼鐵守護').text === '钢铁看守',
+  api.toSimplified('鋼鐵守護').text]);
+// ② 字形层兜底
+extra.push(['字形层转换', api.toSimplified('風暴編織者').text === '风暴编织者',
+  api.toSimplified('風暴編織者').text]);
+// ③ 腾讯国服层优先级高于编年史层
+api.addTencent('鋼鐵守護', '腾讯译名优先');
+extra.push(['腾讯层优先于编年史层', api.toSimplified('鋼鐵守護').text === '腾讯译名优先',
+  api.toSimplified('鋼鐵守護').text]);
+// ④ 英文版 / 非繁中页面：一律不覆盖（用户随时能看英文原版）
+api.setPageLang(false);
+extra.push(['非繁中页面不覆盖繁体', api.translatePhrase('鋼鐵守護') === '鋼鐵守護',
+  api.translatePhrase('鋼鐵守護')]);
+extra.push(['非繁中页面不覆盖英文', api.translatePhrase('Tabula Rasa') === 'Tabula Rasa',
+  api.translatePhrase('Tabula Rasa')]);
+api.setPageLang(true);
+// ⑤ 恢复繁中后转换恢复
+extra.push(['恢复繁中后继续覆盖', api.translatePhrase('風魔舞者') === '风舞者',
+  api.translatePhrase('風魔舞者')]);
+
+for (const [name, ok, got] of extra) {
+  console.log(`${ok ? '✅' : '❌'} ${name} → ${JSON.stringify(got)}`);
+  if (ok) pass++;
+}
+
+const total = cases.length + 1 + extra.length;
+console.log(`\n${pass}/${total} 通过`);
+process.exit(pass === total ? 0 : 1);

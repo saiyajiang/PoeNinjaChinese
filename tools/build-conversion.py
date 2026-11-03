@@ -9,9 +9,10 @@
   overrides.json 人工纠错层，其中 tw→cn 视为腾讯国服叫法，优先级最高
 
 产出：
-  data/h2s_packed.json   繁→简 单字表（紧凑字符串，每 2 字符一组「繁+简」）
-  data/tencent.json      腾讯国服覆盖层 {繁体词: 简体词}
-  data/tw2cn.json        合并后的用词对照表 {繁体词: 简体词}
+  data/h2s_packed.json      繁→简 单字表（紧凑字符串，每 2 字符一组「繁+简」）
+  data/tencent.json         腾讯国服层 {繁体词: 简体词}  ← 查表时优先级最高
+  data/tw2cn_poedb.json     编年史层 {繁体词: 简体词}    ← 腾讯层查不到才用
+  data/tw2cn.json           两层合并（仅供参考，脚本不直接读）
 
 改完 data/*.json 后依次执行：
   python3 tools/build-conversion.py
@@ -85,7 +86,8 @@ for en, cn in ui['cn'].items():
     if tw and cn and tw != cn and shape_t2s(tw) != cn:
         tw2cn[tw] = cn
 
-print(f'编年史对齐用词差异：{len(tw2cn)} 条')
+print(f'编年史层（英文对齐出的用词差异）：{len(tw2cn)} 条')
+save('tw2cn_poedb.json', tw2cn)
 
 # ── 3. 腾讯国服层（最高优先）────────────────────────────────
 # overrides 里的 cn 本来就是国服/大陆玩家习惯叫法，tw 是对应繁体。
@@ -96,12 +98,13 @@ for en, tw in ov.get('tw', {}).items():
     tw, cn = tw.strip(), (cn or '').strip()
     if tw and cn and tw != cn:
         tencent[tw] = cn
-print(f'腾讯国服覆盖层：{len(tencent)} 条')
+print(f'腾讯国服层：{len(tencent)} 条')
 save('tencent.json', tencent)
 
+# 两层分开存，脚本查表时先腾讯再编年史；这里额外留一份合并结果便于人工查看
 merged = dict(tw2cn)
-merged.update(tencent)          # 腾讯优先
-print(f'合并后用词对照表：{len(merged)} 条')
+merged.update(tencent)
 save('tw2cn.json', merged)
+print(f'合并参考表：{len(merged)} 条')
 
 print('\n完成。接着执行：node tools/sync-inline.mjs')
