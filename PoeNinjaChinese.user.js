@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      2.2.0
+// @version      2.2.1
 // @description  把 poe.ninja 官方繁體中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-CN  把 poe.ninja 官方繁体中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-TW  把 poe.ninja 官方繁體中文版整頁轉成簡體中文（騰訊國服譯名優先、找不到再用編年史）；切到 English 自動停手；只有「替換 / 不替換」一個開關
@@ -58,7 +58,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '2.2.0';
+  const SCRIPT_VERSION = '2.2.1';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -3004,23 +3004,43 @@ const INLINE_TW2CN = [
   }
 
   /* ------------------------------------------------------------
-   * 页面语言检测（v2.2）
+   * 页面语言检测（v2.2.1）
    *
    * 只在官方中文（繁體）页面上做替换；站顶切到 English 时完全停手。
    *
-   * v2.1 的教训：用「繁体特征字」当信号会在脚本自己转简后消失，
-   * 于是把结果锁死，导致「切到英文还在替换」「繁中页反而不转换」。
-   * v2.2 改用**汉字总数**：繁→简只是换字形，汉字数量不变，信号稳定，
-   * 因此可以每次重新检测、不锁定，语言切换后能立刻跟着变。
+   * 官方把语言写在 URL 路径前缀里：poe.ninja/zh-tw/poe2/builds/...
+   * 这是**最强信号**——脚本在 document-start 第一帧就能确定，不必等
+   * body 渲染。v2.2.0 只看正文汉字数，首屏文本不足 150 字时判「未就绪」，
+   * 而首屏节点已被 seen 永久标记，导致刷新后大片繁体不转、只有点
+   * 「更新词库」（rescanAll 清空 seen）才变简体。
+   *
+   * 判定顺序（后者不得推翻已确证的英文页）：
+   *   ① 正文已渲染且几乎全是拉丁字母 → 英文版（SPA 切语言未改 URL 也能发现）
+   *   ② URL 前缀 zh-tw / zh-hant 等 → 官方繁中（body 未渲染也算）
+   *   ③ <html lang=zh*> → 中文
+   *   ④ 正文汉字数 + 占比
    * ---------------------------------------------------------- */
   const pageLang = {
     isZH: false,       // 当前是否中文页面（唯一的生效开关）
-    ready: false,      // 是否已采样到足够文本
+    ready: false,      // 是否已有可靠判定
     checkedAt: 0,
     forced: null,      // 仅供调试/测试强制指定；生产环境恒为 null
-    cjk: 0, latin: 0, ratio: 0, htmlLang: '', reason: ''
+    cjk: 0, latin: 0, ratio: 0, htmlLang: '', path: '', reason: ''
   };
   const LANG_TTL = 500;   // ms，采样缓存，避免每个文本节点都读一次 innerText
+
+  /** 取当前路径（兼容只给 href 的环境） */
+  function currentPath() {
+    let p = '';
+    try { p = location.pathname || ''; } catch (e) {}
+    if (!p) {
+      try { p = (location.href || '').replace(/^https?:\/\/[^/]+/, ''); } catch (e) {}
+    }
+    return p.split(/[?#]/)[0];
+  }
+
+  const URL_TW = /(?:^|\/)(zh[-_]tw|zh[-_]hant|zh[-_]hk|zh[-_]mo|zh[-_]hant[-_]tw)(?:\/|$)/i;
+  const URL_EN = /(?:^|\/)(en|en[-_]us|en[-_]gb)(?:\/|$)/i;
 
   function refreshPageLang(force) {
     if (pageLang.forced !== null) return pageLang.forced;   // 调试/测试接管
@@ -3032,6 +3052,7 @@ const INLINE_TW2CN = [
 
     const doc = document.documentElement;
     const htmlLang = (doc && (doc.getAttribute('lang') || doc.lang) || '').toLowerCase();
+    const path = currentPath();
     let sample = '';
     try {
       const b = document.body;
@@ -3042,32 +3063,37 @@ const INLINE_TW2CN = [
     const latin = (sample.match(/[A-Za-z]/g) || []).length;
     const total = cjk + latin;
     pageLang.htmlLang = htmlLang;
+    pageLang.path = path;
     pageLang.cjk = cjk;
     pageLang.latin = latin;
     pageLang.ratio = total ? cjk / total : 0;
+    pageLang.ready = true;      // URL / lang 是确证信号时，不必等正文渲染
 
-    // 页面还没渲染出足够文本 → 不下结论，也先不替换，等下一轮
-    if (total < 150) {
-      pageLang.ready = false;
+    // ① 正文已渲染且几乎全是英文 → 英文版优先，避免 URL 未更新时误替换
+    if (total >= 150 && cjk < 20 && !/^zh/.test(htmlLang)) {
       pageLang.isZH = false;
-      pageLang.reason = '页面尚未渲染完成，等待中';
+      pageLang.reason = `正文汉字仅 ${cjk} 个，判为 English（URL=${path || '/'}）`;
       return false;
     }
-    pageLang.ready = true;
-
-    // <html lang> 明确是中文语系 → 直接认（不受占比波动影响）
+    // ② URL 前缀明确是官方繁中 —— 首屏 body 还没内容也照判
+    if (URL_TW.test(path)) {
+      pageLang.isZH = true;
+      pageLang.reason = `URL 路径 ${path} 标为官方繁體中文`;
+      return true;
+    }
+    // ③ <html lang> 明确中文语系
     if (/^zh(?:[-_]|$)/.test(htmlLang)) {
       pageLang.isZH = true;
       pageLang.reason = `<html lang="${htmlLang}"> 标为中文`;
       return true;
     }
-    // 汉字数量 + 占比双条件：英文页几乎不可能凑出这么多汉字；
-    // 转成简体后汉字数不变，所以这个判定不会因为脚本自身修改而翻转。
-    const isZH = cjk >= 50 && pageLang.ratio >= 0.04;
+    // ④ 正文汉字数量 + 占比（繁→简只换字形，汉字数不变，信号稳定）
+    const isZH = total >= 150 && cjk >= 50 && pageLang.ratio >= 0.04;
     pageLang.isZH = isZH;
     pageLang.reason = isZH
       ? `正文汉字 ${cjk} 个（占比 ${(pageLang.ratio * 100).toFixed(1)}%）`
-      : `正文汉字仅 ${cjk} 个（占比 ${(pageLang.ratio * 100).toFixed(1)}%），判为英文版`;
+      : `正文汉字 ${cjk} 个 / 文本量 ${total}，不足以判定为中文页（URL=${path || '/'}）`;
+    if (total < 150) pageLang.ready = false;   // 无 URL/lang 信号时仍需等渲染
     return isZH;
   }
 
@@ -3090,6 +3116,8 @@ const INLINE_TW2CN = [
       paintToggle();
       if (nowZH) {
         GM.notify('已检测到官方繁體中文，恢复替换（繁→简）', 5000);
+        seen = new WeakSet();     // 英文页期间被标记的节点也要重新参与
+        lastAppliedZH = null;     // 让下一轮 flush 再做一次整页重扫
         needFull = true;
         schedule();
       } else {
@@ -3696,6 +3724,9 @@ const INLINE_TW2CN = [
 
   function scan(root) {
     if (!root || state.lang === 'off' || !state.ready) return;
+    // v2.2.1：语言未判定 / 英文版时整轮跳过，节点绝不进 seen。
+    // 否则首屏被标记过的节点，等语言就绪后也不会再重扫（刷新后大片繁体的根因）。
+    if (!isOfficialTraditional()) return;
     if (root.nodeType === 3) { scanText(root); return; }
     if (root.nodeType === 1 && skippable(root)) return;
 
@@ -3789,9 +3820,18 @@ const INLINE_TW2CN = [
     requestAnimationFrame(() => { scheduled = false; flush(); });
   }
 
+  let lastAppliedZH = null;
+
   function flush() {
     if (!state.ready || state.lang === 'off') return;
-    refreshPageLang(false);       // 刷新页面语言判定，按钮 tooltip 随之更新
+    const zh = refreshPageLang(false);   // 刷新页面语言判定，按钮 tooltip 随之更新
+    // 首次（或重新）判定为中文页 → 清空 seen 整页重扫。
+    // 兜住「首屏判定未就绪时已扫过一部分节点」的旧状态，刷新后无需手动更新词库。
+    if (zh && lastAppliedZH !== true) {
+      seen = new WeakSet();
+      needFull = true;
+    }
+    lastAppliedZH = zh;
     paintToggle();
     if (obs) obs.disconnect();
     try {
@@ -3921,7 +3961,7 @@ const INLINE_TW2CN = [
 
     // v2.2：靠「汉字数量 / 占比」判定页面语言，这个信号转简后不会消失
     const langNow = refreshPageLang(true);
-    say(`页面语言：<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 拉丁字母 ${pageLang.latin} 个（汉字占比 ${(pageLang.ratio * 100).toFixed(1)}%）`);
+    say(`页面语言：URL=${pageLang.path || '/'}　<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 拉丁字母 ${pageLang.latin} 个（占比 ${(pageLang.ratio * 100).toFixed(1)}%）`);
     say(`判定：${!pageLang.ready ? '⏳ 页面未渲染完，暂不替换'
           : langNow ? '✅ 官方中文（繁體）→ 整页转简体'
                     : '⛔ English → 脚本停手，页面保持英文原样'}　（${pageLang.reason}）`);
@@ -3990,7 +4030,7 @@ const INLINE_TW2CN = [
   function registerMenu() {
     GM.menu('⚠️ 页面语言：需切「繁體中文」才替换（点此检测）', () => {
       const ok = refreshPageLang(true);
-      const detail = `<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 占比 ${(pageLang.ratio * 100).toFixed(1)}%　${pageLang.reason}`;
+      const detail = `URL=${pageLang.path || '/'}　<html lang="${pageLang.htmlLang || '(无)'}">　汉字 ${pageLang.cjk} 个 / 占比 ${(pageLang.ratio * 100).toFixed(1)}%　${pageLang.reason}`;
       if (!pageLang.ready) {
         GM.notify(`⏳ 页面还没渲染完，暂未判定。\n${detail}\n稍后再点一次检测。`, 8000);
       } else if (ok) {
@@ -4118,6 +4158,7 @@ const INLINE_TW2CN = [
         paintToggle();
       },
       setReplace(on) { state.lang = on ? 'on' : 'off'; GM.set(K_LANG, state.lang); paintToggle(); },
+      flush, scan, rescanAll, pollPageLang, setNeedFull(v) { needFull = !!v; },
       pageLang
     };
   } catch (e) {}
