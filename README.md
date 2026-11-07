@@ -40,6 +40,7 @@ v2 把架构翻过来：以官方繁中为源，整页转换，覆盖面上从�
 | **整页每一个「字」都转简** | 不只是词条命中 —— 所有文本节点逐字扫描，剩余繁体字一律走字形层。`這是一個繁體字測試 → 这是一个繁体字测试` |
 | **只在中文页面替换** | 优先看 **URL 路径前缀 `/zh-tw/`**（官方把语言写进路径，首屏第一帧即可确定），辅以 `<html lang>` 与**正文汉字数量 / 占比**（繁→简只换字形，汉字数不变，信号不会自我消解）。切到 English 立刻停手，切回繁中立刻恢复 |
 | **残留英文兜底** | 官方繁中尚未翻译的新物品 / 词缀仍是英文，这部分继续用旧词库翻译（仅中文页面生效） |
+| **联盟名补翻** | 官方繁中只本地化了基础联盟名，HC / SSF 前缀组合与新联盟仍是英文。按腾讯国服官方译名补翻：`Runes of Aldur → 奥杜尔秘符`、`Forbidden Rites → 禁忌仪式`、`HC → 专家`、`SSF → 独狼`，输出如 `HC SSF Forbidden Rites → 专家独狼·禁忌仪式`。数据见 `data/leagues.json`，30 条整串自动展开 |
 | **只有一个开关：替换 / 不替换** | 页面语言由 poe.ninja 站顶控制，脚本**不再**自带简/繁/英三态。右下角按钮和油猴菜单都是两态切换 |
 | **保留原文** | 转换后的节点 `title` 保留官方繁体，鼠标悬停可对照；可关 |
 | **图标安全** | 数据层默认关闭——poe.ninja 用 `name` 查技能图标与描述，改成中文会导致技能丢图标和描述 |
@@ -109,6 +110,7 @@ node tools/sync-inline.mjs          # 写回脚本内联区块
 node tools/smoke-test.mjs           # 冒烟测试
 node tools/lang-test.mjs            # 页面语言切换 / 替换开关测试
 node tools/scan-test.mjs            # 首屏重扫集成测试（刷新后是否自动转简）
+node tools/league-test.mjs          # 联盟名补翻测试
 ```
 
 文件结构：
@@ -123,14 +125,34 @@ data/gems.json            技能宝石简繁双语（977 条）
 data/ui.json              界面文案简繁双语（601 条）
 data/terms.json           通用术语（556 条）
 data/overrides.json       人工纠错层
+data/leagues.json         腾讯官方联盟名补翻层（含 HC/SSF 前缀，构建时展开）
 tools/build-conversion.py 转换表构建
 tools/sync-inline.mjs     内联词库同步
 tools/smoke-test.mjs      冒烟测试
 tools/lang-test.mjs       页面语言切换 / 替换开关测试
 tools/scan-test.mjs       首屏重扫集成测试
+tools/league-test.mjs     联盟名补翻测试
 tools/coverage.mjs        覆盖率检查
 assets/                   图标资源
 ```
+
+---
+
+## 新增联盟 / 改译名
+
+官方每开一个新赛季，`data/leagues.json` 的 `bases` 里加一条即可，前缀组合自动生成：
+
+```json
+"bases": {
+  "New League Name": { "cn": "腾讯国服简体译名", "tw": "對應繁體譯名" }
+}
+```
+
+然后 `node tools/sync-inline.mjs` 写回脚本。
+`prefixOrders` 控制 HC / SSF 的组合顺序，`joiner` 控制前缀与联盟名之间的分隔符。
+
+> 译名以腾讯国服官方公告为准；编年史 `/cn/`、`/tw/` 与媒体叫法常不一致
+> （如 `Runes of Aldur` 腾讯叫「奥杜尔秘符」，编年史叫「符文之環」），不要混用。
 
 ---
 
@@ -151,7 +173,7 @@ assets/                   图标资源
 
 | 分支 | 内容 |
 |---|---|
-| `main` | v2.0.0+（繁转简），当前 2.2.1 |
+| `main` | v2.0.0+（繁转简），当前 2.3.0 |
 | `old` | v1.0.0–1.8.1 完整历史（英译中） |
 
 Greasyfork 若当初是「从 URL 导入」，会自动跟 `main` 同步；
