@@ -1,0 +1,27 @@
+{
+  "_comment": "poe.ninja 官方繁體中文版未本地化的联盟名（含 HC/SSF 前缀组合），由脚本补翻。译名优先取腾讯国服官方，编年史只作参考。运行时由 tools/sync-inline.mjs 展开成所有前缀组合内联进脚本。",
+  "sources": {
+    "Runes of Aldur": "腾讯官方《流放之路：降临》奥杜尔秘符赛季 6月5日开服公告（poe2.qq.com）",
+    "Forbidden Rites": "国服 0.5.5 补丁说明：禁忌仪式挑战联赛",
+    "HC": "国服补丁说明：标准 / 专家 / 独狼三种模式（Hardcore = 专家）",
+    "SSF": "国服补丁说明：独狼（Solo Self-Found）；编年史 /tw/ 作「自力」",
+    "note": "编年史 poe2db.tw 把 Runes of Aldur 译作「符文之環 / 阿德爾的符文」，与腾讯国服不同，故不采用。"
+  },
+  "bases": {
+    "Runes of Aldur": { "cn": "奥杜尔秘符", "tw": "奧杜爾秘符" },
+    "Forbidden Rites": { "cn": "禁忌仪式", "tw": "禁忌儀式" }
+  },
+  "prefixes": {
+    "HC": { "cn": "专家", "tw": "專家" },
+    "SSF": { "cn": "独狼", "tw": "獨狼" }
+  },
+  "prefixOrders": [
+    [],
+    ["HC"],
+    ["SSF"],
+    ["HC", "SSF"],
+    ["SSF", "HC"]
+  ],
+  "joiner": "·",
+  "suffixes": ["", " 联盟", " 聯盟"]
+}
