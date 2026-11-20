@@ -103,6 +103,52 @@ check('普通英文句不受影响',
   api.translatePhrase('Twisters fired at the same time can merge'),
   'Twisters fired at the same time can merge');
 
+// ── 新赛季：PoE1 S31「黑影巫会」(Covens of Umbra, 国服 2026-11-20 开服) ──
+console.log('\n── PoE1 3.30 / 国服 S31：黑影巫会 ──');
+// poe.ninja /poe1/builds 实际显示的 6 种写法（页面用缩写 Covens）
+for (const [src, exp] of [
+  ['Covens', '黑影巫会'],
+  ['Hardcore Covens', '专家·黑影巫会'],
+  ['SSF Covens', '独狼·黑影巫会'],
+  ['HC SSF Covens', '专家独狼·黑影巫会'],
+  ['Ruthless Covens', '无情·黑影巫会'],
+  ['SSF R Covens', '独狼无情·黑影巫会']
+]) check(src, api.translatePhrase(src), exp);
+check('全称 Covens of Umbra', api.translatePhrase('Covens of Umbra'), '黑影巫会');
+check('全称 + 专家', api.translatePhrase('Hardcore Covens of Umbra'), '专家·黑影巫会');
+check('带后缀', api.translatePhrase('HC SSF Covens 聯盟'), '专家独狼·黑影巫会 联盟');
+
+// ── 新赛季：PoE2 1.0「瓦尔克拉斯征服者」(Conquerors of Wraeclast, 12/11 国际服 / 12/12 国服) ──
+console.log('\n── PoE2 1.0：瓦尔克拉斯征服者 ──');
+for (const [src, exp] of [
+  ['Conquerors of Wraeclast', '瓦尔克拉斯征服者'],
+  ['HC Conquerors of Wraeclast', '专家·瓦尔克拉斯征服者'],
+  ['SSF Conquerors of Wraeclast', '独狼·瓦尔克拉斯征服者'],
+  ['HC SSF Conquerors of Wraeclast', '专家独狼·瓦尔克拉斯征服者']
+]) check(src, api.translatePhrase(src), exp);
+check('带后缀', api.translatePhrase('HC SSF Conquerors of Wraeclast 聯盟'),
+  '专家独狼·瓦尔克拉斯征服者 联盟');
+
+// ── 1.0 新职业 / 升华（国服官方前瞻会口径）──
+console.log('\n── PoE2 1.0 新职业与升华 ──');
+for (const [src, exp] of [
+  ['Shadow', '暗影'],
+  ['Duelist', '决斗者'],
+  ['Assassin', '刺客'],
+  ['Infiltrator', '潜行者'],
+  ['Knight', '骑士'],
+  ['Master-at-Arms', '武器大师'],
+  ['Varek', '瓦雷克'],
+  ['Blood Lord', '血之领主'],
+  ['Ruthless', '无情']
+]) check(src, api.translatePhrase(src), exp);
+
+// ── 腾讯官方用词纠正 ──
+console.log('\n── 译名口径 ──');
+check('Hardcore 改按腾讯国服「专家」', api.translatePhrase('Hardcore'), '专家');
+check('不出现旧译「硬核」', api.translatePhrase('Hardcore').includes('硬核'), false);
+check('黑影巫会不是编年史式译名', api.translatePhrase('Covens').includes('巫會'), false);
+
 const pass = results.filter(Boolean).length;
 console.log(`\n${pass}/${results.length} 通过`);
 process.exit(pass === results.length ? 0 : 1);
