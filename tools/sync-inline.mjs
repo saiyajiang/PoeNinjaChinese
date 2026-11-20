@@ -72,23 +72,35 @@ function objectRows(obj) {
 }
 
 /**
- * 把「基础联盟名 × HC/SSF 前缀组合 × 联盟后缀」展开成整串词条。
- * 必须整串：translatePhrase 对形如 "HC Forbidden Rites" 的专有名词走
- * 「全有或全无」逐词规则，HC 查不到就会整条放弃，所以只加单词没用。
+ * 把「基础联盟名 × 该游戏的前缀组合 × 联盟后缀」展开成整串词条。
+ *
+ * 必须整串：translatePhrase 对 "HC Forbidden Rites" 这类短语走
+ * 「专有名词全有或全无」规则，HC 查不到就整条放弃，只加单词没用。
+ *
+ * PoE2 与 PoE1 的前缀体系不同，各用一套 prefixSet：
+ *   PoE2 用 HC；PoE1 用 Hardcore 全称，另有 Ruthless / SSF R 无情模式变体。
+ * 兼容旧格式（顶层 prefixes + prefixOrders），是新仓库 clone 后跑旧脚本也不炸。
  */
 function expandLeagues(l) {
   const suffixMap = {
     '': ['', ''],
     ' 联盟': [' 联盟', ' 联盟'],
-    ' 聯盟': [' 联盟', ' 聯盟']        // 繁转简后 key 会变成「 联盟」，cn 侧也用简体
+    ' 聯盟': [' 联盟', ' 聯盟']        // 繁转简后 key 变成「 联盟」，cn 侧也用简体
+  };
+  const sets = l.prefixSets || {
+    legacy: { prefixes: l.prefixes || {}, orders: l.prefixOrders || [[]] }
   };
   const rows = [];
   for (const baseEn of Object.keys(l.bases)) {
     const base = l.bases[baseEn];
-    for (const order of l.prefixOrders) {
+    const set = sets[base.set] || sets.legacy || sets[Object.keys(sets)[0]];
+    if (!set) continue;
+    for (const order of set.orders) {
       const preEn = order.length ? order.join(' ') + ' ' : '';
-      const preCn = order.length ? order.map((p) => l.prefixes[p].cn).join('') + l.joiner : '';
-      const preTw = order.length ? order.map((p) => l.prefixes[p].tw).join('') + l.joiner : '';
+      const preCn = order.length
+        ? order.map((p) => (set.prefixes[p] || {}).cn || p).join('') + l.joiner : '';
+      const preTw = order.length
+        ? order.map((p) => (set.prefixes[p] || {}).tw || p).join('') + l.joiner : '';
       for (const suffix of l.suffixes) {
         const [sCn, sTw] = suffixMap[suffix] || ['', ''];
         rows.push([preEn + baseEn + suffix, preCn + base.cn + sCn, preTw + base.tw + sTw]);
