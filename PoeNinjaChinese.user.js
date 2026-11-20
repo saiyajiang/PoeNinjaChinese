@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      2.3.0
+// @version      2.4.0
 // @description  把 poe.ninja 官方繁體中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；补翻官方未本地化的联盟名；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-CN  把 poe.ninja 官方繁体中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；补翻官方未本地化的联盟名；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-TW  把 poe.ninja 官方繁體中文版整頁轉成簡體中文（騰訊國服譯名優先、找不到再用編年史）；補翻官方未本地化的聯盟名；切到 English 自動停手；只有「替換 / 不替換」一個開關
@@ -43,7 +43,8 @@
  *   2. 编年史层：data/tw2cn_poedb.json（腾讯层查不到才用）
  *   3. 字形层：3419 个简繁异体单字 —— 每个繁体「字」都会转简，不只是词条
  *   4. 兜底层：官方繁中未覆盖的残留英文，仍用旧词库翻译（仅中文页面生效）
- *      —— 含「联盟名补翻层」data/leagues.json：腾讯官方译名，自动展开 HC/SSF 全部组合
+ *      —— 含「联盟名补翻层」data/leagues.json：腾讯官方译名，按 PoE1/PoE2 各自
+ *         的前缀体系自动展开 HC / Hardcore / SSF / Ruthless 全部组合
  *   5. 数据层：默认关闭（poe.ninja 用 name 查图标/描述，改中文会导致技能丢图标）
  * 词库来源：poedb.tw / poe2db.tw 的 /cn/ 与 /tw/ 页面（CC BY-NC-SA 3.0）
  *
@@ -59,7 +60,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '2.3.0';
+  const SCRIPT_VERSION = '2.4.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -183,6 +184,7 @@ const INLINE_UI = [
     ["Blind II", "致盲 II", "致盲 II"],
     ["Block", "格挡", "格擋"],
     ["Block Chance", "格挡率", "格擋率"],
+    ["Blood Lord", "血之领主", "血之領主"],
     ["Blood Mage", "命源法师", "血法師"],
     ["Bloodmage", "命源法师", "血法師"],
     ["Breachlord's Rift", "裂界之主的裂隙", "裂界之主的裂隙"],
@@ -351,7 +353,7 @@ const INLINE_UI = [
     ["Guardian", "守护者", "守護者"],
     ["Guatelitzi's Ablation", "瓜铁雷兹的消融", "瓜鐵雷茲的消融"],
     ["Halls of the Dead", "亡者之厅", "亡者之廳"],
-    ["Hardcore", "硬核", "硬核"],
+    ["Hardcore", "专家", "專家"],
     ["Hayoxi's Fulmination", "海幽夏的诛罚", "海幽夏的誅罰"],
     ["Heart of the Well", "井中之心", "井中之心"],
     ["Heightened Charges", "强化充能", "強化充能"],
@@ -375,6 +377,7 @@ const INLINE_UI = [
     ["Incubator", "孵化器", "孵化器"],
     ["Incubators", "孵化器", "孵化器"],
     ["Infernalist", "驱炎师", "獄火師"],
+    ["Infiltrator", "潜行者", "潛行者"],
     ["Influenced", "已受尊师影响", "已受尊師影響"],
     ["Inquisitor", "判官", "判官"],
     ["Intelligence", "智慧", "智慧"],
@@ -396,6 +399,7 @@ const INLINE_UI = [
     ["Keystone", "核心天赋", "核心天賦"],
     ["Keystones", "核心天赋", "核心天賦"],
     ["Khatal's Rejuvenation", "卡哈塔的复苏", "卡哈塔的復甦"],
+    ["Knight", "骑士", "騎士"],
     ["Kulemak's Dominion", "库勒马克的统治", "庫勒馬克的統治"],
     ["Kurgal's Leash", "古加尔的缰绳", "古加爾的韁繩"],
     ["Ladder", "天梯", "天梯"],
@@ -439,6 +443,7 @@ const INLINE_UI = [
     ["Maps", "地图", "地圖"],
     ["Marauder", "野蛮人", "野蠻人"],
     ["Martial Weapon", "军械武器", "軍械武器"],
+    ["Master-at-Arms", "武器大师", "武器大師"],
     ["Mastery", "精通", "精通"],
     ["Max Hit", "最大承受击中", "最大承受擊中"],
     ["Medallion", "徽章", "徽章"],
@@ -554,6 +559,7 @@ const INLINE_UI = [
     ["Rune", "符文", "符文"],
     ["Runeforged Secured Wraps", "符文锻造护腕", "符文鍛造護腕"],
     ["Runic Ward", "符文护盾", "符文護盾"],
+    ["Ruthless", "无情", "無情"],
     ["Saboteur", "破坏者", "破壞者"],
     ["Salvo", "齐射", "齊射"],
     ["Sanctified", "圣化的", "聖化的"],
@@ -671,6 +677,7 @@ const INLINE_UI = [
     ["Valley of the Titans", "泰坦之谷", "泰坦之谷"],
     ["Value", "价值", "價值"],
     ["Varashta's Blessing", "瓦拉煞的祝福", "瓦拉煞的祝福"],
+    ["Varek", "瓦雷克", "瓦雷克"],
     ["Variant", "变体", "變體"],
     ["Vial", "小瓶", "小瓶"],
     ["Vials", "小瓶", "小瓶"],
@@ -2268,15 +2275,54 @@ const H2S_PACKED = "丟丢丣卯並并乗乘乹干乾干亁干亂乱亙亘亝斋
 
   /* INLINE_LEAGUES:BEGIN */
 const INLINE_LEAGUES = [
+    ["Conquerors of Wraeclast", "瓦尔克拉斯征服者", "瓦爾克拉斯征服者"],
+    ["Conquerors of Wraeclast 联盟", "瓦尔克拉斯征服者 联盟", "瓦爾克拉斯征服者 联盟"],
+    ["Conquerors of Wraeclast 聯盟", "瓦尔克拉斯征服者 联盟", "瓦爾克拉斯征服者 聯盟"],
+    ["Covens", "黑影巫会", "黑影巫會"],
+    ["Covens of Umbra", "黑影巫会", "黑影巫會"],
+    ["Covens of Umbra 联盟", "黑影巫会 联盟", "黑影巫會 联盟"],
+    ["Covens of Umbra 聯盟", "黑影巫会 联盟", "黑影巫會 聯盟"],
+    ["Covens 联盟", "黑影巫会 联盟", "黑影巫會 联盟"],
+    ["Covens 聯盟", "黑影巫会 联盟", "黑影巫會 聯盟"],
     ["Forbidden Rites", "禁忌仪式", "禁忌儀式"],
     ["Forbidden Rites 联盟", "禁忌仪式 联盟", "禁忌儀式 联盟"],
     ["Forbidden Rites 聯盟", "禁忌仪式 联盟", "禁忌儀式 聯盟"],
+    ["Hardcore Covens", "专家·黑影巫会", "專家·黑影巫會"],
+    ["Hardcore Covens of Umbra", "专家·黑影巫会", "專家·黑影巫會"],
+    ["Hardcore Covens of Umbra 联盟", "专家·黑影巫会 联盟", "專家·黑影巫會 联盟"],
+    ["Hardcore Covens of Umbra 聯盟", "专家·黑影巫会 联盟", "專家·黑影巫會 聯盟"],
+    ["Hardcore Covens 联盟", "专家·黑影巫会 联盟", "專家·黑影巫會 联盟"],
+    ["Hardcore Covens 聯盟", "专家·黑影巫会 联盟", "專家·黑影巫會 聯盟"],
+    ["Hardcore SSF Covens", "专家独狼·黑影巫会", "專家獨狼·黑影巫會"],
+    ["Hardcore SSF Covens of Umbra", "专家独狼·黑影巫会", "專家獨狼·黑影巫會"],
+    ["Hardcore SSF Covens of Umbra 联盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 联盟"],
+    ["Hardcore SSF Covens of Umbra 聯盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 聯盟"],
+    ["Hardcore SSF Covens 联盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 联盟"],
+    ["Hardcore SSF Covens 聯盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 聯盟"],
+    ["HC Conquerors of Wraeclast", "专家·瓦尔克拉斯征服者", "專家·瓦爾克拉斯征服者"],
+    ["HC Conquerors of Wraeclast 联盟", "专家·瓦尔克拉斯征服者 联盟", "專家·瓦爾克拉斯征服者 联盟"],
+    ["HC Conquerors of Wraeclast 聯盟", "专家·瓦尔克拉斯征服者 联盟", "專家·瓦爾克拉斯征服者 聯盟"],
+    ["HC Covens", "专家·黑影巫会", "專家·黑影巫會"],
+    ["HC Covens of Umbra", "专家·黑影巫会", "專家·黑影巫會"],
+    ["HC Covens of Umbra 联盟", "专家·黑影巫会 联盟", "專家·黑影巫會 联盟"],
+    ["HC Covens of Umbra 聯盟", "专家·黑影巫会 联盟", "專家·黑影巫會 聯盟"],
+    ["HC Covens 联盟", "专家·黑影巫会 联盟", "專家·黑影巫會 联盟"],
+    ["HC Covens 聯盟", "专家·黑影巫会 联盟", "專家·黑影巫會 聯盟"],
     ["HC Forbidden Rites", "专家·禁忌仪式", "專家·禁忌儀式"],
     ["HC Forbidden Rites 联盟", "专家·禁忌仪式 联盟", "專家·禁忌儀式 联盟"],
     ["HC Forbidden Rites 聯盟", "专家·禁忌仪式 联盟", "專家·禁忌儀式 聯盟"],
     ["HC Runes of Aldur", "专家·奥杜尔秘符", "專家·奧杜爾秘符"],
     ["HC Runes of Aldur 联盟", "专家·奥杜尔秘符 联盟", "專家·奧杜爾秘符 联盟"],
     ["HC Runes of Aldur 聯盟", "专家·奥杜尔秘符 联盟", "專家·奧杜爾秘符 聯盟"],
+    ["HC SSF Conquerors of Wraeclast", "专家独狼·瓦尔克拉斯征服者", "專家獨狼·瓦爾克拉斯征服者"],
+    ["HC SSF Conquerors of Wraeclast 联盟", "专家独狼·瓦尔克拉斯征服者 联盟", "專家獨狼·瓦爾克拉斯征服者 联盟"],
+    ["HC SSF Conquerors of Wraeclast 聯盟", "专家独狼·瓦尔克拉斯征服者 联盟", "專家獨狼·瓦爾克拉斯征服者 聯盟"],
+    ["HC SSF Covens", "专家独狼·黑影巫会", "專家獨狼·黑影巫會"],
+    ["HC SSF Covens of Umbra", "专家独狼·黑影巫会", "專家獨狼·黑影巫會"],
+    ["HC SSF Covens of Umbra 联盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 联盟"],
+    ["HC SSF Covens of Umbra 聯盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 聯盟"],
+    ["HC SSF Covens 联盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 联盟"],
+    ["HC SSF Covens 聯盟", "专家独狼·黑影巫会 联盟", "專家獨狼·黑影巫會 聯盟"],
     ["HC SSF Forbidden Rites", "专家独狼·禁忌仪式", "專家獨狼·禁忌儀式"],
     ["HC SSF Forbidden Rites 联盟", "专家独狼·禁忌仪式 联盟", "專家獨狼·禁忌儀式 联盟"],
     ["HC SSF Forbidden Rites 聯盟", "专家独狼·禁忌仪式 联盟", "專家獨狼·禁忌儀式 聯盟"],
@@ -2286,18 +2332,54 @@ const INLINE_LEAGUES = [
     ["Runes of Aldur", "奥杜尔秘符", "奧杜爾秘符"],
     ["Runes of Aldur 联盟", "奥杜尔秘符 联盟", "奧杜爾秘符 联盟"],
     ["Runes of Aldur 聯盟", "奥杜尔秘符 联盟", "奧杜爾秘符 聯盟"],
+    ["Ruthless Covens", "无情·黑影巫会", "無情·黑影巫會"],
+    ["Ruthless Covens of Umbra", "无情·黑影巫会", "無情·黑影巫會"],
+    ["Ruthless Covens of Umbra 联盟", "无情·黑影巫会 联盟", "無情·黑影巫會 联盟"],
+    ["Ruthless Covens of Umbra 聯盟", "无情·黑影巫会 联盟", "無情·黑影巫會 聯盟"],
+    ["Ruthless Covens 联盟", "无情·黑影巫会 联盟", "無情·黑影巫會 联盟"],
+    ["Ruthless Covens 聯盟", "无情·黑影巫会 联盟", "無情·黑影巫會 聯盟"],
+    ["SSF Conquerors of Wraeclast", "独狼·瓦尔克拉斯征服者", "獨狼·瓦爾克拉斯征服者"],
+    ["SSF Conquerors of Wraeclast 联盟", "独狼·瓦尔克拉斯征服者 联盟", "獨狼·瓦爾克拉斯征服者 联盟"],
+    ["SSF Conquerors of Wraeclast 聯盟", "独狼·瓦尔克拉斯征服者 联盟", "獨狼·瓦爾克拉斯征服者 聯盟"],
+    ["SSF Covens", "独狼·黑影巫会", "獨狼·黑影巫會"],
+    ["SSF Covens of Umbra", "独狼·黑影巫会", "獨狼·黑影巫會"],
+    ["SSF Covens of Umbra 联盟", "独狼·黑影巫会 联盟", "獨狼·黑影巫會 联盟"],
+    ["SSF Covens of Umbra 聯盟", "独狼·黑影巫会 联盟", "獨狼·黑影巫會 聯盟"],
+    ["SSF Covens 联盟", "独狼·黑影巫会 联盟", "獨狼·黑影巫會 联盟"],
+    ["SSF Covens 聯盟", "独狼·黑影巫会 联盟", "獨狼·黑影巫會 聯盟"],
     ["SSF Forbidden Rites", "独狼·禁忌仪式", "獨狼·禁忌儀式"],
     ["SSF Forbidden Rites 联盟", "独狼·禁忌仪式 联盟", "獨狼·禁忌儀式 联盟"],
     ["SSF Forbidden Rites 聯盟", "独狼·禁忌仪式 联盟", "獨狼·禁忌儀式 聯盟"],
+    ["SSF Hardcore Covens", "独狼专家·黑影巫会", "獨狼專家·黑影巫會"],
+    ["SSF Hardcore Covens of Umbra", "独狼专家·黑影巫会", "獨狼專家·黑影巫會"],
+    ["SSF Hardcore Covens of Umbra 联盟", "独狼专家·黑影巫会 联盟", "獨狼專家·黑影巫會 联盟"],
+    ["SSF Hardcore Covens of Umbra 聯盟", "独狼专家·黑影巫会 联盟", "獨狼專家·黑影巫會 聯盟"],
+    ["SSF Hardcore Covens 联盟", "独狼专家·黑影巫会 联盟", "獨狼專家·黑影巫會 联盟"],
+    ["SSF Hardcore Covens 聯盟", "独狼专家·黑影巫会 联盟", "獨狼專家·黑影巫會 聯盟"],
+    ["SSF HC Conquerors of Wraeclast", "独狼专家·瓦尔克拉斯征服者", "獨狼專家·瓦爾克拉斯征服者"],
+    ["SSF HC Conquerors of Wraeclast 联盟", "独狼专家·瓦尔克拉斯征服者 联盟", "獨狼專家·瓦爾克拉斯征服者 联盟"],
+    ["SSF HC Conquerors of Wraeclast 聯盟", "独狼专家·瓦尔克拉斯征服者 联盟", "獨狼專家·瓦爾克拉斯征服者 聯盟"],
     ["SSF HC Forbidden Rites", "独狼专家·禁忌仪式", "獨狼專家·禁忌儀式"],
     ["SSF HC Forbidden Rites 联盟", "独狼专家·禁忌仪式 联盟", "獨狼專家·禁忌儀式 联盟"],
     ["SSF HC Forbidden Rites 聯盟", "独狼专家·禁忌仪式 联盟", "獨狼專家·禁忌儀式 聯盟"],
     ["SSF HC Runes of Aldur", "独狼专家·奥杜尔秘符", "獨狼專家·奧杜爾秘符"],
     ["SSF HC Runes of Aldur 联盟", "独狼专家·奥杜尔秘符 联盟", "獨狼專家·奧杜爾秘符 联盟"],
     ["SSF HC Runes of Aldur 聯盟", "独狼专家·奥杜尔秘符 联盟", "獨狼專家·奧杜爾秘符 聯盟"],
+    ["SSF R Covens", "独狼无情·黑影巫会", "獨狼無情·黑影巫會"],
+    ["SSF R Covens of Umbra", "独狼无情·黑影巫会", "獨狼無情·黑影巫會"],
+    ["SSF R Covens of Umbra 联盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 联盟"],
+    ["SSF R Covens of Umbra 聯盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 聯盟"],
+    ["SSF R Covens 联盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 联盟"],
+    ["SSF R Covens 聯盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 聯盟"],
     ["SSF Runes of Aldur", "独狼·奥杜尔秘符", "獨狼·奧杜爾秘符"],
     ["SSF Runes of Aldur 联盟", "独狼·奥杜尔秘符 联盟", "獨狼·奧杜爾秘符 联盟"],
-    ["SSF Runes of Aldur 聯盟", "独狼·奥杜尔秘符 联盟", "獨狼·奧杜爾秘符 聯盟"]
+    ["SSF Runes of Aldur 聯盟", "独狼·奥杜尔秘符 联盟", "獨狼·奧杜爾秘符 聯盟"],
+    ["SSF Ruthless Covens", "独狼无情·黑影巫会", "獨狼無情·黑影巫會"],
+    ["SSF Ruthless Covens of Umbra", "独狼无情·黑影巫会", "獨狼無情·黑影巫會"],
+    ["SSF Ruthless Covens of Umbra 联盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 联盟"],
+    ["SSF Ruthless Covens of Umbra 聯盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 聯盟"],
+    ["SSF Ruthless Covens 联盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 联盟"],
+    ["SSF Ruthless Covens 聯盟", "独狼无情·黑影巫会 联盟", "獨狼無情·黑影巫會 聯盟"]
   ];
   /* INLINE_LEAGUES:END */
 
