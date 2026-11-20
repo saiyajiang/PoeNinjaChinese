@@ -1,27 +1,59 @@
 {
-  "_comment": "poe.ninja 官方繁體中文版未本地化的联盟名（含 HC/SSF 前缀组合），由脚本补翻。译名优先取腾讯国服官方，编年史只作参考。运行时由 tools/sync-inline.mjs 展开成所有前缀组合内联进脚本。",
+  "_comment": "poe.ninja 官方繁體中文版未本地化的联盟名（含 HC/SSF/Ruthless 前缀组合），由脚本补翻。译名优先取腾讯国服官方，编年史只作参考。tools/sync-inline.mjs 会按每个 base 的 set 展开成所有前缀组合，整串内联进脚本。",
   "sources": {
+    "Covens of Umbra": "腾讯《流放之路》S31 黑影巫会赛季 11月20日开服公告、「S31版本内容前瞻及赛季平衡改动」（poe.qq.com）。国际服 3.30 名 Covens of Umbra。",
+    "Covens": "poe.ninja /poe1/builds 实际显示的是缩写 Covens，并带 Hardcore / SSF / HC SSF / Ruthless / SSF R 前缀，故缩写与全称都要收。",
+    "Conquerors of Wraeclast": "腾讯《流放之路：降临》1.0 官方公众号《1.0正式版第三弹！征服者攻城玩法》：「1.0正式版全新赛季【瓦尔克拉斯征服者】」。国际服 12/11、国服 12/12 上线。",
     "Runes of Aldur": "腾讯官方《流放之路：降临》奥杜尔秘符赛季 6月5日开服公告（poe2.qq.com）",
     "Forbidden Rites": "国服 0.5.5 补丁说明：禁忌仪式挑战联赛",
-    "HC": "国服补丁说明：标准 / 专家 / 独狼三种模式（Hardcore = 专家）",
-    "SSF": "国服补丁说明：独狼（Solo Self-Found）；编年史 /tw/ 作「自力」",
-    "note": "编年史 poe2db.tw 把 Runes of Aldur 译作「符文之環 / 阿德爾的符文」，与腾讯国服不同，故不采用。"
+    "Hardcore / HC": "国服 S31 与 PoE2 补丁说明均写「标准 / 专家 / 独狼三种模式」，故 Hardcore = 专家（旧版词库里的「硬核」已纠正）",
+    "SSF": "国服：独狼（Solo Self-Found）；编年史 /tw/ 作「自力」，不采用",
+    "Ruthless / R": "国服 S31 前瞻：「『黑影巫会』无情模式新增 8 项挑战」「无情模式专属调整」，故 Ruthless = 无情",
+    "note": "编年史 poe2db.tw 把 Runes of Aldur 译作「符文之環 / 阿德爾的符文」，媒体译作「奥杜尔符文 / 奥尔杜尔符文」，都与腾讯官方不同，一律不采用。"
   },
   "bases": {
-    "Runes of Aldur": { "cn": "奥杜尔秘符", "tw": "奧杜爾秘符" },
-    "Forbidden Rites": { "cn": "禁忌仪式", "tw": "禁忌儀式" }
+    "Runes of Aldur": { "cn": "奥杜尔秘符", "tw": "奧杜爾秘符", "set": "poe2" },
+    "Forbidden Rites": { "cn": "禁忌仪式", "tw": "禁忌儀式", "set": "poe2" },
+    "Conquerors of Wraeclast": { "cn": "瓦尔克拉斯征服者", "tw": "瓦爾克拉斯征服者", "set": "poe2" },
+    "Covens": { "cn": "黑影巫会", "tw": "黑影巫會", "set": "poe1" },
+    "Covens of Umbra": { "cn": "黑影巫会", "tw": "黑影巫會", "set": "poe1" }
   },
-  "prefixes": {
-    "HC": { "cn": "专家", "tw": "專家" },
-    "SSF": { "cn": "独狼", "tw": "獨狼" }
+  "prefixSets": {
+    "poe2": {
+      "prefixes": {
+        "HC": { "cn": "专家", "tw": "專家" },
+        "SSF": { "cn": "独狼", "tw": "獨狼" }
+      },
+      "orders": [
+        [],
+        ["HC"],
+        ["SSF"],
+        ["HC", "SSF"],
+        ["SSF", "HC"]
+      ]
+    },
+    "poe1": {
+      "prefixes": {
+        "Hardcore": { "cn": "专家", "tw": "專家" },
+        "HC": { "cn": "专家", "tw": "專家" },
+        "SSF": { "cn": "独狼", "tw": "獨狼" },
+        "Ruthless": { "cn": "无情", "tw": "無情" },
+        "R": { "cn": "无情", "tw": "無情" }
+      },
+      "orders": [
+        [],
+        ["Hardcore"],
+        ["HC"],
+        ["SSF"],
+        ["HC", "SSF"],
+        ["Hardcore", "SSF"],
+        ["SSF", "Hardcore"],
+        ["Ruthless"],
+        ["SSF", "R"],
+        ["SSF", "Ruthless"]
+      ]
+    }
   },
-  "prefixOrders": [
-    [],
-    ["HC"],
-    ["SSF"],
-    ["HC", "SSF"],
-    ["SSF", "HC"]
-  ],
   "joiner": "·",
   "suffixes": ["", " 联盟", " 聯盟"]
 }
