@@ -585,7 +585,7 @@
   "Oracle": "神谕者",
   "Amazon": "亚马逊",
   "Ritualist": "仪祭师",
-  "Hardcore": "硬核",
+  "Hardcore": "专家",
   "Standard": "标准",
   "Solo Self-Found": "独狼模式",
   "Latest snapshot": "最新快照",
@@ -601,7 +601,13 @@
   "Leagues": "联盟",
   "Ascendancies": "升华职业",
   "Popularity": "热度",
-  "Percentage": "占比"
+  "Percentage": "占比",
+  "Infiltrator": "潜行者",
+  "Knight": "骑士",
+  "Master-at-Arms": "武器大师",
+  "Varek": "瓦雷克",
+  "Blood Lord": "血之领主",
+  "Ruthless": "无情"
  },
  "tw": {
   "Economy - Path of Exile 1": "經濟 — 流放之路 1",
@@ -1188,7 +1194,7 @@
   "Oracle": "天啟先知",
   "Amazon": "亞馬遜",
   "Ritualist": "儀式行者",
-  "Hardcore": "硬核",
+  "Hardcore": "專家",
   "Standard": "標準",
   "Solo Self-Found": "獨狼模式",
   "Latest snapshot": "最新快照",
@@ -1204,6 +1210,12 @@
   "Leagues": "聯盟",
   "Ascendancies": "昇華職業",
   "Popularity": "熱度",
-  "Percentage": "佔比"
+  "Percentage": "佔比",
+  "Infiltrator": "潛行者",
+  "Knight": "騎士",
+  "Master-at-Arms": "武器大師",
+  "Varek": "瓦雷克",
+  "Blood Lord": "血之領主",
+  "Ruthless": "無情"
  }
 }
