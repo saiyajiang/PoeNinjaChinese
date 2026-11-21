@@ -3,7 +3,7 @@
 // @name:zh-CN   poe.ninja 中文化
 // @name:zh-TW   poe.ninja 中文化
 // @namespace    https://github.com/saiyajiang/PoeNinjaChinese
-// @version      2.4.0
+// @version      2.5.0
 // @description  把 poe.ninja 官方繁體中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；补翻官方未本地化的联盟名；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-CN  把 poe.ninja 官方繁体中文版整页转成简体中文（腾讯国服译名优先、找不到再用编年史）；补翻官方未本地化的联盟名；切到 English 自动停手；只有「替换 / 不替换」一个开关
 // @description:zh-TW  把 poe.ninja 官方繁體中文版整頁轉成簡體中文（騰訊國服譯名優先、找不到再用編年史）；補翻官方未本地化的聯盟名；切到 English 自動停手；只有「替換 / 不替換」一個開關
@@ -41,11 +41,13 @@
  *   因此每次可重新检测：切到 English 立刻停手，切回繁中立刻恢复，不再锁死。
  *   1. 腾讯国服层：data/tencent.json + 运行时同步的国服简体（最高优先）
  *   2. 编年史层：data/tw2cn_poedb.json（腾讯层查不到才用）
- *   3. 字形层：3419 个简繁异体单字 —— 每个繁体「字」都会转简，不只是词条
- *   4. 兜底层：官方繁中未覆盖的残留英文，仍用旧词库翻译（仅中文页面生效）
+ *   3. 简繁用语层：data/zh-wording.json —— 两岸中文「用词」差异，
+ *      字形转换永远做不出来（資訊→资讯，但大陆说「信息」；匯入→汇入 / 导入）
+ *   4. 字形层：3419 个简繁异体单字 —— 每个繁体「字」都会转简，不只是词条
+ *   5. 兜底层：官方繁中未覆盖的残留英文，仍用旧词库翻译（仅中文页面生效）
  *      —— 含「联盟名补翻层」data/leagues.json：腾讯官方译名，按 PoE1/PoE2 各自
  *         的前缀体系自动展开 HC / Hardcore / SSF / Ruthless 全部组合
- *   5. 数据层：默认关闭（poe.ninja 用 name 查图标/描述，改中文会导致技能丢图标）
+ *   6. 数据层：默认关闭（poe.ninja 用 name 查图标/描述，改中文会导致技能丢图标）
  * 词库来源：poedb.tw / poe2db.tw 的 /cn/ 与 /tw/ 页面（CC BY-NC-SA 3.0）
  *
  * 词库来源：poedb.tw / poe2db.tw 的公开 autocomplete 词表（CC BY-NC-SA 3.0）。
@@ -60,7 +62,7 @@
   const OWNER = 'saiyajiang';        // GitHub 用户名，决定 @namespace / CDN / 更新地址
   const REPO = 'PoeNinjaChinese';
   const BRANCH = 'main';
-  const SCRIPT_VERSION = '2.4.0';
+  const SCRIPT_VERSION = '2.5.0';
 
   const CDN_BASE = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/data/`;
   const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/`;
@@ -2386,17 +2388,94 @@ const INLINE_LEAGUES = [
   /* INLINE_TENCENT:BEGIN */
 const INLINE_TENCENT = [
     ["卡蘭德的魔鏡", "卡兰德的魔镜"],
+    ["輿圖天賦樹", "异界天赋树"],
     ["寶石稜鏡", "宝石棱镜"],
     ["法師之血", "法师之血"],
     ["瓦爾寶珠", "瓦尔宝珠"],
+    ["私人聯盟", "私享服"],
     ["鏡之殿堂", "镜之殿堂"],
     ["神聖石", "神圣石"],
+    ["能力值", "属性值"],
+    ["能量球", "充能球"],
     ["製圖釘", "制图钉"],
     ["重鑄石", "重铸石"],
     ["獵首", "猎首"],
+    ["輿圖", "异界"],
     ["醫生", "医生"]
   ];
   /* INLINE_TENCENT:END */
+
+  /* INLINE_WORDING:BEGIN */
+const INLINE_WORDING = [
+    ["匯入代碼", "导入代码"],
+    ["搜尋結果", "搜索结果"],
+    ["檔案名稱", "文件名"],
+    ["登入帳號", "登录账号"],
+    ["目前價格", "当前价格"],
+    ["稍後再試", "稍后重试"],
+    ["網路連線", "网络连接"],
+    ["載入更多", "加载更多"],
+    ["進階搜尋", "高级搜索"],
+    ["進階選項", "高级选项"],
+    ["重新整理", "刷新"],
+    ["重新載入", "重新加载"],
+    ["項目清單", "项目列表"],
+    ["伺服器", "服务器"],
+    ["優先權", "优先级"],
+    ["儲存格", "单元格"],
+    ["工具列", "工具栏"],
+    ["狀態列", "状态栏"],
+    ["相容性", "兼容性"],
+    ["程式碼", "代码"],
+    ["解析度", "分辨率"],
+    ["記憶體", "内存"],
+    ["設定檔", "配置文件"],
+    ["資料夾", "文件夹"],
+    ["資料庫", "数据库"],
+    ["資料表", "数据表"],
+    ["資訊頁", "信息页"],
+    ["載入中", "加载中"],
+    ["預設值", "默认值"],
+    ["儲存", "保存"],
+    ["剪下", "剪切"],
+    ["匯入", "导入"],
+    ["匯出", "导出"],
+    ["升冪", "升序"],
+    ["延宕", "延迟"],
+    ["復原", "撤销"],
+    ["快取", "缓存"],
+    ["捷徑", "快捷方式"],
+    ["搜尋", "搜索"],
+    ["支援", "支持"],
+    ["收合", "收起"],
+    ["機率", "几率"],
+    ["檔案", "文件"],
+    ["清單", "列表"],
+    ["滑鼠", "鼠标"],
+    ["當機", "死机"],
+    ["登入", "登录"],
+    ["登出", "退出"],
+    ["相容", "兼容"],
+    ["硬體", "硬件"],
+    ["視窗", "窗口"],
+    ["程式", "程序"],
+    ["級距", "区间"],
+    ["網路", "网络"],
+    ["螢幕", "屏幕"],
+    ["設定", "设置"],
+    ["貼上", "粘贴"],
+    ["資訊", "信息"],
+    ["軟體", "软件"],
+    ["載入", "加载"],
+    ["進階", "高级"],
+    ["遞增", "升序"],
+    ["遞減", "降序"],
+    ["降冪", "降序"],
+    ["韌體", "固件"],
+    ["預設", "默认"],
+    ["頻寬", "带宽"]
+  ];
+  /* INLINE_WORDING:END */
 
   /* INLINE_TW2CN:BEGIN */
 const INLINE_TW2CN = [
@@ -3060,8 +3139,9 @@ const INLINE_TW2CN = [
     return n;
   }
 
-  const TENCENT_BY_HEAD = makeHeadIndex(INLINE_TENCENT);   // 腾讯国服层
-  const POEDB_BY_HEAD = makeHeadIndex(INLINE_TW2CN);      // 编年史层
+  const TENCENT_BY_HEAD = makeHeadIndex(INLINE_TENCENT);   // ① 腾讯国服层（最高优先）
+  const POEDB_BY_HEAD = makeHeadIndex(INLINE_TW2CN);      // ② 编年史层
+  const WORDING_BY_HEAD = makeHeadIndex(INLINE_WORDING);  // ③ 通用简繁用语层
   let tencentAugmented = 0;                               // 运行时动态补进腾讯层的条数
 
   function addTencent(tw, cn) {
@@ -3113,8 +3193,11 @@ const INLINE_TW2CN = [
     let changed = false;
     let i = 0;
     while (i < s.length) {
-      // ① 腾讯官方 → ② 编年史 → ③ 字形，前者命中即停
-      const hit = matchAt(TENCENT_BY_HEAD, s, i) || matchAt(POEDB_BY_HEAD, s, i);
+      // ① 腾讯官方 → ② 编年史 → ③ 通用简繁用语 → ④ 字形，前者命中即停。
+      // 第 ③ 层专治「字形转换做不出来的用词差异」：資訊→信息、匯入→导入、機率→几率。
+      const hit = matchAt(TENCENT_BY_HEAD, s, i)
+               || matchAt(POEDB_BY_HEAD, s, i)
+               || matchAt(WORDING_BY_HEAD, s, i);
       if (hit) {
         out += hit[1];
         i += hit[0].length;
@@ -3684,6 +3767,14 @@ const INLINE_TW2CN = [
 
     const isWord = (t) => /^[A-Za-z0-9]/.test(t);
     const isSpace = (t) => /^\s+$/.test(t);
+    // 纯功能词不得单独翻译：词库里有 of→之（为「X of Y」词缀加的），
+    // 逐词匹配会把 "Path of Building" 拆成 "Path 之 Building"。
+    // 多词词组（of base / of the damage）走最长匹配，不受影响。
+    const STOP_WORDS = new Set([
+      'of', 'the', 'and', 'to', 'in', 'on', 'at', 'for', 'with', 'a', 'an',
+      'from', 'by', 'or', 'is', 'are', 'be', 'as', 'that', 'this', 'it',
+      'your', 'you', 'per', 'de', 'la', 'le'
+    ]);
 
     let out = '';
     let changed = false;
@@ -3699,8 +3790,10 @@ const INLINE_TW2CN = [
       for (let n = 1; n <= MAX_NGRAM; n++) {
         const phrase = seq.join('').replace(/\s+/g, ' ').trim();
         const r = lookupLoose(phrase);
-        // 单词级命中要求首字母大写，避免把普通英文单词当物品名误翻
-        const okSingle = seq.length > 1 || /^[A-Z]/.test(phrase) || inGlossary(phrase);
+        // 单词级命中要求首字母大写，避免把普通英文单词当物品名误翻；
+        // 另外纯功能词单独出现时一律跳过（见 STOP_WORDS 注释）
+        const isStop = seq.length === 1 && STOP_WORDS.has(phrase.toLowerCase());
+        const okSingle = !isStop && (seq.length > 1 || /^[A-Z]/.test(phrase) || inGlossary(phrase));
         if (r && okSingle) { hitText = r.head + r.zh + r.tail; break; }
 
         const sp = tokens[i + seq.length];
@@ -4091,18 +4184,24 @@ const INLINE_TW2CN = [
     say(`判定：${!pageLang.ready ? '⏳ 页面未渲染完，暂不替换'
           : langNow ? '✅ 官方中文（繁體）→ 整页转简体'
                     : '⛔ English → 脚本停手，页面保持英文原样'}　（${pageLang.reason}）`);
-    say(`替换开关：${state.lang === 'on' ? '开（腾讯国服 → 编年史 → 字形）' : '关（页面完全不动）'}`);
+    say(`替换开关：${state.lang === 'on' ? '开（腾讯国服 → 编年史 → 简繁用语 → 字形）' : '关（页面完全不动）'}`);
     say(langNow
       ? '→ 想看英文原版：站顶 Language 切 English，脚本自动停手'
       : '→ 需要简体：站顶 Language 切「繁體中文」，脚本会自动恢复替换');
     say(`译名优先级：腾讯国服 ${countIndex(TENCENT_BY_HEAD)} 条（含动态补入 ${tencentAugmented} 条）`
-      + ` → 编年史 ${countIndex(POEDB_BY_HEAD)} 条 → 字形 ${Object.keys(H2S).length} 字`);
+      + ` → 编年史 ${countIndex(POEDB_BY_HEAD)} 条 → 简繁用语 ${countIndex(WORDING_BY_HEAD)} 条`
+      + ` → 字形 ${Object.keys(H2S).length} 字`);
     say('内置：界面 ' + Object.keys(state.ui.cn).length + ' 条（含联盟名补翻 ' + INLINE_LEAGUES.length + ' 条） / 术语 ' + Object.keys(state.terms.cn).length + ' 条');
     say('内存中物品名词库：' + Object.keys(state.dict[activeLang()]).length + ' 条　来源：' + (state.source || '（空）'));
     say('');
-    say('繁转简抽验：');
-    for (const p of ['鋼鐵守護', '風魔舞者', '骷髏巨獸', '每秒攻擊次數']) {
-      say(`   ${p} → ${toSimplified(p).text}`);
+    say('繁转简抽验（按命中层级）：');
+    for (const [p, layer] of [
+      ['鋼鐵守護', '编年史'], ['風魔舞者', '编年史'], ['碎骨', '编年史'],
+      ['能力值', '腾讯国服'], ['能量球', '腾讯国服'],
+      ['資訊', '简繁用语'], ['匯入代碼', '简繁用语'], ['閃避機率', '简繁用语'],
+      ['統計', '字形层'], ['每秒攻擊次數', '字形层']
+    ]) {
+      say(`   ${p} → ${toSimplified(p).text}　[${layer}]`);
     }
     say('');
 
@@ -4211,7 +4310,7 @@ const INLINE_TW2CN = [
       GM.notify(`版本 ${SCRIPT_VERSION}　词库来源：${state.source || '内置'}\n`
         + `页面语言：${!pageLang.ready ? '检测中' : pageLang.isZH ? '官方繁體中文（替换中）' : 'English（脚本停手）'}\n`
         + `开关：${state.lang === 'on' ? '替换' : '不替换'}\n`
-        + `译名：腾讯国服 ${countIndex(TENCENT_BY_HEAD)} → 编年史 ${countIndex(POEDB_BY_HEAD)} → 字形 ${Object.keys(H2S).length}\n`
+        + `译名：腾讯国服 ${countIndex(TENCENT_BY_HEAD)} → 编年史 ${countIndex(POEDB_BY_HEAD)} → 简繁用语 ${countIndex(WORDING_BY_HEAD)} → 字形 ${Object.keys(H2S).length}\n`
         + `简体 ${Object.keys(state.dict.cn).length} 条 / 繁體 ${Object.keys(state.dict.tw).length} 条`);
     });
   }
