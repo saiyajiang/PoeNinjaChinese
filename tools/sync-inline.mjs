@@ -43,6 +43,20 @@ const h2s = readJSON(join(ROOT, 'data/h2s_packed.json'));      // 紧凑字符�
 const tencent = readJSON(join(ROOT, 'data/tencent.json'));     // 腾讯国服层（最高优先）
 const poedb = readJSON(join(ROOT, 'data/tw2cn_poedb.json'));   // 编年史层（腾讯查不到才用）
 const leagues = readJSON(join(ROOT, 'data/leagues.json'));     // 官方未本地化的联盟名
+const wording = readJSON(join(ROOT, 'data/zh-wording.json')).map;  // 通用简繁用语差异层
+
+// 用语层校验：若字形转换结果已经等于目标简体，这条毫无价值却可能误伤，直接报错
+{
+  const packed = h2s;
+  const H = {};
+  for (let i = 0; i < packed.length; i += 2) H[packed[i]] = packed[i + 1];
+  const glyph = (s) => [...s].map((c) => H[c] || c).join('');
+  const bad = Object.keys(wording).filter((k) => glyph(k) === wording[k]);
+  if (bad.length) {
+    console.error('❌ zh-wording.json 里有纯字形冗余条目（字形层已能给出相同结果）：\n  ' + bad.join(', '));
+    process.exit(1);
+  }
+}
 const legacy = extractArray('INLINE_UI') || [];
 let merged = 0;
 for (const row of legacy) {
@@ -115,6 +129,12 @@ function expandLeagues(l) {
 const leagueRows = expandLeagues(leagues);
 
 function render(name) {
+  if (name === 'INLINE_WORDING') {
+    const lines = Object.keys(wording)
+      .sort((a, b) => b.length - a.length || a.localeCompare(b))
+      .map((k) => `    [${JSON.stringify(k)}, ${JSON.stringify(wording[k])}]`);
+    return `const INLINE_WORDING = [\n${lines.join(',\n')}\n  ];`;
+  }
   if (name === 'INLINE_LEAGUES') {
     const lines = leagueRows.map((r) => `    [${JSON.stringify(r[0])}, ${JSON.stringify(r[1])}, ${JSON.stringify(r[2])}]`);
     return `const INLINE_LEAGUES = [\n${lines.join(',\n')}\n  ];`;
@@ -165,6 +185,7 @@ const nextH2S = render('INLINE_H2S');
 const nextTW2CN = render('INLINE_TW2CN');
 const nextTENCENT = render('INLINE_TENCENT');
 const nextLeagues = render('INLINE_LEAGUES');
+const nextWording = render('INLINE_WORDING');
 let out = replace(code, 'INLINE_UI', nextUI);
 out = replace(out, 'INLINE_TERMS', nextTerms);
 out = replace(out, 'INLINE_GEMS', nextGems);
@@ -172,6 +193,7 @@ out = replace(out, 'INLINE_H2S', nextH2S);
 out = replace(out, 'INLINE_TW2CN', nextTW2CN);
 out = replace(out, 'INLINE_TENCENT', nextTENCENT);
 out = replace(out, 'INLINE_LEAGUES', nextLeagues);
+out = replace(out, 'INLINE_WORDING', nextWording);
 
 if (CHECK) {
   const same = out.trim() === code.trim();
@@ -180,4 +202,4 @@ if (CHECK) {
 }
 
 writeFileSync(SCRIPT, out, 'utf8');
-console.log(`✅ 已写回脚本：INLINE_UI ${Object.keys(ui.cn).filter(k=>!k.startsWith('_')).length} 条 / INLINE_TERMS ${Object.keys(terms.cn).filter(k=>!k.startsWith('_')).length} 条 / INLINE_LEAGUES ${leagueRows.length} 条`);
+console.log(`✅ 已写回脚本：INLINE_UI ${Object.keys(ui.cn).filter(k=>!k.startsWith('_')).length} 条 / INLINE_TERMS ${Object.keys(terms.cn).filter(k=>!k.startsWith('_')).length} 条 / INLINE_LEAGUES ${leagueRows.length} 条 / INLINE_WORDING ${Object.keys(wording).length} 条`);
